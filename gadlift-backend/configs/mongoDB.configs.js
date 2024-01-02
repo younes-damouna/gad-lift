@@ -1,6 +1,7 @@
+// const {mongoose} =require("mongoose")
 const mongoose =require("mongoose")
 
-const connectToMongoDb=()=>{
+const connectToMongoDB=()=>{
 
     mongoose.connect(process.env.MONGODB_URL)
     const connection= mongoose.connection
@@ -13,4 +14,4 @@ const connectToMongoDb=()=>{
     })
 }
 
-module.exports ={connectToMongoDb}
+module.exports ={connectToMongoDB}
