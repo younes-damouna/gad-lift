@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 6
+    },
+    userType:{
+        default:"user"
     }
 })
 userSchema.pre("save", async function (next) {
