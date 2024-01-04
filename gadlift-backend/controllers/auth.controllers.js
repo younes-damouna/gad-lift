@@ -25,24 +25,29 @@ const login = async (req, res) => {
 }
 
 const register =async(req,res)=>{
-    const {email,password,firstName,lastName}=req.body
+    const {email,password,firstName,lastName,userType}=req.body
+    console.log("Hello from postman")
     if(!email || !password || !firstName || !lastName){
         res.status(400).send({message:"all fields are required"})
+
+    } else{
+        try {
+            const user= new User({
+                email,
+                password,
+                firstName,
+                lastName,
+                userType
+            })
+    
+            await user.save()
+            res.status(200).send({user})
+        } catch (error) {
+            res.status(500).send({error:error})
+        }
     }
 
-    try {
-        const user= new User({
-            email,
-            password,
-            firstName,
-            lastName
-        })
-
-        await user.save()
-        res.status(200).send({user})
-    } catch (error) {
-        res.status(500).send({error:error})
-    }
+ 
 }
 module.exports={
     login,register
