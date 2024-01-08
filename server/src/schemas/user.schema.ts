@@ -35,7 +35,7 @@ export class User {
     @Prop({ default: "User" })
     user_type: string;
     
-    @Prop({type:mongoose.Schema.Types.ObjectId, ref:'UserSettings'})
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings'})
     settings?:UserSettings;
 
 

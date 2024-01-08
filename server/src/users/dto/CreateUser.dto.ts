@@ -1,5 +1,14 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, minLength } from "class-validator";
+import { Type } from "class-transformer";
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, ValidateNested, minLength } from "class-validator";
 
+export class CreateUserSettingsDto {
+
+    @IsOptional()
+    theme?: string;
+
+    @IsOptional()
+    language?: string;
+}
 export class CreateUserDto {
     // Validating the data that is coming from the frontend
     @IsNotEmpty()
@@ -23,4 +32,9 @@ export class CreateUserDto {
 
     @IsOptional()
     user_type?: string;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(()=>CreateUserSettingsDto)
+    settings?: CreateUserSettingsDto
 }
