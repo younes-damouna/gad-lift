@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { HydratedDocument } from 'mongoose'
+import mongoose, { HydratedDocument } from 'mongoose'
+import { UserSettings } from './userSettings.schema';
 
 export type UserDocument = HydratedDocument<User>;
 @Schema()
@@ -33,6 +34,9 @@ export class User {
 
     @Prop({ default: "User" })
     user_type: string;
+    
+    @Prop({type:mongoose.Schema.Types.ObjectId, ref:'UserSettings'})
+    settings?:UserSettings;
 
 
 }
