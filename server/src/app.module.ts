@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UsersModule } from './users/users.module';
 
 
 @Module({
@@ -15,7 +16,9 @@ import { MongooseModule } from '@nestjs/mongoose';
       useFactory:async (config:ConfigService)=>({
         uri:config.get<string>('MONGODB_URL')
       })
-    })
+    }),
+    // registring the users module
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
