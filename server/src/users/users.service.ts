@@ -14,5 +14,8 @@ export class usersService{
         return newUser.save();
 
     }
+    getUsers(){
+        return this.UserModel.find();
+    }
 
 }
