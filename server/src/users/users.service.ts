@@ -9,8 +9,10 @@ import { UserSettings } from "src/schemas/userSettings.schema";
 // Service is used to interact with the database
 @Injectable()
 export class usersService {
-    constructor(@InjectModel(User.name) private UserModel: Model<User>,
-        @InjectModel(UserSettings.name) private UserSettingsModel: Model<UserSettings>) { }
+    constructor(
+        @InjectModel(User.name) private UserModel: Model<User>,
+        @InjectModel(UserSettings.name) private UserSettingsModel: Model<UserSettings>
+    ) { }
     //dto stands for data transfer object
     async createUser({ settings, ...createUserDto }: CreateUserDto) {
         if (settings) {
@@ -41,6 +43,13 @@ export class usersService {
     }
     deleteUser(id: string) {
         return this.UserModel.findByIdAndDelete(id);
+    }
+    async findOne(email: string) : Promise<any> {
+         return await this.UserModel.find({ email }).select('+password');
+        //  console.log(user);
+         
+        //  return user;
+
     }
 
 }
