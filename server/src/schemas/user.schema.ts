@@ -25,13 +25,13 @@ export class User {
     email: string;
 
     @Prop({
-      
+
         required: true,
         minlength: 8
     })
     password: string;
 
-    @Prop({ default:"User"})
+    @Prop({ default: "User" })
     user_type: string;
 
 

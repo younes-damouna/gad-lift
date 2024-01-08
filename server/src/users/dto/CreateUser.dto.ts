@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, minLength } from "class-validator";
 
 export class CreateUserDto {
     // Validating the data that is coming from the frontend
@@ -12,11 +12,15 @@ export class CreateUserDto {
 
     @IsNotEmpty()
     @IsString()
+    @IsEmail()
+
     email: string;
 
     @IsNotEmpty()
     @IsString()
+    @MinLength(8)
     password: string;
 
+    @IsOptional()
     user_type?: string;
 }

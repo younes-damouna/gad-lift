@@ -12,7 +12,8 @@ constructor(private usersService:usersService){}
     // @UsePipes(new ValidationPipe())
     // request.body is same as @Body()
     createUser(@Body() createUserDto:CreateUserDto){
-        // this.usersService
+    
         console.log(createUserDto)
+            return this.usersService.createUser(createUserDto)
     }
 }
