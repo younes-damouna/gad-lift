@@ -17,6 +17,6 @@ import { HashService } from 'src/common/hash.service';
       },
     }),],
   controllers: [AuthController],
-  providers: [AuthService,LocalStrategy,HashService]
+  providers: [AuthService,LocalStrategy]
 })
 export class AuthModule {}

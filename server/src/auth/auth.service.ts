@@ -21,17 +21,7 @@ export class AuthService {
 
     async login(user:any): Promise<any> {
 
-        // const user: User = await this.usersService.findOne(email);
-        // console.log(user?.password)
-        // if (user?.password !== pass) {
-
-        //     throw new UnauthorizedException();
-
-        // }
-        // const { password, ...result } = user;
-        // // TODO: Generate a JWT and return it here
-        // // instead of the user object
-        // return user;
+        
         const payload = {
             email: user.email,
             sub: user.id
