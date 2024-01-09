@@ -59,7 +59,7 @@ export class usersService {
         return this.UserModel.findByIdAndDelete(id);
     }
     async findOne(email: string): Promise<any> {
-        const user= await this.UserModel.findOne({ email }).select('+password');
+        const user= await this.UserModel.findOne({ email }).select('+password').populate('settings');
         //  console.log(user);
 
          return user;
