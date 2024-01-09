@@ -1,5 +1,5 @@
 import { BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Patch, Post, UsePipes, ValidationPipe } from "@nestjs/common";
-import { usersService } from "./users.service";
+import { UsersService } from "./users.service";
 import { CreateUserDto } from "./dto/CreateUser.dto";
 import mongoose from "mongoose";
 import { UpdateUserDto } from "./dto/UpdateUser.dto";
@@ -8,7 +8,7 @@ import { UpdateUserDto } from "./dto/UpdateUser.dto";
 @Controller('users')
 export class UserController {
     // this layer should interact with the service layer
-    constructor(private usersService: usersService) { }
+    constructor(private usersService: UsersService) { }
     @Post()
     // use pipes will enable validation inside this controller only
     // @UsePipes(new ValidationPipe())
