@@ -6,6 +6,11 @@ import { UserController } from "./users.controller";
 import { UserSettings, UserSettingsSchema } from "src/schemas/userSettings.schema";
 import { AuthModule } from "src/auth/auth.module";
 import { HashService } from "../common/hash.service";
+import { JwtModule } from "@nestjs/jwt";
+import { jwtConstants } from "src/strategy/constants";
+import { AuthService } from "src/auth/auth.service";
+import { JwtStrategy } from "src/strategy/jwt.strategy";
+import { LocalStrategy } from "src/auth/local.strategy";
 
 @Module({
     imports: [
@@ -22,10 +27,16 @@ import { HashService } from "../common/hash.service";
                     schema: UserSettingsSchema
                 }
             ]
-        ) 
+        ) ,
+        JwtModule.register({
+            secret: jwtConstants.secret,
+            signOptions: {
+              expiresIn: '60d'
+            },
+          }),
         // ,forwardRef(() => AuthModule),
     ],
-    providers: [usersService,HashService],
+    providers: [usersService,HashService,AuthService,JwtStrategy,LocalStrategy],
     // register the usersController
     controllers: [UserController],
     exports:[usersService]
