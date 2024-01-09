@@ -11,8 +11,7 @@ export class AuthService {
         
     const user: User = await this.usersService.findOne(email);
     if (user && (await this.hashService.comparePassword(password , user.password))) {
-        // const { password, ...result} = user;
-        // console.log(result)
+       
         return user;
     }
     throw new UnauthorizedException();
@@ -21,10 +20,7 @@ export class AuthService {
     const user = await this.validateUser(email,pass);
    
     
-  
-    // if (user?.password !== pass) {
-     
-    // }
+ 
 
     const payload = {  user: user};
     return {
