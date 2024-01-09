@@ -5,6 +5,7 @@ import { usersService } from "./users.service";
 import { UserController } from "./users.controller";
 import { UserSettings, UserSettingsSchema } from "src/schemas/userSettings.schema";
 import { AuthModule } from "src/auth/auth.module";
+import { HashService } from "./hash.service";
 
 @Module({
     imports: [
@@ -24,7 +25,7 @@ import { AuthModule } from "src/auth/auth.module";
         ) 
         // ,forwardRef(() => AuthModule),
     ],
-    providers: [usersService],
+    providers: [usersService,HashService],
     // register the usersController
     controllers: [UserController],
     exports:[usersService]

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, Param, Patch, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Patch, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { usersService } from "./users.service";
 import { CreateUserDto } from "./dto/CreateUser.dto";
 import mongoose from "mongoose";
@@ -13,8 +13,8 @@ export class UserController {
     // use pipes will enable validation inside this controller only
     // @UsePipes(new ValidationPipe())
     // request.body is same as @Body()
-    createUser(@Body() createUserDto: CreateUserDto) {
-
+   async createUser(@Body() createUserDto: CreateUserDto) {
+      
         console.log(createUserDto)
         return this.usersService.createUser(createUserDto)
     }
