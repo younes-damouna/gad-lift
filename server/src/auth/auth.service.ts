@@ -19,7 +19,7 @@ export class AuthService {
         return null;
     }
 
-    async login(user:User): Promise<any> {
+    async login(user:any): Promise<any> {
 
         // const user: User = await this.usersService.findOne(email);
         // console.log(user?.password)
@@ -32,9 +32,13 @@ export class AuthService {
         // // TODO: Generate a JWT and return it here
         // // instead of the user object
         // return user;
-        const payload={
-
-        }
+        const payload = {
+            email: user.email,
+            sub: user.id
+          };
+          return {
+            access_token: this.jwtService.sign(payload),
+          };
 
        
     }
