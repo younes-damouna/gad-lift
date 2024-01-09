@@ -30,7 +30,7 @@ export class User {
     @Prop({
 
         required: true,
-        minlength: 8
+        minlength: 8,
     })
     password: string;
 
