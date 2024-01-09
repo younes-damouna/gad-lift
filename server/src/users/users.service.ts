@@ -9,7 +9,7 @@ import { HashService } from "../common/hash.service";
 
 // Service is used to interact with the database
 @Injectable()
-export class usersService {
+export class UsersService {
     constructor(
         @InjectModel(User.name) private UserModel: Model<User>,
         @InjectModel(UserSettings.name) private UserSettingsModel: Model<UserSettings>,
