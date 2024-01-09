@@ -5,7 +5,7 @@ import { User } from "src/schemas/user.schema";
 import { CreateUserDto } from "./dto/CreateUser.dto";
 import { UpdateUserDto } from "./dto/UpdateUser.dto";
 import { UserSettings } from "src/schemas/userSettings.schema";
-import { HashService } from "./hash.service";
+import { HashService } from "../common/hash.service";
 
 // Service is used to interact with the database
 @Injectable()

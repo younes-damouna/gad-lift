@@ -5,7 +5,7 @@ import { usersService } from "./users.service";
 import { UserController } from "./users.controller";
 import { UserSettings, UserSettingsSchema } from "src/schemas/userSettings.schema";
 import { AuthModule } from "src/auth/auth.module";
-import { HashService } from "./hash.service";
+import { HashService } from "../common/hash.service";
 
 @Module({
     imports: [
