@@ -4,13 +4,13 @@ import { User, UserSchema } from "../schemas/user.schema";
 import { usersService } from "./users.service";
 import { UserController } from "./users.controller";
 import { UserSettings, UserSettingsSchema } from "src/schemas/userSettings.schema";
-import { AuthModule } from "src/auth/auth.module";
+
 import { HashService } from "../common/hash.service";
 import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from "src/strategy/constants";
-import { AuthService } from "src/auth/auth.service";
+
 import { JwtStrategy } from "src/strategy/jwt.strategy";
-import { LocalStrategy } from "src/auth/local.strategy";
+
 
 @Module({
     imports: [
@@ -36,7 +36,7 @@ import { LocalStrategy } from "src/auth/local.strategy";
           }),
         // ,forwardRef(() => AuthModule),
     ],
-    providers: [usersService,HashService,AuthService,JwtStrategy,LocalStrategy],
+    providers: [usersService,HashService,JwtStrategy],
     // register the usersController
     controllers: [UserController],
     exports:[usersService]
