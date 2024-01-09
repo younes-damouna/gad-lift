@@ -1,7 +1,7 @@
 import { Module, forwardRef } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { User, UserSchema } from "../schemas/user.schema";
-import { usersService } from "./users.service";
+import { UsersService } from "./users.service";
 import { UserController } from "./users.controller";
 import { UserSettings, UserSettingsSchema } from "src/schemas/userSettings.schema";
 
@@ -27,19 +27,19 @@ import { JwtStrategy } from "src/strategy/jwt.strategy";
                     schema: UserSettingsSchema
                 }
             ]
-        ) ,
+        ),
         JwtModule.register({
             secret: jwtConstants.secret,
             signOptions: {
-              expiresIn: '60d'
+                expiresIn: '60d'
             },
-          }),
+        }),
         // ,forwardRef(() => AuthModule),
     ],
-    providers: [usersService,HashService,JwtStrategy],
+    providers: [UsersService, HashService, JwtStrategy],
     // register the usersController
     controllers: [UserController],
-    exports:[usersService]
+    exports: [UsersService]
 })
 
 export class UsersModule { }
