@@ -17,15 +17,15 @@ export class usersService {
     ) { }
     //dto stands for data transfer object
     async createUser({ settings, ...createUserDto }: CreateUserDto) {
-        // const createUser = new this.UserModel(createUserDto);
-        // const user = await this.findOne(createUser.email);
-        // createUser.password = await this.hashService.hashPassword(createUser.password);
+        const createUser = new this.UserModel(createUserDto);
+        const user = await this.findOne(createUser.email);
+        createUser.password = await this.hashService.hashPassword(createUser.password);
       
 
-        // if (user) {
-        //     console.log(user);
-        //     throw new BadRequestException();
-        // }
+        if (user) {
+            console.log(user);
+            throw new BadRequestException();
+        }
         if (settings) {
             const newSettings = new this.UserSettingsModel(settings);
             const savedNewSettings = await newSettings.save()
