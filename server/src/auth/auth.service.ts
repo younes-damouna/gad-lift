@@ -13,13 +13,14 @@ export class AuthService {
         const user: User = await this.usersService.findOne(email);
         if (user && (await this.hashService.comparePassword(user.password , password))) {
             // const { password, ...result} = user;
-            // console.log(result)
+            console.log(user)
             return user;
         }
         return null;
     }
 
     async login(user:any): Promise<any> {
+        console.log(user)
 
         
         const payload = {

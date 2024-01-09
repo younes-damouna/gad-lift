@@ -12,9 +12,9 @@ export class AuthController {
     @UseGuards(LocalAuthGuard)
 
     @Post('login')
-    login(@Request() req:User){
-        // console.log(req)
-        return this.authService.login(req)
+    login(@Request() req:any){
+        console.log(req.user)
+        return this.authService.login(req.user)
 
     }
 }
