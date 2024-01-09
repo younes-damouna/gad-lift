@@ -1,5 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { User } from 'src/users/user.entity';
+import { User } from 'src/entities/user.entity';
 import { usersService } from 'src/users/users.service';
 
 @Injectable()

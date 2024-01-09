@@ -1,6 +1,6 @@
 import { Type } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, ValidateNested, minLength } from "class-validator";
-import { User } from "../user.entity";
+import { User } from "../../entities/user.entity";
 
 export class CreateUserSettingsDto extends  User{
 
