@@ -9,5 +9,8 @@ async hashPassword(password: string){
 
 
 }
+async comparePassword(password:string,hash:any){
+    return await bcrypt.compare(password,hash);
 
+}
 }
