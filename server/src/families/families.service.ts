@@ -41,7 +41,9 @@ export class FamiliesService {
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
         const family = await this.findFamily(code);
-
+        const user=await this.checkUserIfMember(req.user.user._id);
+        console.log(user)
+        return user;
         if (family) {
             if (family.requests.length === 0) {
 
@@ -67,6 +69,11 @@ export class FamiliesService {
     async findFamily(code: string) {
         const family = await this.FamilyModel.findOne({ code });
         return family;
+
+    }
+    async checkUserIfMember(id:mongoose.Schema.Types.ObjectId){
+        const user=await this.FamilyModel.findOne({members: { $in: [id]}});
+        return user;
 
     }
 }
