@@ -41,10 +41,10 @@ export class FamiliesService {
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
         const family = await this.findFamily(code);
-        const member=await this.checkUserIfMember(req.user.user._id);
+        const member = await this.checkUserIfMember(req.user.user._id);
         console.log(member)
         // return user;
-        if(member){
+        if (member) {
             throw new BadRequestException({ message: "You Are Already a Member!" },)
         }
         if (family) {
@@ -74,8 +74,8 @@ export class FamiliesService {
         return family;
 
     }
-    async checkUserIfMember(id:mongoose.Schema.Types.ObjectId){
-        const user=await this.FamilyModel.findOne({members: { $in: [id]}});
+    async checkUserIfMember(id: mongoose.Schema.Types.ObjectId) {
+        const user = (await this.FamilyModel.findOne({ members: { $in: [id] } })).populate('members');
         return user;
 
     }
