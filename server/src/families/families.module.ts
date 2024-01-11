@@ -2,6 +2,8 @@ import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import mongoose from "mongoose";
 import { Family, FamilySchema } from "src/schemas/family.schema";
+import { FamiliesController } from './families.controller';
+import { FamiliesService } from './families.service';
 
 
 @Module({
@@ -15,8 +17,9 @@ import { Family, FamilySchema } from "src/schemas/family.schema";
             ]
         )
     ],
-    providers: [],
-    exports: []
+    providers: [FamiliesService],
+    exports: [],
+    controllers: [FamiliesController]
 })
 
 export class FamiliesModule { }

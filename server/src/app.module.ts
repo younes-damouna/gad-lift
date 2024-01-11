@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { FamiliesModule } from './families/families.module';
 
 
 @Module({
@@ -25,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
     // registring the users module
     UsersModule,
     AuthModule,
+    FamiliesModule,
    
   ],
   controllers: [AppController],
