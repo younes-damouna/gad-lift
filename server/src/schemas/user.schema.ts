@@ -36,6 +36,8 @@ export class User {
 
     @Prop({ default: "User" })
     user_type: string;
+    @Prop({required:false, default:""})
+    floor: string;
     
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings'})
     settings?:UserSettings;
