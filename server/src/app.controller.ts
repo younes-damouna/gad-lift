@@ -5,15 +5,19 @@ import { AuthGuard } from '@nestjs/passport';
 
 @Controller('google')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   @UseGuards(AuthGuard('google'))
-  async googleAuth(@Req() req) {}
+  async googleAuth(@Req() req) { }
   @Get()
   getHello(): string {
     return this.appService.getHello();
   }
 
- 
+  @Get('redirect')
+  @UseGuards(AuthGuard('google'))
+  googleAuthRedirect(@Req() req) {
+    return this.appService.googleLogin(req)
+  }
 }
