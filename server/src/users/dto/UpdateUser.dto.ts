@@ -15,8 +15,8 @@ export class UpdateUserDto {
     @IsString()
     password?: string;
 
-    @Type(()=>createFamilyDto)
+    @Type(() => createFamilyDto)
 
-    family:createFamilyDto
+    family: createFamilyDto
 
 }

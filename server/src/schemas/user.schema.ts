@@ -44,7 +44,7 @@ export class User {
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings' })
     settings?: UserSettings;
 
-    @Prop({ default: null,type: mongoose.Schema.Types.ObjectId,ref:'Family' })
+    @Prop({ default: null, type: mongoose.Schema.Types.ObjectId, ref: 'Family' })
     family: Family
 
 }
