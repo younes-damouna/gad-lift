@@ -47,12 +47,11 @@ export class FamiliesService {
 
             } else {
                 const isInRequests = family.requests.map((user: any) => {
-                    console.log(user._id)
+
                     return req.user.user._id == user._id;
                 })
                 if (isInRequests) {
-                    // console.log(req.user.user._id)
-                    // console.log(family.requests)
+
 
                     throw new BadRequestException({ message: "Waiting For Approval!" },)
                 }
