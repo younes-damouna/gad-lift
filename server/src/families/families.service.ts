@@ -11,14 +11,16 @@ export class FamiliesService {
       
     }
     async createFamily(createFamilyDto:createFamilyDto,@Request() req){
-        const createFamily= new this.FamilyModel(createFamilyDto);
-        createFamily.code=this.createRandomFamilyCode();
-        createFamily.parent=req.user.user._id;
-        return createFamily.save()
+        const family= new this.FamilyModel(createFamilyDto);
+        family.code=this.createRandomFamilyCode();
+        family.parent=req.user.user._id;
+         const createdFamily=(await family.save()).populate('parent')
         // console.log(req.user.user._id)
         // const family 
+        return createdFamily;
 
     }
+    checkifUser
     createRandomFamilyCode() :string{
         
         return parseInt((Math.random()*1000000).toString()).toString();
