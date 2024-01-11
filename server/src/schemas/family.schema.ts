@@ -7,6 +7,7 @@ import { User } from "./user.schema";
 export class Family {
     @Prop({
         required: true,
+        unique:true
     })
     code: string;
 
