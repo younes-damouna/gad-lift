@@ -17,13 +17,13 @@ export class FamiliesController {
 
     @Post('/request-to-join')
     @UseGuards(AuthGuard)
-    async requestToJoinFamily(@Request() req, @Body('code') code ){
-        return this.familyService.requestTojoinFamily(req,code);
+    async requestToJoinFamily(@Request() req, @Body('code') code) {
+        return this.familyService.requestTojoinFamily(req, code);
 
     }
     @Post('/accept-member')
     @UseGuards(AuthGuard)
-    async acceptMember(@Body('id') id ){
+    async acceptMember(@Body('id') id) {
         return this.familyService.acceptMember(id);
 
     }
