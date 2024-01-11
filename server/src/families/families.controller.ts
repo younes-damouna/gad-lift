@@ -21,5 +21,11 @@ export class FamiliesController {
         return this.familyService.requestTojoinFamily(req,code);
 
     }
+    @Post('/accept-member')
+    @UseGuards(AuthGuard)
+    async acceptMember(@Body('id') id ){
+        return this.familyService.acceptMember(id);
+
+    }
 
 }

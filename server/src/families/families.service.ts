@@ -42,7 +42,7 @@ export class FamiliesService {
         // search for the family based on its code
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
-        const familyy = await this.acceptMember(req.user.user._id);
+       
         // console.log(familyy)
         // return user;
         if (member) {
@@ -82,19 +82,23 @@ export class FamiliesService {
     }
     async acceptMember(id: mongoose.Schema.Types.ObjectId) {
         const family = await this.FamilyModel.findOne({ requests: { $in: [id] } }).populate('requests');
+        if (family) {
+            const allRequests = family.requests?.filter((request: any) => {
+                return request._id != id
+            })
+            const toBeAccepted = family.requests?.filter((request: any) => {
+                return request._id == id
+            })
+            console.log(family);
+            family.requests = allRequests;
+            // family.members.push({ status: "accepted", user: toBeAccepted[0]} );
+            family.members.push(toBeAccepted[0]);
 
-        const allRequests = family.requests?.filter((request: any) => {
-            return request._id != id
-        })
-        const toBeAccepted = family.requests?.filter((request: any) => {
-            return request._id == id
-        })
-        console.log(toBeAccepted);
-        family.requests = allRequests;
-        // family.members.push({ status: "accepted", user: toBeAccepted[0]} );
-        family.members.push(toBeAccepted[0]);
+            return family.save();
+        }
+        throw new BadRequestException({ message: "You Are Already a Member!" },)
 
-        // return family.save();
+
 
 
     }
