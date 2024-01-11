@@ -1,6 +1,6 @@
 import { Injectable, Request } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
 import { createFamilyDto } from './dto/CreateFamily.dto';
 
@@ -24,6 +24,11 @@ export class FamiliesService {
     createRandomFamilyCode() :string{
         
         return parseInt((Math.random()*1000000).toString()).toString();
+
+    }
+    async checkUserHaveFamily(id:mongoose.Schema.Types.ObjectId){
+        const user =await this.FamilyModel.findOne({parent:id});
+        return user;
 
     }
 }
