@@ -2,6 +2,7 @@ import { Body, Controller, Post, Request, UseGuards } from '@nestjs/common';
 import { FamiliesService } from './families.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { createFamilyDto } from './dto/CreateFamily.dto';
+import { RolesGuard } from 'src/guards/roles.guard';
 
 @Controller('families')
 export class FamiliesController {
@@ -21,6 +22,7 @@ export class FamiliesController {
         return this.familyService.requestTojoinFamily(req, code);
 
     }
+    @UseGuards(RolesGuard)
     @Post('/accept-member')
     @UseGuards(AuthGuard)
     async acceptMember(@Body('id') id) {
