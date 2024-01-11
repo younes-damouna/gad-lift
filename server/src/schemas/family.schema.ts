@@ -22,3 +22,4 @@ export class Family {
 
 
 }
+export const FamilySchema = SchemaFactory.createForClass(Family);
