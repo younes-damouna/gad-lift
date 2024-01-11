@@ -4,10 +4,10 @@ import { User } from "src/entities/user.entity";
 import { CreateUserDto } from "src/users/dto/CreateUser.dto";
 
 export class createFamilyDto{
-    @IsString()
+    // @IsString()
     code: string;
 
-    @IsNotEmpty()
+    // @IsNotEmpty()
     @ValidateNested()
     @Type(()=>CreateUserDto)
     parent: CreateUserDto;

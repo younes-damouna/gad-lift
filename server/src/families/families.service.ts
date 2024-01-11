@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Request } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
@@ -10,10 +10,12 @@ export class FamiliesService {
 
       
     }
-    async createFamily(createFamilyDto:createFamilyDto){
+    async createFamily(createFamilyDto:createFamilyDto,@Request() req){
         const createFamily= new this.FamilyModel(createFamilyDto);
         createFamily.code=this.createRandomFamilyCode();
-        console.log('create family')
+        createFamily.parent=req.user.user._id;
+        return createFamily.save()
+        // console.log(req.user.user._id)
         // const family 
 
     }
