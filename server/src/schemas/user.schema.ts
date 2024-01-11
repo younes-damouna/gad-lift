@@ -5,7 +5,7 @@ import { UserSettings } from './userSettings.schema';
 // export type UserDocument = HydratedDocument<User>;
 export type UserDocument = User & Document;
 
-@Schema({timestamps:true})
+@Schema({ timestamps: true })
 export class User {
     @Prop({
         required: true,
@@ -36,11 +36,12 @@ export class User {
 
     @Prop({ default: "User" })
     user_type: string;
-    @Prop({required:false, default:""})
-    floor: string;
     
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings'})
-    settings?:UserSettings;
+    @Prop({ required: false, default: "" })
+    floor: string;
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings' })
+    settings?: UserSettings;
 
 
 }
