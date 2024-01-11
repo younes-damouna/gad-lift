@@ -5,14 +5,21 @@ import { createFamilyDto } from './dto/CreateFamily.dto';
 
 @Controller('families')
 export class FamiliesController {
-    constructor(private familyService:FamiliesService){}
+    constructor(private familyService: FamiliesService) { }
     @Post()
     @UseGuards(AuthGuard)
-    async createFamily(@Request() req,@Body() createFamilyDto:createFamilyDto){
-       
+    async createFamily(@Request() req, @Body() createFamilyDto: createFamilyDto) {
 
-        return this.familyService.createFamily(createFamilyDto,req)
+
+        return this.familyService.createFamily(createFamilyDto, req)
         // console.log(req.user)
+    }
+
+    @Post('/request-to-join')
+    @UseGuards(AuthGuard)
+    async requestToJoinFamily(@Request() req, @Body('code') code ){
+        return this.familyService.requestTojoinFamily(req,code);
+
     }
 
 }

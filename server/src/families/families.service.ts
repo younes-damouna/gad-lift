@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Request } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException, Request } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
@@ -12,7 +12,7 @@ export class FamiliesService {
     }
     async createFamily(createFamilyDto: createFamilyDto, @Request() req) {
         const user = await this.checkUserHaveFamily(req.user.user._id);
-        
+
         if (user) {
             console.log(user);
             throw new BadRequestException({ message: "Already in a family" });
@@ -37,13 +37,20 @@ export class FamiliesService {
         return user;
 
     }
-    // async requestTojoinFamily(id:mongoose.Schema.Types.ObjectId,code:string){
-    //     // search for the family based on its code
+    async requestTojoinFamily(@Request() req, code: string) {
+        // search for the family based on its code
+        const family = await this.findFamily(code);
+        if(family){
+            family.requests.push(req.user.user);
+            return (await family.save()).populate('requests');
 
-    // }
+        }
+        throw new NotFoundException({message:'Family Not Found!'});
 
-    async findFamily(code:string){
-        const family =await this.FamilyModel.findOne({code});
+    }
+
+    async findFamily(code: string) {
+        const family = await this.FamilyModel.findOne({ code });
         return family;
 
     }
