@@ -9,15 +9,15 @@ import { UpdateUserDto } from "./dto/UpdateUser.dto";
 export class UserController {
     // this layer should interact with the service layer
     constructor(private usersService: UsersService) { }
-    @Post()
-    // use pipes will enable validation inside this controller only
-    // @UsePipes(new ValidationPipe())
-    // request.body is same as @Body()
-   async createUser(@Body() createUserDto: CreateUserDto) {
+//     @Post()
+//     // use pipes will enable validation inside this controller only
+//     // @UsePipes(new ValidationPipe())
+//     // request.body is same as @Body()
+//    async createUser(@Body() createUserDto: CreateUserDto) {
       
-        console.log(createUserDto)
-        return this.usersService.createUser(createUserDto)
-    }
+//         console.log(createUserDto)
+//         return this.usersService.createUser(createUserDto)
+//     }
 
     @Get()
     getUsers() {
