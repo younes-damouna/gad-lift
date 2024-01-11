@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import mongoose from "mongoose";
-import { User } from "./user.schema";
+import { User } from "src/entities/user.entity";
 
 
 @Schema({ timestamps: true })
@@ -17,8 +17,10 @@ export class Family {
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
     requests?: User[];
 
+    // @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
+    // members: { status: string, user: User }[];
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
-    members: { status: string, user: User }[];
+    members: User[];
 
 
 

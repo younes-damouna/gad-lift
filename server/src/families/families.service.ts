@@ -42,7 +42,7 @@ export class FamiliesService {
         // search for the family based on its code
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
-        const familyy=await this.acceptMember(req.user.user._id);
+        const familyy = await this.acceptMember(req.user.user._id);
         // console.log(familyy)
         // return user;
         if (member) {
@@ -80,15 +80,21 @@ export class FamiliesService {
         return user;
 
     }
-    async acceptMember(id:mongoose.Schema.Types.ObjectId){
-        const family= await this.FamilyModel.findOne({requests:{$in:[id]}}).populate('requests');
-        console.log();
-        const requests=family.requests.filter((request:any)=>{
-            return request._id==id
+    async acceptMember(id: mongoose.Schema.Types.ObjectId) {
+        const family = await this.FamilyModel.findOne({ requests: { $in: [id] } }).populate('requests');
+
+        const allRequests = family.requests?.filter((request: any) => {
+            return request._id != id
         })
-        family.requests=requests;
-        family.members.push(id);
-        return family;
+        const toBeAccepted = family.requests?.filter((request: any) => {
+            return request._id == id
+        })
+        console.log(toBeAccepted);
+        family.requests = allRequests;
+        // family.members.push({ status: "accepted", user: toBeAccepted[0]} );
+        family.members.push(toBeAccepted[0]);
+
+        // return family.save();
 
 
     }
