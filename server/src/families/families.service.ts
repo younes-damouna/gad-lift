@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
 import { createFamilyDto } from './dto/CreateFamily.dto';
+import { User } from 'src/entities/user.entity';
 
 @Injectable()
 export class FamiliesService {
@@ -40,12 +41,27 @@ export class FamiliesService {
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
         const family = await this.findFamily(code);
-        if(family){
+
+        if (family) {
+            if (family.requests.length === 0) {
+
+            } else {
+                const isInRequests = family.requests.map((user: any) => {
+                    console.log(user._id)
+                    return req.user.user._id == user._id;
+                })
+                if (isInRequests) {
+                    // console.log(req.user.user._id)
+                    // console.log(family.requests)
+
+                    throw new BadRequestException({ message: "Waiting For Approval!" },)
+                }
+            }
             family.requests.push(req.user.user);
             return (await family.save()).populate('requests');
 
         }
-        throw new NotFoundException({message:'Family Not Found!'});
+        throw new NotFoundException({ message: 'Family Not Found!' });
 
     }
 
