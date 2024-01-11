@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { FamiliesModule } from './families/families.module';
+import { GoogleStrategy } from './strategy/google.strategy';
 
 
 @Module({
@@ -30,6 +31,6 @@ import { FamiliesModule } from './families/families.module';
    
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,GoogleStrategy],
 })
 export class AppModule {}
