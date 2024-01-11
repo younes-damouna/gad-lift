@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, NotFoundException, Request } from '@nestjs/common';
+import { BadRequestException, HttpException, Injectable, NotFoundException, Request } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
@@ -42,7 +42,7 @@ export class FamiliesService {
         // search for the family based on its code
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
-       
+
         // console.log(familyy)
         // return user;
         if (member) {
@@ -80,7 +80,8 @@ export class FamiliesService {
         return user;
 
     }
-    async acceptMember(id: mongoose.Schema.Types.ObjectId) {
+    async acceptMember(id: string) {
+        this.isValidMongooseId(id);
         const family = await this.FamilyModel.findOne({ requests: { $in: [id] } }).populate('requests');
         if (family) {
             const allRequests = family.requests?.filter((request: any) => {
@@ -101,5 +102,10 @@ export class FamiliesService {
 
 
 
+    }
+    
+    isValidMongooseId(id: string ){
+        const isValidId = mongoose.Types.ObjectId.isValid(id);
+        if (!isValidId) throw new HttpException('User not found', 404);
     }
 }
