@@ -76,7 +76,7 @@ export class FamiliesService {
 
     }
     async checkUserIfMember(id: mongoose.Schema.Types.ObjectId) {
-        const user = (await this.FamilyModel.findOne({ members: { $in: [id] } }));
+        const user = await this.FamilyModel.findOne({ members: { $in: [id] } });
         return user;
 
     }
