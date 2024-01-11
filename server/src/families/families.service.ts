@@ -1,4 +1,4 @@
-import { Injectable, Request } from '@nestjs/common';
+import { BadRequestException, Injectable, Request } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
@@ -11,6 +11,11 @@ export class FamiliesService {
       
     }
     async createFamily(createFamilyDto:createFamilyDto,@Request() req){
+       const user=await this.checkUserHaveFamily(req.user.user._id);
+       if (user) {
+        console.log(user);
+        throw new BadRequestException({message:"Already in a family"});
+    }
         const family= new this.FamilyModel(createFamilyDto);
         family.code=this.createRandomFamilyCode();
         family.parent=req.user.user._id;
@@ -20,7 +25,7 @@ export class FamiliesService {
         return createdFamily;
 
     }
-    checkifUser
+    
     createRandomFamilyCode() :string{
         
         return parseInt((Math.random()*1000000).toString()).toString();
