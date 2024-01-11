@@ -41,9 +41,12 @@ export class FamiliesService {
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
         const family = await this.findFamily(code);
-        const user=await this.checkUserIfMember(req.user.user._id);
-        console.log(user)
-        return user;
+        const member=await this.checkUserIfMember(req.user.user._id);
+        console.log(member)
+        // return user;
+        if(member){
+            throw new BadRequestException({ message: "You Are Already a Member!" },)
+        }
         if (family) {
             if (family.requests.length === 0) {
 
