@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import mongoose, { HydratedDocument } from 'mongoose'
 import { UserSettings } from './userSettings.schema';
+import { Family } from './family.schema';
 
 // export type UserDocument = HydratedDocument<User>;
 export type UserDocument = User & Document;
@@ -36,13 +37,15 @@ export class User {
 
     @Prop({ default: "User" })
     user_type: string;
-    
+
     @Prop({ required: false, default: "" })
     floor: string;
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserSettings' })
     settings?: UserSettings;
 
+    @Prop({ default: null,type: mongoose.Schema.Types.ObjectId,ref:'Family' })
+    family: Family
 
 }
 
