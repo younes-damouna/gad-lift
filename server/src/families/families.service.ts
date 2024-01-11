@@ -42,7 +42,8 @@ export class FamiliesService {
         // search for the family based on its code
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
-        console.log(member)
+        const familyy=await this.acceptMember(req.user.user._id);
+        // console.log(familyy)
         // return user;
         if (member) {
             throw new BadRequestException({ message: "You Are Already a Member!" },)
@@ -75,8 +76,20 @@ export class FamiliesService {
 
     }
     async checkUserIfMember(id: mongoose.Schema.Types.ObjectId) {
-        const user = (await this.FamilyModel.findOne({ members: { $in: [id] } })).populate('members');
+        const user = (await this.FamilyModel.findOne({ members: { $in: [id] } }));
         return user;
+
+    }
+    async acceptMember(id:mongoose.Schema.Types.ObjectId){
+        const family= await this.FamilyModel.findOne({requests:{$in:[id]}}).populate('requests');
+        console.log();
+        const requests=family.requests.filter((request:any)=>{
+            return request._id==id
+        })
+        family.requests=requests;
+        family.members.push(id);
+        return family;
+
 
     }
 }
