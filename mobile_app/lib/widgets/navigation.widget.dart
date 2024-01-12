@@ -42,15 +42,19 @@ class _NavigationState extends State<Navigation> {
         BottomNavigationBarItem(
           label: 'Profile',
           icon: Icon(Icons.person_outlined),
+          tooltip: 'Profile Screen'
         ),
         BottomNavigationBarItem(
           label: 'Home',
           icon: Icon(Icons.home_outlined),
+          tooltip: 'Home Screen',
         ),
         BottomNavigationBarItem(
             label: 'Settings',
             icon: Icon(Icons.settings_outlined),
-           ),
+            // backgroundColor: Colors.red,
+            tooltip: 'Settings Screen'
+            ),
       ],
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       currentIndex: _selectedIndex,
