@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           // excludeHeaderSemantics: true,
-          title: screenTitle(),
+          title: screenTitle(title: 'GadLift'),
           foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
@@ -62,12 +62,19 @@ class MainApp extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget screenTitle() {
-    return const Center(
-      child: Text(
-        'GadLift',
-      ),
-    );
-  }
+Widget screenTitle({required String title}) {
+  return  Center(
+    child: Text(
+      title,
+      style: const  TextStyle(
+                  color: Colors.white70,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w800,
+                  fontFamily: '',
+                  backgroundColor: Color.fromARGB(255, 18, 163, 39)),
+      
+    ),
+  );
 }
