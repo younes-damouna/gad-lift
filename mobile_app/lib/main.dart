@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           // excludeHeaderSemantics: true,
-          title: screenTitle(title: 'GadLift'),
+          title: screenTitle(title: 'GadLift', size: 50),
           foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
@@ -52,11 +52,17 @@ class MainApp extends StatelessWidget {
           unselectedItemColor: Colors.white,
           items: const [
             BottomNavigationBarItem(
-                label: 'Profile', icon: Icon(Icons.person_outlined)),
+              label: 'Profile',
+              icon: Icon(Icons.person_outlined),
+            ),
             BottomNavigationBarItem(
-                label: 'Home', icon: Icon(Icons.home_outlined)),
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+            ),
             BottomNavigationBarItem(
-                label: 'Settings', icon: Icon(Icons.settings_outlined)),
+              label: 'Settings',
+              icon: Icon(Icons.settings_outlined),
+            ),
           ],
           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         ),
@@ -65,11 +71,14 @@ class MainApp extends StatelessWidget {
   }
 }
 
-Widget screenTitle({required String title}) {
+Widget screenTitle({required String title, required double size}) {
   return Center(
     child: Text(
       title,
-      style:GoogleFonts.zenDots()
+      style: GoogleFonts.zenDots(
+        fontSize: size,
+        // fontWeight: FontWeight.w900,
+      ),
     ),
   );
 }

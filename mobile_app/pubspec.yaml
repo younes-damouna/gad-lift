@@ -1,4 +1,4 @@
-name: GadLift
+name: mobile_app
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_translate: ^4.0.4
   google_fonts: ^6.1.0
   
   
