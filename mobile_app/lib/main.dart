@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/screens/settings.screen.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
 import 'widgets/app_bar.widget.dart';
@@ -18,47 +19,58 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // appBar: const MyAppBar(),
         appBar: AppBar(
-      // excludeHeaderSemantics: true,
-      title: screenTitle(title: 'GadLift', size: 50),
-      foregroundColor: Colors.white,
-      backgroundColor: const Color(0xFF2FE2EE),
-      bottomOpacity: 0.5,
-      toolbarHeight: 160,
-      elevation: 5.0,
-      leadingWidth: 40,
-    
-      // leadingWidth: 100,
-      shadowColor: const Color(0xFF2FE2EE),
-      // shape: const CircleBorder(
-      //   side: BorderSide(width: 5, color: Colors.purple),
-      // ),
-      shape: const RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.vertical(bottom: Radius.circular(1000))),
-    ),
+          // excludeHeaderSemantics: true,
+          title: screenTitle(title: 'GadLift', size: 50),
+          foregroundColor: Colors.white,
+          backgroundColor: const Color(0xFF2FE2EE),
+          bottomOpacity: 0.5,
+          toolbarHeight: 160,
+          elevation: 5.0,
+          leadingWidth: 40,
+
+          // leadingWidth: 100,
+          shadowColor: const Color(0xFF2FE2EE),
+          // shape: const CircleBorder(
+          //   side: BorderSide(width: 5, color: Colors.purple),
+          // ),
+          shape: const RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(1000))),
+        ),
         backgroundColor: const Color(0xFFF3F1F1),
         body: Container(
           decoration:
               const BoxDecoration(color: Color.fromARGB(0, 255, 193, 7)),
           child: const Center(
-            child: Text(
-              'Hello World!',
-              style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: '',
-                  backgroundColor: Color.fromARGB(255, 18, 163, 39)),
-            ),
+            // child: Text(
+            //   'Hello World!',
+              
+            //   style: TextStyle(
+            //       color: Colors.white70,
+            //       fontSize: 30,
+            //       fontWeight: FontWeight.w800,
+            //       fontFamily: '',
+            //       backgroundColor: Color.fromARGB(255, 18, 163, 39)),
+            // ),
+            // child: TextButton(
+            //     child: Text('data'),
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
+            //   },
+            
+            // ),
+                    // child: _widgetOptions.elementAt(_selectedIndex),
+
           ),
         ),
-        bottomNavigationBar:const Navigation(),
+        bottomNavigationBar: const Navigation(),
+        
       ),
+      
     );
   }
 }
-
-
 
 Widget screenTitle({required String title, required double size}) {
   return Center(
