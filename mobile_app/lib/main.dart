@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:mobile_app/widgets/navigation.widget.dart';
 void main() {
   runApp(const MainApp());
 }
@@ -47,7 +47,7 @@ class MainApp extends StatelessWidget {
             ),
           ),
         ),
-        // bottomNavigationBar:const Navigation(),
+        bottomNavigationBar:const Navigation(),
       ),
     );
   }
