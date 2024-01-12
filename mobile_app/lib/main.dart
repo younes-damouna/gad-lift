@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -65,16 +66,10 @@ class MainApp extends StatelessWidget {
 }
 
 Widget screenTitle({required String title}) {
-  return  Center(
+  return Center(
     child: Text(
       title,
-      style: const  TextStyle(
-                  color: Colors.white70,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: '',
-                  backgroundColor: Color.fromARGB(255, 18, 163, 39)),
-      
+      style:GoogleFonts.zenDots()
     ),
   );
 }
