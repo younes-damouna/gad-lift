@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:mobile_app/main.dart';
-class MyAppBar <PreferredSizeWidget> extends StatelessWidget {
+class MyAppBar extends StatelessWidget   {
   const MyAppBar({
     super.key,
   });
