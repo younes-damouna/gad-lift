@@ -13,11 +13,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           // excludeHeaderSemantics: true,
-          title: const Center(
-            child: Text(
-              'GadLift',
-            ),
-          ),
+          title: screenTitle(),
           foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
@@ -63,6 +59,14 @@ class MainApp extends StatelessWidget {
           ],
           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         ),
+      ),
+    );
+  }
+
+  Widget screenTitle() {
+    return const Center(
+      child: Text(
+        'GadLift',
       ),
     );
   }
