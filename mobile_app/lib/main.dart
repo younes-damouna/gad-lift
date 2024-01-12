@@ -47,29 +47,12 @@ class MainApp extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: const Color(0xFF2FE2EE),
-          unselectedItemColor: Colors.white,
-          items: const [
-            BottomNavigationBarItem(
-              label: 'Profile',
-              icon: Icon(Icons.person_outlined),
-            ),
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.home_outlined),
-            ),
-            BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Icon(Icons.settings_outlined),
-            ),
-          ],
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        ),
+        // bottomNavigationBar:const Navigation(),
       ),
     );
   }
 }
+
 
 Widget screenTitle({required String title, required double size}) {
   return Center(
