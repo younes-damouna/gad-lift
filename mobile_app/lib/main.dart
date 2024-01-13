@@ -20,23 +20,29 @@ class MainApp extends StatelessWidget {
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
-      
+
       home: Scaffold(
         // appBar: const MyAppBar(),
         appBar: AppBar(
           // excludeHeaderSemantics: true,
           title: screenTitle(title: 'GadLift', size: 50),
+          bottom: const PreferredSize(
+            preferredSize: Size(100, 100),
+            child: Text(''),
+            // child: Text(
+            //   'hello',
+            // )
+          ),
           // foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
-          toolbarHeight: 140,
+          // toolbarHeight: 140,
+          toolbarHeight: 50,
           elevation: 5.0,
           leadingWidth: 40,
           titleTextStyle: const TextStyle(
             color: Colors.white,
-            
           ),
-          
 
           // leadingWidth: 100,
           shadowColor: const Color(0xFF2FE2EE),
@@ -48,22 +54,22 @@ class MainApp extends StatelessWidget {
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
         backgroundColor: const Color(0xFFF3F1F1),
-        body:DashboardScreen(key: key) ,
+        body: DashboardScreen(key: key),
         // body: Container(
         //   height: 100,
         //   margin: const EdgeInsets.all(20),
         //   padding: const EdgeInsets.all(20),
-          
+
         //   decoration:
         //       const BoxDecoration(color: Color.fromARGB(255, 255, 193, 7)),
         //       // child: Container(
         //       //   color: Colors.red,
         //       // ),
-              
+
         //   // child: const Center(
         //   //   // child: Text(
         //   //   //   'Hello World!',
-              
+
         //   //   //   style: TextStyle(
         //   //   //       color: Colors.white70,
         //   //   //       fontSize: 30,
@@ -77,16 +83,14 @@ class MainApp extends StatelessWidget {
         //   //   //     Navigator.push(
         //   //   //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
         //   //   //   },
-            
+
         //   //   // ),
         //   //           // child: _widgetOptions.elementAt(_selectedIndex),
         //   //   // child: ,
         //   // ),
         // ),
         bottomNavigationBar: const Navigation(),
-        
       ),
-      
     );
   }
 }

@@ -11,7 +11,7 @@ class DashboardScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.all(20),
+            margin: const EdgeInsets.only(bottom: 10,left: 20,right: 20,top: 20),
             height: 50,
             // color: const Color(0xFF2FE2EE),
             decoration: BoxDecoration(
