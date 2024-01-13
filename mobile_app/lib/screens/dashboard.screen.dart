@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/camera_view.widget.dart';
+import 'package:mobile_app/widgets/common/section_title.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -11,7 +12,8 @@ class DashboardScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(bottom: 10,left: 20,right: 20,top: 20),
+            margin:
+                const EdgeInsets.only(bottom: 10, left: 20, right: 20, top: 20),
             height: 50,
             // color: const Color(0xFF2FE2EE),
             decoration: BoxDecoration(
@@ -40,7 +42,10 @@ class DashboardScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Device Status'),
+                      SectionTitle(
+                        title: 'Device Status',
+                        size: 15,
+                      ),
                       Icon(
                         Icons.circle,
                         color: Colors.green,
@@ -51,7 +56,7 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
           ),
-        const CameraView(),
+          const CameraView(),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/secondary_button.widget.dart';
 
 class CameraView extends StatefulWidget {
@@ -42,7 +43,7 @@ class _CameraViewState extends State<CameraView> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Camera'),
+                    SectionTitle(title: 'Camera', size: 15),
                     Icon(Icons.camera_alt_outlined),
                   ],
                 ),
