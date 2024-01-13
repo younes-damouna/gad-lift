@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class SectionTitle extends StatelessWidget {
   final String title;
   final double size;
+  
   const SectionTitle({super.key, required this.title, required this.size});
 
   @override
