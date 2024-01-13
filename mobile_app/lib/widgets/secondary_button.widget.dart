@@ -27,24 +27,42 @@ class _SecondaryButtonState extends State<SecondaryButton> {
           ),
         ],
       ),
-      child: TextButton(
-          style: const ButtonStyle(
-            alignment: Alignment.center,
+      child:  TextButton(
+        onPressed:()=> print('object'),
+        // clipBehavior:Clip.antiAlias,
+        style:const ButtonStyle(
+          shape: MaterialStatePropertyAll(
+            RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            // (borderRadius: BorderRadius.zero,side: BorderSide(color: Colors.black,style: BorderStyle.solid,width: 3))
           ),
-          onPressed: () {},
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Up',
-              ),
-              Icon(
-                Icons.keyboard_double_arrow_up,
-                color: Colors.black,
-                size: 40,
-              )
-            ],
-          )),
+
+          overlayColor:
+              MaterialStatePropertyAll(Color.fromARGB(67, 47, 225, 238)),
+          // tapTargetSize: MaterialTapTargetSize.padded,
+          // foregroundColor: MaterialStatePropertyAll(Colors.red),
+
+          // alignment: Alignment.center,
+        ),
+
+        
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Up',
+              style: TextStyle(
+                  fontSize: 25,
+                  // fontFamily:
+                  color: Colors.black),
+            ),
+            Icon(
+              Icons.keyboard_double_arrow_up,
+              color: Colors.black,
+              size: 40,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
