@@ -4,11 +4,13 @@ import 'package:mobile_app/widgets/common/section_title.dart';
 
 class InputGroup extends StatefulWidget {
   final String title;
+  final bool secure;
   // final double size;
   const InputGroup({
+
     super.key,
     required this.title,
-    //  required this.size
+    required this.secure//  required this.size
   });
 
   @override
@@ -21,8 +23,11 @@ class _InputGroupState extends State<InputGroup> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextField(
+        // keyboardType: TextInputType.emailAddress,
+        obscureText: widget.secure,
         cursorColor: const Color(0xFF2FE2EE),
         decoration: InputDecoration(
+          
           floatingLabelStyle: const TextStyle(color: Color(0xFF2FE2EE)),
           label: SectionTitle(
             title: widget.title,
