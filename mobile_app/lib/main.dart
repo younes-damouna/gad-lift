@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
-import 'package:mobile_app/screens/settings.screen.dart';
+import 'package:mobile_app/screens/welcome.screen.dart';
+// import 'package:mobile_app/screens/settings.screen.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
 // import 'widgets/app_bar.widget.dart';
@@ -54,7 +55,8 @@ class MainApp extends StatelessWidget {
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
         backgroundColor: const Color(0xFFF3F1F1),
-        body: DashboardScreen(key: key),
+        body: WelcomeScreen(key: key),
+        // body: DashboardScreen(key: key),
         // body: Container(
         //   height: 100,
         //   margin: const EdgeInsets.all(20),
