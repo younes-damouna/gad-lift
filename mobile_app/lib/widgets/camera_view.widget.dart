@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CameraView extends StatefulWidget {
@@ -12,8 +14,9 @@ class _CameraViewState extends State<CameraView> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0x63FFFFFF),
+        // color: Color.fromARGB(98, 255, 255, 255),
         borderRadius: BorderRadius.all(Radius.circular(10)),
+        color: Color(0xf1f1f1f1),
         boxShadow: [
           BoxShadow(
             color: Colors.grey,
@@ -26,9 +29,31 @@ class _CameraViewState extends State<CameraView> {
       margin: const EdgeInsets.all(20),
       width: double.infinity,
       child: Container(
-        color: const Color.fromARGB(22, 22, 22, 22),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+
+        // color: const Color.fromARGB(22, 22, 22, 22),
+        //  color: const Color(0x63FFFFFF),
         height: 200,
-        child: const Text('data'),
+        child: Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Camera'),
+                Icon(Icons.camera_alt_outlined),
+              ],
+            ),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                // color: Colors.red,
+               
+                width: double.infinity,
+                // child: const Text('data'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
