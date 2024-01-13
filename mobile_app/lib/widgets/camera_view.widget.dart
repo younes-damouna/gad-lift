@@ -67,17 +67,8 @@ class _CameraViewState extends State<CameraView> {
             ),
           ),
         ),
-       const Row(
-          children: [
-             SecondaryButton(text: 'Up',icon: Icons.keyboard_double_arrow_up,),
-             SecondaryButton(text: 'Down',icon: Icons.keyboard_double_arrow_down,),
-            
-          
-          ],
-        )
+      
       ],
     );
   }
 }
-
-

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/camera_view.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
+import 'package:mobile_app/widgets/secondary_button.widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -57,6 +58,18 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
           const CameraView(),
+          const Row(
+            children: [
+              SecondaryButton(
+                text: 'Up',
+                icon: Icons.keyboard_double_arrow_up,
+              ),
+              SecondaryButton(
+                text: 'Down',
+                icon: Icons.keyboard_double_arrow_down,
+              ),
+            ],
+          )
         ],
       ),
     );
