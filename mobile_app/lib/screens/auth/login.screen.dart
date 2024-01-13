@@ -20,19 +20,20 @@ class _LoginScreenState extends State<LoginScreen> {
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
               // height: 200,
-              child: const Column(
+              child:  Column(
                 children: [
-                  InputGroup(
+                  Image.asset('assets/images/Login.png'),
+                  const InputGroup(
                     title: 'Email',
                     secure: false,
                     icon: Icons.person_2_outlined,
                   ),
-                  InputGroup(
+                  const InputGroup(
                     title: 'Password',
                     secure: true,
                     icon: Icons.remove_red_eye,
                   ),
-                  PrimaryButton(
+                  const PrimaryButton(
                     text: 'Log In',
                     color: Colors.white,
                     bgColor: Color(0xFF2FE2EE),
