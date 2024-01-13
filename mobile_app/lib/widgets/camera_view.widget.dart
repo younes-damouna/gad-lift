@@ -12,7 +12,7 @@ class _CameraViewState extends State<CameraView> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-         color:  Color(0x63FFFFFF),
+        color: Color(0x63FFFFFF),
         borderRadius: BorderRadius.all(Radius.circular(10)),
         boxShadow: [
           BoxShadow(
@@ -26,7 +26,7 @@ class _CameraViewState extends State<CameraView> {
       margin: const EdgeInsets.all(20),
       width: double.infinity,
       child: Container(
-        color: const Color.fromARGB(22,22,22, 22),
+        color: const Color.fromARGB(22, 22, 22, 22),
         height: 200,
         child: const Text('data'),
       ),
