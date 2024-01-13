@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
+import 'package:mobile_app/widgets/common/primary_button.widget.dart';
+import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,17 +17,22 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: const Color(0xFFF3F1F1),
         body: Center(
           child: Container(
-              // height: 100,
+                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+
+              // height: 200,
               child: const Column(
             children: [
               InputGroup(
                 title: 'Email',
                 secure: false,
+                icon:   Icons.person_2_outlined,
               ),
               InputGroup(
                 title: 'Password',
                 secure: true,
+                icon:   Icons.remove_red_eye,
               ),
+              PrimaryButton(text: 'Log In',color:Colors.white)
             ],
           )),
         )
