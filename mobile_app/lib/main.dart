@@ -25,6 +25,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // appBar: const MyAppBar(),
         appBar: AppBar(
+          
           // excludeHeaderSemantics: true,
           title: screenTitle(title: 'GadLift', size: 50),
           bottom: const PreferredSize(
@@ -38,6 +39,7 @@ class MainApp extends StatelessWidget {
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
           // toolbarHeight: 140,
+          
           toolbarHeight: 50,
           elevation: 5.0,
           leadingWidth: 40,
@@ -51,6 +53,7 @@ class MainApp extends StatelessWidget {
           //   side: BorderSide(width: 5, color: Colors.purple),
           // ),
           shape: const RoundedRectangleBorder(
+            
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
