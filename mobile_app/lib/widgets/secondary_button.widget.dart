@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 class SecondaryButton extends StatefulWidget {
   final String text;
   final IconData icon;
-  const SecondaryButton({
-    super.key,
-    required this.text,
-    required this.icon
-  });
+  const SecondaryButton({super.key, required this.text, required this.icon});
 
   @override
   State<SecondaryButton> createState() => _SecondaryButtonState();
@@ -32,31 +28,24 @@ class _SecondaryButtonState extends State<SecondaryButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => print('object'),
-        // clipBehavior:Clip.antiAlias,
+        onPressed: () => {},
         style: const ButtonStyle(
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-            // (borderRadius: BorderRadius.zero,side: BorderSide(color: Colors.black,style: BorderStyle.solid,width: 3))
           ),
-
           overlayColor:
               MaterialStatePropertyAll(Color.fromARGB(67, 47, 225, 238)),
-          // tapTargetSize: MaterialTapTargetSize.padded,
-          // foregroundColor: MaterialStatePropertyAll(Colors.red),
-
-          // alignment: Alignment.center,
         ),
-
-        child:  Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               widget.text,
               style: const TextStyle(
-                  fontSize: 25,
-                  // fontFamily:
-                  color: Colors.black),
+                fontSize: 25,
+                // fontFamily:
+                color: Colors.black,
+              ),
             ),
             Icon(
               widget.icon,
