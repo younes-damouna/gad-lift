@@ -43,6 +43,7 @@ class _SecondaryButtonState extends State<SecondaryButton> {
             ButtonTitle(
               title: widget.text,
               size: 20,
+              color: Colors.black,
             ),
             Icon(
               widget.icon,

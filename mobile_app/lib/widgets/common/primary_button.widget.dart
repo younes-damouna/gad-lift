@@ -32,7 +32,6 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       child: TextButton(
         onPressed: () => {},
         style: const ButtonStyle(
-          
           // textStyle: MaterialStatePropertyAll(),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.zero),
@@ -46,6 +45,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
             ButtonTitle(
               title: widget.text,
               size: 20,
+              color: Colors.white,
             ),
           ],
         ),
