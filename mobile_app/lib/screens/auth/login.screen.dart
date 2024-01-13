@@ -12,7 +12,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor:  Color(0xFFF3F1F1),
-    
+      body: Center(child: Text('loginScreen')),
     );
   }
 }
