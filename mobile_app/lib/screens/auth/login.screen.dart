@@ -17,8 +17,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Container(
           // height: 100,
           child:const Column(children: [
-          InputGroup(title: 'Email'),
-            InputGroup(title: 'Password')
+          InputGroup(title: 'Email',secure: false,),
+            InputGroup(title: 'Password',secure: true,)
         ],)
         ),
       )
