@@ -5,9 +5,12 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+              backgroundColor: const Color(0xFFF3F1F1),
+
         body: Center(
-      child: Image(image: AssetImage('animatedLogo.png'))
+      child: Image.asset('assets/images/AnimatedLogo.png'),
+
       // Image(
       //   image: NetworkImage(
       //       'https://raw.githubusercontent.com/younes-damouna/younes-damouna/main/github-banner.png'),

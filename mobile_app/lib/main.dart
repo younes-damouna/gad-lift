@@ -91,7 +91,7 @@ class MainApp extends StatelessWidget {
         //   //   // child: ,
         //   // ),
         // ),
-        bottomNavigationBar: const Navigation(),
+        // bottomNavigationBar: const Navigation(),
       ),
     );
   }
