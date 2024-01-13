@@ -69,6 +69,8 @@ class _CameraViewState extends State<CameraView> {
        const Row(
           children: [
              SecondaryButton(),
+             SecondaryButton(),
+            
           
           ],
         )

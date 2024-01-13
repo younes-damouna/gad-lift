@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SecondaryButton extends StatelessWidget {
+class SecondaryButton extends StatefulWidget {
   const SecondaryButton({
     super.key,
   });
 
+  @override
+  State<SecondaryButton> createState() => _SecondaryButtonState();
+}
+
+class _SecondaryButtonState extends State<SecondaryButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
