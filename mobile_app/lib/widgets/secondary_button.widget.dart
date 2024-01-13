@@ -40,15 +40,10 @@ class _SecondaryButtonState extends State<SecondaryButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ButtonTitle(title: widget.text,size: 25,),
-            // Text(
-            //   widget.text,
-            //   style: const TextStyle(
-            //     fontSize: 25,
-            //     // fontFamily:
-            //     color: Colors.black,
-            //   ),
-            // ),
+            ButtonTitle(
+              title: widget.text,
+              size: 20,
+            ),
             Icon(
               widget.icon,
               color: Colors.black,
