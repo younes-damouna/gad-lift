@@ -45,9 +45,17 @@ class _CameraViewState extends State<CameraView> {
             ),
             Expanded(
               child: Container(
+                decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                  gradient: LinearGradient(
+                      colors: [Colors.grey, Colors.white],
+                      // begin: AlignmentDirectional(30, 12),
+                      ),
+                ),
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 // color: Colors.red,
-               
+
                 width: double.infinity,
                 // child: const Text('data'),
               ),
