@@ -16,17 +16,26 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
+      // ),
+      
       home: Scaffold(
         // appBar: const MyAppBar(),
         appBar: AppBar(
           // excludeHeaderSemantics: true,
           title: screenTitle(title: 'GadLift', size: 50),
-          foregroundColor: Colors.white,
+          // foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
           toolbarHeight: 160,
           elevation: 5.0,
           leadingWidth: 40,
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+            
+          ),
+          
 
           // leadingWidth: 100,
           shadowColor: const Color(0xFF2FE2EE),
@@ -38,32 +47,41 @@ class MainApp extends StatelessWidget {
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
         backgroundColor: const Color(0xFFF3F1F1),
-        body: Container(
-          decoration:
-              const BoxDecoration(color: Color.fromARGB(0, 255, 193, 7)),
-          child: const Center(
-            // child: Text(
-            //   'Hello World!',
+        body:SettingsScreen(key: key) ,
+        // body: Container(
+        //   height: 100,
+        //   margin: const EdgeInsets.all(20),
+        //   padding: const EdgeInsets.all(20),
+          
+        //   decoration:
+        //       const BoxDecoration(color: Color.fromARGB(255, 255, 193, 7)),
+        //       // child: Container(
+        //       //   color: Colors.red,
+        //       // ),
               
-            //   style: TextStyle(
-            //       color: Colors.white70,
-            //       fontSize: 30,
-            //       fontWeight: FontWeight.w800,
-            //       fontFamily: '',
-            //       backgroundColor: Color.fromARGB(255, 18, 163, 39)),
-            // ),
-            // child: TextButton(
-            //     child: Text('data'),
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
-            //   },
+        //   // child: const Center(
+        //   //   // child: Text(
+        //   //   //   'Hello World!',
+              
+        //   //   //   style: TextStyle(
+        //   //   //       color: Colors.white70,
+        //   //   //       fontSize: 30,
+        //   //   //       fontWeight: FontWeight.w800,
+        //   //   //       fontFamily: '',
+        //   //   //       backgroundColor: Color.fromARGB(255, 18, 163, 39)),
+        //   //   // ),
+        //   //   // child: TextButton(
+        //   //   //     child: Text('data'),
+        //   //   //   onPressed: () {
+        //   //   //     Navigator.push(
+        //   //   //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
+        //   //   //   },
             
-            // ),
-                    // child: _widgetOptions.elementAt(_selectedIndex),
-
-          ),
-        ),
+        //   //   // ),
+        //   //           // child: _widgetOptions.elementAt(_selectedIndex),
+        //   //   // child: ,
+        //   // ),
+        // ),
         bottomNavigationBar: const Navigation(),
         
       ),
