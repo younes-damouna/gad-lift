@@ -29,7 +29,7 @@ class MainApp extends StatelessWidget {
           // foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),
           bottomOpacity: 0.5,
-          toolbarHeight: 160,
+          toolbarHeight: 140,
           elevation: 5.0,
           leadingWidth: 40,
           titleTextStyle: const TextStyle(
