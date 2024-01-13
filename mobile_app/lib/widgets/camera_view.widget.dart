@@ -65,48 +65,15 @@ class _CameraViewState extends State<CameraView> {
             ),
           ),
         ),
-        Row(
+       const Row(
           children: [
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              width: (MediaQuery.of(context).size.width / 2) - 40,
-              height: 100,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 37, 213, 229),
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-              ),
-              child: TextButton(
-                  style: const ButtonStyle(
-                    alignment: Alignment.center,
-                  ),
-                  onPressed: () {},
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Up',
-                      ),
-                      Icon(
-                        Icons.keyboard_double_arrow_up,
-                        color: Colors.black,
-                        size: 40,
-                      )
-                    ],
-                  )),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              width: (MediaQuery.of(context).size.width / 2) - 40,
-              height: 100,
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-              ),
-              child: const Text('data'),
-            ),
+             Button(),
+          
           ],
         )
       ],
     );
   }
 }
+
+
