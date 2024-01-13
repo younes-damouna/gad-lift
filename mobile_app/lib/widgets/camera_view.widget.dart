@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/secondary_button.widget.dart';
 
 class CameraView extends StatefulWidget {
   const CameraView({super.key});
@@ -67,7 +68,7 @@ class _CameraViewState extends State<CameraView> {
         ),
        const Row(
           children: [
-             Button(),
+             SecondaryButton(),
           
           ],
         )

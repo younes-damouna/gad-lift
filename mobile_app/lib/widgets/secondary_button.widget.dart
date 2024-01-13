@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
-  const Button({
+class SecondaryButton extends StatelessWidget {
+  const SecondaryButton({
     super.key,
   });
 
