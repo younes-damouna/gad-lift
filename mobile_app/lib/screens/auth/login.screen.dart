@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
-import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
+// import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,7 +32,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     secure: true,
                     icon: Icons.remove_red_eye,
                   ),
-                  PrimaryButton(text: 'Log In', color: Colors.white,bgColor: Color(0xFF2FE2EE),)
+                  PrimaryButton(
+                    text: 'Log In',
+                    color: Colors.white,
+                    bgColor: Color(0xFF2FE2EE),
+                  )
                 ],
               )),
         )
