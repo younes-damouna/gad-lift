@@ -46,6 +46,7 @@ class DashboardScreen extends StatelessWidget {
                       SectionTitle(
                         title: 'Device Status',
                         size: 15,
+                        color: Colors.black,
                       ),
                       Icon(
                         Icons.circle,

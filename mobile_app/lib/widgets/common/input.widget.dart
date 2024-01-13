@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 
 class InputGroup extends StatefulWidget {
-  // final String title;
+  final String title;
   // final double size;
   const InputGroup({
     super.key,
-    // required this.title,
+    required this.title,
     //  required this.size
   });
 
@@ -18,36 +18,58 @@ class InputGroup extends StatefulWidget {
 class _InputGroupState extends State<InputGroup> {
   @override
   Widget build(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
-        label: SectionTitle(title: 'First Name', size: 15),
-        // hintText: 'First Name',
-        labelStyle: TextStyle(
-          color: Color(0xFF2FE2EE),
-          // backgroundColor: Colors.amber
-
-          // fontSize: 100,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
-        ),
-        enabled: true,
-        focusColor: Color(0xFF2FE2EE),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
+      child: TextField(
+        cursorColor: const Color(0xFF2FE2EE),
+        decoration: InputDecoration(
+          floatingLabelStyle: const TextStyle(color: Color(0xFF2FE2EE)),
+          label: SectionTitle(
+            title: widget.title,
+            size: 15,
             // color: Colors.grey,
-            color: Color(0xFF2FE2EE),
-            style: BorderStyle.solid,
-            width: 2,
           ),
-        ),
-        hoverColor: Color(0xFF2FE2EE),
+          // hintText: 'First Name',
+          labelStyle: const TextStyle(
+            // color: Color(0xFF2FE2EE)
+            // color: Colors.red,
 
-        // labelText: 'First Name'
-// hintStyle:
-        // focusedErrorBorder: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(15)))
+            // backgroundColor: Colors.amber
+            color: Colors.grey,
+            // decorationColor: Colors.amber
+
+            // backgroundColor: Colors.amber
+
+            // fontSize: 100,
+          ),
+          // errorText: 'First Name Required!',
+          // helperText: 'hi',
+          suffix: const Icon(
+            Icons.person_2_outlined,
+            color: Color(0xff2fe2ee),
+          ),
+
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+          ),
+          enabled: true,
+          focusColor: const Color(0xFF2FE2EE),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              // color: Colors.grey,
+              color: Color(0xFF2FE2EE),
+              style: BorderStyle.solid,
+              width: 2,
+            ),
+          ),
+          hoverColor: const Color(0xFF2FE2EE),
+
+          // labelText: 'First Name'
+          // hintStyle:
+          // focusedErrorBorder: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(15)))
+        ),
       ),
     );
   }
