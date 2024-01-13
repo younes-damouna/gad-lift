@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/common/button_title.widget.dart';
 
 class SecondaryButton extends StatefulWidget {
   final String text;
@@ -39,14 +40,15 @@ class _SecondaryButtonState extends State<SecondaryButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.text,
-              style: const TextStyle(
-                fontSize: 25,
-                // fontFamily:
-                color: Colors.black,
-              ),
-            ),
+            ButtonTitle(title: widget.text,size: 25,),
+            // Text(
+            //   widget.text,
+            //   style: const TextStyle(
+            //     fontSize: 25,
+            //     // fontFamily:
+            //     color: Colors.black,
+            //   ),
+            // ),
             Icon(
               widget.icon,
               color: Colors.black,
