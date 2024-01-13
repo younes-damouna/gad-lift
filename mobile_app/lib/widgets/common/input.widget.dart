@@ -5,12 +5,14 @@ import 'package:mobile_app/widgets/common/section_title.dart';
 class InputGroup extends StatefulWidget {
   final String title;
   final bool secure;
+  final IconData icon;
   // final double size;
   const InputGroup({
 
     super.key,
     required this.title,
-    required this.secure//  required this.size
+    required this.secure,
+    required this.icon//  required this.size
   });
 
   @override
@@ -49,9 +51,9 @@ class _InputGroupState extends State<InputGroup> {
           ),
           // errorText: 'First Name Required!',
           // helperText: 'hi',
-          suffix: const Icon(
-            Icons.person_2_outlined,
-            color: Color(0xff2fe2ee),
+          suffix:  Icon(widget.icon,
+          
+            color: const Color(0xff2fe2ee),
           ),
 
           border: const OutlineInputBorder(

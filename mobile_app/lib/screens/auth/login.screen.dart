@@ -11,27 +11,34 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor:  const Color(0xFFF3F1F1),
-      body:  Center(
-        child: Container(
-          // height: 100,
-          child:const Column(children: [
-          InputGroup(title: 'Email',secure: false,),
-            InputGroup(title: 'Password',secure: true,)
-        ],)
-        ),
-      )
-      //  Center(
-      //   child: Column(
-      //     children: [
-      //       // Center(child: Text('loginScreen')),
-      //       Center(
-      //       child:
-      //      )
-      //     ],
-      //   ),
-      // ),
-    );
+    return Scaffold(
+        backgroundColor: const Color(0xFFF3F1F1),
+        body: Center(
+          child: Container(
+              // height: 100,
+              child: const Column(
+            children: [
+              InputGroup(
+                title: 'Email',
+                secure: false,
+              ),
+              InputGroup(
+                title: 'Password',
+                secure: true,
+              ),
+            ],
+          )),
+        )
+        //  Center(
+        //   child: Column(
+        //     children: [
+        //       // Center(child: Text('loginScreen')),
+        //       Center(
+        //       child:
+        //      )
+        //     ],
+        //   ),
+        // ),
+        );
   }
 }
