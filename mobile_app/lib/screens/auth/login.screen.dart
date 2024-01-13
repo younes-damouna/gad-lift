@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     secure: true,
                     icon: Icons.remove_red_eye,
                   ),
-                  PrimaryButton(text: 'Log In', color: Colors.white)
+                  PrimaryButton(text: 'Log In', color: Colors.white,bgColor: Color(0xFF2FE2EE),)
                 ],
               )),
         )

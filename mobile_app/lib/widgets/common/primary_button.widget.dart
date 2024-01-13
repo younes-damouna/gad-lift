@@ -4,8 +4,9 @@ import 'package:mobile_app/widgets/common/button_title.widget.dart';
 class PrimaryButton extends StatefulWidget {
   final String text;
   final Color color;
+  final Color bgColor;
 
-  const PrimaryButton({super.key, required this.text, required this.color});
+  const PrimaryButton({super.key, required this.text, required this.color,required this.bgColor});
 
   @override
   State<PrimaryButton> createState() => _PrimaryButtonState();
@@ -18,10 +19,10 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.all(10),
       // height: 100,
-      decoration: const BoxDecoration(
-        color: Color(0xf1f1f1f1),
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        boxShadow: [
+      decoration:  BoxDecoration(
+        color: widget.bgColor,
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        boxShadow: const [
           BoxShadow(
             color: Colors.grey,
             blurRadius: 5,
@@ -37,7 +38,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
             RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           ),
           overlayColor:
-              MaterialStatePropertyAll(Color.fromARGB(67, 47, 225, 238)),
+              MaterialStatePropertyAll(Color.fromARGB(146, 153, 228, 233)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
