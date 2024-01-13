@@ -51,7 +51,7 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
           ),
-         
+        const CameraView(),
         ],
       ),
     );
