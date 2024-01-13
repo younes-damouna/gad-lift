@@ -18,48 +18,48 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
 
       home: Scaffold(
         // appBar: const MyAppBar(),
-        // appBar: AppBar(
+        appBar: AppBar(
           
-        //   // excludeHeaderSemantics: true,
-        //   title: screenTitle(title: 'GadLift', size: 50),
-        //   bottom: const PreferredSize(
-        //     preferredSize: Size(100, 100),
-        //     child: Text(''),
-        //     // child: Text(
-        //     //   'hello',
-        //     // )
-        //   ),
-        //   // foregroundColor: Colors.white,
-        //   backgroundColor: const Color(0xFF2FE2EE),
-        //   bottomOpacity: 0.5,
-        //   // toolbarHeight: 140,
+          // excludeHeaderSemantics: true,
+          title: screenTitle(title: 'GadLift', size: 50),
+          bottom:  const PreferredSize(
+            preferredSize: Size(100, 100),
+            child: Text(''),
+            // child: Text(
+            //   'hello',
+            // )
+          ),
+          // foregroundColor: Colors.white,
+          backgroundColor: const Color(0xFF2FE2EE),
+          bottomOpacity: 0.5,
+          // toolbarHeight: 140,
           
-        //   toolbarHeight: 50,
-        //   elevation: 5.0,
-        //   leadingWidth: 40,
-        //   titleTextStyle: const TextStyle(
-        //     color: Colors.white,
-        //   ),
+          toolbarHeight: 50,
+          elevation: 5.0,
+          leadingWidth: 40,
+          titleTextStyle:  const TextStyle(
+            color: Colors.white,
+          ),
 
-        //   // leadingWidth: 100,
-        //   shadowColor: const Color(0xFF2FE2EE),
-        //   // shape: const CircleBorder(
-        //   //   side: BorderSide(width: 5, color: Colors.purple),
-        //   // ),
-        //   shape: const RoundedRectangleBorder(
+          // leadingWidth: 100,
+          shadowColor:  const Color(0xFF2FE2EE),
+          // shape: const CircleBorder(
+          //   side: BorderSide(width: 5, color: Colors.purple),
+          // ),
+          shape: const RoundedRectangleBorder(
             
-        //       borderRadius:
-        //           BorderRadius.vertical(bottom: Radius.circular(1000))),
-        // ),
-        backgroundColor: const Color(0xFFF3F1F1),
-        body: const LoginScreen(),
+              borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(1000))),
+        ),
+        backgroundColor:  const Color(0xFFF3F1F1),
+        body:  const LoginScreen(),
         // body: WelcomeScreen(key: key),
         // body: DashboardScreen(key: key),
         // body: Container(

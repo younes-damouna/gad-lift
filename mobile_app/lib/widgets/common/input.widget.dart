@@ -25,6 +25,8 @@ class _InputGroupState extends State<InputGroup> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextField(
+        scrollPadding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        
         // keyboardType: TextInputType.emailAddress,
         obscureText: widget.secure,
         cursorColor: const Color(0xFF2FE2EE),
