@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 class SectionTitle extends StatelessWidget {
   final String title;
   final double size;
+  final Color? color;
   
-  const SectionTitle({super.key, required this.title, required this.size});
+  const SectionTitle({super.key, required this.title, required this.size,this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class SectionTitle extends StatelessWidget {
       title,
       style: GoogleFonts.zenDots(
         fontSize: size,
-        color: Colors.black,
+        color: color,
         // fontWeight: FontWeight.w900,
       ),
     );
