@@ -81,7 +81,10 @@ class DashboardScreen extends StatelessWidget {
                 text: 'Open',
                 
               ),
-             
+              CustomTextButton(
+                text: 'Close',
+                
+              ),
             ],
           )
         ],
