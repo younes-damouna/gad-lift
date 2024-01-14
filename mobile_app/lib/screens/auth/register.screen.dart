@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
@@ -13,7 +14,9 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
+    return Scaffold(
+      appBar: const MyAppBar(),
+      body:  ListView(children: [
       //  Scaffold(
       // backgroundColor: const Color(0xFFF3F1F1),
       // body:
@@ -114,6 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       //   ),
       // ),
       // ),
-    ]);
+    ]),
+    );
   }
 }
