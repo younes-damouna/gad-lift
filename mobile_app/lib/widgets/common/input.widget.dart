@@ -22,6 +22,7 @@ class _InputGroupState extends State<InputGroup> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextField(
         scrollPadding:
