@@ -8,7 +8,6 @@ import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -21,19 +20,18 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  int _page=0;
+  int _page = 0;
   late PageController _pageController;
 
   @override
-  void initState(){
-    _pageController=PageController(
-      initialPage: _page
-    );
+  void initState() {
+    _pageController = PageController(initialPage: _page);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return   MaterialApp(
+    return MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
@@ -41,105 +39,109 @@ class _MainAppState extends State<MainApp> {
       //  textTheme: GoogleFonts.zenDotsTextTheme(
       //    Theme.of(context).textTheme,
       //  ),
-    //  ),
+      //  ),
 
-      
       // home: RegisterScreen()
-      home: 
-      // DashboardScreen(),
-      // home: WelcomeScreen(),
-      // home: ProfileScreen(),
-      // home: ConnectDeviceScreen(),
-      // routes: Map('/'),
-      Scaffold(
-      //   // appBar: const MyAppBar(),
-      //   appBar: MyAppBar(key: key,),
-      //   // AppBar(
-      //   //   // scrolledUnderElevation: 1,
+      home:
+          // DashboardScreen(),
+          // home: WelcomeScreen(),
+          // home: ProfileScreen(),
+          // home: ConnectDeviceScreen(),
+          // routes: Map('/'),
+          Scaffold(
+        //   // appBar: const MyAppBar(),
+        //   appBar: MyAppBar(key: key,),
+        //   // AppBar(
+        //   //   // scrolledUnderElevation: 1,
 
-      //   //   // excludeHeaderSemantics: true,
-      //   //   title: Column(
-      //   //     children: [
-      //   //       screenTitle(title: 'GadLift', size: 50),
-      //   //     screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
-      //   //   ),
-      //   //   bottom:  const PreferredSize(
-      //   //     preferredSize: Size(100, 100),
-      //   //     child: Text(''),
-      //   //     // child: Text(
-      //   //     //   'hello',
-      //   //     // )
-      //   //   ),
-      //   //   // foregroundColor: Colors.white,
-      //   //   backgroundColor: const Color(0xFF2FE2EE),
-      //   //   bottomOpacity: 0.5,
-      //   //   // toolbarHeight: 140,
+        //   //   // excludeHeaderSemantics: true,
+        //   //   title: Column(
+        //   //     children: [
+        //   //       screenTitle(title: 'GadLift', size: 50),
+        //   //     screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
+        //   //   ),
+        //   //   bottom:  const PreferredSize(
+        //   //     preferredSize: Size(100, 100),
+        //   //     child: Text(''),
+        //   //     // child: Text(
+        //   //     //   'hello',
+        //   //     // )
+        //   //   ),
+        //   //   // foregroundColor: Colors.white,
+        //   //   backgroundColor: const Color(0xFF2FE2EE),
+        //   //   bottomOpacity: 0.5,
+        //   //   // toolbarHeight: 140,
 
-      //   //   toolbarHeight: 80,
-      //   //   elevation: 5.0,
-      //   //   leadingWidth: 40,
-      //   //   titleTextStyle:  const TextStyle(
-      //   //     color: Colors.white,
-      //   //   ),
+        //   //   toolbarHeight: 80,
+        //   //   elevation: 5.0,
+        //   //   leadingWidth: 40,
+        //   //   titleTextStyle:  const TextStyle(
+        //   //     color: Colors.white,
+        //   //   ),
 
-      //   //   // leadingWidth: 100,
-      //   //   shadowColor:  const Color(0xFF2FE2EE),
-      //   //   // shape: const CircleBorder(
-      //   //   //   side: BorderSide(width: 5, color: Colors.purple),
-      //   //   // ),
-      //   //   shape: const RoundedRectangleBorder(
+        //   //   // leadingWidth: 100,
+        //   //   shadowColor:  const Color(0xFF2FE2EE),
+        //   //   // shape: const CircleBorder(
+        //   //   //   side: BorderSide(width: 5, color: Colors.purple),
+        //   //   // ),
+        //   //   shape: const RoundedRectangleBorder(
 
-      //   //       borderRadius:
-      //   //           BorderRadius.vertical(bottom: Radius.circular(1000))),
-      //   // ),
-      //   backgroundColor:  const Color(0xFFF3F1F1),
-        body: 
-        
-         PageView(
-          children: const [ProfileScreen(),DashboardScreen(),SettingsScreen()],
-          onPageChanged: (newPage){
-            setState((){_page=newPage;
-            // print(_page);
+        //   //       borderRadius:
+        //   //           BorderRadius.vertical(bottom: Radius.circular(1000))),
+        //   // ),
+        //   backgroundColor:  const Color(0xFFF3F1F1),
+        body: PageView(
+          children: const [
+            RegisterScreen(),
+            // LoginScreen(),
+            ProfileScreen(),
+            DashboardScreen(),
+            SettingsScreen(),
+          ],
+          onPageChanged: (newPage) {
+            setState(() {
+              _page = newPage;
+              // print(_page);
             });
           },
         ),
-      //   body:  const LoginScreen(),
-      //   // body: WelcomeScreen(key: key),
-      //   // body: DashboardScreen(key: key),
-      //   // body: Container(
-      //   //   height: 100,
-      //   //   margin: const EdgeInsets.all(20),
-      //   //   padding: const EdgeInsets.all(20),
+        //   body:  const LoginScreen(),
+        //   // body: WelcomeScreen(key: key),
+        //   // body: DashboardScreen(key: key),
+        //   // body: Container(
+        //   //   height: 100,
+        //   //   margin: const EdgeInsets.all(20),
+        //   //   padding: const EdgeInsets.all(20),
 
-      //   //   decoration:
-      //   //       const BoxDecoration(color: Color.fromARGB(255, 255, 193, 7)),
-      //   //       // child: Container(
-      //   //       //   color: Colors.red,
-      //   //       // ),
+        //   //   decoration:
+        //   //       const BoxDecoration(color: Color.fromARGB(255, 255, 193, 7)),
+        //   //       // child: Container(
+        //   //       //   color: Colors.red,
+        //   //       // ),
 
-      //   //   // child: const Center(
-      //   //   //   // child: Text(
-      //   //   //   //   'Hello World!',
+        //   //   // child: const Center(
+        //   //   //   // child: Text(
+        //   //   //   //   'Hello World!',
 
-      //   //   //   //   style: TextStyle(
-      //   //   //   //       color: Colors.white70,
-      //   //   //   //       fontSize: 30,
-      //   //   //   //       fontWeight: FontWeight.w800,
-      //   //   //   //       fontFamily: '',
-      //   //   //   //       backgroundColor: Color.fromARGB(255, 18, 163, 39)),
-      //   //   //   // ),
-      //   //   //   // child: TextButton(
-      //   //   //   //     child: Text('data'),
-      //   //   //   //   onPressed: () {
-      //   //   //   //     Navigator.push(
-      //   //   //   //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
-      //   //   //   //   },
+        //   //   //   //   style: TextStyle(
+        //   //   //   //       color: Colors.white70,
+        //   //   //   //       fontSize: 30,
+        //   //   //   //       fontWeight: FontWeight.w800,
+        //   //   //   //       fontFamily: '',
+        //   //   //   //       backgroundColor: Color.fromARGB(255, 18, 163, 39)),
+        //   //   //   // ),
+        //   //   //   // child: TextButton(
+        //   //   //   //     child: Text('data'),
+        //   //   //   //   onPressed: () {
+        //   //   //   //     Navigator.push(
+        //   //   //   //       context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
+        //   //   //   //   },
 
-      //   //   //   // ),
-      //   //   //           // child: _widgetOptions.elementAt(_selectedIndex),
-      //   //   //   // child: ,
-      //   //   // ),
-      //   // ),
+        //   //   //   // ),
+        //   //   //           // child: _widgetOptions.elementAt(_selectedIndex),
+        //   //   //   // child: ,
+        //   //   // ),
+        //   // ),
         bottomNavigationBar: const Navigation(),
       ),
     );

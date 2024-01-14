@@ -6,9 +6,11 @@ class InputGroup extends StatefulWidget {
   final String title;
   final bool secure;
   final IconData icon;
+  final TextEditingController controller;
   // final double size;
   const InputGroup(
       {super.key,
+      required this.controller,
       required this.title,
       required this.secure,
       required this.icon //  required this.size
@@ -25,6 +27,7 @@ class _InputGroupState extends State<InputGroup> {
       height: 60,
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextField(
+        
         scrollPadding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
 

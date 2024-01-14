@@ -12,6 +12,12 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  TextEditingController emailCoontroller = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+
+  TextEditingController passwordNameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,26 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     'assets/images/SignUp.png', fit: BoxFit.cover,
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
-                  const InputGroup(
-                    title: 'First Name',
-                    secure: false,
-                    icon: Icons.person_2_outlined,
-                  ),
-                  const InputGroup(
-                    title: 'Last Name',
-                    secure: false,
-                    icon: Icons.person_2_outlined,
-                  ),
-                  const InputGroup(
-                    title: 'Email',
-                    secure: false,
-                    icon: Icons.email,
-                  ),
-                  const InputGroup(
-                    title: 'Password',
-                    secure: true,
-                    icon: Icons.remove_red_eye,
-                  ),
+              
 
                   // Image.asset(
                   //   'assets/images/googleButton.png', fit: BoxFit.cover,
@@ -60,30 +47,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   //   // colorBlendMode: BlendMode.colorBurn,
                   // ),
                   TextButton(
-                      style: const ButtonStyle(
-                          shape: MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.zero),
-                          ),
-                          overlayColor:
-                              MaterialStatePropertyAll(Colors.white60)),
-                      onPressed: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(15),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: Colors.white,
+                    style: const ButtonStyle(
+                      shape: MaterialStatePropertyAll(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                      ),
+                      overlayColor: MaterialStatePropertyAll(Colors.white60),
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      padding: const EdgeInsets.all(15),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
                         ),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset('assets/images/googleIcon.png'),
-                              const Text('Sign in with Google')
-                            ]),
-                      )),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/images/googleIcon.png'),
+                            const Text('Sign in with Google')
+                          ]),
+                    ),
+                  ),
 
                   const PrimaryButton(
                     text: 'Register',
