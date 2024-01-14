@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
+import 'package:mobile_app/widgets/common/section_title.dart';
 // import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -71,6 +72,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Colors.white,
                     bgColor: Color(0xFF2FE2EE),
                   ),
+                    Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SectionTitle(
+                      title: 'Don\'t Have an Account?',
+                      color: Colors.black,
+                      size: 12,
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: const SectionTitle(
+                          title: "Register", size: 12, color: Colors.grey,
+                          // style: TextStyle(color: Colors.grey),
+                        )),
+                  ],
+                ),
                 ],
               )),
         )

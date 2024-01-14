@@ -65,8 +65,8 @@ class MainApp extends StatelessWidget {
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
         backgroundColor:  const Color(0xFFF3F1F1),
-        body: const RegisterScreen(),
-        // body:  const LoginScreen(),
+        // body: const RegisterScreen(),
+        body:  const LoginScreen(),
         // body: WelcomeScreen(key: key),
         // body: DashboardScreen(key: key),
         // body: Container(
