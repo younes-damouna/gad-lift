@@ -26,7 +26,8 @@ class MainApp extends StatelessWidget {
       // ),
 
       // home: RegisterScreen()
-      home: DashboardScreen(),
+      // home: DashboardScreen(),
+      home: WelcomeScreen(),
       // Scaffold(
       //   // appBar: const MyAppBar(),
       //   appBar: MyAppBar(key: key,),
