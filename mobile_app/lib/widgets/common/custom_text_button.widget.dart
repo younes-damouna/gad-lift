@@ -14,7 +14,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       width: (MediaQuery.of(context).size.width / 2) - 40,
       height: 100,
       decoration: const BoxDecoration(
