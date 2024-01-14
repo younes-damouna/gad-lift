@@ -27,9 +27,9 @@ class MainApp extends StatelessWidget {
       // ),
 
       // home: RegisterScreen()
-      home: DashboardScreen(),
+      // home: DashboardScreen(),
       // home: WelcomeScreen(),
-      // home: ProfileScreen(),
+      home: ProfileScreen(),
       // routes: Map('/'),
       // Scaffold(
       //   // appBar: const MyAppBar(),
