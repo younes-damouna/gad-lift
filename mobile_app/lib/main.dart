@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   const MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
       // home: RegisterScreen()
       // home: DashboardScreen(),
       home: WelcomeScreen(),
+      // routes: Map('/'),
       // Scaffold(
       //   // appBar: const MyAppBar(),
       //   appBar: MyAppBar(key: key,),
