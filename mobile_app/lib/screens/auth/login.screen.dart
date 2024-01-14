@@ -43,12 +43,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   // ),
                   TextButton(
                       style: const ButtonStyle(
-                        
                           shape: MaterialStatePropertyAll(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.zero),
                           ),
-                          overlayColor: MaterialStatePropertyAll(Colors.white60)),
+                          overlayColor:
+                              MaterialStatePropertyAll(Colors.white60)),
                       onPressed: () {},
                       child: Container(
                         padding: const EdgeInsets.all(15),

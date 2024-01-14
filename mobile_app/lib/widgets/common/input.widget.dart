@@ -7,13 +7,12 @@ class InputGroup extends StatefulWidget {
   final bool secure;
   final IconData icon;
   // final double size;
-  const InputGroup({
-
-    super.key,
-    required this.title,
-    required this.secure,
-    required this.icon//  required this.size
-  });
+  const InputGroup(
+      {super.key,
+      required this.title,
+      required this.secure,
+      required this.icon //  required this.size
+      });
 
   @override
   State<InputGroup> createState() => _InputGroupState();
@@ -25,13 +24,13 @@ class _InputGroupState extends State<InputGroup> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextField(
-        scrollPadding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        
+        scrollPadding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+
         // keyboardType: TextInputType.emailAddress,
         obscureText: widget.secure,
         cursorColor: const Color(0xFF2FE2EE),
         decoration: InputDecoration(
-          
           floatingLabelStyle: const TextStyle(color: Color(0xFF2FE2EE)),
           label: SectionTitle(
             title: widget.title,
@@ -53,8 +52,8 @@ class _InputGroupState extends State<InputGroup> {
           ),
           // errorText: 'First Name Required!',
           // helperText: 'hi',
-          suffix:  Icon(widget.icon,
-          
+          suffix: Icon(
+            widget.icon,
             color: const Color(0xff2fe2ee),
           ),
 

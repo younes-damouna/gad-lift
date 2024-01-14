@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
+import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/welcome.screen.dart';
 // import 'package:mobile_app/screens/settings.screen.dart';
@@ -59,7 +60,8 @@ class MainApp extends StatelessWidget {
                   BorderRadius.vertical(bottom: Radius.circular(1000))),
         ),
         backgroundColor:  const Color(0xFFF3F1F1),
-        body:  const LoginScreen(),
+        body: const RegisterScreen(),
+        // body:  const LoginScreen(),
         // body: WelcomeScreen(key: key),
         // body: DashboardScreen(key: key),
         // body: Container(
