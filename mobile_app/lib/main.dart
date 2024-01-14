@@ -30,7 +30,11 @@ class MainApp extends StatelessWidget {
           // scrolledUnderElevation: 1,
           
           // excludeHeaderSemantics: true,
-          title: screenTitle(title: 'GadLift', size: 50),
+          title: Column(
+            children: [
+              screenTitle(title: 'GadLift', size: 50),
+            screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
+          ),
           bottom:  const PreferredSize(
             preferredSize: Size(100, 100),
             child: Text(''),
@@ -43,7 +47,7 @@ class MainApp extends StatelessWidget {
           bottomOpacity: 0.5,
           // toolbarHeight: 140,
           
-          toolbarHeight: 50,
+          toolbarHeight: 80,
           elevation: 5.0,
           leadingWidth: 40,
           titleTextStyle:  const TextStyle(
