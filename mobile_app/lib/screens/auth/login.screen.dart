@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
@@ -15,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const MyAppBar(title: 'Log In'),
         backgroundColor: const Color(0xFFF3F1F1),
         body: Center(
           child: Container(
