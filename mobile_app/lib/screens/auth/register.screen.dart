@@ -35,6 +35,17 @@ class _LoginScreenState extends State<RegisterScreen> {
                     secure: false,
                     icon: Icons.remove_red_eye,
                   ),
+                   const InputGroup(
+                    title: 'Email',
+                    secure: false,
+                    icon: Icons.remove_red_eye,
+                  ),
+                   const InputGroup(
+                    title: 'Password',
+                    secure: true,
+                    icon: Icons.remove_red_eye,
+                  ),
+
                   // Image.asset(
                   //   'assets/images/googleButton.png', fit: BoxFit.cover,
                   //   width: MediaQuery.of(context).size.width,
