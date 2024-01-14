@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
+import 'package:mobile_app/widgets/common/section_title.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -77,10 +78,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             const Text('Sign in with Google')
                           ]),
                     )),
+
                 const PrimaryButton(
                   text: 'Register',
                   color: Colors.white,
                   bgColor: Color(0xFF2FE2EE),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SectionTitle(
+                      title: 'Already Have an Account?',
+                      color: Colors.black,
+                      size: 12,
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: const SectionTitle(
+                          title: "Sign In", size: 12, color: Colors.grey,
+                          // style: TextStyle(color: Colors.grey),
+                        )),
+                  ],
                 ),
               ],
             )),
