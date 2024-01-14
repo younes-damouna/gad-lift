@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
+import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/welcome.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 // import 'package:mobile_app/screens/settings.screen.dart';
@@ -26,8 +27,9 @@ class MainApp extends StatelessWidget {
       // ),
 
       // home: RegisterScreen()
-      // home: DashboardScreen(),
-      home: WelcomeScreen(),
+      home: DashboardScreen(),
+      // home: WelcomeScreen(),
+      // home: ProfileScreen(),
       // routes: Map('/'),
       // Scaffold(
       //   // appBar: const MyAppBar(),
