@@ -39,7 +39,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     'assets/images/SignUp.png', fit: BoxFit.cover,
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
-              
+                   InputGroup(
+                    controller: firstNameController,
+                    title: 'First Name',
+                    secure: false,
+                    icon: Icons.person_2_outlined,
+                  ),
+                   InputGroup(
+                    controller: lastNameController,
+                    title: 'Last Name',
+                    secure: false,
+                    icon: Icons.person_2_outlined,
+                  ),
+                   InputGroup(
+                    controller: emailCoontroller,
+                    title: 'Email',
+                    secure: false,
+                    icon: Icons.email,
+                  ),
+                   InputGroup(
+                    controller: passwordNameController,
+                    title: 'Password',
+                    secure: true,
+                    icon: Icons.remove_red_eye,
+                  ),
 
                   // Image.asset(
                   //   'assets/images/googleButton.png', fit: BoxFit.cover,
