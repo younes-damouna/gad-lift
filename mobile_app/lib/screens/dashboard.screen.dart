@@ -87,7 +87,7 @@ class DashboardScreen extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: const Navigation(),
+      // bottomNavigationBar: const Navigation(),
     );
   }
 }
