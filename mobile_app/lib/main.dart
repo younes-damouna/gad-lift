@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
+import 'package:mobile_app/screens/dashboard.screen.dart';
 
 
 void main() {
@@ -12,16 +14,22 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
+      // theme: ThemeData(
+      //  textTheme: GoogleFonts.zenDotsTextTheme(
+      //    Theme.of(context).textTheme,
+      //  ),
+    //  ),
+
 
       // home: RegisterScreen()
-      // home: DashboardScreen(),
+      home: DashboardScreen(),
       // home: WelcomeScreen(),
       // home: ProfileScreen(),
-      home: ConnectDeviceScreen(),
+      // home: ConnectDeviceScreen(),
       // routes: Map('/'),
       // Scaffold(
       //   // appBar: const MyAppBar(),
