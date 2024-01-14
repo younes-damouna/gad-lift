@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -25,13 +26,13 @@ class _LoginScreenState extends State<RegisterScreen> {
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
                   const InputGroup(
-                    title: 'Email',
+                    title: 'First Name',
                     secure: false,
                     icon: Icons.person_2_outlined,
                   ),
                   const InputGroup(
-                    title: 'Password',
-                    secure: true,
+                    title: 'Last Name',
+                    secure: false,
                     icon: Icons.remove_red_eye,
                   ),
                   // Image.asset(
