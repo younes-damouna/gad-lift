@@ -12,7 +12,7 @@ class ConnectDeviceScreen extends StatelessWidget {
       appBar: MyAppBar(title: 'Connect Device'),
       backgroundColor: Color(0xFFF3F1F1),
       body: Center(child: Text('Connect')),
-      bottomNavigationBar: Navigation(),
+      // bottomNavigationBar: Navigation(),
     );
   }
 }

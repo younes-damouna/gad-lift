@@ -13,9 +13,24 @@ void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  int _page=0;
+  late PageController _pageController;
+
+  @override
+  void initState(){
+    _pageController=PageController(
+      initialPage: _page
+    );
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return   MaterialApp(
@@ -78,8 +93,15 @@ class MainApp extends StatelessWidget {
       //   //           BorderRadius.vertical(bottom: Radius.circular(1000))),
       //   // ),
       //   backgroundColor:  const Color(0xFFF3F1F1),
-        body:  PageView(
+        body: 
+        
+         PageView(
           children: const [ProfileScreen(),DashboardScreen(),SettingsScreen()],
+          onPageChanged: (newPage){
+            setState((){_page=newPage;
+            // print(_page);
+            });
+          },
         ),
       //   body:  const LoginScreen(),
       //   // body: WelcomeScreen(key: key),
