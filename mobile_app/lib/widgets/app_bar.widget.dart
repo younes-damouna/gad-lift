@@ -18,7 +18,7 @@ class MyAppBar extends StatelessWidget  implements PreferredSizeWidget  {
           // excludeHeaderSemantics: true,
           title: Column(
             children: [
-              screenTitle(title: title, size: 50),
+              screenTitle(title: title, size: 40),
             screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
           ),
           bottom:  const PreferredSize(

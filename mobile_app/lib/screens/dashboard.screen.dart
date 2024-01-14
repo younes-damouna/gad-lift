@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/camera_view.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
@@ -9,6 +10,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const MyAppBar(title: 'Dashboard'),
       backgroundColor: const Color(0xFFF3F1F1),
       body: Column(
         children: [

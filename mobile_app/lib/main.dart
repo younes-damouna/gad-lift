@@ -25,7 +25,8 @@ class MainApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
 
-      home: RegisterScreen()
+      // home: RegisterScreen()
+      home: DashboardScreen(),
       // Scaffold(
       //   // appBar: const MyAppBar(),
       //   appBar: MyAppBar(key: key,),
