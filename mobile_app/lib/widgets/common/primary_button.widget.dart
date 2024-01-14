@@ -5,8 +5,13 @@ class PrimaryButton extends StatefulWidget {
   final String text;
   final Color color;
   final Color bgColor;
-
-  const PrimaryButton({super.key, required this.text, required this.color,required this.bgColor});
+  final void handlePress;
+  const PrimaryButton(
+      {super.key,
+      required this.text,
+      required this.color,
+      required this.bgColor,
+      this.handlePress});
 
   @override
   State<PrimaryButton> createState() => _PrimaryButtonState();
@@ -19,7 +24,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       margin: const EdgeInsets.symmetric(vertical: 10),
       // padding: const EdgeInsets.all(10),
       height: 70,
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         color: widget.bgColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         boxShadow: const [
@@ -31,7 +36,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => {},
+        onPressed: () => widget.handlePress,
         style: const ButtonStyle(
           // textStyle: MaterialStatePropertyAll(),
           shape: MaterialStatePropertyAll(

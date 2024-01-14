@@ -28,16 +28,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     'assets/images/Login.png', fit: BoxFit.cover,
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
-                  const InputGroup(
-                    title: 'Email',
-                    secure: false,
-                    icon: Icons.person_2_outlined,
-                  ),
-                  const InputGroup(
-                    title: 'Password',
-                    secure: true,
-                    icon: Icons.remove_red_eye,
-                  ),
+                  // const InputGroup(
+                  //   title: 'Email',
+                  //   secure: false,
+                  //   icon: Icons.person_2_outlined,
+                  // ),
+                  // const InputGroup(
+                  //   title: 'Password',
+                  //   secure: true,
+                  //   icon: Icons.remove_red_eye,
+                  // ),
                   // Image.asset(
                   //   'assets/images/googleButton.png', fit: BoxFit.cover,
                   //   width: MediaQuery.of(context).size.width,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -39,25 +41,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     'assets/images/SignUp.png', fit: BoxFit.cover,
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
-                   InputGroup(
+                  InputGroup(
                     controller: firstNameController,
                     title: 'First Name',
                     secure: false,
                     icon: Icons.person_2_outlined,
                   ),
-                   InputGroup(
+                  InputGroup(
                     controller: lastNameController,
                     title: 'Last Name',
                     secure: false,
                     icon: Icons.person_2_outlined,
                   ),
-                   InputGroup(
+                  InputGroup(
                     controller: emailCoontroller,
                     title: 'Email',
                     secure: false,
                     icon: Icons.email,
                   ),
-                   InputGroup(
+                  InputGroup(
                     controller: passwordNameController,
                     title: 'Password',
                     secure: true,
@@ -76,7 +78,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       overlayColor: MaterialStatePropertyAll(Colors.white60),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                   
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       width: MediaQuery.of(context).size.width,
@@ -109,7 +113,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         size: 12,
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                               log('emailCoontroller.text');
+                          },
                           child: const SectionTitle(
                             title: "Sign In", size: 12, color: Colors.grey,
                             // style: TextStyle(color: Colors.grey),
