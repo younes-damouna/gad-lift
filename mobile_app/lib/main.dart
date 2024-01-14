@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
+import 'package:mobile_app/screens/profile.screen.dart';
+import 'package:mobile_app/screens/settings.screen.dart';
+import 'package:mobile_app/widgets/navigation.widget.dart';
 
 
 void main() {
@@ -14,7 +18,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
@@ -24,14 +28,15 @@ class MainApp extends StatelessWidget {
       //  ),
     //  ),
 
-
+      
       // home: RegisterScreen()
-      home: DashboardScreen(),
+      home: 
+      // DashboardScreen(),
       // home: WelcomeScreen(),
       // home: ProfileScreen(),
       // home: ConnectDeviceScreen(),
       // routes: Map('/'),
-      // Scaffold(
+      Scaffold(
       //   // appBar: const MyAppBar(),
       //   appBar: MyAppBar(key: key,),
       //   // AppBar(
@@ -73,7 +78,9 @@ class MainApp extends StatelessWidget {
       //   //           BorderRadius.vertical(bottom: Radius.circular(1000))),
       //   // ),
       //   backgroundColor:  const Color(0xFFF3F1F1),
-      //   // body: const RegisterScreen(),
+        body:  PageView(
+          children: const [ProfileScreen(),DashboardScreen(),SettingsScreen()],
+        ),
       //   body:  const LoginScreen(),
       //   // body: WelcomeScreen(key: key),
       //   // body: DashboardScreen(key: key),
@@ -111,8 +118,8 @@ class MainApp extends StatelessWidget {
       //   //   //   // child: ,
       //   //   // ),
       //   // ),
-      //   // bottomNavigationBar: const Navigation(),
-      // ),
+        bottomNavigationBar: const Navigation(),
+      ),
     );
   }
 }
