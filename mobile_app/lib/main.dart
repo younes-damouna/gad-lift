@@ -27,6 +27,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // appBar: const MyAppBar(),
         appBar: AppBar(
+          // scrolledUnderElevation: 1,
           
           // excludeHeaderSemantics: true,
           title: screenTitle(title: 'GadLift', size: 50),
