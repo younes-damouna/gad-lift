@@ -11,7 +11,7 @@ class ConnectDeviceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: MyAppBar(title: 'Profile'),
+      appBar: MyAppBar(title: 'Connect Device'),
       backgroundColor: Color(0xFFF3F1F1),
       body: Center(child: Text('Connect')),
       bottomNavigationBar: Navigation(),

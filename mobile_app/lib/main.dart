@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
+import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/welcome.screen.dart';
@@ -29,7 +30,8 @@ class MainApp extends StatelessWidget {
       // home: RegisterScreen()
       // home: DashboardScreen(),
       // home: WelcomeScreen(),
-      home: ProfileScreen(),
+      // home: ProfileScreen(),
+      home: ConnectDeviceScreen(),
       // routes: Map('/'),
       // Scaffold(
       //   // appBar: const MyAppBar(),
