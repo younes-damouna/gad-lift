@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   const MaterialApp(
+    return const MaterialApp(
       // theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
       // ),
@@ -38,7 +38,7 @@ class MainApp extends StatelessWidget {
       //   appBar: MyAppBar(key: key,),
       //   // AppBar(
       //   //   // scrolledUnderElevation: 1,
-          
+
       //   //   // excludeHeaderSemantics: true,
       //   //   title: Column(
       //   //     children: [
@@ -56,7 +56,7 @@ class MainApp extends StatelessWidget {
       //   //   backgroundColor: const Color(0xFF2FE2EE),
       //   //   bottomOpacity: 0.5,
       //   //   // toolbarHeight: 140,
-          
+
       //   //   toolbarHeight: 80,
       //   //   elevation: 5.0,
       //   //   leadingWidth: 40,
@@ -70,7 +70,7 @@ class MainApp extends StatelessWidget {
       //   //   //   side: BorderSide(width: 5, color: Colors.purple),
       //   //   // ),
       //   //   shape: const RoundedRectangleBorder(
-            
+
       //   //       borderRadius:
       //   //           BorderRadius.vertical(bottom: Radius.circular(1000))),
       //   // ),

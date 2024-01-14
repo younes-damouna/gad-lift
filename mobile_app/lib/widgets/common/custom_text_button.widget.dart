@@ -3,7 +3,7 @@ import 'package:mobile_app/widgets/common/button_title.widget.dart';
 
 class CustomTextButton extends StatefulWidget {
   final String text;
-  
+
   const CustomTextButton({super.key, required this.text});
 
   @override
@@ -45,7 +45,6 @@ class _CustomTextButtonState extends State<CustomTextButton> {
               size: 20,
               color: Colors.black,
             ),
-            
           ],
         ),
       ),

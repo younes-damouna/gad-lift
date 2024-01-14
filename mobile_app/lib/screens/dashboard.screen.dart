@@ -75,15 +75,13 @@ class DashboardScreen extends StatelessWidget {
               ),
             ],
           ),
-            const Row(
+          const Row(
             children: [
               CustomTextButton(
                 text: 'Open',
-                
               ),
               CustomTextButton(
                 text: 'Close',
-                
               ),
             ],
           )

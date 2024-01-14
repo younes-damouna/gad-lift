@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
         children: [
           Expanded(
               child: Container(
-                height: 100,
+                  height: 100,
                   child: Image.asset('assets/images/AnimatedLogo.png'))),
 
           // Image(
