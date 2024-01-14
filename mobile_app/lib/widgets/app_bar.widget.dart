@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/main.dart';
 // import 'package:mobile_app/main.dart';
-class MyAppBar extends StatelessWidget   {
+class MyAppBar extends StatelessWidget  implements PreferredSizeWidget  {
   const MyAppBar({
     super.key,
   });
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
+    return AppBar(
           // scrolledUnderElevation: 1,
           
           // excludeHeaderSemantics: true,
