@@ -13,10 +13,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      
-      children:[ Scaffold(
-          backgroundColor: const Color(0xFFF3F1F1),
-          body: Center(
+        
+      children:[
+        //  Scaffold(
+          // backgroundColor: const Color(0xFFF3F1F1),
+          // body:
+           Center(
+            
             child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       
@@ -24,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/Login.png', fit: BoxFit.cover,
+                      'assets/images/SignUp.png', fit: BoxFit.cover,
                       // colorBlendMode: BlendMode.colorBurn,
                     ),
                     const InputGroup(
@@ -96,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           //     ],
           //   ),
           // ),
-          ),
+          // ),
       ]
     );
   }
