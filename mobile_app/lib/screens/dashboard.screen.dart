@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/camera_view.widget.dart';
+import 'package:mobile_app/widgets/common/custom_text_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
@@ -73,10 +74,19 @@ class DashboardScreen extends StatelessWidget {
                 icon: Icons.keyboard_double_arrow_down,
               ),
             ],
+          ),
+            const Row(
+            children: [
+              CustomTextButton(
+                text: 'Open',
+                
+              ),
+             
+            ],
           )
         ],
       ),
-       bottomNavigationBar: const Navigation(),
+      bottomNavigationBar: const Navigation(),
     );
   }
 }
