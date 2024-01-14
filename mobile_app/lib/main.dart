@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
-// import 'package:mobile_app/screens/settings.screen.dart';
 
-// import 'widgets/app_bar.widget.dart';
-// import 'package:mobile_app/widgets/app_bar.widget.dart';
 
 void main() {
   runApp(const MainApp());

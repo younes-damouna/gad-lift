@@ -3,7 +3,6 @@ import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
-// import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
