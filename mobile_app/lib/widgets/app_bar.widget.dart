@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app/main.dart';
 // import 'package:mobile_app/main.dart';
 class MyAppBar extends StatelessWidget  implements PreferredSizeWidget  {
+  final String title;
   const MyAppBar({
     super.key,
+    required this.title
   });
   @override
   Size get preferredSize => const Size.fromHeight(100);
@@ -16,7 +18,7 @@ class MyAppBar extends StatelessWidget  implements PreferredSizeWidget  {
           // excludeHeaderSemantics: true,
           title: Column(
             children: [
-              screenTitle(title: 'GadLift', size: 50),
+              screenTitle(title: title, size: 50),
             screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
           ),
           bottom:  const PreferredSize(
