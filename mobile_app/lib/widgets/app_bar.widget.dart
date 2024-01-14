@@ -19,14 +19,16 @@ class MyAppBar extends StatelessWidget  implements PreferredSizeWidget  {
           title: Column(
             children: [
               screenTitle(title: title, size: 40),
-            screenTitle(title: 'Lift Your Gadgets With Us', size: 10),],
+            screenTitle(title: 'Lift Your Gadgets With Us', size: 10),
+          ],
           ),
-          bottom:  const PreferredSize(
+          bottom:    const PreferredSize(
             preferredSize: Size(100, 100),
-            child: Text(''),
-            // child: Text(
-            //   'hello',
-            // )
+            // child: CircleAvatar(child:  Image.asset('assets/images/AnimatedLogo.png',width: 200,),),
+            // child:  Image.asset('assets/images/AnimatedLogo.png',width: 100,),
+            child:  Text(
+              '',
+            )
           ),
           // foregroundColor: Colors.white,
           backgroundColor: const Color(0xFF2FE2EE),

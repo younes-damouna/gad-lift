@@ -38,38 +38,23 @@ class ProfileScreen extends StatelessWidget {
             // color: const Color.fromARGB(22, 22, 22, 22),
             //  color: const Color(0x63FFFFFF),
             height: 200,
-            child: Column(
+            child: const Column(
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SectionTitle(title: 'Personal Information', size: 15),
+                    SectionTitle(title: 'Personal Information', size: 18),
                   
                   ],
                 ),
-                Expanded(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      gradient: LinearGradient(
-                        colors: [Colors.grey, Colors.white],
-                        // begin: AlignmentDirectional(30, 12),
-                      ),
-                    ),
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    // color: Colors.red,
-
-                    width: double.infinity,
-                    // child: const Text('data'),
-                  ),
-                ),
+              
               ],
             ),
           ),
         ),
       ],
     ),
-      bottomNavigationBar: Navigation(),
+      bottomNavigationBar: const Navigation(),
     );
   }
 }
