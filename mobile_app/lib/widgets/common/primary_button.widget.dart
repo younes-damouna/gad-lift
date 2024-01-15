@@ -23,7 +23,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       // padding: const EdgeInsets.all(10),
-      height: 70,
+      height: 60,
       decoration: BoxDecoration(
         color: widget.bgColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),

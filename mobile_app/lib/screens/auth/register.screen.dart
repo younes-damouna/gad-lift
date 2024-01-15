@@ -14,6 +14,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _formKey = GlobalKey<FormState>();
   TextEditingController emailCoontroller = TextEditingController();
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -26,6 +27,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     String lastName,
   ) {
     print('register $email, $password, $firstName,$lastName');
+
+    // if (_formKey.currentState!.validate()) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Good to go...')),
+    //   );
+    // }
   }
 
   @override
@@ -46,9 +53,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               // height: 200,
               child: Form(
                 child: Column(
+                  key: _formKey,
                   children: [
                     Image.asset(
-                      'assets/images/SignUp.png', fit: BoxFit.cover,
+                      'assets/images/SignUp.png', fit: BoxFit.cover,width: 200,
                       // colorBlendMode: BlendMode.colorBurn,
                     ),
                     InputGroup(
@@ -64,6 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
+                      key: _formKey,
                       controller: emailCoontroller,
                       title: 'Email',
                       secure: false,

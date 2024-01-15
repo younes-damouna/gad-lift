@@ -92,7 +92,7 @@ class _MainAppState extends State<MainApp> {
         //   backgroundColor:  const Color(0xFFF3F1F1),
         body: PageView(
           children: const [
-            RegisterScreen(),
+            RegisterScreen(key: Key('value'),),
             // LoginScreen(),
             ProfileScreen(),
             DashboardScreen(),
@@ -142,7 +142,7 @@ class _MainAppState extends State<MainApp> {
         //   //   //   // child: ,
         //   //   // ),
         //   // ),
-        bottomNavigationBar: const Navigation(),
+        // bottomNavigationBar: const Navigation(),
       ),
     );
   }
