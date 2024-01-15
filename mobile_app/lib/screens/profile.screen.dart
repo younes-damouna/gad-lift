@@ -44,6 +44,7 @@ class ProfileScreen extends StatelessWidget {
                       SectionTitle(title: 'Personal Information', size: 18),
                     ],
                   ),
+                  Text('data')
                 ],
               ),
             ),
