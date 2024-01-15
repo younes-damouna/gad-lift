@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -24,6 +25,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() => _index++);
+    });
+    Timer(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext(context)=>const LoginScreen())));
     });
   }
 
