@@ -6,6 +6,7 @@ import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
+import 'package:mobile_app/screens/welcome.screen.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
 void main() {
@@ -92,6 +93,7 @@ class _MainAppState extends State<MainApp> {
         //   backgroundColor:  const Color(0xFFF3F1F1),
         body: PageView(
           children: const [
+            WelcomeScreen(),
             RegisterScreen(key: Key('value'),),
             LoginScreen(),
             ProfileScreen(),

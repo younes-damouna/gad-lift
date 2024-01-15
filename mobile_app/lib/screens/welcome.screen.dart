@@ -1,8 +1,37 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  late final Timer timer;
+  final values = [
+    'assets/images/AnimatedLogo1.png',
+    'assets/images/AnimatedLogo2.png',
+    'assets/images/AnimatedLogo3.png',
+    'assets/images/AnimatedLogo4.png',
+  ];
+  int _index = 0;
+  @override
+  void initState() {
+    super.initState();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() => _index++);
+    });
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +41,17 @@ class WelcomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-              child: Container(
-                  height: 100,
-                  child: Image.asset('assets/images/AnimatedLogo.png'))),
+            child: SizedBox(
+              height: 100,
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 1000),
+                child: Image.asset(
+                  values[_index % values.length],
+                  key: UniqueKey(),
+                ),
+              ),
+            ),
+          ),
 
           // Image(
           //   image: NetworkImage(
