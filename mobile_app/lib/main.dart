@@ -93,7 +93,7 @@ class _MainAppState extends State<MainApp> {
         //   backgroundColor:  const Color(0xFFF3F1F1),
         body: PageView(
           children: const [
-            WelcomeScreen(),
+            // WelcomeScreen(),
             RegisterScreen(key: Key('value'),),
             LoginScreen(),
             ProfileScreen(),
