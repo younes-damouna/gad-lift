@@ -1,5 +1,5 @@
 abstract class ApiRoutes{
-  static const login="/login";
-  static const register="/register";
-  
+  static const login="/auth/login";
+  static const register="/auth/register";
+
 }
