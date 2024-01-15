@@ -93,7 +93,7 @@ class _MainAppState extends State<MainApp> {
         body: PageView(
           children: const [
             RegisterScreen(key: Key('value'),),
-            // LoginScreen(),
+            LoginScreen(),
             ProfileScreen(),
             DashboardScreen(),
             SettingsScreen(),

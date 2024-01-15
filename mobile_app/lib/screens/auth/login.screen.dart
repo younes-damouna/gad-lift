@@ -12,6 +12,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+   TextEditingController emailCoontroller = TextEditingController();
+
+  TextEditingController passwordNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,22 +25,25 @@ class _LoginScreenState extends State<LoginScreen> {
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
               // height: 200,
-              child: Column(
+              child:ListView(
+                children: [ Column(
                 children: [
                   Image.asset(
-                    'assets/images/Login.png', fit: BoxFit.cover,
+                    'assets/images/Login.png', fit: BoxFit.cover,width: 300,
                     // colorBlendMode: BlendMode.colorBurn,
                   ),
-                  // const InputGroup(
-                  //   title: 'Email',
-                  //   secure: false,
-                  //   icon: Icons.person_2_outlined,
-                  // ),
-                  // const InputGroup(
-                  //   title: 'Password',
-                  //   secure: true,
-                  //   icon: Icons.remove_red_eye,
-                  // ),
+                   InputGroup(
+                    controller: emailCoontroller,
+                    title: 'Email',
+                    secure: false,
+                    icon: Icons.person_2_outlined,
+                  ),
+                   InputGroup(
+                    controller: passwordNameController,
+                    title: 'Password',
+                    secure: true,
+                    icon: Icons.remove_red_eye,
+                  ),
                   // Image.asset(
                   //   'assets/images/googleButton.png', fit: BoxFit.cover,
                   //   width: MediaQuery.of(context).size.width,
@@ -90,7 +96,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 ],
-              )),
+              ),],
+              ),
+              ),
         )
         //  Center(
         //   child: Column(
