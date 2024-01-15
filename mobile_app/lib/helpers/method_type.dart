@@ -8,3 +8,4 @@ enum Methods {
   const Methods(this.method);
   final String method;
 }
+
