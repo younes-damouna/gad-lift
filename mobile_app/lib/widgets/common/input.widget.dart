@@ -26,7 +26,15 @@ class _InputGroupState extends State<InputGroup> {
     return Container(
       height: 60,
       margin: const EdgeInsets.symmetric(vertical: 5),
-      child: TextField(
+      child: TextFormField(
+        //  validator: (value) {
+        //     if (value == null || value.isEmpty) {
+        //       return 'Please enter first name';
+        //     }
+        //     return value.length < 3
+        //         ? 'Name must be at least 3 to 30 characters long'
+        //         : null;
+        //   },
         
         scrollPadding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -34,6 +42,7 @@ class _InputGroupState extends State<InputGroup> {
         // keyboardType: TextInputType.emailAddress,
         obscureText: widget.secure,
         cursorColor: const Color(0xFF2FE2EE),
+        
         decoration: InputDecoration(
           floatingLabelStyle: const TextStyle(color: Color(0xFF2FE2EE)),
           label: SectionTitle(
@@ -66,6 +75,7 @@ class _InputGroupState extends State<InputGroup> {
               Radius.circular(10),
             ),
           ),
+          
           enabled: true,
           focusColor: const Color(0xFF2FE2EE),
           focusedBorder: const OutlineInputBorder(
@@ -82,6 +92,7 @@ class _InputGroupState extends State<InputGroup> {
           // hintStyle:
           // focusedErrorBorder: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(15)))
         ),
+        
       ),
     );
   }
