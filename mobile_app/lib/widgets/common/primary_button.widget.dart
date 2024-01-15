@@ -5,7 +5,7 @@ class PrimaryButton extends StatefulWidget {
   final String text;
   final Color color;
   final Color bgColor;
-  final Function()? handlePress;
+  final Function? handlePress;
   const PrimaryButton(
       {super.key,
       required this.text,
