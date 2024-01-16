@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
@@ -22,15 +24,38 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  int _page = 0;
-  late PageController _pageController;
+  int _page = 1;
+  final PageController _pageController = PageController(
+    initialPage: 1,
+    keepPage: true,
+  );
+
+  void pageChanged(int index) {
+    setState(() {
+      _page = index;
+    });
+  }
+
+  void bottomTapped(int index) {
+    setState(() {
+      _page = index;
+      _pageController.animateToPage(index,
+          duration: const Duration(milliseconds: 1000), curve: Curves.easeInOutCubicEmphasized);
+    });
+  }
 
   @override
   void initState() {
-    _pageController = PageController(initialPage: _page);
+    // _pageController = PageController(initialPage: _page,keepPage: true);
     super.initState();
   }
 
+//  void _onItemTapped(int index) {
+//     setState(() {
+//       _page = index;
+//        _pageController = PageController(initialPage: _page);
+//     });
+//  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -93,23 +118,33 @@ class _MainAppState extends State<MainApp> {
         //   // ),
         //   backgroundColor:  const Color(0xFFF3F1F1),
         body: PageView(
-          children: const [
-            // WelcomeScreen(),
-            // RegisterScreen(),
-            LoginScreen(),
-            // ProfileScreen(),
-            // DashboardScreen(),
-            // SettingsScreen(),
-            // ConnectDeviceScreen(),
-            // MyCustomForm()
-            
-          ],
+          // pageSnapping: true,
+          // physics: const ScrollPhysics(),
+          scrollBehavior: const ScrollBehavior(),
+
+          controller: _pageController,
+          // allowImplicitScrolling: true,
+          // scrollBehavior: const MaterialScrollBehavior(),
           onPageChanged: (newPage) {
+            pageChanged(newPage);
             setState(() {
-              _page = newPage;
+              //           _page = newPage;
+              //           //  _pageController = PageController(initialPage: newPage);
+              // _pageController.animateToPage(newPage, duration: const Duration(milliseconds: 500), curve: Curves.ease);
+
               // print(_page);
             });
           },
+          children: const [
+            // WelcomeScreen(),
+            // RegisterScreen(),
+            // LoginScreen(),
+            ProfileScreen(),
+            DashboardScreen(),
+            SettingsScreen(),
+            // ConnectDeviceScreen(),
+            // MyCustomForm()
+          ],
         ),
         //   body:  const LoginScreen(),
         //   // body: WelcomeScreen(key: key),
@@ -144,11 +179,71 @@ class _MainAppState extends State<MainApp> {
         //   //   //   //   },
 
         //   //   //   // ),
-        //   //   //           // child: _widgetOptions.elementAt(_selectedIndex),
+        // child: _widgetOptions.elementAt(_selectedIndex),
         //   //   //   // child: ,
         //   //   // ),
         //   // ),
         // bottomNavigationBar: const Navigation(),
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: const Color(0xFF2FE2EE),
+
+          unselectedItemColor: Colors.white,
+
+          items: const [
+            BottomNavigationBarItem(
+                label: 'Profile',
+                icon: Icon(Icons.person_outlined),
+                tooltip: 'Profile Screen'),
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+              tooltip: 'Home Screen',
+            ),
+            BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Icon(Icons.settings_outlined),
+                // backgroundColor: Colors.red,
+                tooltip: 'Settings Screen'),
+          ],
+          // enableFeedback: true,
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+          currentIndex: _page,
+
+          type: BottomNavigationBarType.fixed,
+          enableFeedback: true,
+
+          onTap: (index) {
+            bottomTapped(index);
+            setState(() {
+              _page = index;
+
+              // _pageController = PageController(initialPage: index);
+              //   log('${ _pageController.initialPage}');
+            });
+          },
+          selectedFontSize: 15,
+
+          selectedLabelStyle: GoogleFonts.zenDots(
+            fontWeight: FontWeight.w900,
+            fontSize: 16,
+          ),
+          unselectedLabelStyle: GoogleFonts.zenDots(),
+          // const TextStyle(
+          // fontWeight: FontWeight.w900,
+          // fontFamily: 'zenDots',
+          // package: 'google_fonts',
+          // fontSize: 20,
+          // shadows: [
+          //   // Shadow(
+          //   //   color: Colors.white,
+          //   //   offset: Offset(1, 1),
+          //   //   blurRadius: 10,
+          //   // ),
+          // ]),
+          iconSize: 30,
+
+          // selectedIconTheme: const IconThemeData(color: Colors.amber),
+        ),
       ),
     );
   }
