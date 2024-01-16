@@ -15,7 +15,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController emailCoontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
 
@@ -56,29 +56,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   key: _formKey,
                   children: [
                     Image.asset(
-                      'assets/images/SignUp.png', fit: BoxFit.cover,width: 200,
+                      'assets/images/SignUp.png', fit: BoxFit.cover, width: 200,
                       // colorBlendMode: BlendMode.colorBurn,
                     ),
                     InputGroup(
+                      key: const Key('fname'),
                       controller: firstNameController,
                       title: 'First Name',
                       secure: false,
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
+                      key: const Key('lname'),
                       controller: lastNameController,
                       title: 'Last Name',
                       secure: false,
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
-                      key: _formKey,
-                      controller: emailCoontroller,
+                      key: const Key('email'),
+                      controller: emailController,
                       title: 'Email',
                       secure: false,
                       icon: Icons.email,
                     ),
                     InputGroup(
+                      key: const Key('password'),
                       controller: passwordNameController,
                       title: 'Password',
                       secure: true,
@@ -118,16 +121,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
 
                     PrimaryButton(
+                      key: const Key('register'),
                       text: 'Register',
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
                       handlePress: () {
-                        handlePress(
-                          emailCoontroller.text,
-                          passwordNameController.text,
-                          firstNameController.text,
-                          lastNameController.text,
-                        );
+                        var t=emailController.text;
+                        log('email $t');
+                        //  await AuthService.register(
+                        //     firstNameController.text,
+                        //     lastNameController.text,
+                        //     emailCoontroller.text,
+                        //     passwordNameController.text,
+                        //   );
                       },
                     ),
                     Row(

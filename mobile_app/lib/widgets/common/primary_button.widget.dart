@@ -5,13 +5,13 @@ class PrimaryButton extends StatefulWidget {
   final String text;
   final Color color;
   final Color bgColor;
-  final Function? handlePress;
+  final Function handlePress;
   const PrimaryButton(
       {super.key,
       required this.text,
       required this.color,
       required this.bgColor,
-      this.handlePress});
+      required this.handlePress});
 
   @override
   State<PrimaryButton> createState() => _PrimaryButtonState();
@@ -36,7 +36,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => widget.handlePress!(),
+        onPressed: () => widget.handlePress(),
         style: const ButtonStyle(
           // textStyle: MaterialStatePropertyAll(),
           shape: MaterialStatePropertyAll(

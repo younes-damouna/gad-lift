@@ -14,7 +14,8 @@ export class AuthController {
   }
   @HttpCode(HttpStatus.OK)
   @Post('register')
-  register(@Body() createUserDto:CreateUserDto) {
+  register(@Body() createUserDto:CreateUserDto) {console.log("frontend");
+  
     return this.authService.register(createUserDto);
   }
 

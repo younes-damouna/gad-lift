@@ -75,11 +75,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 const Text('Sign in with Google')
                               ]),
                         )),
-                    const PrimaryButton(
-                      text: 'Log In',
-                      color: Colors.white,
-                      bgColor: Color(0xFF2FE2EE),
-                    ),
+                    // const PrimaryButton(
+                    //   text: 'Log In',
+                    //   color: Colors.white,
+                    //   bgColor: Color(0xFF2FE2EE),
+                    //   handlePress: () {},
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

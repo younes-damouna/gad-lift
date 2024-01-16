@@ -19,16 +19,17 @@ abstract class AuthService {
 
   static Future register(
       String firstName, String lastName, String email, String password) async {
+      
     try {
-      final response = await dio.post(ApiRoutes.login, data: {
+      final response = await dio.post(ApiRoutes.register, data: {
         "first_name": firstName,
         "last_name": lastName,
         "email": email,
         "password": password,
       });
-      log(response as String);
-    } on DioException catch (e) {
-      log(e as String);
+      log(response.data);
+    }  catch (e) {
+      log('error: $e');
     }
   }
 }

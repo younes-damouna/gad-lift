@@ -27,15 +27,15 @@ class _InputGroupState extends State<InputGroup> {
       height: 50,
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
-         validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter first name';
-            }
-            return value.length < 3
-                ? 'Name must be at least 3 to 30 characters long'
-                : null;
-          },
-        
+        //  validator: (value) {
+        //     if (value == null || value.isEmpty) {
+        //       return 'Please enter first name';
+        //     }
+        //     return value.length < 3
+        //         ? 'Name must be at least 3 to 30 characters long'
+        //         : null;
+        //   },
+        controller: widget.controller,
         scrollPadding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
 
