@@ -75,7 +75,7 @@ class _MainAppState extends State<MainApp> {
             SettingsScreen(),
           ],
         ),
-        
+
         //context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
 
         //bottomNavigationBar: const Navigation(),

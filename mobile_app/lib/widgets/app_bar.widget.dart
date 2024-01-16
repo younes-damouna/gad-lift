@@ -4,7 +4,8 @@ import 'package:mobile_app/main.dart';
 // import 'package:mobile_app/main.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const MyAppBar({super.key, required this.title});
+  final CircleAvatar? avatar;
+  const MyAppBar({super.key, required this.title, this.avatar});
   @override
   Size get preferredSize => const Size.fromHeight(100);
 
@@ -20,19 +21,23 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           screenTitle(title: 'Lift Your Gadgets With Us', size: 10),
         ],
       ),
-      bottom: const PreferredSize(
-          preferredSize: Size(100, 100),
-          // child: CircleAvatar(child:  Image.asset('assets/images/AnimatedLogo.png',width: 200,),),
-          // child:  Image.asset('assets/images/AnimatedLogo.png',width: 100,),
-          child: Text(
-            '',
-          )),
+      bottom: PreferredSize(
+        preferredSize: const Size(100, 100),
+        // child: CircleAvatar(child:  Image.asset('assets/images/AnimatedLogo1.png',width: 200,),),
+        child: Column(
+          children: [Center(child: avatar), const Text('')],
+        ),
+        // child: Text(
+        //   '',
+        // ),
+      ),
       // foregroundColor: Colors.white,
       backgroundColor: const Color(0xFF2FE2EE),
       bottomOpacity: 0.5,
       // toolbarHeight: 140,
 
       toolbarHeight: 80,
+      // toolbarHeight: 100,
       elevation: 5.0,
       leadingWidth: 40,
       titleTextStyle: const TextStyle(
@@ -45,7 +50,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       //   side: BorderSide(width: 5, color: Colors.purple),
       // ),
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(1000))),
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(1000),
+        ),
+      ),
     );
 
     // AppBar(
