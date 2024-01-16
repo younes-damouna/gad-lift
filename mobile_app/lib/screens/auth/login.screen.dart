@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
+import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -83,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
                       handlePress: () async {
-                       final response= await AuthService.login(
+                        final response = await AuthService.login(
                           emailController.text,
                           passwordNameController.text,
                         );
@@ -99,7 +100,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           size: 12,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  maintainState: false,
+                                    builder: (context) =>
+                                        const RegisterScreen()));
+                          },
                           child: const SectionTitle(
                             title: "Register", size: 12, color: Colors.grey,
                             // style: TextStyle(color: Colors.grey),

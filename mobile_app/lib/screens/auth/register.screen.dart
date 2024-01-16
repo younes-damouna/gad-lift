@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
+import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -146,7 +147,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           size: 12,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) => const LoginScreen()));
+                          },
                           child: const SectionTitle(
                             title: "Sign In", size: 12, color: Colors.grey,
                             // style: TextStyle(color: Colors.grey),
