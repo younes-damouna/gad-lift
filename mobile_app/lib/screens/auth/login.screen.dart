@@ -110,11 +110,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   );
                                   // If the form is valid, display a snackbar. In the real world,
                                   // you'd often call a server or save the information in a database.
-                                   final response = await AuthService.login(
-                                    emailController.text,
-                                    passwordNameController.text,
+                                  //  final response = await AuthService.login(
+                                  //   emailController.text,
+                                  //   passwordNameController.text,
                                     
-                                  );
+                                  // );
 
                                   // log(response);
                                  
