@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
 
 import 'package:mobile_app/screens/dashboard.screen.dart';
+import 'package:mobile_app/screens/join_family.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
 
@@ -73,7 +74,8 @@ class _MainAppState extends State<MainApp> {
           children: const [
             ProfileScreen(),
             // DashboardScreen(),
-            ConnectDeviceScreen(),
+            // ConnectDeviceScreen(),
+            JoinFamilyScreen(),
             SettingsScreen(),
           ],
         ),

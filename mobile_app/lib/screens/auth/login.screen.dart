@@ -67,32 +67,32 @@ class _LoginScreenState extends State<LoginScreen> {
                             //   // colorBlendMode: BlendMode.colorBurn,
                             // ),
                             TextButton(
-                                style: const ButtonStyle(
-                                    shape: MaterialStatePropertyAll(
-                                      RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.zero),
-                                    ),
-                                    overlayColor: MaterialStatePropertyAll(
-                                        Colors.white60)),
-                                onPressed: () {},
-                                child: Container(
-                                  padding: const EdgeInsets.all(15),
-                                  width: MediaQuery.of(context).size.width,
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10),
-                                    ),
-                                    color: Colors.white,
+                              style: const ButtonStyle(
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.zero),
                                   ),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                            'assets/images/googleIcon.png'),
-                                        const Text('Sign in with Google')
-                                      ]),
-                                )),
+                                  overlayColor:
+                                      MaterialStatePropertyAll(Colors.white60)),
+                              onPressed: () {},
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                width: MediaQuery.of(context).size.width,
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset(
+                                          'assets/images/googleIcon.png'),
+                                      const Text('Sign in with Google')
+                                    ]),
+                              ),
+                            ),
                             PrimaryButton(
                               text: 'Log In',
                               color: Colors.white,
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                           ],
-                        ))
+                        ),)
                   ],
                 ),
               ],
