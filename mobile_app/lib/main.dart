@@ -94,11 +94,12 @@ class _MainAppState extends State<MainApp> {
         body: PageView(
           children: const [
             // WelcomeScreen(),
-            // RegisterScreen(),
+            RegisterScreen(),
             LoginScreen(),
-            // ProfileScreen(),
-            // DashboardScreen(),
-            // SettingsScreen(),
+            ProfileScreen(),
+            DashboardScreen(),
+            SettingsScreen(),
+            ConnectDeviceScreen(),
           ],
           onPageChanged: (newPage) {
             setState(() {

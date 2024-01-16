@@ -5,7 +5,7 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> An IOT device controlled by a mobile app that will help you carry your gadgets to your door step.
+> GadLift is an IOT system that will make your life easier. It is designed to help you carry your gadgets to your doorstep in case there is no elevator in your building.
 >
 > GadLift aims to make your life easier
 
