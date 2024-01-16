@@ -16,7 +16,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController fullNameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
 
-  TextEditingController phoneControlle = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     fullNameController.text = "Younes Damouna";
      emailController.text = "Younes.Damouna@gmail.com";
-      phoneControlle.text = "123123456";
+      phoneController.text = "123123456";
 
     return Scaffold(
       appBar: const MyAppBar(
@@ -109,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         controller: emailController,
                         title: 'Email',
                         secure: false,
-                        icon: Icons.person_2_outlined,
+                        icon: Icons.email_outlined,
                         color: Colors.black,
                       ),
                       const SizedBox(
@@ -117,13 +117,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       InputGroup(
                         key: const Key('mobile'),
-                        controller: phoneControlle,
+                        controller: phoneController,
                         title: 'Mobile Number',
                         secure: false,
-                        icon: Icons.person_2_outlined,
+                        icon: Icons.phone_android_outlined,
                         color: Colors.black,
                       ),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15),
+                      Padding(padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 15),
                       child: PrimaryButton(text: 'Save', color: Colors.white, bgColor: Colors.black, handlePress: (){})),
                     ],
                   ))
