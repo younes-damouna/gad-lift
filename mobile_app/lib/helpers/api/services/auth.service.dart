@@ -11,7 +11,7 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-      log(response as String);
+      log('response: $response');
     } on DioException catch (e) {
       log(e as String);
     }

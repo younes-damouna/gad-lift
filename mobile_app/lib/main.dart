@@ -94,8 +94,8 @@ class _MainAppState extends State<MainApp> {
         body: PageView(
           children: const [
             // WelcomeScreen(),
-            RegisterScreen(),
-            // LoginScreen(),
+            // RegisterScreen(),
+            LoginScreen(),
             // ProfileScreen(),
             // DashboardScreen(),
             // SettingsScreen(),

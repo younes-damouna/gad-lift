@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -12,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController emailCoontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordNameController = TextEditingController();
   @override
@@ -34,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // colorBlendMode: BlendMode.colorBurn,
                     ),
                     InputGroup(
-                      controller: emailCoontroller,
+                      controller: emailController,
                       title: 'Email',
                       secure: false,
                       icon: Icons.person_2_outlined,
@@ -75,12 +76,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                 const Text('Sign in with Google')
                               ]),
                         )),
-                    // const PrimaryButton(
-                    //   text: 'Log In',
-                    //   color: Colors.white,
-                    //   bgColor: Color(0xFF2FE2EE),
-                    //   handlePress: () {},
-                    // ),
+                    PrimaryButton(
+                      text: 'Log In',
+                      color: Colors.white,
+                      bgColor: const Color(0xFF2FE2EE),
+                      handlePress: () async {
+                        await AuthService.login(
+                          emailController.text,
+                          passwordNameController.text,
+                        );
+                      },
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
