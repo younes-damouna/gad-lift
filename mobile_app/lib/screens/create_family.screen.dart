@@ -15,7 +15,7 @@ class CreateFamily extends StatefulWidget {
 class _CreateFamilyState extends State<CreateFamily> {
   @override
   Widget build(BuildContext context) {
-   TextEditingController text = TextEditingController();
+    TextEditingController text = TextEditingController();
 
     return Scaffold(
       appBar: const MyAppBar(title: 'Create a Family'),
@@ -48,7 +48,6 @@ class _CreateFamilyState extends State<CreateFamily> {
                   const SizedBox(
                     height: 10,
                   ),
-                 
                   Form(
                     child: Column(
                       children: [
@@ -56,7 +55,7 @@ class _CreateFamilyState extends State<CreateFamily> {
                           controller: text,
                           title: 'Floor Number',
                           secure: false,
-                          icon: Icons.wifi,
+                          icon: Icons.elevator_outlined,
                           color: Colors.black,
                         ),
                         PrimaryButton(
@@ -99,6 +98,5 @@ class _CreateFamilyState extends State<CreateFamily> {
         ],
       ),
     );
-  
   }
 }
