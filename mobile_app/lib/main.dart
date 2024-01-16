@@ -6,6 +6,7 @@ import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
+import 'package:mobile_app/screens/test_validation.screen.dart';
 import 'package:mobile_app/screens/welcome.screen.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
@@ -94,12 +95,14 @@ class _MainAppState extends State<MainApp> {
         body: PageView(
           children: const [
             // WelcomeScreen(),
-            RegisterScreen(),
+            // RegisterScreen(),
             LoginScreen(),
-            ProfileScreen(),
-            DashboardScreen(),
-            SettingsScreen(),
-            ConnectDeviceScreen(),
+            // ProfileScreen(),
+            // DashboardScreen(),
+            // SettingsScreen(),
+            // ConnectDeviceScreen(),
+            // MyCustomForm()
+            
           ],
           onPageChanged: (newPage) {
             setState(() {
