@@ -18,6 +18,7 @@ export class AuthService {
     throw new UnauthorizedException();
   }
   async register(@Body() createUserDto: CreateUserDto) {
+    console.log("frontend");
     return this.usersService.createUser(createUserDto)
   }
   async signIn(email: string, pass: string): Promise<any> {

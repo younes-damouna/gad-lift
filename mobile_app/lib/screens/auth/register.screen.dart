@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -125,15 +126,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       text: 'Register',
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
-                      handlePress: () {
+                      handlePress: () async{
                         var t=emailController.text;
                         log('email $t');
-                        //  await AuthService.register(
-                        //     firstNameController.text,
-                        //     lastNameController.text,
-                        //     emailCoontroller.text,
-                        //     passwordNameController.text,
-                        //   );
+                         await AuthService.register(
+                            firstNameController.text,
+                            lastNameController.text,
+                            emailController.text,
+                            passwordNameController.text,
+                          );
                       },
                     ),
                     Row(

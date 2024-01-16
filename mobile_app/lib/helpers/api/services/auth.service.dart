@@ -27,9 +27,12 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-      log(response.data);
-    }  catch (e) {
-      log('error: $e');
+      return response.data;
+      // log(response.statusCode as String);
+    } on DioException catch (e) {
+      String? message=e.message;
+      // log('error: $message');
+      return message;
     }
   }
 }
