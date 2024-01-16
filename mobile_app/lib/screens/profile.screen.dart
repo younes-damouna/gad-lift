@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
+import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/navigation.widget.dart';
 
@@ -12,10 +13,19 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-    TextEditingController firstNameController = TextEditingController();
+  TextEditingController fullNameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+
+  TextEditingController phoneControlle = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    fullNameController.text = "Younes Damouna";
+     emailController.text = "Younes.Damouna@gmail.com";
+      phoneControlle.text = "123123456";
+
     return Scaffold(
       appBar: const MyAppBar(
         title: 'Profile',
@@ -63,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // color: const Color.fromARGB(22, 22, 22, 22),
               //  color: const Color(0x63FFFFFF),
               height: 200,
-              child:  Column(
+              child: Column(
                 children: [
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,17 +86,47 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                   InputGroup(
-                      key: const Key('fname'),
-                      controller: firstNameController,
-                      title: 'Younes Damouna',
-                      secure: false,
-                      icon: Icons.person_2_outlined,
-                    ),
-                  
+                  Form(
+                    key: _formKey,
+                      child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      InputGroup(
+                        key: const Key('fname'),
+                        controller: fullNameController,
+                        title: 'Full Name',
+                        secure: false,
+                        icon: Icons.person_2_outlined,
+                        color: Colors.black,
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      InputGroup(
+                        key: const Key('email'),
+                        controller: emailController,
+                        title: 'Email',
+                        secure: false,
+                        icon: Icons.person_2_outlined,
+                        color: Colors.black,
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      InputGroup(
+                        key: const Key('mobile'),
+                        controller: phoneControlle,
+                        title: 'Mobile Number',
+                        secure: false,
+                        icon: Icons.person_2_outlined,
+                        color: Colors.black,
+                      ),
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15),
+                      child: PrimaryButton(text: 'Save', color: Colors.white, bgColor: Colors.black, handlePress: (){})),
+                    ],
+                  ))
                 ],
               ),
             ),

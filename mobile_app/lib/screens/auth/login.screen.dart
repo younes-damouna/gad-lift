@@ -74,9 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     overlayColor: MaterialStatePropertyAll(
                                         Colors.white60)),
-                                onPressed: () {
-                                 
-                                },
+                                onPressed: () {},
                                 child: Container(
                                   padding: const EdgeInsets.all(15),
                                   width: MediaQuery.of(context).size.width,
@@ -104,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   {
                                 // print(_formKey.currentState!.validate());
                                 if (_formKey.currentState!.validate()) {
-                                   ScaffoldMessenger.of(context).showSnackBar(
+                                  ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                         content: Text('Processing Data')),
                                   );
@@ -113,12 +111,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                   //  final response = await AuthService.login(
                                   //   emailController.text,
                                   //   passwordNameController.text,
-                                    
+
                                   // );
 
                                   // log(response);
-                                 
-                                 
                                 }
                               },
                             ),
@@ -147,7 +143,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ],
                             ),
-                            
                           ],
                         ))
                   ],
