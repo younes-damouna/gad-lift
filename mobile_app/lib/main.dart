@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/screens/connect_device.screen.dart';
 
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
@@ -71,7 +72,8 @@ class _MainAppState extends State<MainApp> {
           },
           children: const [
             ProfileScreen(),
-            DashboardScreen(),
+            // DashboardScreen(),
+            ConnectDeviceScreen(),
             SettingsScreen(),
           ],
         ),
@@ -79,49 +81,50 @@ class _MainAppState extends State<MainApp> {
         //context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
 
         //bottomNavigationBar: const Navigation(),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: const Color(0xFF2FE2EE),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   selectedItemColor: const Color(0xFF2FE2EE),
 
-          unselectedItemColor: Colors.white,
+        //   unselectedItemColor: Colors.white,
 
-          items: const [
-            BottomNavigationBarItem(
-                label: 'Profile',
-                icon: Icon(Icons.person_outlined),
-                tooltip: 'Profile Screen'),
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.home_outlined),
-              tooltip: 'Home Screen',
-            ),
-            BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Icon(Icons.settings_outlined),
-              tooltip: 'Settings Screen',
-            ),
-          ],
+        //   items: const [
+        //     BottomNavigationBarItem(
+        //         label: 'Profile',
+        //         icon: Icon(Icons.person_outlined),
+        //         tooltip: 'Profile Screen'),
+        //     BottomNavigationBarItem(
+        //       label: 'Home',
+        //       icon: Icon(Icons.home_outlined),
+        //       tooltip: 'Home Screen',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       label: 'Settings',
+        //       icon: Icon(Icons.settings_outlined),
+        //       tooltip: 'Settings Screen',
+        //     ),
+        //   ],
 
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-          currentIndex: _page,
+        //   backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        //   currentIndex: _page,
 
-          type: BottomNavigationBarType.fixed,
-          enableFeedback: true,
+        //   type: BottomNavigationBarType.fixed,
+        //   enableFeedback: true,
 
-          onTap: (index) {
-            bottomTapped(index);
-          },
-          selectedFontSize: 15,
+        //   onTap: (index) {
+        //     bottomTapped(index);
+        //   },
+        //   selectedFontSize: 15,
 
-          selectedLabelStyle: GoogleFonts.zenDots(
-            fontWeight: FontWeight.w900,
-            fontSize: 16,
-          ),
-          unselectedLabelStyle: GoogleFonts.zenDots(),
+        //   selectedLabelStyle: GoogleFonts.zenDots(
+        //     fontWeight: FontWeight.w900,
+        //     fontSize: 16,
+        //   ),
+        //   unselectedLabelStyle: GoogleFonts.zenDots(),
 
-          iconSize: 30,
+        //   iconSize: 30,
 
-          // selectedIconTheme: const IconThemeData(color: Colors.amber),
-        ),
+        //   // selectedIconTheme: const IconThemeData(color: Colors.amber),
+        // ),
+      
       ),
     );
   }
