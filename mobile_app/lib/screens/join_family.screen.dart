@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -79,12 +80,12 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       maintainState: false,
-                          //       builder: (context) => const RegisterScreen()),
-                          // );
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                maintainState: false,
+                                builder: (context) => const CreateFamily()),
+                          );
                         },
                         child: const SectionTitle(
                           title: "Create Now", size: 12,
