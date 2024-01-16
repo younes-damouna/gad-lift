@@ -11,15 +11,18 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-      log('response: $response');
+      log('response: ${response.data['user']}');
     } on DioException catch (e) {
-      log(e as String);
+      return e.response;
     }
   }
 
   static Future register(
-      String firstName, String lastName, String email, String password) async {
-      
+    String firstName,
+    String lastName,
+    String email,
+    String password,
+  ) async {
     try {
       final response = await dio.post(ApiRoutes.register, data: {
         "first_name": firstName,
@@ -27,13 +30,13 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-            log(response.statusCode as String);
+      log(response.statusCode as String);
 
       return response.data;
     } on DioException catch (e) {
-      String? message=e.message;
-      // log('error: $message');
-      return message;
+     
+           return e.response;
+
     }
   }
 }
