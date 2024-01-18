@@ -12,6 +12,7 @@ abstract class AuthService {
         "password": password,
       });
       log('response: ${response.data['user']}');
+      return response.data;
     } on DioException catch (e) {
       return e.response;
     }

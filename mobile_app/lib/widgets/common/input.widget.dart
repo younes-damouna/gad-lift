@@ -17,7 +17,7 @@ class InputGroup extends StatefulWidget {
       required this.title,
       required this.secure,
       required this.icon,
-      this.color
+      this.color,
        //  required this.size
       });
 

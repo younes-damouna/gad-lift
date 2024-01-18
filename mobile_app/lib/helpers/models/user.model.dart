@@ -1,22 +1,22 @@
 class User {
   String id;
   String email;
-  String firstName;
-  String lastName;
+  String first_name;
+  String last_name;
 
   User({
     required this.id,
     required this.email,
-    required this.firstName,
-    required this.lastName,
+    required this.first_name,
+    required this.last_name,
   });
 
   factory User.fromJson(Map json) {
     return User(
-      id: json['id'],
+      id: json['_id'],
       email: json['email'],
-      firstName: json['firstName'],
-      lastName: json['lastName'],
+      first_name: json['first_name'],
+      last_name: json['last_name'],
     );
   }
 }
