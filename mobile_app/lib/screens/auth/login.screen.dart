@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
+import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -105,16 +106,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                   const SnackBar(
                                       content: Text('Processing Data')),
                                 );
-                                // If the form is valid, display a snackbar. In the real world,
-                                // you'd often call a server or save the information in a database.
-                                //  final response = await AuthService.login(
-                                //   emailController.text,
-                                //   passwordNameController.text,
-
-                                // );
-
-                                // log(response);
+                                // If the form is valid, display a snackbar. 
+                                
                               }
+                               final response = await AuthService.login(
+                                  emailController.text,
+                                  passwordNameController.text,
+
+                                );
+                                final user=User.fromJson(response['user']);
+
+                                log('user: $user');
                             },
                           ),
                           Row(
