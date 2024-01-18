@@ -57,18 +57,23 @@ class ConnectDeviceScreen extends StatelessWidget {
                 // bottom: 100,
                 // bottom: 50,
                 child: Container(
-                  margin: const EdgeInsets.all(20),
-                  child: Column(children: [
-                    InputGroup(
-                    controller: text,
-                    title: 'Ip Address',
-                    secure: false,
-                    icon: Icons.wifi,
-                    color: Colors.black,
-                  ),
-                  PrimaryButton(text: 'Connect Device', color: Colors.white, bgColor: Colors.black, handlePress: (){})
-                  ],)
-                ),
+                    margin: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        InputGroup(
+                          controller: text,
+                          title: 'Ip Address',
+                          secure: false,
+                          icon: Icons.wifi,
+                          color: Colors.black,
+                        ),
+                        PrimaryButton(
+                            text: 'Connect Device',
+                            color: Colors.white,
+                            bgColor: Colors.black,
+                            handlePress: () {})
+                      ],
+                    )),
               )
             ]),
       ),

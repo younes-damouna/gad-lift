@@ -2,12 +2,16 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/screens/auth/login.screen.dart';
+import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
+import 'package:mobile_app/screens/create_family.screen.dart';
 
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
+import 'package:mobile_app/screens/welcome.screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -72,10 +76,14 @@ class _MainAppState extends State<MainApp> {
             pageChanged(newPage);
           },
           children: const [
+            WelcomeScreen(),
+            LoginScreen(),
+            RegisterScreen(),
             ProfileScreen(),
-            // DashboardScreen(),
-            // ConnectDeviceScreen(),
+            DashboardScreen(),
+            ConnectDeviceScreen(),
             JoinFamilyScreen(),
+            CreateFamily(),
             SettingsScreen(),
           ],
         ),
