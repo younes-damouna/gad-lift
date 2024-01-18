@@ -4,7 +4,6 @@ import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 
-import 'package:mobile_app/widgets/navigation.widget.dart';
 
 class ConnectDeviceScreen extends StatelessWidget {
   const ConnectDeviceScreen({super.key});
@@ -37,6 +36,7 @@ class ConnectDeviceScreen extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
+                  color: const Color.fromARGB(0, 255, 255, 255),
                   // width: double.infinity,
                   child: Stack(
                     alignment: AlignmentDirectional.center,

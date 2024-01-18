@@ -1,13 +1,10 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
-import 'package:mobile_app/widgets/navigation.widget.dart';
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -30,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final profileInfo = Provider.of<ProfileProvider>(context, listen: false);
 
     fullNameController = TextEditingController(
-    text: "${profileInfo.firstName} ${profileInfo.lastName}");
+        text: "${profileInfo.firstName} ${profileInfo.lastName}");
     emailController = TextEditingController(text: profileInfo.email);
     phoneController = TextEditingController();
     // fullNameController = TextEditingController();

@@ -4,7 +4,6 @@ import 'package:mobile_app/widgets/camera_view.widget.dart';
 import 'package:mobile_app/widgets/common/custom_text_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
-import 'package:mobile_app/widgets/navigation.widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
