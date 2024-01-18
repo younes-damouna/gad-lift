@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
@@ -83,12 +82,16 @@ class _MainAppState extends State<MainApp> {
               // WelcomeScreen(),
               LoginScreen(),
               // RegisterScreen(),
-              ProfileScreen(key: Key('profile'),),
+              ProfileScreen(
+                key: Key('profile'),
+              ),
               // DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
               // CreateFamily(),
-              SettingsScreen(key: Key('settings'),),
+              SettingsScreen(
+                key: Key('settings'),
+              ),
             ],
           ),
 

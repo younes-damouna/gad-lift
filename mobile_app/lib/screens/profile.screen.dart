@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
@@ -51,6 +50,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       backgroundColor: const Color(0xFFF3F1F1),
       body: Consumer<ProfileProvider>(
+        child: PrimaryButton(
+          text: 'Save',
+          color: Colors.white,
+          bgColor: Colors.black,
+          handlePress: () {},
+        ),
         builder: (context, profile, child) {
           return ListView(
             children: [
@@ -139,17 +144,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 color: Colors.black,
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 40,
-                                  vertical: 15,
-                                ),
-                                child: PrimaryButton(
-                                  text: 'Save',
-                                  color: Colors.white,
-                                  bgColor: Colors.black,
-                                  handlePress: () {},
-                                ),
-                              ),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 40,
+                                    vertical: 15,
+                                  ),
+                                  child: child),
                             ],
                           ))
                     ],
