@@ -59,7 +59,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(
+        ListenableProvider(
             create: (context) =>
                 ProfileProvider(id: '', email: '', firstName: '', lastName: ''))
       ],
@@ -87,12 +87,12 @@ class _MainAppState extends State<MainApp> {
               // WelcomeScreen(),
               // LoginScreen(),
               // RegisterScreen(),
-              ProfileScreen(),
-              DashboardScreen(),
+              ProfileScreen(key: Key('profile'),),
+              DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
               // CreateFamily(),
-              SettingsScreen(),
+              SettingsScreen(key: Key('settings'),),
             ],
           ),
 
