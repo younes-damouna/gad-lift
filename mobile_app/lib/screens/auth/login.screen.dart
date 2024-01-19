@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
+import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -115,10 +116,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                 passwordNameController.text,
                               );
                               final user = User.fromJson(response['user']);
+                              final storage = SecureStorage();
+                              await storage.saveToken(
+                                  'access_token', response['access_token']);
+                              final token =
+                                  await storage.getToken('access_token');
+                              log('access_token: $token');
                               Provider.of<ProfileProvider>(
                                 context,
                                 listen: false,
                               ).getProfile(user);
+
                               log('user: $user');
                             },
                           ),

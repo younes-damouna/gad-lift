@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/update_profile.service.dart';
+import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -20,11 +24,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   late TextEditingController phoneController;
 
   final _formKey = GlobalKey<FormState>();
-
+  late String id;
   @override
   void initState() {
     final profileInfo = Provider.of<ProfileProvider>(context, listen: false);
-
+    id = profileInfo.id;
     fullNameController = TextEditingController(
         text: "${profileInfo.firstName} ${profileInfo.lastName}");
     emailController = TextEditingController(text: profileInfo.email);
@@ -54,7 +58,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
           text: 'Save',
           color: Colors.white,
           bgColor: Colors.black,
-          handlePress: () {},
+          handlePress: () async
+              //  async
+              {
+            // print(_formKey.currentState!.validate());
+            if (_formKey.currentState!.validate()) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Processing Data')),
+              );
+              // If the form is valid, display a snackbar.
+            }
+            final fullName = fullNameController.text.trim().split(' ');
+            final response = await UserService.updateUser(
+                 fullName[0], fullName[1],emailController.text, id
+                // passwordNameController.text,
+                );
+                log('rsponse u: ${response}');
+            final user = User.fromJson(response['user']);
+
+            Provider.of<ProfileProvider>(
+              context,
+              listen: false,
+            ).getProfile(user);
+
+            log('user: $user');
+          },
         ),
         builder: (context, profile, child) {
           return ListView(
