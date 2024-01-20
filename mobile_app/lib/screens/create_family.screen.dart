@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/family.service.dart';
+import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -59,10 +63,34 @@ class _CreateFamilyState extends State<CreateFamily> {
                           color: Colors.black,
                         ),
                         PrimaryButton(
-                            text: 'Join Family',
+                            text: 'Create Family',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress: () {})
+                            handlePress:  () async
+                                //  async
+                                {
+                                    final response =
+                                  await FamilyService.createFamily(
+                                text.text,
+                              );
+                              // print(_formKey.currentState!.validate());
+                              // if (_formKey.currentState!.validate()) {
+                                //  if (!context.mounted) return;
+  // Navigator.pop(context); 
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                 SnackBar(
+                                    content: Text(await response['message'])),
+                              );
+                              // ScaffoldMessenger.of(context).build((context)=>return Text('data'));
+                              // If the form is valid, display a snackbar.
+                              // }
+                            
+                              final storage = SecureStorage();
+
+                              final token =
+                                  await storage.getToken('access_token');
+                              log('$response');
+                            })
                       ],
                     ),
                   ),
