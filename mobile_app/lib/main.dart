@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
+import 'package:mobile_app/screens/create_family.screen.dart';
 
 import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
@@ -89,7 +90,7 @@ class _MainAppState extends State<MainApp> {
               // DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
-              // CreateFamily(),
+              CreateFamily(),
               // SettingsScreen(
               //   key: Key('settings'),
               // ),
@@ -116,6 +117,11 @@ class _MainAppState extends State<MainApp> {
                 tooltip: 'Home Screen',
               ),
               BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Icon(Icons.settings_outlined),
+                tooltip: 'Settings Screen',
+              ),
+               BottomNavigationBarItem(
                 label: 'Settings',
                 icon: Icon(Icons.settings_outlined),
                 tooltip: 'Settings Screen',

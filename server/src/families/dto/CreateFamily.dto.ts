@@ -6,6 +6,7 @@ import { CreateUserDto } from "src/users/dto/CreateUser.dto";
 export class createFamilyDto{
     // @IsString()
     code: string;
+    floor:number;
 
     // @IsNotEmpty()
     @ValidateNested()

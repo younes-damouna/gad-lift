@@ -13,6 +13,8 @@ export class FamiliesService {
     }
     async createFamily(createFamilyDto: createFamilyDto, @Request() req) {
         const user = await this.checkUserHaveFamily(req.user.user._id);
+        console.log(createFamilyDto);
+        
 
         if (user) {
             console.log(user);
@@ -20,6 +22,8 @@ export class FamiliesService {
         }
         const family = new this.FamilyModel(createFamilyDto);
         family.code = this.createRandomFamilyCode();
+        family.floor = createFamilyDto.floor;
+
         family.parent = req.user.user._id;
         const createdFamily = (await family.save()).populate('parent')
         // console.log(req.user.user._id)

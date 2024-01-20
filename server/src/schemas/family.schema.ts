@@ -10,6 +10,8 @@ export class Family {
         unique:true
     })
     code: string;
+    @Prop()
+    floor: number;
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true })
     parent: User;

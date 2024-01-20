@@ -67,31 +67,34 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                           color: Colors.black,
                         ),
                         PrimaryButton(
+                          
                             text: 'Join Family',
                             color: Colors.white,
                             bgColor: Colors.black,
                             handlePress: () async
                                 //  async
                                 {
+                                    final response =
+                                  await FamilyService.requestJoinFamily(
+                                code.text,
+                              );
                               // print(_formKey.currentState!.validate());
                               // if (_formKey.currentState!.validate()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Processing Data')),
-                                );
-                                // If the form is valid, display a snackbar.
-                              // }
-                              final response = await FamilyService.requestJoinFamily(
-                                code.text,
-                              
+                                 if (!context.mounted) return;
+  // Navigator.pop(context); 
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                 SnackBar(
+                                    content: Text(await response['message'])),
                               );
-                                final storage = SecureStorage();
-
-      final token = await storage.getToken('access_token');
-                              log('$token');
-                          
-
+                              // ScaffoldMessenger.of(context).build((context)=>return Text('data'));
+                              // If the form is valid, display a snackbar.
+                              // }
                             
+                              final storage = SecureStorage();
+
+                              final token =
+                                  await storage.getToken('access_token');
+                              log('$response');
                             })
                       ],
                     ),

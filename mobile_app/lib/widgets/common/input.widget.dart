@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
@@ -9,6 +8,7 @@ class InputGroup extends StatefulWidget {
   final IconData icon;
   final TextEditingController controller;
   final Color? color;
+  final bool? numpad;
   // final double size;
   const InputGroup(
       {super.key,
@@ -17,7 +17,8 @@ class InputGroup extends StatefulWidget {
       required this.secure,
       required this.icon,
       this.color,
-       //  required this.size
+      this.numpad
+      //  required this.size
       });
 
   @override
@@ -36,7 +37,9 @@ class _InputGroupState extends State<InputGroup> {
           child: Padding(
             padding: const EdgeInsets.all(0),
             child: TextFormField(
-              style:  TextStyle(color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
+              // keyboardType: widget.numpad?? TextInputType.number ,
+              style: TextStyle(
+                  color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
 
               onFieldSubmitted: (value) {},
               validator: (value) {
@@ -64,7 +67,8 @@ class _InputGroupState extends State<InputGroup> {
                     Radius.circular(10),
                   ),
                 ),
-                floatingLabelStyle:  TextStyle(color: widget.color ?? const Color(0xFF2FE2EE)),
+                floatingLabelStyle:
+                    TextStyle(color: widget.color ?? const Color(0xFF2FE2EE)),
                 label: SectionTitle(
                   title: widget.title,
                   size: 15,
@@ -100,8 +104,8 @@ class _InputGroupState extends State<InputGroup> {
                 ),
 
                 enabled: true,
-                focusColor:  widget.color ?? const Color(0xFF2FE2EE),
-                focusedBorder:  OutlineInputBorder(
+                focusColor: widget.color ?? const Color(0xFF2FE2EE),
+                focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     // color: Colors.grey,
                     color: widget.color ?? const Color(0xFF2FE2EE),

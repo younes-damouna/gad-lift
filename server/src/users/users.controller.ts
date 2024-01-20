@@ -41,7 +41,7 @@ export class UserController {
         if (!isValidId) throw new HttpException('Invalid ID', 400);
         const UpdatedUser = await this.usersService.updateUser(id, updateUserDto);
         if (!UpdatedUser) throw new HttpException('User Not Found', 404);
-        console.log(UpdatedUser)
+        // console.log(UpdatedUser)
         return UpdatedUser;
 
 
