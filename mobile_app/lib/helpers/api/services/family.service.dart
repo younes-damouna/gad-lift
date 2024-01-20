@@ -16,7 +16,7 @@ abstract class FamilyService {
         HttpHeaders.authorizationHeader: token,
       };
       dio.options.headers = header;
-      final response = await dio.patch(
+      final response = await dio.post(
         ApiRoutes.joinFamily,
         data: {
           "code": code,

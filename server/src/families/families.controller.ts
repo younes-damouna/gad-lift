@@ -20,7 +20,10 @@ export class FamiliesController {
 
     @Post('/request-to-join')
     @UseGuards(AuthGuard)
+    
     async requestToJoinFamily(@Request() req, @Body('code') code) {
+        // console.log('REQ',req.user.user);
+
         return this.familyService.requestTojoinFamily(req, code);
 
     }

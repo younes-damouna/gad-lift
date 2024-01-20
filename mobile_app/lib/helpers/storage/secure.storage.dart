@@ -12,7 +12,7 @@ class SecureStorage {
   Future<void> saveToken(String key, String value) async {
     log(' $key');
     
-    await storage.write(key: key, value: value,aOptions: const AndroidOptions());
+    await storage.write(key: key, value:  'Bearer $value',aOptions: const AndroidOptions());
   }
 
   Future<String?> getToken(String key) async {

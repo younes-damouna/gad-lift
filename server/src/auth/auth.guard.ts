@@ -15,6 +15,8 @@ import { jwtConstants } from 'src/strategy/constants';
     async canActivate(context: ExecutionContext): Promise<boolean> {
       const request = context.switchToHttp().getRequest();
       const token = this.extractTokenFromHeader(request);
+      console.log(request);
+      
       if (!token) {
         throw new UnauthorizedException();
       }

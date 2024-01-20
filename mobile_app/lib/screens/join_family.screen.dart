@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/family.service.dart';
+import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -68,8 +70,28 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                             text: 'Join Family',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress: () {
-                              log('${code.text}');
+                            handlePress: () async
+                                //  async
+                                {
+                              // print(_formKey.currentState!.validate());
+                              // if (_formKey.currentState!.validate()) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Processing Data')),
+                                );
+                                // If the form is valid, display a snackbar.
+                              // }
+                              final response = await FamilyService.requestJoinFamily(
+                                code.text,
+                              
+                              );
+                                final storage = SecureStorage();
+
+      final token = await storage.getToken('access_token');
+                              log('$token');
+                          
+
+                            
                             })
                       ],
                     ),

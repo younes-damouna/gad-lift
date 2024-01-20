@@ -40,6 +40,7 @@ export class FamiliesService {
     }
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
+        
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
 
