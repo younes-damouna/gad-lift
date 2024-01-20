@@ -29,4 +29,27 @@ abstract class FamilyService {
       return e.response;
     }
   }
+
+  static Future createFamily(String floor) async {
+    try {
+      final storage = SecureStorage();
+
+      final token = await storage.getToken('access_token');
+      final header = {
+        HttpHeaders.authorizationHeader: token,
+      };
+      dio.options.headers = header;
+      final response = await dio.post(
+        ApiRoutes.createFamily,
+        data: {
+          "floor": floor,
+        },
+      );
+      log(response.statusCode as String);
+      log('response : ${response.data}');
+      return response.data;
+    } on DioException catch (e) {
+      return e.response;
+    }
+  }
 }
