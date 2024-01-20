@@ -10,6 +10,7 @@ export class FamiliesService {
     constructor(@InjectModel(Family.name) private FamilyModel: Model<Family>) {
 
 
+
     }
     async createFamily(createFamilyDto: createFamilyDto, @Request() req) {
         const user = await this.checkUserHaveFamily(req.user.user._id);
@@ -40,6 +41,13 @@ export class FamiliesService {
     async checkUserHaveFamily(id: mongoose.Schema.Types.ObjectId) {
         const user = await this.FamilyModel.findOne({ parent: id });
         return user;
+
+    }
+    async getRequests(@Request() req){
+        const family= await this.FamilyModel.findOne({ parent:req.user.user._id }).populate('requests','-password');
+        if(!family)
+        throw new BadRequestException({ message: "You Don't Have a Family" },)
+        return {"requests":family.requests};
 
     }
     async requestTojoinFamily(@Request() req, code: string) {

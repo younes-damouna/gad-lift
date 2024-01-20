@@ -27,6 +27,17 @@ export class FamiliesController {
         return this.familyService.requestTojoinFamily(req, code);
 
     }
+
+    @Post('/get-requests')
+    @UseGuards(AuthGuard)
+    
+    async getRequests(@Request() req) {
+        // console.log('REQ',req.user.user);
+
+        return this.familyService.getRequests(req);
+
+    }
+
     @Roles(Role.User)
     @UseGuards(RolesGuard)
     @Post('/accept-member')
