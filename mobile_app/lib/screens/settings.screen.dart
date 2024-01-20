@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
+import 'package:mobile_app/widgets/common/request_button.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -29,22 +30,34 @@ class SettingsScreen extends StatelessWidget {
             // height: 300,
             margin: const EdgeInsets.all(20),
             width: double.infinity,
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: ListView(
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
-              // color: const Color.fromARGB(22, 22, 22, 22),
-              //  color: const Color(0x63FFFFFF),
-              height: 200,
-              child: const Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // color: const Color.fromARGB(22, 22, 22, 22),
+                  //  color: const Color(0x63FFFFFF),
+                  height: 200,
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SectionTitle(title: 'Requests', size: 18),
-                    ],
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SectionTitle(title: 'Requests', size: 18),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      RequestButton(text: 'hello',handlePress: (){
+                        
+                      },)
+                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

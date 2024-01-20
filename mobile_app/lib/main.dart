@@ -91,10 +91,13 @@ class _MainAppState extends State<MainApp> {
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
               CreateFamily(),
-              // SettingsScreen(
-              //   key: Key('settings'),
-              // ),
-              JoinFamilyScreen(key: Key('joinfamily'),)
+
+              JoinFamilyScreen(
+                key: Key('joinfamily'),
+              ),
+              SettingsScreen(
+                key: Key('settings'),
+              ),
             ],
           ),
 
@@ -121,7 +124,12 @@ class _MainAppState extends State<MainApp> {
                 icon: Icon(Icons.settings_outlined),
                 tooltip: 'Settings Screen',
               ),
-               BottomNavigationBarItem(
+              BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Icon(Icons.settings_outlined),
+                tooltip: 'Settings Screen',
+              ),
+              BottomNavigationBarItem(
                 label: 'Settings',
                 icon: Icon(Icons.settings_outlined),
                 tooltip: 'Settings Screen',
