@@ -83,7 +83,7 @@ class _MainAppState extends State<MainApp> {
               LoginScreen(),
               // RegisterScreen(),
               ProfileScreen(
-                key: Key('profile'),
+                key: Key('profile'), 
               ),
               // DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
