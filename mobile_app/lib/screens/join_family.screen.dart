@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
@@ -15,7 +17,7 @@ class JoinFamilyScreen extends StatefulWidget {
 class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController text = TextEditingController();
+    TextEditingController code = TextEditingController();
 
     return Scaffold(
       appBar: const MyAppBar(title: 'Join a Family'),
@@ -56,7 +58,7 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                     child: Column(
                       children: [
                         InputGroup(
-                          controller: text,
+                          controller: code,
                           title: 'Family Code',
                           secure: false,
                           icon: Icons.wifi,
@@ -66,7 +68,9 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                             text: 'Join Family',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress: () {})
+                            handlePress: () {
+                              log('${code.text}');
+                            })
                       ],
                     ),
                   ),

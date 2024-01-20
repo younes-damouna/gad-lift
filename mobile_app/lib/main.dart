@@ -4,6 +4,7 @@ import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 
 import 'package:mobile_app/screens/dashboard.screen.dart';
+import 'package:mobile_app/screens/join_family.screen.dart';
 
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
@@ -83,15 +84,16 @@ class _MainAppState extends State<MainApp> {
               LoginScreen(),
               // RegisterScreen(),
               ProfileScreen(
-                key: Key('profile'), 
+                key: Key('profile'),
               ),
               // DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
               // CreateFamily(),
-              SettingsScreen(
-                key: Key('settings'),
-              ),
+              // SettingsScreen(
+              //   key: Key('settings'),
+              // ),
+              JoinFamilyScreen(key: Key('joinfamily'),)
             ],
           ),
 

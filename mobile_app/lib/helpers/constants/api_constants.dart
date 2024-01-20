@@ -1,9 +1,9 @@
-abstract class ApiRoutes{
-  static const login="/auth/login";
-  static const register="/auth/register";
-  static const profile="/users";
+abstract class ApiRoutes {
+  static const login = "/auth/login";
+  static const register = "/auth/register";
+  static const profile = "/users";
   // static const families="/families";
-  static const joinFamily="/families/request-to-join";
-  static const acceptFamilyMember="/families/accept-member";
-
+  static const joinFamily = "/families/request-to-join";
+  static const acceptFamilyMember = "/families/accept-member";
 }
+// family code to test 905040
