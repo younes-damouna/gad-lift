@@ -7,7 +7,7 @@ import 'package:mobile_app/helpers/constants/api_constants.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
 
 abstract class RequestService {
-  static Future getRequests(String code) async {
+  static Future getRequests() async {
     try {
       final storage = SecureStorage();
 
@@ -20,8 +20,7 @@ abstract class RequestService {
         ApiRoutes.getRequests,
       
       );
-      log(response.statusCode as String);
-      log('response : ${response.data}');
+      // log('response : ${response}');
       return response.data;
     } on DioException catch (e) {
       return e.response;

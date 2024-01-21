@@ -1,10 +1,46 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/request.service.dart';
+import 'package:mobile_app/helpers/models/request.model.dart';
+import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/request_button.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
+import 'package:provider/provider.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  req() async {
+    final response = await RequestService.getRequests();
+    // final user = User.fromJson(response['user']);
+// //
+    final req = Request.parseRequests(response['requests']);
+    log('response $response');
+    Provider.of<RequestProvider>(
+      context,
+      listen: false,
+    ).getRequests(req);
+
+    log('requests: ${response['requests']}');
+  }
+
+  @override
+  // ignore: must_call_super
+  initState() {
+    super.initState();
+    req();
+
+    // ignore: avoid_print
+
+    // print("initState Called");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,23 +84,23 @@ class SettingsScreen extends StatelessWidget {
                           SectionTitle(title: 'Requests', size: 18),
                         ],
                       ),
-                     
-                      RequestButton(
-                        text: 'hello',
-                        handlePress: () {},
+                      SizedBox(
+                        child: Consumer<RequestProvider>(
+                          builder: (BuildContext context, req, Widget? child) {
+                            return ListView.builder(
+                              itemCount: req.requests.length,
+                            shrinkWrap: true,
+                              itemBuilder: (context, i) {return RequestButton(
+                                text: '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                handlePress: ()  {
+                                  log(req.requests[i].id);
+                                },
+                              );}
+                            );
+                          },
+                        ),
                       ),
-                      RequestButton(
-                        text: 'hello',
-                        handlePress: () {},
-                      ),
-                      RequestButton(
-                        text: 'hello',
-                        handlePress: () {},
-                      ),
-                      RequestButton(
-                        text: 'hello',
-                        handlePress: () {},
-                      )
+                   
                     ],
                   ),
                 ),

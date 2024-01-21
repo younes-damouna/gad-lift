@@ -18,7 +18,7 @@ class _RequestButtonState extends State<RequestButton> {
     return Container(
         width: double.infinity,
         height: 50,
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 2),
         // padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         decoration: const BoxDecoration(
           // color: Color.fromARGB(98, 255, 255, 255),

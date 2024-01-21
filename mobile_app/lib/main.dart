@@ -58,9 +58,18 @@ class _MainAppState extends State<MainApp> {
     return MultiProvider(
       providers: [
         ListenableProvider(
-            create: (context) =>
-                ProfileProvider(id: '', email: '', firstName: '', lastName: '')),
-                ListenableProvider(create: (context)=>RequestProvider(requests: []))
+          create: (context) => ProfileProvider(
+            id: '',
+            email: '',
+            firstName: '',
+            lastName: '',
+          ),
+        ),
+        ListenableProvider(
+          create: (context) => RequestProvider(
+            requests: [],
+          ),
+        ),
       ],
       child: MaterialApp(
         // theme: ThemeData(
