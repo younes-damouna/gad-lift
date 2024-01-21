@@ -5,6 +5,7 @@ import 'package:mobile_app/helpers/api/services/request.service.dart';
 import 'package:mobile_app/helpers/models/request.model.dart';
 import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
+import 'package:mobile_app/widgets/common/aler.widget.dart';
 import 'package:mobile_app/widgets/common/request_button.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:provider/provider.dart';
@@ -96,6 +97,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         '${req.requests[i].first_name} ${req.requests[i].last_name}',
                                     handlePress: () {
                                       log(req.requests[i].id);
+                                      showDialog<String>(
+                                        context: context,
+                                        builder: (BuildContext context) =>
+                                            const AlertMessage(),
+                                      );
                                     },
                                   );
                                 });

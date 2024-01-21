@@ -10,10 +10,7 @@ class AlertMessage extends StatefulWidget {
 class _AlertMessageState extends State<AlertMessage> {
   @override
   Widget build(BuildContext context) {
-    return  TextButton(
-      onPressed: () => showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
+    return  AlertDialog(
           title: const Text('AlertDialog Title'),
           content: const Text('AlertDialog description'),
           actions: <Widget>[
@@ -26,9 +23,8 @@ class _AlertMessageState extends State<AlertMessage> {
               child: const Text('OK'),
             ),
           ],
-        ),
-      ),
-      child: const Text('Show Dialog'),
-    );
+        );
+      
+      
   }
 }
