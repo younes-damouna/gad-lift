@@ -38,8 +38,8 @@ class SettingsScreen extends StatelessWidget {
 
                   // color: const Color.fromARGB(22, 22, 22, 22),
                   //  color: const Color(0x63FFFFFF),
-                  height: 200,
-                  child:  Column(
+                  // height: 200,
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Row(
@@ -48,13 +48,24 @@ class SettingsScreen extends StatelessWidget {
                           SectionTitle(title: 'Requests', size: 18),
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                     
+                      RequestButton(
+                        text: 'hello',
+                        handlePress: () {},
                       ),
-                      RequestButton(text: 'hello',handlePress: (){
-                        
-                      },)
-                     ],
+                      RequestButton(
+                        text: 'hello',
+                        handlePress: () {},
+                      ),
+                      RequestButton(
+                        text: 'hello',
+                        handlePress: () {},
+                      ),
+                      RequestButton(
+                        text: 'hello',
+                        handlePress: () {},
+                      )
+                    ],
                   ),
                 ),
               ],
