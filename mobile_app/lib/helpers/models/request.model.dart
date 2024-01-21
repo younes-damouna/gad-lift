@@ -20,7 +20,7 @@ class Request {
     );
   }
 
-  List<Request> parseProducts(List<Map> objects) {
+  List<Request> parseRequests(List<Map> objects) {
     List<Request> list = [];
     for (Map object in objects) {
       final request = Request.fromJson(object);
