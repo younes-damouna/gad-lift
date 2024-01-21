@@ -88,19 +88,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: Consumer<RequestProvider>(
                           builder: (BuildContext context, req, Widget? child) {
                             return ListView.builder(
-                              itemCount: req.requests.length,
-                            shrinkWrap: true,
-                              itemBuilder: (context, i) {return RequestButton(
-                                text: '${req.requests[i].first_name} ${req.requests[i].last_name}',
-                                handlePress: ()  {
-                                  log(req.requests[i].id);
-                                },
-                              );}
-                            );
+                                itemCount: req.requests.length,
+                                shrinkWrap: true,
+                                itemBuilder: (context, i) {
+                                  return RequestButton(
+                                    text:
+                                        '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                    handlePress: () {
+                                      log(req.requests[i].id);
+                                    },
+                                  );
+                                });
                           },
                         ),
                       ),
-                   
                     ],
                   ),
                 ),
