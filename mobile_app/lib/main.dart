@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
+import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
 
@@ -58,7 +59,8 @@ class _MainAppState extends State<MainApp> {
       providers: [
         ListenableProvider(
             create: (context) =>
-                ProfileProvider(id: '', email: '', firstName: '', lastName: ''))
+                ProfileProvider(id: '', email: '', firstName: '', lastName: '')),
+                ListenableProvider(create: (context)=>RequestProvider(requests: []))
       ],
       child: MaterialApp(
         // theme: ThemeData(
