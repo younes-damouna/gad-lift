@@ -29,7 +29,7 @@ abstract class RequestService {
 
 
 
-    static Future acceptMember() async {
+    static Future acceptMember(String id) async {
     try {
       final storage = SecureStorage();
 
@@ -40,6 +40,9 @@ abstract class RequestService {
       dio.options.headers = header;
       final response = await dio.post(
         ApiRoutes.acceptMember,
+        data: {
+          "id":id
+        }
       
       );
       // log('response : ${response}');
