@@ -26,4 +26,10 @@ abstract class RequestService {
       return e.response;
     }
   }
+
+
+
+    static Future acceptMember() async {
+  
+  }
 }

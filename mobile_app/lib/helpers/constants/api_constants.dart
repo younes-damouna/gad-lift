@@ -6,5 +6,6 @@ abstract class ApiRoutes {
   static const joinFamily = "/families/request-to-join";
   static const acceptFamilyMember = "/families/accept-member";
   static const getRequests="/families/get-requests";
+  static const acceptMember="/families/accept-member";
 }
 // family code to test 905040 
