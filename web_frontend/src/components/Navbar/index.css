@@ -1,0 +1,10 @@
+.navbar{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px ;
+   
+  
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 10px 5px rgb(212, 211, 211); */
+}
