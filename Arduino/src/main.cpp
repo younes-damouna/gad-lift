@@ -34,7 +34,7 @@ void setup()
   analogWrite(ENA, 250); // set speed to 200 out of possible range 0~255
                          // digitalWrite(Do,HIGH);
   Serial.begin(115200);
-  // //Connect to wifi
+  //Connect to wifi
   setupWifi();
   // Check if wifi is connected
   if (WiFi.status() == WL_CONNECTED)
