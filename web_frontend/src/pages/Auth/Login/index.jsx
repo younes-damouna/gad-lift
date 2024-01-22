@@ -23,7 +23,7 @@ const LoginPage = ({ switchToRegister }) => {
   const handleSubmit = async () => {};
 
   return (
-    <div className=" d-flex center  ">
+    <div className=" d-flex center  full-height">
       <div className="form">
         <h2 className="text-center bold">Welcome Again</h2>
         <form action="" method="post">

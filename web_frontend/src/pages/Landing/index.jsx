@@ -3,7 +3,7 @@ import './index.css'
 import Navbar from '../../components/Navbar'
 const LandingPage = () => {
   return (
-    <div className=''>
+    <div className='container'>
           <Navbar />
 
         Landing Page

@@ -6,7 +6,7 @@ import LoginPage from "./pages/Auth/Login";
 import DashboardPage from "./pages/Dashboard";
 function App() {
   return (
-    <div className="container">
+    <div className="">
       <BrowserRouter>
       
         <Routes>

@@ -1,139 +1,156 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family:'zen Dots', Arial, Helvetica, sans-serif;
-  }
-  
-  :root {
-    --black-color: #263238;
-    --dark-bg: rgb(9, 9, 9);
-    --primary-color: #2FE2EE;
-    --gray-bg: rgb(45, 45, 45);
-    --gray-color: rgb(25, 25, 25);
-    --hover-gray-color: rgb(65, 65, 65);
-    --gradient-bg: linear-gradient(90deg, #333 5%, #181818 95%);
-    --color-white: #fff;
-  }
-  body{
-    background-color:#f7f7f7;
-  }
-  .container {
-    max-width: 1340px;
-    /* max-width: calc( 100% - 3rem ); */
-    width: 100%;
-    margin: 0 auto;
-    padding: 30px 0;  
-  
-    /* background-color: gray; */
-  }
-  .bg-black{background-color: var(--black-color);}
-.primary-bg{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "zen Dots", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --black-color: #263238;
+  --dark-bg: rgb(9, 9, 9);
+  --primary-color: #2fe2ee;
+  --gray-bg: rgb(45, 45, 45);
+  --gray-color: rgb(25, 25, 25);
+  --hover-gray-color: rgb(65, 65, 65);
+  --gradient-bg: linear-gradient(90deg, #333 5%, #181818 95%);
+  --color-white: #fff;
+}
+body {
+  background-color: #f7f7f7;
+}
+.container {
+  max-width: 1340px;
+  /* max-width: calc( 100% - 3rem ); */
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  /* background-color: gray; */
+}
+.bg-black {
+  background-color: var(--black-color);
+}
+.primary-bg {
   background-color: var(--primary-color);
 }
-.text-primary{
+.text-primary {
   color: var(--primary-color);
 }
-.text-secondary{
+.text-secondary {
   color: var(--secondary-color);
 }
-.secondary-bg{
+.secondary-bg {
   background-color: var(--gray-bg);
 }
-.textblack{
+.textblack {
   color: var(--black-color);
 }
-  .d-flex {
-    display: flex;
-  }
-  
-  .row {
-    flex-direction: row;
-  }
-  
-  .column {
-    flex-direction: column;
-  }
-  
-  .reverse-row {
-    flex-direction: row-reverse;
-  }
-  .space-between {
-    justify-content: space-between;
-    align-items: center;
-  }
-  .align-items-center {
-    align-items: center;
-  }
-  
-  .center {
-    align-items: center;
-    justify-content: center;
-  }
-  .start {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .start-center {
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  .rounded-1 {
-    border-radius: 3px;
-  }
-  
-  .bg-dark {
-    background-color: var(--dark-bg);
-  }
-  
-  .text-white {
-    color: var(--color-white);
-  }
-  .bg-gray {
-    background-color: var(--gray-bg);
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .gap {
-    gap: 10px;
-  }
-  
-  .d-block {
-    display: block;
-  }
-  
-  .wrap{
-    flex-wrap: wrap;
-  }
-  
-  .w-300{
-    width: 300px;
-  }
-  
-  .padding-top-0{
-    padding-block: 10px;
-    padding-inline: 0;
-    position:fixed;
-    z-index: 99;
-    background-color: var(--black-color);
-    max-width: calc(100%-3rem);
-    right: 0;
-    left: 0;
-  }
-  
-  
-  
-  .p-30{
-    padding-inline: 30px;
-  }
+.d-flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+}
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.start {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.start-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+.rounded-1 {
+  border-radius: 3px;
+}
+
+.bg-dark {
+  background-color: var(--dark-bg);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+.bg-gray {
+  background-color: var(--gray-bg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap {
+  gap: 10px;
+}
+
+.d-block {
+  display: block;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.padding-top-0 {
+  padding-block: 10px;
+  padding-inline: 0;
+  position: fixed;
+  z-index: 99;
+  background-color: var(--black-color);
+  max-width: calc(100%-3rem);
+  right: 0;
+  left: 0;
+}
+
+.p-30 {
+  padding-inline: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fs-sm {
+  font-size: 12px;
+}
+.fs-md {
+  font-size: 24px;
+}
+
+.fs-lg {
+  font-size: 48px;
+}
+
+.full-height{
+  height: 100vh;
+}
