@@ -20,8 +20,7 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   req() async {
     final response = await RequestService.getRequests();
-    // final user = User.fromJson(response['user']);
-// //
+
     final req = Request.parseRequests(response['requests']);
     log('response $response');
     Provider.of<RequestProvider>(
@@ -101,6 +100,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         context: context,
                                         builder: (BuildContext context) =>
                                             AlertMessage(
+                                          handlePress: () async {
+                                            final response =
+                                                await RequestService
+                                                    .acceptMember('${req.requests[i].id}');
+
+                                            // final req = Request.parseRequests(
+                                            //     response['requests']);
+                                            // log('response $response');
+                                            // Provider.of<RequestProvider>(
+                                            //   context,
+                                            //   listen: false,
+                                            // ).getRequests(req);
+
+                                            log('requests: ${response}');
+                                          },
                                           request:
                                               '${req.requests[i].first_name} ${req.requests[i].last_name}',
                                         ),

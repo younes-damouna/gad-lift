@@ -5,7 +5,13 @@ import 'package:mobile_app/widgets/common/section_title.dart';
 
 class AlertMessage extends StatefulWidget {
   final String request;
-  const AlertMessage({super.key,required this.request});
+  final Function handlePress;
+
+  const AlertMessage({
+    super.key,
+    required this.request,
+    required this.handlePress,
+  });
 
   @override
   State<AlertMessage> createState() => _AlertMessageState();
@@ -28,15 +34,18 @@ class _AlertMessageState extends State<AlertMessage> {
       ),
       elevation: 5,
       icon: const Icon(Icons.help_outline_rounded, color: Colors.amber),
-      title:  const SectionTitle(title: 'Accept request?', size: 15),
+      title: const SectionTitle(title: 'Accept request?', size: 15),
       // contentTextStyle: TextStyle(),
       backgroundColor: Colors.white,
-  alignment: Alignment.center,
+      alignment: Alignment.center,
       content: Container(
         height: 20,
         alignment: Alignment.center,
         // width: double.infinity,
-        child:  SectionTitle(title: 'For: ${widget.request}',size: 12,),
+        child: SectionTitle(
+          title: 'For: ${widget.request}',
+          size: 12,
+        ),
       ),
       actionsAlignment: MainAxisAlignment.spaceBetween,
 
@@ -59,7 +68,10 @@ class _AlertMessageState extends State<AlertMessage> {
           // key: Key(''),
           bgColor: Colors.amber,
           color: Colors.amber,
-          handlePress: () => Navigator.pop(context, 'Yes'),
+          handlePress: () {
+             widget.handlePress();
+            Navigator.pop(context, 'Yes');
+          },
         ),
 
         // TextButton(
