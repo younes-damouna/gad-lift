@@ -49,7 +49,7 @@ const LoginPage = ({ switchToRegister }) => {
 
           <PrimaryButton
             text={"Log In"}
-            className={"primary-btn bg-primary text-center fs-sm"}
+            className={"primary-btn primary-bg text-center fs-sm"}
             onClick={() => handleSubmit()}
           />
         </form>

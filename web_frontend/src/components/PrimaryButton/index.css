@@ -1,0 +1,26 @@
+.primary-btn,
+.primary-outline-btn {
+  margin-block: 20;
+  padding: 10px 30px;
+  /* background-color: var(--primary-bg); */
+  /* color: white; */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px !important;
+}
+
+.primary-outline-btn {
+  border: 2px solid var(--primary-bg);
+}
+.primary-outline-btn:hover {
+  color: white;
+  background-color: var(--primary-bg);
+}
+.primary-btn:hover {
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.button-wrapper{
+    margin-block: 20px;
+
+}
