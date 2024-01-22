@@ -28,7 +28,19 @@
   
     /* background-color: gray; */
   }
-  
+  .bg-black{background-color: var(--black-color);}
+.primary-bg{
+  background-color: var(--primary-color);
+}
+.text-primary{
+  color: var(--primary-color);
+}
+.text-secondary{
+  color: var(--secondary-color);
+}
+.secondary-bg{
+  background-color: var(--gray-bg);
+}
   .d-flex {
     display: flex;
   }
