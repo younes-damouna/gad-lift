@@ -3,6 +3,7 @@ import LandingPage from "./pages/Landing";
 import Navbar from "./components/Navbar";
 import "./styles/utilities.css";
 import LoginPage from "./pages/Auth/Login";
+import DashboardPage from "./pages/Dashboard";
 function App() {
   return (
     <div className="container">
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route element={<LandingPage />} path="/" />
           <Route element={<LoginPage />} path="/auth/login" />
+          <Route element={<DashboardPage />} path="/dashboard" />
         </Routes>
       </BrowserRouter>
     </div>
