@@ -100,7 +100,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       showDialog<String>(
                                         context: context,
                                         builder: (BuildContext context) =>
-                                            const AlertMessage(),
+                                            AlertMessage(
+                                          request:
+                                              '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                        ),
                                       );
                                     },
                                   );
