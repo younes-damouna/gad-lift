@@ -2,7 +2,11 @@ import React from 'react'
 import './index.css'
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <div className='container'>
+        
+        Landing Page
+
+    </div>
   )
 }
 
