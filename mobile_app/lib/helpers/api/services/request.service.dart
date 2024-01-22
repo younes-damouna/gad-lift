@@ -30,6 +30,22 @@ abstract class RequestService {
 
 
     static Future acceptMember() async {
-  
+    try {
+      final storage = SecureStorage();
+
+      final token = await storage.getToken('access_token');
+      final header = {
+        HttpHeaders.authorizationHeader: token,
+      };
+      dio.options.headers = header;
+      final response = await dio.post(
+        ApiRoutes.acceptMember,
+      
+      );
+      // log('response : ${response}');
+      return response.data;
+    } on DioException catch (e) {
+      return e.response;
+    }
   }
 }
