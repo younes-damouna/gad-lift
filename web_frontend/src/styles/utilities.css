@@ -10,9 +10,9 @@
   }
   
   :root {
-    --black-color: #00  0;
+    --black-color: #263238;
     --dark-bg: rgb(9, 9, 9);
-    --primary-color: rgb(229, 9, 20);
+    --primary-color: #2FE2EE;
     --gray-bg: rgb(45, 45, 45);
     --gray-color: rgb(25, 25, 25);
     --hover-gray-color: rgb(65, 65, 65);
@@ -43,6 +43,9 @@
 }
 .secondary-bg{
   background-color: var(--gray-bg);
+}
+.textblack{
+  color: var(--black-color);
 }
   .d-flex {
     display: flex;
