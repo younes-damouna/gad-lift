@@ -3,8 +3,10 @@ import 'package:mobile_app/widgets/common/button_title.widget.dart';
 
 class CustomTextButton extends StatefulWidget {
   final String text;
+  final Function handlePress;
 
-  const CustomTextButton({super.key, required this.text});
+  const CustomTextButton({super.key, required this.text,
+      required this.handlePress});
 
   @override
   State<CustomTextButton> createState() => _CustomTextButtonState();
@@ -29,7 +31,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => {},
+        onPressed: () => widget.handlePress(),
         style: const ButtonStyle(
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.zero),
