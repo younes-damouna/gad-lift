@@ -27,4 +27,4 @@ export class Device {
     // ];
 
 }
-export const UserSchema = SchemaFactory.createForClass(Device);
+export const DeviceSchema = SchemaFactory.createForClass(Device);
