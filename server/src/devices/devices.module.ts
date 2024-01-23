@@ -6,7 +6,7 @@ import { Device, DeviceSchema } from 'src/schemas/device.schema';
 import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [,
+  imports: [HttpModule,
     MongooseModule.forFeature([
       {
         name: Device.name,
