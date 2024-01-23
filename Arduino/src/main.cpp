@@ -28,17 +28,23 @@ void handleLedOff()
 void handleBoxDown()
 {
     Serial.println("Box Down");
+    analogWrite(ENA, 255);
+    Serial.println("LED1 off");
+
+    digitalWrite(IN1, LOW);
+
+    digitalWrite(IN2, HIGH);
+    delay(600);
+    digitalWrite(IN2, LOW);
 }
 void handleBoxUp()
 {
-
     Serial.println("Box Up");
     analogWrite(ENA, 150);
-    digitalWrite(IN1, HIGH);
-    delay(300);
-
     digitalWrite(IN2, LOW);
 
+    digitalWrite(IN1, HIGH);
+    delay(300);
     digitalWrite(IN1, LOW);
 }
 
@@ -53,8 +59,10 @@ void setup()
 
     setupWifi();
 
-    server.on("/led/on", HTTP_GET, handleLedOn);
-    server.on("/led/off", HTTP_GET, handleLedOff);
+    server.on("/box/open", HTTP_GET, handleBoxopen);
+    server.on("/box/close", HTTP_GET, handleBoxClose);
+      server.on("/box/up", HTTP_GET, handleBoxUp);
+    server.on("/box/down", HTTP_GET, handleBoxDown);
 
     server.begin();
     Serial.println("HTTP server started");
