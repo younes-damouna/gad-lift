@@ -12,40 +12,43 @@ int IN2 = 2;
 Servo servo;
 ESP8266WebServer server(80);
 
-void handleLedOn()
+void handleBoxOpen()
 {
-    // Your logic to handle LED ON
-    digitalWrite(LED_BUILTIN, HIGH);
-    server.send(200, "text/plain", "LED turned ON");
+    Serial.println("Box Open");
+
+    servo.write(90);
+    server.send(200, "text/plain", "Box Open");
 }
 
-void handleLedOff()
+void handleBoxClose()
 {
-    // Your logic to handle LED OFF
-    digitalWrite(LED_BUILTIN, LOW);
-    server.send(200, "text/plain", "LED turned OFF");
+    Serial.println("Box Closed");
+
+    servo.write(0);
+    server.send(200, "text/plain", "Box Closed");
 }
-void handleBoxDown()
+void handleBoxUp()
 {
     Serial.println("Box Down");
     analogWrite(ENA, 255);
-    Serial.println("LED1 off");
 
     digitalWrite(IN1, LOW);
 
     digitalWrite(IN2, HIGH);
     delay(600);
     digitalWrite(IN2, LOW);
+    server.send(200, "text/plain", "Box Down");
 }
-void handleBoxUp()
+void handleBoxDown()
 {
     Serial.println("Box Up");
-    analogWrite(ENA, 150);
+    analogWrite(ENA, 255);
     digitalWrite(IN2, LOW);
 
     digitalWrite(IN1, HIGH);
     delay(300);
     digitalWrite(IN1, LOW);
+    server.send(200, "text/plain", "Box Up");
 }
 
 void setup()
@@ -59,9 +62,9 @@ void setup()
 
     setupWifi();
 
-    server.on("/box/open", HTTP_GET, handleBoxopen);
+    server.on("/box/open", HTTP_GET, handleBoxOpen);
     server.on("/box/close", HTTP_GET, handleBoxClose);
-      server.on("/box/up", HTTP_GET, handleBoxUp);
+    server.on("/box/up", HTTP_GET, handleBoxUp);
     server.on("/box/down", HTTP_GET, handleBoxDown);
 
     server.begin();
