@@ -30,12 +30,14 @@ class _InputGroupState extends State<InputGroup> {
   Widget build(BuildContext context) {
     // widget.controller.buildTextSpan(context: context, withComposing: false);
     return Container(
-        height: 50,
+        // height: 50,
+        
         margin: const EdgeInsets.symmetric(vertical: 5),
         child: Expanded(
+
           flex: 1,
           child: Padding(
-            padding: const EdgeInsets.all(0),
+            padding: const EdgeInsets.all(10),
             child: TextFormField(
               // keyboardType: widget.numpad?? TextInputType.number ,
               style: TextStyle(
@@ -61,8 +63,11 @@ class _InputGroupState extends State<InputGroup> {
               cursorColor: const Color(0xFF2FE2EE),
 
               decoration: InputDecoration(
+                contentPadding:
+      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                 errorStyle: const TextStyle(),
                 errorBorder: const OutlineInputBorder(
+                  // gapPadding: 12,
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
                   ),

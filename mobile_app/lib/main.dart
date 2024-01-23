@@ -98,7 +98,7 @@ class _MainAppState extends State<MainApp> {
               ProfileScreen(
                 key: Key('profile'),
               ),
-              // DashboardScreen(key: Key('dashboard'),),
+              DashboardScreen(key: Key('dashboard'),),
               // ConnectDeviceScreen(),
               // JoinFamilyScreen(),
               CreateFamily(),
@@ -141,6 +141,11 @@ class _MainAppState extends State<MainApp> {
                 tooltip: 'Settings Screen',
               ),
               BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Icon(Icons.settings_outlined),
+                tooltip: 'Settings Screen',
+              ),
+               BottomNavigationBarItem(
                 label: 'Settings',
                 icon: Icon(Icons.settings_outlined),
                 tooltip: 'Settings Screen',

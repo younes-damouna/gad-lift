@@ -3,7 +3,7 @@ import "./index.css";
 import FormGroup from "../../../components/FormGroup";
 import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../../components/PrimaryButton";
-const LoginPage = ({ switchToRegister }) => {
+const LoginPage = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({

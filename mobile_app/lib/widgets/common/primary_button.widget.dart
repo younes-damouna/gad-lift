@@ -21,9 +21,9 @@ class _PrimaryButtonState extends State<PrimaryButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      // padding: const EdgeInsets.all(10),
-      height: 60,
+      // margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.all(10),
+      height: 50,
       decoration: BoxDecoration(
         color: widget.bgColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
