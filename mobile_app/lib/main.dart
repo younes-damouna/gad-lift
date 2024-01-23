@@ -62,7 +62,8 @@ class _MainAppState extends State<MainApp> {
 
          
         },
-        home: const WelcomeScreen(),
+        // home: const WelcomeScreen(),
+        home: const DashboardScreen(),
       ),
     );
   }
