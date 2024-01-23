@@ -79,7 +79,12 @@ class _MainAppState extends State<MainApp> {
         //  textTheme: GoogleFonts.zenDotsTextTheme(
         //    Theme.of(context).textTheme,
         //  ),
-
+ routes: {
+    'login':(context) => LoginScreen(),
+    '/dashboard': (context) => const DashboardScreen(),
+    // Navigator.defaultRouteName:(context)=>const LoginScreen()
+    // other named routes if needed
+  },
         home: Scaffold(
           // routes: Map('/'),
 
@@ -93,7 +98,7 @@ class _MainAppState extends State<MainApp> {
             },
             children: const [
               // WelcomeScreen(),
-              LoginScreen(),
+              // LoginScreen(),
               // RegisterScreen(),
               ProfileScreen(
                 key: Key('profile'),
@@ -145,11 +150,11 @@ class _MainAppState extends State<MainApp> {
                 icon: Icon(Icons.settings_outlined),
                 tooltip: 'Settings Screen',
               ),
-               BottomNavigationBarItem(
-                label: 'Settings',
-                icon: Icon(Icons.settings_outlined),
-                tooltip: 'Settings Screen',
-              ),
+              //  BottomNavigationBarItem(
+              //   label: 'Settings',
+              //   icon: Icon(Icons.settings_outlined),
+              //   tooltip: 'Settings Screen',
+              // ),
             ],
 
             backgroundColor: const Color.fromARGB(255, 0, 0, 0),

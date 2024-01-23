@@ -45,7 +45,7 @@ class _InputGroupState extends State<InputGroup> {
               onFieldSubmitted: (value) {},
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
+                  return 'Please enter ${widget.title}';
                 }
                 return null;
               },
@@ -56,7 +56,7 @@ class _InputGroupState extends State<InputGroup> {
               // autovalidateMode: AutovalidateMode.always,
               // autovalidateMode: AutovalidateMode.onUserInteraction,
               // keyboardAppearance: Brightness.da,
-              autofocus: true,
+              // autofocus: true,
               // keyboardType: TextInputType.emailAddress,
               obscureText: widget.secure,
               cursorColor: const Color(0xFF2FE2EE),
@@ -72,7 +72,7 @@ class _InputGroupState extends State<InputGroup> {
                   ),
                 ),
                 floatingLabelStyle:
-                    TextStyle(color: widget.color ?? const Color(0xFF2FE2EE)),
+                    TextStyle(color: widget.color ?? Color.fromARGB(255, 0, 0, 0)),
                 label: SectionTitle(
                   title: widget.title,
                   size: 15,
@@ -98,7 +98,7 @@ class _InputGroupState extends State<InputGroup> {
 
                 suffix: Icon(
                   widget.icon,
-                  color: widget.color ?? const Color(0xFF2FE2EE),
+                  color: widget.color ?? Color.fromARGB(255, 0, 0, 0),
                 ),
 
                 border: const OutlineInputBorder(
@@ -108,16 +108,16 @@ class _InputGroupState extends State<InputGroup> {
                 ),
 
                 enabled: true,
-                focusColor: widget.color ?? const Color(0xFF2FE2EE),
+                focusColor: widget.color ?? Color.fromARGB(255, 0, 0, 0),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     // color: Colors.grey,
-                    color: widget.color ?? const Color(0xFF2FE2EE),
+                    color: widget.color ?? Color.fromARGB(255, 0, 0, 0),
                     style: BorderStyle.solid,
                     width: 2,
                   ),
                 ),
-                hoverColor: widget.color ?? const Color(0xFF2FE2EE),
+                hoverColor: widget.color ?? Color.fromARGB(255, 0, 0, 0),
 
                 // labelText: 'First Name'
                 // hintStyle:

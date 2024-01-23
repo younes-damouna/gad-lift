@@ -5,7 +5,9 @@ import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
+import 'package:mobile_app/main.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
+import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -89,23 +91,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                   overlayColor:
                                       MaterialStatePropertyAll(Colors.white60)),
                               onPressed: () {},
-                             
-                                child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                          'assets/images/googleIcon.png'),
-                                      Container(
-                                          margin: const EdgeInsets.symmetric(
-                                              horizontal: 10),
-                                          child: const Text(
-                                            'Sign in with Google',
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          ))
-                                    ]),
-                              ),
-                            
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset('assets/images/googleIcon.png'),
+                                    Container(
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: const Text(
+                                          'Sign in with Google',
+                                          style: TextStyle(color: Colors.black),
+                                        ))
+                                  ]),
+                            ),
                           ),
                           PrimaryButton(
                             text: 'Log In',
@@ -116,29 +114,46 @@ class _LoginScreenState extends State<LoginScreen> {
                                 {
                               // print(_formKey.currentState!.validate());
                               if (_formKey.currentState!.validate()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Processing Data')),
-                                );
                                 // If the form is valid, display a snackbar.
-                              }
-                              final response = await AuthService.login(
-                                emailController.text,
-                                passwordNameController.text,
-                              );
-                              final user = User.fromJson(response['user']);
-                              final storage = SecureStorage();
-                              await storage.saveToken(
-                                  'access_token', response['access_token']);
-                              final token =
-                                  await storage.getToken('access_token');
-                              log('access_token: $token');
-                              Provider.of<ProfileProvider>(
-                                context,
-                                listen: false,
-                              ).getProfile(user);
 
-                              log('user: $user');
+                                final response = await AuthService.login(
+                                  emailController.text,
+                                  passwordNameController.text,
+                                );
+                                // log('${response.data['message']}');
+                                if (response['statusCode'] == 200) {
+                                  log('${response}');
+
+                                  final user = User.fromJson(response['user']);
+                                  final storage = SecureStorage();
+                                  await storage.saveToken(
+                                      'access_token', response['access_token']);
+                                  final token =
+                                      await storage.getToken('access_token');
+                                  log('access_token: $token');
+                                  // ignore: use_build_context_synchronously
+                                  Provider.of<ProfileProvider>(
+                                    context,
+                                    listen: false,
+                                  ).getProfile(user);
+                                  // ignore: use_build_context_synchronously
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MainApp()));
+// Navigator.pushNamed(context, '/dashboard');
+
+                                  log('user: $user');
+                                } else if (response.data['statusCode'] == 401) {
+                                  // ignore: use_build_context_synchronously
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                        content: Text(
+                                            '${response.data['message']}')),
+                                  );
+                                }
+                              }
                             },
                           ),
                           Row(

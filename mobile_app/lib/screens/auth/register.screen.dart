@@ -95,29 +95,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     //   width: MediaQuery.of(context).size.width,
                     //   // colorBlendMode: BlendMode.colorBurn,
                     // ),
-                    TextButton(
-                      style: const ButtonStyle(
-                        shape: MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.all(2),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
                         ),
-                        overlayColor: MaterialStatePropertyAll(Colors.white60),
+                        color: Colors.white,
                       ),
-                      onPressed: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(15),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: Colors.white,
-                        ),
+                      child: TextButton(
+                        style: const ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.zero),
+                            ),
+                            overlayColor:
+                                MaterialStatePropertyAll(Colors.white60)),
+                        onPressed: () {},
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset('assets/images/googleIcon.png'),
-                              const Text('Sign in with Google')
+                              Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: const Text(
+                                    'Sign in with Google',
+                                    style: TextStyle(color: Colors.black),
+                                  ))
                             ]),
                       ),
                     ),
@@ -127,15 +134,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       text: 'Register',
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
-                      handlePress: () async{
-                        var t=emailController.text;
+                      handlePress: () async {
+                        var t = emailController.text;
                         log('email $t');
-                         await AuthService.register(
-                            firstNameController.text,
-                            lastNameController.text,
-                            emailController.text,
-                            passwordNameController.text,
-                          );
+                        await AuthService.register(
+                          firstNameController.text,
+                          lastNameController.text,
+                          emailController.text,
+                          passwordNameController.text,
+                        );
                       },
                     ),
                     Row(
@@ -148,7 +155,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) => const LoginScreen()));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const LoginScreen()));
                           },
                           child: const SectionTitle(
                             title: "Sign In", size: 12, color: Colors.grey,

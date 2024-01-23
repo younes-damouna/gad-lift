@@ -30,6 +30,8 @@ export class AuthService {
 
     const payload = { user: user };
     return {
+      message:"Success",
+      statusCode:200,
       user: user,
       access_token: await this.jwtService.signAsync(payload),
     };

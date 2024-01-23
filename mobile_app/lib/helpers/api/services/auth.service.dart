@@ -12,7 +12,11 @@ abstract class AuthService {
         "password": password,
       });
       // log('response: ${response.data['user']}');
-      return response.data;
+      // if (response.statusCode == 200) {
+         return response.data;
+
+  // } 
+  // return {response.data};
     } on DioException catch (e) {
       return e.response;
     }
