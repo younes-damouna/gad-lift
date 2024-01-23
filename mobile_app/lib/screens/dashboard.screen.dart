@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/control.service.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/camera_view.widget.dart';
 import 'package:mobile_app/widgets/common/custom_text_button.widget.dart';
@@ -62,15 +63,21 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
           const CameraView(),
-          const Row(
+          Row(
             children: [
               SecondaryButton(
                 text: 'Up',
                 icon: Icons.keyboard_double_arrow_up,
+                handlePress: () async {
+                  callControl('up');
+                },
               ),
               SecondaryButton(
                 text: 'Down',
                 icon: Icons.keyboard_double_arrow_down,
+                handlePress: () {
+                   callControl('down');
+                },
               ),
             ],
           ),
@@ -89,4 +96,8 @@ class DashboardScreen extends StatelessWidget {
       // bottomNavigationBar: const Navigation(),
     );
   }
+}
+
+void callControl(String action) async {
+  final response = await ControlService.control(action);
 }
