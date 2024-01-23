@@ -75,18 +75,24 @@ class DashboardScreen extends StatelessWidget {
               SecondaryButton(
                 text: 'Down',
                 icon: Icons.keyboard_double_arrow_down,
-                handlePress: () {
+                handlePress: ()async {
                    callControl('down');
                 },
               ),
             ],
           ),
-          const Row(
+           Row(
             children: [
               CustomTextButton(
                 text: 'Open',
+                 handlePress: () async{
+                   callControl('open');
+                },
               ),
               CustomTextButton(
+                 handlePress: () async{
+                   callControl('close');
+                },
                 text: 'Close',
               ),
             ],
