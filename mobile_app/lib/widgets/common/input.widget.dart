@@ -31,10 +31,9 @@ class _InputGroupState extends State<InputGroup> {
     // widget.controller.buildTextSpan(context: context, withComposing: false);
     return Container(
         // height: 50,
-        
-        margin: const EdgeInsets.symmetric(vertical: 5),
-        child: Expanded(
 
+        margin: const EdgeInsets.symmetric(vertical: 2),
+        child: Expanded(
           flex: 1,
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -63,8 +62,8 @@ class _InputGroupState extends State<InputGroup> {
               cursorColor: const Color(0xFF2FE2EE),
 
               decoration: InputDecoration(
-                contentPadding:
-      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 13.0, horizontal: 10.0),
                 errorStyle: const TextStyle(),
                 errorBorder: const OutlineInputBorder(
                   // gapPadding: 12,
