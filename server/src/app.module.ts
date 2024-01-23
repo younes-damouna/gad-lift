@@ -7,6 +7,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { FamiliesModule } from './families/families.module';
 import { GoogleStrategy } from './strategy/google.strategy';
+import { DevicesModule } from './devices/devices.module';
+
 
 
 @Module({
@@ -28,9 +30,11 @@ import { GoogleStrategy } from './strategy/google.strategy';
     UsersModule,
     AuthModule,
     FamiliesModule,
+    DevicesModule,
+   
    
   ],
-  controllers: [AppController],
-  providers: [AppService,GoogleStrategy],
+  controllers: [AppController, ],
+  providers: [AppService,GoogleStrategy, ],
 })
 export class AppModule {}
