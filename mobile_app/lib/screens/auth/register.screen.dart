@@ -143,6 +143,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           emailController.text,
                           passwordNameController.text,
                         );
+                        // ignore: use_build_context_synchronously
+                        Navigator.popAndPushNamed(context, '/login');
                       },
                     ),
                     Row(

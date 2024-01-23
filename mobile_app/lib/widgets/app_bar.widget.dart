@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/main.dart';
+import 'package:mobile_app/screens/main_view.screen.dart';
 
 // import 'package:mobile_app/main.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {

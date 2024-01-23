@@ -71,7 +71,10 @@ class ConnectDeviceScreen extends StatelessWidget {
                             text: 'Connect Device',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress: () {})
+                            handlePress: () {
+
+                              Navigator.popAndPushNamed(context, '/create-family');
+                            })
                       ],
                     )),
               )

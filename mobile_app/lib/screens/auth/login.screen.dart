@@ -7,7 +7,9 @@ import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/main.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
+import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
+import 'package:mobile_app/screens/main_view.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -141,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const MainApp()));
+                                              const ConnectDeviceScreen()));
 // Navigator.pushNamed(context, '/dashboard');
 
                                   log('user: $user');

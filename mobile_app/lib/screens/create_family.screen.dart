@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
+import 'package:mobile_app/screens/main_view.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -73,6 +74,10 @@ class _CreateFamilyState extends State<CreateFamily> {
                                   await FamilyService.createFamily(
                                 text.text,
                               );
+                                  // ignore: use_build_context_synchronously
+                                  Navigator.popAndPushNamed(
+                                      context,
+                                     '/dashboard');
                               // print(_formKey.currentState!.validate());
                               // if (_formKey.currentState!.validate()) {
                                 //  if (!context.mounted) return;
