@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include "wifi/wifi.h"
 
-const char *ssid = "TP";
-const char *password = "2120861younesdaaaaa";
+
 
 ESP8266WebServer server(80);
 
@@ -22,11 +22,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
 
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
+    setupWifi();
 
   server.on("/led/on", HTTP_GET, handleLedOn);
   server.on("/led/off", HTTP_GET, handleLedOff);
