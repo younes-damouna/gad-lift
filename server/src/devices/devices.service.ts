@@ -6,10 +6,10 @@ import axios from 'axios';
 export class DevicesService {
     constructor(private httpService:HttpService){}
 
-    async turnMotorUp():Promise<any> {
+    async turnMotorUp(action:String):Promise<any> {
             try {
                 console.log('try')
-               const response= await axios.get('http://192.168.0.100/motor/up');
+               const response= await axios.get('http://192.168.0.100/box/up');
               
                return {"message":response.data,
             "statusCode":200};
