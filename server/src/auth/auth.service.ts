@@ -1,4 +1,4 @@
-import { Body, Injectable, UnauthorizedException } from '@nestjs/common';
+import { Body, HttpException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/entities/user.entity';
@@ -15,7 +15,8 @@ export class AuthService {
 
       return user;
     }
-    throw new UnauthorizedException();
+
+    throw new HttpException('Wrong Email/Password', 401);
   }
   async register(@Body() createUserDto: CreateUserDto) {
     // console.log("frontend");
