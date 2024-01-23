@@ -12,7 +12,7 @@ import { DevicesModule } from './devices/devices.module';
 
 
 @Module({
-  imports: [
+  imports: [ 
     ConfigModule.forRoot({isGlobal:true
       // ,
       // envFilePath:'../.env'
