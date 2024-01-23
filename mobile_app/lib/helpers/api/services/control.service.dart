@@ -18,7 +18,7 @@ abstract class ControlService {
       };
       // dio.options.headers = header;
       final response = await dio.get(
-        '${ApiRoutes.profile}/$action',
+        '${ApiRoutes.control}/$action',
        
         // queryParameters: {"id":id}
       );

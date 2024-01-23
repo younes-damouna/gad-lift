@@ -4,7 +4,13 @@ import 'package:mobile_app/widgets/common/button_title.widget.dart';
 class SecondaryButton extends StatefulWidget {
   final String text;
   final IconData icon;
-  const SecondaryButton({super.key, required this.text, required this.icon});
+  final Function handlePress;
+
+  const SecondaryButton(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.handlePress});
 
   @override
   State<SecondaryButton> createState() => _SecondaryButtonState();
@@ -29,7 +35,7 @@ class _SecondaryButtonState extends State<SecondaryButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => {},
+        onPressed: () => widget.handlePress(),
         style: const ButtonStyle(
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.zero),
