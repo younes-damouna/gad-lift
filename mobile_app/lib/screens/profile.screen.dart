@@ -1,6 +1,8 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mobile_app/helpers/api/services/update_profile.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
@@ -39,6 +41,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
   }
 
+  XFile? pickedFile;
+  getImage() async {
+    final picker = ImagePicker();
+    pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    UserService.changeImage(pickedFile);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,10 +81,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             }
             final fullName = fullNameController.text.trim().split(' ');
             final response = await UserService.updateUser(
-                 fullName[0], fullName[1],emailController.text, id
+                fullName[0], fullName[1], emailController.text, id
                 // passwordNameController.text,
                 );
-                log('rsponse u: ${response}');
+            log('rsponse u: ${response}');
             final user = User.fromJson(response['user']);
 
             Provider.of<ProfileProvider>(
@@ -90,11 +101,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 10,
               ),
-              CircleAvatar(
-                radius: 50,
-                child: Image.asset(
-                  'assets/images/AnimatedLogo1.png',
-                  width: 90,
+              GestureDetector(
+                onTap: () => getImage(),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 50,
+                  child: pickedFile == null
+                      ?profile.email==''? ClipOval(
+                          child: Image.asset(
+                          'assets/images/avatar.png',
+                          width: 90,
+                        )):ClipOval(
+                          child: Image.network(
+                          'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
+                          width: 90,
+                        ))
+                      : ClipOval(
+                          child: Image.file(
+                          File(pickedFile!.path),
+                          height: 90,
+                          width: 90,
+                        )),
                 ),
               ),
               Container(

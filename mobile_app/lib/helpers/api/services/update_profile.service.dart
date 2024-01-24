@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mobile_app/helpers/config/base_dio.dart';
 import 'package:mobile_app/helpers/constants/api_constants.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
@@ -34,20 +35,26 @@ abstract class UserService {
     }
   }
 
+  static Future<void> changeImage(XFile? pickedFile) async {
+    DateTime now = DateTime.now();
 
+    if (pickedFile != null) {
+      FormData formData = FormData.fromMap({
+        "profile_img": await MultipartFile.fromFile(pickedFile.path,
+            filename: now.toString()),
+      });
 
-static Future<String> changeImage(File file) async {
-    String fileName = file.path.split('/').last;
-    FormData formData = FormData.fromMap({
-        "file":
-            await MultipartFile.fromFile(file.path, filename:fileName),
-    });
-    final response = await dio.post(ApiRoutes.profile, data: formData);
-    return response.data['id'];
+      final response = await dio.post(ApiRoutes.profile, data: formData);
+
+      if (response.statusCode == 200) {
+        log('200');
+
+        // return '${response.statusMessage}';
+      } else {
+        log('response');
+
+        // return 'Image upload failed!';
+      }
+    }
+  }
 }
-}
-
-
-
-
-
