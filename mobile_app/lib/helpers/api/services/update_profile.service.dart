@@ -33,4 +33,21 @@ abstract class UserService {
       return e.response;
     }
   }
+
+
+
+static Future<String> changeImage(File file) async {
+    String fileName = file.path.split('/').last;
+    FormData formData = FormData.fromMap({
+        "file":
+            await MultipartFile.fromFile(file.path, filename:fileName),
+    });
+    final response = await dio.post(ApiRoutes.profile, data: formData);
+    return response.data['id'];
 }
+}
+
+
+
+
+
