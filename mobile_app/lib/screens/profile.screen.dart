@@ -109,14 +109,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundColor: Colors.white,
                   radius: 50,
                   child: pickedFile == null
-                      ?profile.email==''? ClipOval(
+                      ?profile.profile_img==''? ClipOval(
                           child: Image.asset(
                           'assets/images/avatar.png',
                           width: 90,
                         )):ClipOval(
                           child: Image.network(
-                            // profile.profile_img
-                          'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
+                            profile.profile_img,
+                          // 'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
                           width: 90,
                         ))
                       : ClipOval(
