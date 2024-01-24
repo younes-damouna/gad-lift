@@ -10,6 +10,7 @@ import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from "src/strategy/constants";
 
 import { JwtStrategy } from "src/strategy/jwt.strategy";
+import { FileController } from "src/file.controller";
 
 
 @Module({
@@ -38,7 +39,7 @@ import { JwtStrategy } from "src/strategy/jwt.strategy";
     ],
     providers: [UsersService, HashService, JwtStrategy],
     // register the usersController
-    controllers: [UserController],
+    controllers: [UserController,FileController],
     exports: [UsersService]
 })
 

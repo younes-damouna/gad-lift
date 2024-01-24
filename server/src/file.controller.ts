@@ -15,4 +15,8 @@ export class FileController {
       return res.status(404).send('File not found');
     }
   }
+  getPath(filename:string){
+    const path = join(__dirname, '..', 'uploads', filename);
+    console.log(path)
+  }
 }

@@ -5,12 +5,15 @@ import mongoose from "mongoose";
 import { UpdateUserDto } from "./dto/UpdateUser.dto";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { diskStorage } from "multer";
+import { FileController } from "src/file.controller";
+import { join } from "path";
+import { ConfigService } from "@nestjs/config";
 
 // path the route to the @controller decorator
 @Controller('users')
 export class UserController {
     // this layer should interact with the service layer
-    constructor(private usersService: UsersService) { }
+    constructor(private usersService: UsersService,private readonly configService: ConfigService) { }
     //     @Post()
     //     // use pipes will enable validation inside this controller only
     //     // @UsePipes(new ValidationPipe())
@@ -46,7 +49,7 @@ export class UserController {
           },
         }),
       }))
-    async updateUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto,@Req() request:Request, @UploadedFile(
+    async updateUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto,@Req() request:any, @UploadedFile(
         // new ParseFilePipe({
         //     validators: [
         //         new FileTypeValidator({ fileType: '.(png|jpeg|jpg)' }),
@@ -55,14 +58,19 @@ export class UserController {
         // }),
 
     ) profile_img?: Express.Multer.File)
-     {
-        console.log(profile_img.path)
+     {   
+        const port = this.configService.get<string>('PORT');
+        // const port = request.socket.localPort;
+    //    const fullpath=`http://${request.hostname}:${port}/${profile_img.filename.replace(/\\/g, '/')}`
+        const path = `http://${request.hostname}:${port}/uploads/${profile_img.filename.replace(/\\/g, '/')}`;
+        updateUserDto.profile_img=path
+        console.log(updateUserDto.profile_img)
         const isValidId = mongoose.Types.ObjectId.isValid(id);
         if (!isValidId) throw new HttpException('Invalid ID', 400);
-        updateUserDto.profile_img=profile_img.path;
+        // updateUserDto.profile_img=profile_img.path;
         const UpdatedUser = await this.usersService.updateUser(id, updateUserDto);
         if (!UpdatedUser) throw new HttpException('User Not Found', 404);
-        // console.log(UpdatedUser)
+        console.log(UpdatedUser)
         return UpdatedUser;
 
 
