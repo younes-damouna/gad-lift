@@ -35,7 +35,10 @@ export class CreateUserDto {
     user_type?: string;
 
     @IsOptional()
+    profile_img?:String;
+
+    @IsOptional()
     @ValidateNested()
     @Type(()=>CreateUserSettingsDto)
-    settings?: CreateUserSettingsDto
+    settings?: CreateUserSettingsDto;
 }
