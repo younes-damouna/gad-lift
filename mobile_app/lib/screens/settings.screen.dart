@@ -97,12 +97,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       SizedBox(
                         child: Consumer<RequestProvider>(
                           builder: (BuildContext context, req, Widget? child) {
-                            if (req.requests.length>0) {
+                            if (req.requests.isNotEmpty) {
                               return ListView.builder(
                                   itemCount: req.requests.length,
                                   shrinkWrap: true,
                                   itemBuilder: (context, i) {
                                     return RequestButton(
+                                      color: const Color.fromARGB(255, 158, 95, 95),
                                       text:
                                           '${req.requests[i].first_name} ${req.requests[i].last_name}',
                                       handlePress: () {
@@ -111,10 +112,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           context: context,
                                           builder: (BuildContext context) =>
                                               AlertMessage(
-                                            handlePress: () async {
+                                            handlePress: () async {                        
+                                              req;
+
                                               final response = await RequestService
                                                   .acceptMember(
-                                                      '${req.requests[i].id}');
+                                                      req.requests[i].id);
+                                                     
 
                                               // final req = Request.parseRequests(
                                               //     response['requests']);
@@ -159,12 +163,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: Consumer<MemberProvider>(
                           builder:
                               (BuildContext context, member, Widget? child) {
-                            if (member.members.length>0) {
+                            if (member.members.isNotEmpty) {
                               return ListView.builder(
                                   itemCount: member.members.length,
                                   shrinkWrap: true,
                                   itemBuilder: (context, i) {
                                     return RequestButton(
+                                      color: const Color.fromARGB(255, 95, 158, 104),
                                       text:
                                           '${member.members[i].first_name} ${member.members[i].last_name}',
                                       handlePress: () {
@@ -209,9 +214,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
 
                       FloatingActionButton(onPressed: (){
-                        req();
-                        // Navigator.popAndPushNamed(context, '/login');
-                        },child: Text('data'),)
+                        // req();
+                        Navigator.popAndPushNamed(context, '/login');
+                        },child: const Text('data'),)
                     ],
                   ),
                 ),

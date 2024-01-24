@@ -95,6 +95,9 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                               final token =
                                   await storage.getToken('access_token');
                               log('$response');
+                               Navigator.popAndPushNamed(
+                                      context,
+                                     '/dashboard');
                             })
                       ],
                     ),

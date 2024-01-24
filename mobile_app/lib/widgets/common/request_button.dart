@@ -3,10 +3,11 @@ import 'package:mobile_app/widgets/common/button_title.widget.dart';
 
 class RequestButton extends StatefulWidget {
   final String text;
+  final Color color;
 
   final Function handlePress;
   const RequestButton(
-      {super.key, required this.text, required this.handlePress});
+      {super.key, required this.text, required this.handlePress,required this.color});
 
   @override
   State<RequestButton> createState() => _RequestButtonState();
@@ -51,9 +52,9 @@ class _RequestButtonState extends State<RequestButton> {
                   size: 12,
                   color: Colors.black,
                 ),
-                const Icon(
+                 Icon(
                   Icons.circle,
-                  color: Colors.black,
+                  color: widget.color,
                 ),
               ],
             )));
