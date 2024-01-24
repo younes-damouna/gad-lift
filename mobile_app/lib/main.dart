@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/firebase_options.dart';
 import 'package:mobile_app/helpers/api/services/firebase.service.dart';
+import 'package:mobile_app/helpers/providers/member_provider.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
@@ -49,6 +50,12 @@ class _MainAppState extends State<MainApp> {
         ListenableProvider(
           create: (context) => RequestProvider(
             requests: [],
+          ),
+        ),
+
+           ListenableProvider(
+          create: (context) => MemberProvider(
+            members: [],
           ),
         ),
       ],

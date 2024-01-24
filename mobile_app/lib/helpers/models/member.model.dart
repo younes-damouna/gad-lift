@@ -23,8 +23,8 @@ class Member {
   static List <Member> parseMembers(List objects) {
     List<Member> list = [];
     for (Map object in objects) {
-      final request = Member.fromJson(object);
-      list.add(request);
+      final member = Member.fromJson(object);
+      list.add(member);
     }
     return list;
   }

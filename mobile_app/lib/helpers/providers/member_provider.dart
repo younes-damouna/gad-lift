@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/helpers/models/request.model.dart';
+import 'package:mobile_app/helpers/models/member.model.dart';
 
 class MemberProvider with ChangeNotifier {
-  List<Member> requests;
+  List<Member> members;
 
-  MemberProvider({this.requests = const []});
+  MemberProvider({this.members = const []});
 
-  void getMembers(List<Member> req) {
-    requests = req;
+  void getMembers(List<Member> members) {
+    members = members;
 
     notifyListeners();
   }

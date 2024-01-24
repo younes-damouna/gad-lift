@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/request.service.dart';
+import 'package:mobile_app/helpers/models/member.model.dart';
 import 'package:mobile_app/helpers/models/request.model.dart';
+import 'package:mobile_app/helpers/providers/member_provider.dart';
 import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/aler.widget.dart';
@@ -22,11 +24,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final response = await RequestService.getRequests();
 
     final req = Request.parseRequests(response['requests']);
+    final members = Member.parseMembers(response['members']);
     log('response $response');
     Provider.of<RequestProvider>(
       context,
       listen: false,
     ).getRequests(req);
+
+    Provider.of<MemberProvider>(
+      context,
+      listen: false,
+    ).getMembers(members);
 
     log('requests: ${response['requests']}');
   }
@@ -144,6 +152,56 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
                           SectionTitle(title: 'Members', size: 18),
                         ],
+                      ),
+                      SizedBox(
+                        child: Consumer<MemberProvider>(
+                          builder:
+                              (BuildContext context, member, Widget? child) {
+                            if (member.members.length > 0) {
+                              return ListView.builder(
+                                  itemCount: member.members.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, i) {
+                                    return RequestButton(
+                                      text:
+                                          '${member.members[i].first_name} ${member.members[i].last_name}',
+                                      handlePress: () {
+                                        log(member.members[i].id);
+                                        showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertMessage(
+                                            handlePress: () async {
+                                              final response = await RequestService
+                                                  .acceptMember(
+                                                      '${member.members[i].id}');
+
+                                              // final req = Request.parseRequests(
+                                              //     response['requests']);
+                                              // log('response $response');
+                                              // Provider.of<RequestProvider>(
+                                              //   context,
+                                              //   listen: false,
+                                              // ).getRequests(req);
+
+                                              log('requests: $response');
+                                            },
+                                            request:
+                                                '${member.members[i].first_name} ${member.members[i].last_name}',
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  });
+                            } else {
+                              return const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10.0),
+                                child: SectionTitle(
+                                    title: 'There is no Members!', size: 14),
+                              );
+                            }
+                          },
+                        ),
                       ),
                     ],
                   ),
