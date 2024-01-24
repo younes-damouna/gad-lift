@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app/firebase_options.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
@@ -15,7 +17,9 @@ import 'package:mobile_app/screens/welcome.screen.dart';
 
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MainApp());
 }
 
@@ -62,8 +66,8 @@ class _MainAppState extends State<MainApp> {
 
          
         },
-        home: const WelcomeScreen(),
-        // home: const DashboardScreen(),
+        // home: const WelcomeScreen(),
+        home: const DashboardScreen(),
       ),
     );
   }
