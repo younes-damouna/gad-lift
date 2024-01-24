@@ -25,12 +25,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     final req = Request.parseRequests(response['requests']);
     final members = Member.parseMembers(response['members']);
-    log('response $response');
+    log('response ${response['members']}');
+    // ignore: use_build_context_synchronously
     Provider.of<RequestProvider>(
       context,
       listen: false,
     ).getRequests(req);
 
+    // ignore: use_build_context_synchronously
     Provider.of<MemberProvider>(
       context,
       listen: false,
@@ -95,7 +97,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       SizedBox(
                         child: Consumer<RequestProvider>(
                           builder: (BuildContext context, req, Widget? child) {
-                            if (req.requests.length > 0) {
+                            if (req.requests.length>0) {
                               return ListView.builder(
                                   itemCount: req.requests.length,
                                   shrinkWrap: true,
@@ -157,7 +159,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: Consumer<MemberProvider>(
                           builder:
                               (BuildContext context, member, Widget? child) {
-                            if (member.members.length > 0) {
+                            if (member.members.length>0) {
                               return ListView.builder(
                                   itemCount: member.members.length,
                                   shrinkWrap: true,
@@ -172,9 +174,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           builder: (BuildContext context) =>
                                               AlertMessage(
                                             handlePress: () async {
-                                              final response = await RequestService
-                                                  .acceptMember(
-                                                      '${member.members[i].id}');
+                                              final response =
+                                                  await RequestService
+                                                      .acceptMember(
+                                                          member.members[i].id);
 
                                               // final req = Request.parseRequests(
                                               //     response['requests']);
@@ -202,7 +205,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             }
                           },
                         ),
+
                       ),
+
+                      FloatingActionButton(onPressed: (){
+                        req();
+                        // Navigator.popAndPushNamed(context, '/login');
+                        },child: Text('data'),)
                     ],
                   ),
                 ),

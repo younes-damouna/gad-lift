@@ -15,7 +15,7 @@ export class FamiliesService {
     async createFamily(createFamilyDto: createFamilyDto, @Request() req) {
         const user = await this.checkUserHaveFamily(req.user.user._id);
         console.log(createFamilyDto);
-        
+
 
         if (user) {
             console.log(user);
@@ -43,16 +43,19 @@ export class FamiliesService {
         return user;
 
     }
-    async getRequests(@Request() req){
-        const family= await this.FamilyModel.findOne({ parent:req.user.user._id }).populate('requests','-password');
-        if(!family)
-        throw new BadRequestException({ message: "You Don't Have a Family" },)
-        return {"requests":family.requests};
+    async getRequests(@Request() req) {
+        const family = await this.FamilyModel.findOne({ parent: req.user.user._id }).populate('requests', '-password').populate('members', '-password');
+        if (!family)
+            throw new BadRequestException({ message: "You Don't Have a Family" },)
+        return {
+            "requests": family.requests,
+            "members": family.members
+        };
 
     }
     async requestTojoinFamily(@Request() req, code: string) {
         // search for the family based on its code
-        
+
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
 
@@ -116,8 +119,8 @@ export class FamiliesService {
 
 
     }
-    
-    isValidMongooseId(id: string ){
+
+    isValidMongooseId(id: string) {
         const isValidId = mongoose.Types.ObjectId.isValid(id);
         if (!isValidId) throw new HttpException('User not found', 404);
     }

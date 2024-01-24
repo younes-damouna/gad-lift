@@ -6,8 +6,8 @@ class MemberProvider with ChangeNotifier {
 
   MemberProvider({this.members = const []});
 
-  void getMembers(List<Member> members) {
-    members = members;
+  void getMembers(List<Member> mem) {
+    members = mem;
 
     notifyListeners();
   }
