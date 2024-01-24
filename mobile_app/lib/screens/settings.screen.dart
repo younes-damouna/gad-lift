@@ -87,43 +87,63 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       SizedBox(
                         child: Consumer<RequestProvider>(
                           builder: (BuildContext context, req, Widget? child) {
-                            return ListView.builder(
-                                itemCount: req.requests.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, i) {
-                                  return RequestButton(
-                                    text:
-                                        '${req.requests[i].first_name} ${req.requests[i].last_name}',
-                                    handlePress: () {
-                                      log(req.requests[i].id);
-                                      showDialog<String>(
-                                        context: context,
-                                        builder: (BuildContext context) =>
-                                            AlertMessage(
-                                          handlePress: () async {
-                                            final response =
-                                                await RequestService
-                                                    .acceptMember('${req.requests[i].id}');
+                            if (req.requests.length > 0) {
+                              return ListView.builder(
+                                  itemCount: req.requests.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, i) {
+                                    return RequestButton(
+                                      text:
+                                          '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                      handlePress: () {
+                                        log(req.requests[i].id);
+                                        showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertMessage(
+                                            handlePress: () async {
+                                              final response = await RequestService
+                                                  .acceptMember(
+                                                      '${req.requests[i].id}');
 
-                                            // final req = Request.parseRequests(
-                                            //     response['requests']);
-                                            // log('response $response');
-                                            // Provider.of<RequestProvider>(
-                                            //   context,
-                                            //   listen: false,
-                                            // ).getRequests(req);
+                                              // final req = Request.parseRequests(
+                                              //     response['requests']);
+                                              // log('response $response');
+                                              // Provider.of<RequestProvider>(
+                                              //   context,
+                                              //   listen: false,
+                                              // ).getRequests(req);
 
-                                            log('requests: ${response}');
-                                          },
-                                          request:
-                                              '${req.requests[i].first_name} ${req.requests[i].last_name}',
-                                        ),
-                                      );
-                                    },
-                                  );
-                                });
+                                              log('requests: $response');
+                                            },
+                                            request:
+                                                '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  });
+                            } else {
+                              return const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10.0),
+                                child: SectionTitle(
+                                    title: 'You don\'t have new Requests!',
+                                    size: 14),
+                              );
+                            }
                           },
                         ),
+                      ),
+                      const Divider(
+                        color: Colors.black,
+                        height: 20,
+                        thickness: 2,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SectionTitle(title: 'Members', size: 18),
+                        ],
                       ),
                     ],
                   ),
