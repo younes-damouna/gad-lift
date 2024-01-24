@@ -27,7 +27,8 @@ export class User {
         trim: true
     })
     email: string;
-
+    @Prop()
+    profile_img: string;
     @Prop({
 
         required: true,
