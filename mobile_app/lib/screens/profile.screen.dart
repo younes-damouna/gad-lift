@@ -46,7 +46,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final picker = ImagePicker();
     pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
-    UserService.changeImage(pickedFile);
+   
     setState(() {});
   }
 
@@ -78,15 +78,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SnackBar(content: Text('Processing Data')),
               );
               // If the form is valid, display a snackbar.
-            }
+            } 
+          
             final fullName = fullNameController.text.trim().split(' ');
             final response = await UserService.updateUser(
-                fullName[0], fullName[1], emailController.text, id
+                fullName[0], fullName[1], emailController.text, id,pickedFile
                 // passwordNameController.text,
                 );
-            log('rsponse u: ${response}');
+            log('rsponse u: $response');
             final user = User.fromJson(response['user']);
 
+            // ignore: use_build_context_synchronously
             Provider.of<ProfileProvider>(
               context,
               listen: false,
