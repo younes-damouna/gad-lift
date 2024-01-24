@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/firebase_options.dart';
+import 'package:mobile_app/helpers/api/services/firebase.service.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/providers/request_provider.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
@@ -17,9 +18,11 @@ import 'package:mobile_app/screens/welcome.screen.dart';
 
 import 'package:provider/provider.dart';
 
+final navigatorKey=GlobalKey<NavigatorState>();
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FireBaseService().initNotifications();
   runApp(const MainApp());
 }
 
@@ -50,6 +53,7 @@ class _MainAppState extends State<MainApp> {
         ),
       ],
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         // theme: ThemeData(
         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)
         // ),
@@ -66,8 +70,8 @@ class _MainAppState extends State<MainApp> {
 
          
         },
-        // home: const WelcomeScreen(),
-        home: const DashboardScreen(),
+        home: const WelcomeScreen(),
+        // home: const DashboardScreen(),
       ),
     );
   }

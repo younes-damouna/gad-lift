@@ -16,7 +16,7 @@ abstract class ControlService {
       final header = {
         HttpHeaders.authorizationHeader: token,
       };
-      // dio.options.headers = header;
+      dio.options.headers = header;
       final response = await dio.get(
         '${ApiRoutes.control}/$action',
        
