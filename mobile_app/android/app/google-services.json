@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361136169919",
+    "project_id": "gad-lift",
+    "storage_bucket": "gad-lift.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361136169919:android:5e3136f1a2ec1240b6370a",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361136169919-vg2u2cu1912p2a11mbt4bp3965s5v7i4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAppWapQf4LxAGFUS2QHgvC7QeNP2wvqDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361136169919-vg2u2cu1912p2a11mbt4bp3965s5v7i4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
