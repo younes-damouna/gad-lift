@@ -8,11 +8,16 @@ import { AuthModule } from './auth/auth.module';
 import { FamiliesModule } from './families/families.module';
 import { GoogleStrategy } from './strategy/google.strategy';
 import { DevicesModule } from './devices/devices.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { FileController } from './file.controller';
 
 
 
 @Module({
-  imports: [ 
+  imports: [  
+  //   ServeStaticModule.forRoot({
+  //   rootPath: join(__dirname, '..'),
+  // }),
     ConfigModule.forRoot({isGlobal:true
       // ,
       // envFilePath:'../.env'
@@ -34,7 +39,7 @@ import { DevicesModule } from './devices/devices.module';
    
    
   ],
-  controllers: [AppController, ],
+  controllers: [AppController, FileController, ],
   providers: [AppService,GoogleStrategy, ],
 })
 export class AppModule {}
