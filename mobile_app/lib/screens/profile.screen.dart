@@ -128,7 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               Container(
-                height: 450,
+                height: 490,
                 decoration: const BoxDecoration(
                   // color: Color.fromARGB(98, 255, 255, 255),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -180,7 +180,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 color: Colors.black,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 0,
                               ),
                               InputGroup(
                                 key: const Key('email'),
@@ -191,7 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 color: Colors.black,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 0,
                               ),
                               InputGroup(
                                 key: const Key('mobile'),
@@ -204,7 +204,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Padding(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 40,
-                                    vertical: 15,
+                                    vertical: 10,
                                   ),
                                   child: child),
                             ],
