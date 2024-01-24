@@ -22,10 +22,18 @@ void blinkLed()
 
 void handleBoxOpen()
 {
+    // if (digitalRead(IN1) == HIGH || digitalRead(IN2) == HIGH)
+    // {
+    //       server.send(200, "text/plain", "Can't open Box");
+    // }
+    // else
+    // {
+
     Serial.println("Box Open");
     // blinkLed();
     servo.write(90);
     server.send(200, "text/plain", "Box Open");
+    // }
 }
 
 void handleBoxClose()
@@ -36,8 +44,13 @@ void handleBoxClose()
     server.send(200, "text/plain", "Box Closed");
 }
 void handleBoxUp()
+
 {
-    Serial.println("Box Down");
+    // if(servo.read()>1){
+    //     servo.write(0);
+    // }
+    Serial.println("Box Up");
+
     analogWrite(ENA, 255);
 
     digitalWrite(IN1, LOW);
@@ -45,18 +58,18 @@ void handleBoxUp()
     digitalWrite(IN2, HIGH);
     delay(600);
     digitalWrite(IN2, LOW);
-    server.send(200, "text/plain", "Box Down");
+    server.send(200, "text/plain", "Box Up");
 }
 void handleBoxDown()
 {
-    Serial.println("Box Up");
+    Serial.println("Box Down");
     analogWrite(ENA, 255);
     digitalWrite(IN2, LOW);
     // blinkLed();
     digitalWrite(IN1, HIGH);
     delay(300);
     digitalWrite(IN1, LOW);
-    server.send(200, "text/plain", "Box Up");
+    server.send(200, "text/plain", "Box Down");
 }
 
 void setup()

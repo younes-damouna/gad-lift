@@ -5,7 +5,7 @@ const char *ssidd = "SSID of your network";
 const char *passwordd = "your wifi password";
 
 // Setup wifi
-void setupWifi()
+void setupWifii()
 {
   // Connect to wifi
   WiFi.begin(ssidd, passwordd);
