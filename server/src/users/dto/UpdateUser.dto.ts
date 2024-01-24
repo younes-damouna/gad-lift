@@ -10,6 +10,9 @@ export class UpdateUserDto {
     @IsOptional()
     @IsString()
     last_name?: string;
+    
+    @IsOptional()
+    profile_img?:String;
 
     @IsOptional()
     @IsString()
