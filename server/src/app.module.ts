@@ -15,9 +15,7 @@ import { FileController } from './file.controller';
 
 @Module({
   imports: [  
-  //   ServeStaticModule.forRoot({
-  //   rootPath: join(__dirname, '..'),
-  // }),
+  
     ConfigModule.forRoot({isGlobal:true
       // ,
       // envFilePath:'../.env'

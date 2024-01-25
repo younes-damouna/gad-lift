@@ -51,7 +51,6 @@ export class UserController {
 
         const path = `http://${request.hostname}:${port}/uploads/${profile_img.filename.replace(/\\/g, '/')}`;
         updateUserDto.profile_img = path
-        console.log(updateUserDto.profile_img)
         const isValidId = mongoose.Types.ObjectId.isValid(id);
         if (!isValidId) throw new HttpException('Invalid ID', 400);
 

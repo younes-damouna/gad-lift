@@ -27,7 +27,7 @@ export class FamiliesService {
 
         family.parent = req.user.user._id;
         const createdFamily = (await family.save()).populate('parent')
-      
+
         return createdFamily;
 
     }

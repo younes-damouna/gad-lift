@@ -7,7 +7,7 @@ import { User } from "src/entities/user.entity";
 export class Family {
     @Prop({
         required: true,
-        unique:true
+        unique: true
     })
     code: string;
     @Prop()
@@ -19,7 +19,7 @@ export class Family {
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
     requests?: User[];
 
-    
+
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
     members: User[];
 

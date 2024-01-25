@@ -8,10 +8,10 @@ export class DevicesService {
     constructor(private httpService: HttpService) { }
 
     async control(action: String): Promise<any> {
-        console.log(action);
+       
         try {
 
-            console.log('try')
+            
             const response = await axios.get(`http://192.168.0.100/box/${action}`);
 
             return {

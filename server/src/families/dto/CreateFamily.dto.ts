@@ -3,14 +3,14 @@ import { IsNotEmpty, IsOptional, IsString, ValidateNested } from "class-validato
 import { User } from "src/entities/user.entity";
 import { CreateUserDto } from "src/users/dto/CreateUser.dto";
 
-export class createFamilyDto{
-   
-    code: string;
-    floor:number;
+export class createFamilyDto {
 
-  
+    code: string;
+    floor: number;
+
+
     @ValidateNested()
-    @Type(()=>CreateUserDto)
+    @Type(() => CreateUserDto)
     parent: CreateUserDto;
 
     @IsOptional()

@@ -20,7 +20,7 @@ export class UsersService {
         const createUser = new this.UserModel(createUserDto);
         const user = await this.findOne(createUser.email);
         createUser.password = await this.hashService.hashPassword(createUser.password);
-      
+
 
         if (user) {
             console.log(user);
@@ -58,9 +58,9 @@ export class UsersService {
         return this.UserModel.findByIdAndDelete(id);
     }
     async findOne(email: string): Promise<any> {
-        const user= await this.UserModel.findOne({ email }).select('+password').populate('settings');
+        const user = await this.UserModel.findOne({ email }).select('+password').populate('settings');
 
-         return user;
+        return user;
 
     }
 
