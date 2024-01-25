@@ -7,8 +7,7 @@ import 'package:mobile_app/helpers/constants/api_constants.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
 
 abstract class ControlService {
-  static Future control(
-     String action) async {
+  static Future control(String action) async {
     try {
       final storage = SecureStorage();
 
@@ -19,11 +18,8 @@ abstract class ControlService {
       dio.options.headers = header;
       final response = await dio.get(
         '${ApiRoutes.control}/$action',
-       
-        // queryParameters: {"id":id}
       );
-      // log('${response.statusCode }');
-      // log('response : ${response.statusCode}');
+
       return response.statusCode;
     } on DioException catch (e) {
       return e.response;

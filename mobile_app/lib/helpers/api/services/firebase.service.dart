@@ -1,53 +1,39 @@
 import 'dart:developer';
-import 'dart:ffi';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:mobile_app/main.dart';
 
-class FireBaseService{
-
+class FireBaseService {
   // create an instance of Firebase messaging
-  final _firebaseMessaging=FirebaseMessaging.instance;
-
+  final _firebaseMessaging = FirebaseMessaging.instance;
 
   //initialize notifications
-  Future<void> initNotifications()async{
+  Future<void> initNotifications() async {
     // request permission from user
     await _firebaseMessaging.requestPermission();
 
     // fetch firebase cloud messaging token (FCM) for this device
-    final fcmToken=await _firebaseMessaging.getToken();
+    final fcmToken = await _firebaseMessaging.getToken();
 
     // print token(send to server)
-    log('fcmToken $fcmToken'); 
+    log('fcmToken $fcmToken');
 
-
-
-
-       
-// initPushNotifications();
   }
 
   //handle received messages
-  void handleMessage(RemoteMessage? message){
-if (message==null) return;
+  void handleMessage(RemoteMessage? message) {
+    if (message == null) return;
     // navigate to asettings screen when user taps on the notification
-    navigatorKey.currentState?.popAndPushNamed('/dashboard', arguments: message);
-    
-
+    navigatorKey.currentState
+        ?.popAndPushNamed('/dashboard', arguments: message);
   }
 
-
   //initialize background settings
-  Future initPushNotifications()async{
+  Future initPushNotifications() async {
     // handle notification if the app was terminated and now open
     FirebaseMessaging.instance.getInitialMessage().then(handleMessage);
 
-
-
     // attach event listeners when a notification opens the app
     FirebaseMessaging.onMessageOpenedApp.listen(handleMessage);
-
-
   }
 }
