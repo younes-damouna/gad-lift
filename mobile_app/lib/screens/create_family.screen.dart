@@ -1,10 +1,7 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
-import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
-import 'package:mobile_app/screens/main_view.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -67,34 +64,20 @@ class _CreateFamilyState extends State<CreateFamily> {
                             text: 'Create Family',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress:  () async
+                            handlePress: () async
                                 //  async
                                 {
-                                    final response =
-                                  await FamilyService.createFamily(
+                              final response = await FamilyService.createFamily(
                                 text.text,
                               );
-                                  // ignore: use_build_context_synchronously
-                                  Navigator.popAndPushNamed(
-                                      context,
-                                     '/dashboard');
-                              // print(_formKey.currentState!.validate());
-                              // if (_formKey.currentState!.validate()) {
-                                //  if (!context.mounted) return;
-  // Navigator.pop(context); 
+                              // ignore: use_build_context_synchronously
+                              Navigator.popAndPushNamed(context, '/dashboard');
+
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(
-                                 SnackBar(
+                                SnackBar(
                                     content: Text(await response['message'])),
                               );
-                              // ScaffoldMessenger.of(context).build((context)=>return Text('data'));
-                              // If the form is valid, display a snackbar.
-                              // }
-                            
-                              final storage = SecureStorage();
-
-                              final token =
-                                  await storage.getToken('access_token');
-                              log('$response');
                             })
                       ],
                     ),
@@ -117,9 +100,9 @@ class _CreateFamilyState extends State<CreateFamily> {
                           );
                         },
                         child: const SectionTitle(
-                          title: "Join Now", size: 12,
+                          title: "Join Now",
+                          size: 12,
                           color: Colors.grey,
-                          // style: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ],
