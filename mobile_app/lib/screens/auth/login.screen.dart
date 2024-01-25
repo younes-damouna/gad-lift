@@ -5,11 +5,8 @@ import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
-import 'package:mobile_app/main.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
-import 'package:mobile_app/screens/dashboard.screen.dart';
-import 'package:mobile_app/screens/main_view.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -124,8 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 );
                                 // log('${response.data['message']}');
                                 if (response['statusCode'] == 200) {
-                                  log('${response}');
-
                                   final user = User.fromJson(response['user']);
                                   final storage = SecureStorage();
                                   await storage.saveToken(
@@ -144,7 +139,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               const ConnectDeviceScreen()));
-// Navigator.pushNamed(context, '/dashboard');
 
                                   log('user: $user');
                                 } else if (response.data['statusCode'] == 401) {
@@ -176,9 +170,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                               const RegisterScreen()));
                                 },
                                 child: const SectionTitle(
-                                  title: "Register", size: 12,
+                                  title: "Register",
+                                  size: 12,
                                   color: Colors.grey,
-                                  // style: TextStyle(color: Colors.grey),
                                 ),
                               ),
                             ],
@@ -191,17 +185,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-        )
-        //  Center(
-        //   child: Column(
-        //     children: [
-        //       // Center(child: Text('loginScreen')),
-        //       Center(
-        //       child:
-        //      )
-        //     ],
-        //   ),
-        // ),
-        );
+        ));
   }
 }
