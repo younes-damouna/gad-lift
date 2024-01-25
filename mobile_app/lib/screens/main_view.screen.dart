@@ -4,15 +4,6 @@ import 'package:mobile_app/screens/dashboard.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
 
-
-
-
-
-
-
-
-
-
 class MainView extends StatefulWidget {
   const MainView({super.key});
 
@@ -52,77 +43,59 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-         
-
-          body: PageView(
-            
-
-            controller: _pageController,
-            scrollBehavior: const MaterialScrollBehavior(),
-            onPageChanged: (newPage) {
-              pageChanged(newPage);
-            },
-            children: const [
-             
-              ProfileScreen(
-                key: Key('profile'),
-              ),
-              DashboardScreen(key: Key('dashboard'),),
-             
-             
-              SettingsScreen(
-                key: Key('settings'),
-              ),
-            ],
+      body: PageView(
+        controller: _pageController,
+        scrollBehavior: const MaterialScrollBehavior(),
+        onPageChanged: (newPage) {
+          pageChanged(newPage);
+        },
+        children: const [
+          ProfileScreen(
+            key: Key('profile'),
           ),
-
-          
-          bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: const Color(0xFF2FE2EE),
-
-            unselectedItemColor: Colors.white,
-
-            items: const [
-              BottomNavigationBarItem(
-                  label: 'Profile',
-                  icon: Icon(Icons.person_outlined),
-                  tooltip: 'Profile Screen'),
-              BottomNavigationBarItem(
-                label: 'Home',
-                icon: Icon(Icons.home_outlined),
-                tooltip: 'Home Screen',
-              ),
-              BottomNavigationBarItem(
-                label: 'Settings',
-                icon: Icon(Icons.settings_outlined),
-                tooltip: 'Settings Screen',
-              ),
-             
-            ],
-
-            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-            currentIndex: _page,
-
-            type: BottomNavigationBarType.fixed,
-            enableFeedback: true,
-
-            onTap: (index) {
-              bottomTapped(index);
-            },
-            selectedFontSize: 15,
-
-            selectedLabelStyle: GoogleFonts.zenDots(
-              fontWeight: FontWeight.w900,
-              fontSize: 16,
-            ),
-            unselectedLabelStyle: GoogleFonts.zenDots(),
-
-            iconSize: 30,
-
-          
+          DashboardScreen(
+            key: Key('dashboard'),
           ),
-        
-      );
+          SettingsScreen(
+            key: Key('settings'),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: const Color(0xFF2FE2EE),
+        unselectedItemColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(
+              label: 'Profile',
+              icon: Icon(Icons.person_outlined),
+              tooltip: 'Profile Screen'),
+          BottomNavigationBarItem(
+            label: 'Home',
+            icon: Icon(Icons.home_outlined),
+            tooltip: 'Home Screen',
+          ),
+          BottomNavigationBarItem(
+            label: 'Settings',
+            icon: Icon(Icons.settings_outlined),
+            tooltip: 'Settings Screen',
+          ),
+        ],
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        currentIndex: _page,
+        type: BottomNavigationBarType.fixed,
+        enableFeedback: true,
+        onTap: (index) {
+          bottomTapped(index);
+        },
+        selectedFontSize: 15,
+        selectedLabelStyle: GoogleFonts.zenDots(
+          fontWeight: FontWeight.w900,
+          fontSize: 16,
+        ),
+        unselectedLabelStyle: GoogleFonts.zenDots(),
+        iconSize: 30,
+      ),
+    );
   }
 }
 

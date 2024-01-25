@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/control.service.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
@@ -6,8 +7,23 @@ import 'package:mobile_app/widgets/common/custom_text_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:mobile_app/widgets/common/secondary_button.widget.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  bool loading = false;
+  void callControl(String action) async {
+    await ControlService.control(action);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +38,6 @@ class DashboardScreen extends StatelessWidget {
             height: 50,
             // color: const Color(0xFF2FE2EE),
             decoration: BoxDecoration(
-                // image: DecorationImage(
-                //   image: NetworkImage(
-                //       'https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png'),
-                // ),
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 border: Border.all(
                     color: const Color(0xFF2FE2EE),
@@ -68,30 +80,34 @@ class DashboardScreen extends StatelessWidget {
               SecondaryButton(
                 text: 'Up',
                 icon: Icons.keyboard_double_arrow_up,
-                handlePress: () async {
-                  callControl('up');
-                },
+                handlePress: loading
+                    ? () {
+                        return null;
+                      }
+                    : () async {
+                        callControl('up');
+                      },
               ),
               SecondaryButton(
                 text: 'Down',
                 icon: Icons.keyboard_double_arrow_down,
-                handlePress: ()async {
-                   callControl('down');
+                handlePress: () async {
+                  callControl('down');
                 },
               ),
             ],
           ),
-           Row(
+          Row(
             children: [
               CustomTextButton(
                 text: 'Open',
-                 handlePress: () async{
-                   callControl('open');
+                handlePress: () async {
+                  callControl('open');
                 },
               ),
               CustomTextButton(
-                 handlePress: () async{
-                   callControl('close');
+                handlePress: () async {
+                  callControl('close');
                 },
                 text: 'Close',
               ),
@@ -99,11 +115,6 @@ class DashboardScreen extends StatelessWidget {
           )
         ],
       ),
-      // bottomNavigationBar: const Navigation(),
     );
   }
-}
-
-void callControl(String action) async {
-  final response = await ControlService.control(action);
 }

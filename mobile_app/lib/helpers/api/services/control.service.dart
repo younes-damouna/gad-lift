@@ -22,9 +22,9 @@ abstract class ControlService {
        
         // queryParameters: {"id":id}
       );
-      log(response.statusCode as String);
-      log('response : ${response.data}');
-      return response.data;
+      // log('${response.statusCode }');
+      // log('response : ${response.statusCode}');
+      return response.statusCode;
     } on DioException catch (e) {
       return e.response;
     }

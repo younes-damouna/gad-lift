@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
-import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -107,9 +104,9 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                           );
                         },
                         child: const SectionTitle(
-                          title: "Create Now", size: 12,
+                          title: "Create Now",
+                          size: 12,
                           color: Colors.grey,
-                          // style: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ],
