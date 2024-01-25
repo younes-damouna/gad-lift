@@ -1,29 +1,50 @@
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import * as admin from 'firebase-admin';
+// import { Inject, Injectable } from '@nestjs/common';
+// import { ConfigService } from '@nestjs/config';
+// import * as admin from 'firebase-admin';
+// import * as serviceAccount from './../../firebase-admin-sdk.json';
+// import { CreatePushNotificationDto } from './dto/createPushNotifications.dto';
+// import { firebaseApp } from 'src/config/firebase.config';
+// @Injectable()
+// export class  {
+//     // constructor(@Inject(firebaseApp) private readonly firebaseApp: admin.app.App){}
+//     // async send(createPushNotificationDto:CreatePushNotificationDto) {
 
-import * as serviceAccount from './../../firebase-admin-sdk.json';
-import { CreatePushNotificationDto } from './dto/createPushNotifications.dto';
+
+//     // }
+// }
+import { Injectable } from '@nestjs/common';
+import * as admin from 'firebase-admin';
+import { from, Observable } from 'rxjs';
+
 @Injectable()
 export class PushNotificationsService {
-   
-   
-    //     const firebaseConfig = {
-    //         type: configService.get<string>('TYPE'),
-    //         project_id: configService.get<string>('PROJECT_ID'),
-    //         private_key_id: configService.get<string>('PRIVATE_KEY_ID'),
-    //         private_key: configService.get<string>('PRIVATE_KEY').replace(/\\n/g, '\n'),
-    //         client_email: configService.get<string>('CLIENT_EMAIL'),
-    //         client_id: configService.get<string>('CLIENT_ID'),
-    //         auth_uri: configService.get<string>('AUTH_URI'),
-    //         token_uri: configService.get<string>('TOKEN_URI'),
-    //         auth_provider_x509_cert_url: configService.get<string>('AUTH_PROVIDER_X509_CERT_URL'),
-    //         client_x509_cert_url: configService.get<string>('CLIENT_X509_CERT_URL'),
-    //       } as admin.ServiceAccount;
-    //     console.log(`${serviceAccount.auth_provider_x509_cert_url}`);
-  
-    async send(createPushNotificationDto:CreatePushNotificationDto) {
+  private messaging: admin.messaging.Messaging;
+  private readonly app: admin.app.App;
 
+  constructor() {
+    const serviceAccount = require('./../../firebase-admin-sdk.json')
+    if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    },      
+    );
+} else {
+    // Use the default app if it has already been initialized
+    this.app = admin.app();
+  }
 
-    }
+    this.messaging = admin.messaging();
+  }
+
+  async send(token: string, title: string, body: string) {
+    const message: admin.messaging.Message = {
+      notification: {
+        title: title,
+        body: body,
+      },
+      token: token,
+    };
+
+    return  from(this.messaging.send(message));
+  }
 }
