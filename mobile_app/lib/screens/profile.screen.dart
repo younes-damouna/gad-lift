@@ -96,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundColor: Colors.white,
                   radius: 50,
                   child: pickedFile == null
-                      ? profile.profile_img == ''
+                      ? profile.profileIimg == ''
                           ? ClipOval(
                               child: Image.asset(
                               'assets/images/avatar.png',
@@ -104,7 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ))
                           : ClipOval(
                               child: Image.network(
-                              profile.profile_img,
+                              profile.profileIimg,
                               width: 90,
                             ))
                       : ClipOval(

@@ -6,7 +6,7 @@ class ProfileProvider with ChangeNotifier {
   String email;
   String firstName;
   String lastName;
-    String profile_img;
+    String profileIimg;
 
 
   ProfileProvider({
@@ -14,7 +14,7 @@ class ProfileProvider with ChangeNotifier {
     required this.email,
     required this.firstName,
     required this.lastName,
-    required this.profile_img,
+    required this.profileIimg,
   });
 
   void getProfile(User user) {
@@ -22,7 +22,7 @@ class ProfileProvider with ChangeNotifier {
     email = user.email;
     firstName = user.first_name;
     lastName = user.last_name;
-    profile_img=user.profile_img;
+    profileIimg=user.profile_img;
 
     notifyListeners();
   }

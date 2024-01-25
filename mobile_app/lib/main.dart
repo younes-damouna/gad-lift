@@ -38,7 +38,7 @@ class _MainAppState extends State<MainApp> {
             email: '',
             firstName: '',
             lastName: '',
-            profile_img: '',
+            profileIimg: '',
           ),
         ),
         ListenableProvider(
