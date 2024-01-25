@@ -47,4 +47,13 @@ export class FamiliesController {
 
     }
 
+    @Post('/is-parent')
+    @UseGuards(AuthGuard)
+    async checkIfParent(@Request() req){
+      
+        
+        return this.familyService.checkIfParent(req);
+
+    }
+
 }
