@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 // log('${response.data['message']}');
                                 if (response['statusCode'] == 200) {
                                   final user = User.fromJson(response['user']);
-                                      log('${response}');
+                                      log('${response['user']}');
                                   final storage = SecureStorage();
                                   await storage.saveToken(
                                       'access_token', response['access_token']);

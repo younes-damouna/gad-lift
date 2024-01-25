@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
@@ -68,18 +70,33 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                             color: Colors.white,
                             bgColor: Colors.black,
                             handlePress: () async {
-                              final response =
-                                  await FamilyService.requestJoinFamily(
-                                code.text,
-                              );
-                              // if (!context.mounted) return;
-                              if(response['statusCode']==200 || response['statusCode']==201 ){
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Request Sent Successfully!')),
-                              );
+                              final checkParent =
+                                  await FamilyService.checkIfParent();
+                                  log('$checkParent');
+                              if (checkParent['exists']) {
+                                  // ignore: use_build_context_synchronously
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                     SnackBar(
+                                        content:
+                                            Text('Your family code is: ${checkParent['family_code']}')),
+                                  );
+                              } else {
+                                final response =
+                                    await FamilyService.requestJoinFamily(
+                                  code.text,
+                                );
+                                // if (!context.mounted) return;
+                                if (response== 200 ||
+                                    response== 201) {
+                                  // ignore: use_build_context_synchronously
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content:
+                                            Text('Request Sent Successfully!')),
+                                  );
+                                }
                               }
+
                               // ignore: use_build_context_synchronously
                               Navigator.popAndPushNamed(context, '/dashboard');
                             })

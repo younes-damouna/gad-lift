@@ -35,7 +35,7 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-      log(response.statusCode as String);
+      log('${response.statusCode}');
 
       return response.data;
     } on DioException catch (e) {

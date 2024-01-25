@@ -43,7 +43,7 @@ export class FamiliesService {
 
     }
     async checkIfParent(@Request() req){
-        const family = await this.FamilyModel.findOne({ parent: req.user.user._id }).populate('requests', '-password').populate('members', '-password');
+        const family = await this.FamilyModel.findOne({ parent: req.user.user._id });
         if (!family)
         return {
             "exists": false,
@@ -51,7 +51,8 @@ export class FamiliesService {
         };
         return {
             "exists": true,
-            "statusCode": 200
+            "statusCode": 200,
+            "family_code":family.code,
         };
     }
     async getRequests(@Request() req) {

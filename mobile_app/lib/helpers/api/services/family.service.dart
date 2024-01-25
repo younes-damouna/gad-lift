@@ -23,7 +23,7 @@ abstract class FamilyService {
         },
       );
      
-      return response.data;
+      return response.statusCode;
     } on DioException catch (e) {
       return e.response;
     }
@@ -43,6 +43,27 @@ abstract class FamilyService {
         data: {
           "floor": floor,
         },
+      );
+     
+      return response.data;
+    } on DioException catch (e) {
+      return e.response;
+    }
+  }
+
+
+   static Future checkIfParent() async {
+    try {
+      final storage = SecureStorage();
+
+      final token = await storage.getToken('access_token');
+      final header = {
+        HttpHeaders.authorizationHeader: token,
+      };
+      dio.options.headers = header;
+      final response = await dio.post(
+        ApiRoutes.isParent,
+       
       );
      
       return response.data;
