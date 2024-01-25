@@ -72,22 +72,21 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                             handlePress: () async {
                               final checkParent =
                                   await FamilyService.checkIfParent();
-                                  log('$checkParent');
+                              log('$checkParent');
                               if (checkParent['exists']) {
-                                  // ignore: use_build_context_synchronously
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                     SnackBar(
-                                        content:
-                                            Text('Your family code is: ${checkParent['family_code']}')),
-                                  );
+                                // ignore: use_build_context_synchronously
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content: Text(
+                                          'Your family code is: ${checkParent['family_code']}')),
+                                );
                               } else {
                                 final response =
                                     await FamilyService.requestJoinFamily(
                                   code.text,
                                 );
                                 // if (!context.mounted) return;
-                                if (response== 200 ||
-                                    response== 201) {
+                                if (response == 200 || response == 201) {
                                   // ignore: use_build_context_synchronously
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(

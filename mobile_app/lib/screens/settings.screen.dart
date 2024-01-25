@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/api/services/family.service.dart';
 import 'package:mobile_app/helpers/api/services/request.service.dart';
 import 'package:mobile_app/helpers/models/member.model.dart';
 import 'package:mobile_app/helpers/models/request.model.dart';
@@ -20,6 +21,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  var parent = false;
+
   req() async {
     final response = await RequestService.getRequests();
 
@@ -39,17 +42,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ).getMembers(members);
 
     log('requests: ${response['requests']}');
+    await isParent();
   }
+  // ignore: prefer_typing_uninitialized_variables
 
   @override
   // ignore: must_call_super
   initState() {
-    super.initState();
+    // parent=false;
     req();
+
+    super.initState();
 
     // ignore: avoid_print
 
     // print("initState Called");
+  }
+
+  isParent() async {
+    final checkParent = await FamilyService.checkIfParent();
+    log('EXISTS ${checkParent['exists'] == true}');
+    if (checkParent['exists'] == true) {
+      setState(() {
+        parent = true;
+      });
+    } else {
+      setState(() {
+        parent = false;
+      });
+    }
+    print(parent);
   }
 
   @override
@@ -88,66 +110,81 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Row(
+                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SectionTitle(title: 'Requests', size: 18),
+                          parent?SectionTitle(title: 'Requests', size: 18):Container(),
+                          parent?  TextButton(
+                        onPressed: () {
+                          // req();
+                          Navigator.popAndPushNamed(context, '/login');
+                        },
+                        child: const Text('Log Out',style: TextStyle(color: Color.fromARGB(255, 184, 71, 63)),),
+                      ):Container()
                         ],
                       ),
-                      SizedBox(
-                        child: Consumer<RequestProvider>(
-                          builder: (BuildContext context, req, Widget? child) {
-                            if (req.requests.isNotEmpty) {
-                              return ListView.builder(
-                                  itemCount: req.requests.length,
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, i) {
-                                    return RequestButton(
-                                      color: const Color.fromARGB(255, 158, 95, 95),
-                                      text:
-                                          '${req.requests[i].first_name} ${req.requests[i].last_name}',
-                                      handlePress: () {
-                                        log(req.requests[i].id);
-                                        showDialog<String>(
-                                          context: context,
-                                          builder: (BuildContext context) =>
-                                              AlertMessage(
-                                            handlePress: () async {                        
-                                              req;
-
-                                              final response = await RequestService
-                                                  .acceptMember(
-                                                      req.requests[i].id);
-                                                     
-
-                                              // final req = Request.parseRequests(
-                                              //     response['requests']);
-                                              // log('response $response');
-                                              // Provider.of<RequestProvider>(
-                                              //   context,
-                                              //   listen: false,
-                                              // ).getRequests(req);
-
-                                              log('requests: $response');
-                                            },
-                                            request:
+                      parent
+                          ? SizedBox(
+                              child: Consumer<RequestProvider>(
+                                builder:
+                                    (BuildContext context, req, Widget? child) {
+                                  if (req.requests.isNotEmpty) {
+                                    return ListView.builder(
+                                        itemCount: req.requests.length,
+                                        shrinkWrap: true,
+                                        itemBuilder: (context, i) {
+                                          return RequestButton(
+                                            color: const Color.fromARGB(
+                                                255, 158, 95, 95),
+                                            text:
                                                 '${req.requests[i].first_name} ${req.requests[i].last_name}',
-                                          ),
-                                        );
-                                      },
+                                            handlePress: () {
+                                              log(req.requests[i].id);
+                                              showDialog<String>(
+                                                context: context,
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        AlertMessage(
+                                                  handlePress: () async {
+                                                    req;
+
+                                                    final response =
+                                                        await RequestService
+                                                            .acceptMember(req
+                                                                .requests[i]
+                                                                .id);
+
+                                                    // final req = Request.parseRequests(
+                                                    //     response['requests']);
+                                                    // log('response $response');
+                                                    // Provider.of<RequestProvider>(
+                                                    //   context,
+                                                    //   listen: false,
+                                                    // ).getRequests(req);
+
+                                                    log('requests: $response');
+                                                  },
+                                                  request:
+                                                      '${req.requests[i].first_name} ${req.requests[i].last_name}',
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        });
+                                  } else {
+                                    return const Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10.0),
+                                      child: SectionTitle(
+                                          title:
+                                              'You don\'t have new Requests!',
+                                          size: 14),
                                     );
-                                  });
-                            } else {
-                              return const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10.0),
-                                child: SectionTitle(
-                                    title: 'You don\'t have new Requests!',
-                                    size: 14),
-                              );
-                            }
-                          },
-                        ),
-                      ),
+                                  }
+                                },
+                              ),
+                            )
+                          : Container(),
                       const Divider(
                         color: Colors.black,
                         height: 20,
@@ -169,35 +206,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   shrinkWrap: true,
                                   itemBuilder: (context, i) {
                                     return RequestButton(
-                                      color: const Color.fromARGB(255, 95, 158, 104),
+                                      color: const Color.fromARGB(
+                                          255, 95, 158, 104),
                                       text:
                                           '${member.members[i].first_name} ${member.members[i].last_name}',
                                       handlePress: () {
-                                        log(member.members[i].id);
-                                        showDialog<String>(
-                                          context: context,
-                                          builder: (BuildContext context) =>
-                                              AlertMessage(
-                                            handlePress: () async {
-                                              final response =
-                                                  await RequestService
-                                                      .acceptMember(
-                                                          member.members[i].id);
-
-                                              // final req = Request.parseRequests(
-                                              //     response['requests']);
-                                              // log('response $response');
-                                              // Provider.of<RequestProvider>(
-                                              //   context,
-                                              //   listen: false,
-                                              // ).getRequests(req);
-
-                                              log('requests: $response');
-                                            },
-                                            request:
-                                                '${member.members[i].first_name} ${member.members[i].last_name}',
-                                          ),
-                                        );
+                                      
+                                       
                                       },
                                     );
                                   });
@@ -210,13 +225,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             }
                           },
                         ),
-
                       ),
-
-                      FloatingActionButton(onPressed: (){
-                        // req();
-                        Navigator.popAndPushNamed(context, '/login');
-                        },child: const Text('data'),)
+                    
                     ],
                   ),
                 ),

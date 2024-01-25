@@ -14,6 +14,10 @@ abstract class AuthService {
       // log('response: ${response.data['user']}');
       // if (response.statusCode == 200) {
          return response.data;
+        //   return {
+        //   "response":response.data,
+        //    "statusCode":response.statusCode
+        //  };
 
   // } 
   // return {response.data};

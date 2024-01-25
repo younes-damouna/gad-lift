@@ -118,9 +118,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                   emailController.text,
                                   passwordNameController.text,
                                 );                                  
-
+ log('$response');
                                 // log('${response.data['message']}');
                                 if (response['statusCode'] == 200) {
+                                 
                                   final user = User.fromJson(response['user']);
                                       log('${response['user']}');
                                   final storage = SecureStorage();
