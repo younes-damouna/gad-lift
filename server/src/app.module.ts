@@ -10,6 +10,10 @@ import { GoogleStrategy } from './strategy/google.strategy';
 import { DevicesModule } from './devices/devices.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { FileController } from './file.controller';
+import { PushNotificationsController } from './push-notifications/push-notifications.controller';
+import { PushNotificationsModule } from './push-notifications/push-notifications.module';
+import { PushNotificationsModule } from './push-notifications/push-notifications.module';
+import { PushNotificationsModule } from './push-notifications/push-notifications.module';
 
 
 
@@ -34,10 +38,11 @@ import { FileController } from './file.controller';
     AuthModule,
     FamiliesModule,
     DevicesModule,
+    PushNotificationsModule,
    
    
   ],
-  controllers: [AppController, FileController, ],
+  controllers: [AppController, FileController, PushNotificationsController, ],
   providers: [AppService,GoogleStrategy, ],
 })
 export class AppModule {}
