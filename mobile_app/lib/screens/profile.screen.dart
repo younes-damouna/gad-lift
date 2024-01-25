@@ -10,9 +10,6 @@ import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:provider/provider.dart';
 
-
-
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 

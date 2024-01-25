@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/screens/dashboard.screen.dart';
-import 'package:mobile_app/screens/join_family.screen.dart';
 import 'package:mobile_app/screens/profile.screen.dart';
 import 'package:mobile_app/screens/settings.screen.dart';
+
+
+
+
+
+
+
+
+
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -45,10 +52,10 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          // routes: Map('/'),
+         
 
           body: PageView(
-            // scrollBehavior: const ScrollBehavior(),
+            
 
             controller: _pageController,
             scrollBehavior: const MaterialScrollBehavior(),
@@ -69,9 +76,7 @@ class _MainViewState extends State<MainView> {
             ],
           ),
 
-          //context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
-
-          //bottomNavigationBar: const Navigation(),
+          
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: const Color(0xFF2FE2EE),
 
@@ -114,7 +119,7 @@ class _MainViewState extends State<MainView> {
 
             iconSize: 30,
 
-            // selectedIconTheme: const IconThemeData(color: Colors.amber),
+          
           ),
         
       );

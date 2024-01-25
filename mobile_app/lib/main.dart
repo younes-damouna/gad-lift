@@ -12,7 +12,6 @@ import 'package:mobile_app/screens/main_view.screen.dart';
 import 'package:mobile_app/screens/welcome.screen.dart';
 import 'package:provider/provider.dart';
 
-
 final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
