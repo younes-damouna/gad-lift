@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile_app/helpers/api/services/update_profile.service.dart';
@@ -11,6 +9,9 @@ import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:provider/provider.dart';
+
+
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -32,12 +33,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final profileInfo = Provider.of<ProfileProvider>(context, listen: false);
     id = profileInfo.id;
     fullNameController = TextEditingController(
-        text: "${profileInfo.firstName} ${profileInfo.lastName}");
+      text: "${profileInfo.firstName} ${profileInfo.lastName}",
+    );
     emailController = TextEditingController(text: profileInfo.email);
     phoneController = TextEditingController();
-    // fullNameController = TextEditingController();
-    // emailController = TextEditingController();
-    // log('$user');
+
     super.initState();
   }
 
@@ -54,13 +54,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: const MyAppBar(
         title: 'Profile',
-        // avatar: CircleAvatar(
-        //   child: Image.asset(
-        //     'assets/images/AnimatedLogo1.png',
-        //     // width: 300,
-
-        //   ),
-        // ),
       ),
       backgroundColor: const Color(0xFFF3F1F1),
       body: Consumer<ProfileProvider>(
@@ -68,32 +61,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
           text: 'Save',
           color: Colors.white,
           bgColor: Colors.black,
-          handlePress: () async
-              //  async
-              {
+          handlePress: () async {
             // print(_formKey.currentState!.validate());
             if (_formKey.currentState!.validate()) {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Processing Data')),
               );
-              // If the form is valid, display a snackbar.
+
+              final fullName = fullNameController.text.trim().split(' ');
+              final response = await UserService.updateUser(
+                fullName[0],
+                fullName[1],
+                emailController.text,
+                id,
+                pickedFile,
+              );
+
+              final user = User.fromJson(response['user']);
+
+              // ignore: use_build_context_synchronously
+              Provider.of<ProfileProvider>(
+                context,
+                listen: false,
+              ).getProfile(user);
             }
-
-            final fullName = fullNameController.text.trim().split(' ');
-            final response = await UserService.updateUser(
-                fullName[0], fullName[1], emailController.text, id, pickedFile
-                // passwordNameController.text,
-                );
-            log('rsponse u: $response');
-            final user = User.fromJson(response['user']);
-
-            // ignore: use_build_context_synchronously
-            Provider.of<ProfileProvider>(
-              context,
-              listen: false,
-            ).getProfile(user);
-
-            log('user: $user');
           },
         ),
         builder: (context, profile, child) {
@@ -117,7 +108,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           : ClipOval(
                               child: Image.network(
                               profile.profile_img,
-                              // 'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
                               width: 90,
                             ))
                       : ClipOval(
@@ -131,7 +121,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 height: 490,
                 decoration: const BoxDecoration(
-                  // color: Color.fromARGB(98, 255, 255, 255),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   color: Color(0xf1f1f1f1),
                   boxShadow: [
@@ -142,15 +131,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                // height: 300,
                 margin: const EdgeInsets.all(20),
                 width: double.infinity,
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-
-                  // color: const Color.fromARGB(22, 22, 22, 22),
-                  //  color: const Color(0x63FFFFFF),
                   height: 200,
                   child: Column(
                     children: [
@@ -218,7 +203,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           );
         },
       ),
-      // bottomNavigationBar: const Navigation(),
     );
   }
 }
