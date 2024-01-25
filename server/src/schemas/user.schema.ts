@@ -36,7 +36,7 @@ export class User {
     })
     password: string;
     @Prop()
-    mobile_number?: number;
+    mobile_number?: String;
     @Prop({ default: "User" })
     user_type: string;
 

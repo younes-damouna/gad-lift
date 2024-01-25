@@ -116,16 +116,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
                       handlePress: () async {
-                        var t = emailController.text;
-                        log('email $t');
-                        await AuthService.register(
+                       
+                       final response= await AuthService.register(
                           firstNameController.text,
                           lastNameController.text,
                           emailController.text,
                           passwordNameController.text,
+                            
                         );
+                        // if(response=='200'){
+                        //   log(response);
                         // ignore: use_build_context_synchronously
-                        Navigator.popAndPushNamed(context, '/login');
+                        await Navigator.popAndPushNamed(context, '/login');
+                      // }
                       },
                     ),
                     Row(

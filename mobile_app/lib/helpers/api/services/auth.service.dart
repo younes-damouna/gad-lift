@@ -41,7 +41,7 @@ abstract class AuthService {
       });
       log('${response.statusCode}');
 
-      return response.data;
+      return response.statusCode;
     } on DioException catch (e) {
      
            return e.response;

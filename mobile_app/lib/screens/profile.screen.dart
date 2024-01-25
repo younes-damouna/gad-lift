@@ -33,7 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       text: "${profileInfo.firstName} ${profileInfo.lastName}",
     );
     emailController = TextEditingController(text: profileInfo.email);
-    phoneController = TextEditingController();
+    phoneController = TextEditingController(text: profileInfo.mobileNumber);
 
     super.initState();
   }

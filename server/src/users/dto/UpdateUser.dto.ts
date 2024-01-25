@@ -9,7 +9,7 @@ export class UpdateUserDto {
 
     @IsOptional()
     @IsString()
-    mobile_number?: number;
+    mobile_number?: String;
 
     @IsOptional()
     @IsString()
