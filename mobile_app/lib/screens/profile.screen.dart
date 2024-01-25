@@ -46,7 +46,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final picker = ImagePicker();
     pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
-   
     setState(() {});
   }
 
@@ -78,11 +77,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SnackBar(content: Text('Processing Data')),
               );
               // If the form is valid, display a snackbar.
-            } 
-          
+            }
+
             final fullName = fullNameController.text.trim().split(' ');
             final response = await UserService.updateUser(
-                fullName[0], fullName[1], emailController.text, id,pickedFile
+                fullName[0], fullName[1], emailController.text, id, pickedFile
                 // passwordNameController.text,
                 );
             log('rsponse u: $response');
@@ -109,16 +108,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundColor: Colors.white,
                   radius: 50,
                   child: pickedFile == null
-                      ?profile.profile_img==''? ClipOval(
-                          child: Image.asset(
-                          'assets/images/avatar.png',
-                          width: 90,
-                        )):ClipOval(
-                          child: Image.network(
-                            profile.profile_img,
-                          // 'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
-                          width: 90,
-                        ))
+                      ? profile.profile_img == ''
+                          ? ClipOval(
+                              child: Image.asset(
+                              'assets/images/avatar.png',
+                              width: 90,
+                            ))
+                          : ClipOval(
+                              child: Image.network(
+                              profile.profile_img,
+                              // 'https://img.freepik.com/free-photo/pink-flower-white-background_1203-2127.jpg?size=626&ext=jpg',
+                              width: 90,
+                            ))
                       : ClipOval(
                           child: Image.file(
                           File(pickedFile!.path),
