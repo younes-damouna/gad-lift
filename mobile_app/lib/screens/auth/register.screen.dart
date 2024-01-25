@@ -28,13 +28,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     String firstName,
     String lastName,
   ) {
-    print('register $email, $password, $firstName,$lastName');
 
-    // if (_formKey.currentState!.validate()) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Good to go...')),
-    //   );
-    // }
+  
   }
 
   @override
@@ -45,21 +40,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       body: ListView(
         children: [
-          //  Scaffold(
-          // backgroundColor: const Color(0xFFF3F1F1),
-          // body:
+       
           Center(
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
-              // height: 200,
               child: Form(
                 child: Column(
                   key: _formKey,
                   children: [
                     Image.asset(
                       'assets/images/SignUp.png', fit: BoxFit.cover, width: 200,
-                      // colorBlendMode: BlendMode.colorBurn,
+                     
                     ),
                     InputGroup(
                       key: const Key('fname'),
@@ -90,11 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.remove_red_eye,
                     ),
 
-                    // Image.asset(
-                    //   'assets/images/googleButton.png', fit: BoxFit.cover,
-                    //   width: MediaQuery.of(context).size.width,
-                    //   // colorBlendMode: BlendMode.colorBurn,
-                    // ),
+                   
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10),
                       padding: const EdgeInsets.all(2),
@@ -164,7 +152,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           child: const SectionTitle(
                             title: "Sign In", size: 12, color: Colors.grey,
-                            // style: TextStyle(color: Colors.grey),
                           ),
                         ),
                       ],
@@ -174,17 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
           ),
-          //  Center(
-          //   child: Column(
-          //     children: [
-          //       // Center(child: Text('loginScreen')),
-          //       Center(
-          //       child:
-          //      )
-          //     ],
-          //   ),
-          // ),
-          // ),
+        
         ],
       ),
     );

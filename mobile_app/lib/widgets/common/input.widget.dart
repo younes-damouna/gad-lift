@@ -72,7 +72,7 @@ class _InputGroupState extends State<InputGroup> {
                   ),
                 ),
                 floatingLabelStyle:
-                    TextStyle(color: widget.color ?? Color.fromARGB(255, 0, 0, 0)),
+                    TextStyle(color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
                 label: SectionTitle(
                   title: widget.title,
                   size: 15,
@@ -98,7 +98,7 @@ class _InputGroupState extends State<InputGroup> {
 
                 suffix: Icon(
                   widget.icon,
-                  color: widget.color ?? Color.fromARGB(255, 0, 0, 0),
+                  color: widget.color ?? const Color.fromARGB(255, 0, 0, 0),
                 ),
 
                 border: const OutlineInputBorder(
@@ -108,16 +108,16 @@ class _InputGroupState extends State<InputGroup> {
                 ),
 
                 enabled: true,
-                focusColor: widget.color ?? Color.fromARGB(255, 0, 0, 0),
+                focusColor: widget.color ?? const Color.fromARGB(255, 0, 0, 0),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     // color: Colors.grey,
-                    color: widget.color ?? Color.fromARGB(255, 0, 0, 0),
+                    color: widget.color ?? const Color.fromARGB(255, 0, 0, 0),
                     style: BorderStyle.solid,
                     width: 2,
                   ),
                 ),
-                hoverColor: widget.color ?? Color.fromARGB(255, 0, 0, 0),
+                hoverColor: widget.color ?? const Color.fromARGB(255, 0, 0, 0),
 
                 // labelText: 'First Name'
                 // hintStyle:
