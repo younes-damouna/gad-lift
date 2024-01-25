@@ -19,7 +19,7 @@ export class AuthService {
     throw new HttpException('Wrong Email/Password', 401);
   }
   async register(@Body() createUserDto: CreateUserDto) {
-    // console.log("frontend");
+   
     return this.usersService.createUser(createUserDto)
   }
   async signIn(email: string, pass: string): Promise<any> {

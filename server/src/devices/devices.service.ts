@@ -19,12 +19,11 @@ export class DevicesService {
                 "statusCode": 200
             };
         } catch (error) {
-            console.log(error)
-            // Handle error
-            console.error('Error turning on LED on NodeMCU:', error.message);
-            // return  HttpException('wrong',400);
+
+            console.error('Error turning reaching to Node MCU', error.message);
+            return new HttpException(error.message, 400);
         }
 
-        console.log('called')
+
     }
 }

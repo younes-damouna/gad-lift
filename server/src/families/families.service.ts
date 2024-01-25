@@ -27,8 +27,7 @@ export class FamiliesService {
 
         family.parent = req.user.user._id;
         const createdFamily = (await family.save()).populate('parent')
-        // console.log(req.user.user._id)
-        // const family 
+      
         return createdFamily;
 
     }
@@ -59,8 +58,7 @@ export class FamiliesService {
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
 
-        // console.log(familyy)
-        // return user;
+
         if (member) {
             throw new BadRequestException({ message: "You Are Already a Member!" },)
         }
@@ -108,7 +106,7 @@ export class FamiliesService {
             })
             console.log(family);
             family.requests = allRequests;
-            // family.members.push({ status: "accepted", user: toBeAccepted[0]} );
+
             family.members.push(toBeAccepted[0]);
 
             return family.save();

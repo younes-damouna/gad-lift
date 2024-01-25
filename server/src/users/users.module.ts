@@ -35,7 +35,7 @@ import { FileController } from "src/file.controller";
                 expiresIn: '60d'
             },
         }),
-        // ,forwardRef(() => AuthModule),
+       
     ],
     providers: [UsersService, HashService, JwtStrategy],
     // register the usersController

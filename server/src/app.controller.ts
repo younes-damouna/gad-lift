@@ -23,24 +23,6 @@ export class AppController {
   googleAuthRedirect(@Req() req) {
     return this.appService.googleLogin(req)
   }
-  // @Get('/uploads/:filename')
-  // getImage(@Param('filename') filename: string, @Res() res: Response): void {
-    
-  //   const imagePath = path.join(__dirname, 'google/uploads',filename); // Adjust the path as needed
-  //   console.log(imagePath)
-
-  //   res.sendFile(imagePath);
-  // }
-
-  // @Get('/uploads/:filename')
-  // serveFile(@Param('filename') filename: string, @Res() res) {
-  //   const path = join(__dirname, '..', 'uploads', filename);
-  //   console.log(path)
-  //   if (existsSync(path)) {
-  //     return res.sendFile(path);
-  //   } else {
-  //     return res.status(404).send('File not found');
-  //   }
-  // }
+  
 }
 

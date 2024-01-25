@@ -19,8 +19,7 @@ export class Family {
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
     requests?: User[];
 
-    // @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
-    // members: { status: string, user: User }[];
+    
     @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'User' })
     members: User[];
 

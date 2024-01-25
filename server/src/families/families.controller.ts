@@ -15,14 +15,14 @@ export class FamiliesController {
 
 
         return this.familyService.createFamily(createFamilyDto, req)
-        // console.log(req.user)
+
     }
 
     @Post('/request-to-join')
     @UseGuards(AuthGuard)
-    
+
     async requestToJoinFamily(@Request() req, @Body('code') code) {
-        // console.log('REQ',req.user.user);
+
 
         return this.familyService.requestTojoinFamily(req, code);
 
@@ -30,9 +30,9 @@ export class FamiliesController {
 
     @Post('/get-requests')
     @UseGuards(AuthGuard)
-    
+
     async getRequests(@Request() req) {
-        // console.log('REQ',req.user.user);
+
 
         return this.familyService.getRequests(req);
 

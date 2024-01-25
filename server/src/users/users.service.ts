@@ -31,7 +31,6 @@ export class UsersService {
             const savedNewSettings = await newSettings.save()
             const newUser = new this.UserModel({ ...createUserDto, settings: savedNewSettings._id });
             newUser.password = await this.hashService.hashPassword(newUser.password);
-            // console.log(newUser)
             return newUser.save();
 
 
@@ -60,7 +59,6 @@ export class UsersService {
     }
     async findOne(email: string): Promise<any> {
         const user= await this.UserModel.findOne({ email }).select('+password').populate('settings');
-        //  console.log(user);
 
          return user;
 
