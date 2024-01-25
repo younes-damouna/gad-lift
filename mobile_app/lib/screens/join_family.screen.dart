@@ -67,37 +67,23 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                           color: Colors.black,
                         ),
                         PrimaryButton(
-                          
                             text: 'Join Family',
                             color: Colors.white,
                             bgColor: Colors.black,
-                            handlePress: () async
-                                //  async
-                                {
-                                    final response =
+                            handlePress: () async {
+                              final response =
                                   await FamilyService.requestJoinFamily(
                                 code.text,
                               );
-                              // print(_formKey.currentState!.validate());
-                              // if (_formKey.currentState!.validate()) {
-                                 if (!context.mounted) return;
-  // Navigator.pop(context); 
+                              if (!context.mounted) return;
+
                               ScaffoldMessenger.of(context).showSnackBar(
-                                 SnackBar(
+                                SnackBar(
                                     content: Text(await response['message'])),
                               );
-                              // ScaffoldMessenger.of(context).build((context)=>return Text('data'));
-                              // If the form is valid, display a snackbar.
-                              // }
-                            
-                              final storage = SecureStorage();
 
-                              final token =
-                                  await storage.getToken('access_token');
-                              log('$response');
-                               Navigator.popAndPushNamed(
-                                      context,
-                                     '/dashboard');
+                              // ignore: use_build_context_synchronously
+                              Navigator.popAndPushNamed(context, '/dashboard');
                             })
                       ],
                     ),
@@ -115,8 +101,9 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                maintainState: false,
-                                builder: (context) => const CreateFamily()),
+                              maintainState: false,
+                              builder: (context) => const CreateFamily(),
+                            ),
                           );
                         },
                         child: const SectionTitle(
