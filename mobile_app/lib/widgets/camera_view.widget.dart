@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CameraView extends StatefulWidget {
@@ -29,26 +28,19 @@ class _CameraViewState extends State<CameraView> {
           width: double.infinity,
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-
-         
             height: 200,
             child: Column(
               children: [
-             
                 Expanded(
                   child: Container(
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                     
                       ),
                       margin: const EdgeInsets.symmetric(vertical: 10),
-                     
-
                       width: double.infinity,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
-                            
                             'assets/images/banner.jpg',
                             width: double.infinity,
                             fit: BoxFit.cover,

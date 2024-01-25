@@ -27,10 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     String password,
     String firstName,
     String lastName,
-  ) {
-
-  
-  }
+  ) {}
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +37,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       body: ListView(
         children: [
-       
           Center(
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-
               child: Form(
                 child: Column(
                   key: _formKey,
                   children: [
                     Image.asset(
-                      'assets/images/SignUp.png', fit: BoxFit.cover, width: 200,
-                     
+                      'assets/images/SignUp.png',
+                      fit: BoxFit.cover,
+                      width: 200,
                     ),
                     InputGroup(
                       key: const Key('fname'),
@@ -81,8 +77,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       secure: true,
                       icon: Icons.remove_red_eye,
                     ),
-
-                   
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10),
                       padding: const EdgeInsets.all(2),
@@ -116,7 +110,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ]),
                       ),
                     ),
-
                     PrimaryButton(
                       key: const Key('register'),
                       text: 'Register',
@@ -151,7 +144,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     builder: (context) => const LoginScreen()));
                           },
                           child: const SectionTitle(
-                            title: "Sign In", size: 12, color: Colors.grey,
+                            title: "Sign In",
+                            size: 12,
+                            color: Colors.grey,
                           ),
                         ),
                       ],
@@ -161,7 +156,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
           ),
-        
         ],
       ),
     );
