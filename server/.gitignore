@@ -44,3 +44,4 @@ lerna-debug.log*
 #constants
 constants.ts
 uploads
+firebase-admin-sdk.json

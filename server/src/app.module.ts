@@ -12,17 +12,19 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { FileController } from './file.controller';
 import { PushNotificationsController } from './push-notifications/push-notifications.controller';
 import { PushNotificationsModule } from './push-notifications/push-notifications.module';
-import { PushNotificationsModule } from './push-notifications/push-notifications.module';
-import { PushNotificationsModule } from './push-notifications/push-notifications.module';
+import { PushNotificationsService } from './push-notifications/push-notifications.service';
+
 
 
 
 @Module({
   imports: [  
   
-    ConfigModule.forRoot({isGlobal:true
-      // ,
-      // envFilePath:'../.env'
+    ConfigModule.forRoot({isGlobal:true,
+
+      
+      
+      envFilePath:'../.env'
     }
       ),
     // importing Mongoose model and load env url
@@ -31,6 +33,7 @@ import { PushNotificationsModule } from './push-notifications/push-notifications
       inject:[ConfigService],
       useFactory:async (config:ConfigService)=>({
         uri:config.get<string>('MONGODB_URL')
+
       })
     }),
     // registring the users module
@@ -42,7 +45,7 @@ import { PushNotificationsModule } from './push-notifications/push-notifications
    
    
   ],
-  controllers: [AppController, FileController, PushNotificationsController, ],
-  providers: [AppService,GoogleStrategy, ],
+  controllers: [AppController, FileController, ],
+  providers: [AppService,GoogleStrategy,PushNotificationsService ],
 })
 export class AppModule {}
