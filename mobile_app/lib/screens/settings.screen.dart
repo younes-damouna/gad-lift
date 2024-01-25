@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                        Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          parent?SectionTitle(title: 'Requests', size: 18):Container(),
+                          parent?const SectionTitle(title: 'Requests', size: 18):Container(),
                           parent?  TextButton(
                         onPressed: () {
                           // req();
