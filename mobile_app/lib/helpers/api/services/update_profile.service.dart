@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -40,7 +39,7 @@ abstract class UserService {
         '${ApiRoutes.profile}/$id',
         data: formData,
       );
-     
+
       return response.data;
     } on DioException catch (e) {
       return e.response;

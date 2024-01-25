@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/control.service.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
