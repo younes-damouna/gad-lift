@@ -18,33 +18,33 @@ import { from, Observable } from 'rxjs';
 
 @Injectable()
 export class PushNotificationsService {
-  private messaging: admin.messaging.Messaging;
-  private readonly app: admin.app.App;
+    private messaging: admin.messaging.Messaging;
+    private readonly app: admin.app.App;
 
-  constructor() {
-    const serviceAccount = require('./../../firebase-admin-sdk.json')
-    if (!admin.apps.length) {
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    },      
-    );
-} else {
-    // Use the default app if it has already been initialized
-    this.app = admin.app();
-  }
+    constructor() {
+        const serviceAccount = require('./../../firebase-admin-sdk.json')
+        if (!admin.apps.length) {
+            admin.initializeApp({
+                credential: admin.credential.cert(serviceAccount),
+            },
+            );
+        } else {
+            // Use the default app if it has already been initialized
+            this.app = admin.app();
+        }
 
-    this.messaging = admin.messaging();
-  }
+        this.messaging = admin.messaging();
+    }
 
-  async send(token: string, title: string, body: string) {
-    const message: admin.messaging.Message = {
-      notification: {
-        title: title,
-        body: body,
-      },
-      token: token,
-    };
-
-    return  from(this.messaging.send(message));
-  }
+    async send(token: string, title: string, body: string) {
+        const message: admin.messaging.Message = {
+            notification: {
+                title: title,
+                body: body,
+            },
+            token: token,
+        };
+        console.log("hello "+this.messaging.send(message));
+        return from(this.messaging.send(message));
+    }
 }

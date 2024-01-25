@@ -5,6 +5,7 @@ import { createFamilyDto } from './dto/CreateFamily.dto';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Roles } from 'src/customDecorators/roles.decorator';
 import { Role } from 'src/enums/role.enum';
+import { PushNotificationsService } from 'src/push-notifications/push-notifications.service';
 
 @Controller('families')
 export class FamiliesController {
@@ -25,6 +26,7 @@ export class FamiliesController {
 
 
         return this.familyService.requestTojoinFamily(req, code);
+
 
     }
 

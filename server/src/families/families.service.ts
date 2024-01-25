@@ -4,10 +4,11 @@ import mongoose, { Model } from 'mongoose';
 import { Family } from 'src/schemas/family.schema';
 import { createFamilyDto } from './dto/CreateFamily.dto';
 import { User } from 'src/entities/user.entity';
+import { PushNotificationsService } from 'src/push-notifications/push-notifications.service';
 
 @Injectable()
 export class FamiliesService {
-    constructor(@InjectModel(Family.name) private FamilyModel: Model<Family>) {
+    constructor(@InjectModel(Family.name) private FamilyModel: Model<Family>,private pushNotificationsService:PushNotificationsService) {
 
 
 
@@ -70,6 +71,7 @@ export class FamiliesService {
 
         const family = await this.findFamily(code);
         const member = await this.checkUserIfMember(req.user.user._id);
+       
 
 
         if (member) {
@@ -90,6 +92,8 @@ export class FamiliesService {
                 }
             }
             family.requests.push(req.user.user);
+            this.pushNotificationsService.send(`eTik-Vl-RVWFzBskKM0bN5:APA91bHciqOX23KU1H7sLi5xIGMarRdMxC1okQ3bO-hkyG4sCrvCAFwUN1WlHYAZuYgqlgh1JZIDERGGovrB0jr6ulm8yprs6s_JsgzbFdTigQ5komJzTVyqFLRfakZSCAhOFFGzl3Wm`, `Welcome ${req.user.user.first_name} ${req.user.user.last_name}`, 'string');
+
             return (await family.save()).populate('requests');
 
         }

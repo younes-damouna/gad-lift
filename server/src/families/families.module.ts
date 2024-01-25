@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { Family, FamilySchema } from "src/schemas/family.schema";
 import { FamiliesController } from './families.controller';
 import { FamiliesService } from './families.service';
+import { PushNotificationsService } from "src/push-notifications/push-notifications.service";
 
 
 @Module({
@@ -17,7 +18,7 @@ import { FamiliesService } from './families.service';
             ]
         )
     ],
-    providers: [FamiliesService],
+    providers: [FamiliesService,PushNotificationsService,],
     exports: [],
     controllers: [FamiliesController]
 })
