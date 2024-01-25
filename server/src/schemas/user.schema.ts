@@ -27,7 +27,7 @@ export class User {
         trim: true
     })
     email: string;
-    @Prop()
+    @Prop({ default: "" })
     profile_img: string;
     @Prop({
 

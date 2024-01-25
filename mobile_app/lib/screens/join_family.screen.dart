@@ -72,13 +72,14 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                                   await FamilyService.requestJoinFamily(
                                 code.text,
                               );
-                              if (!context.mounted) return;
-
+                              // if (!context.mounted) return;
+                              if(response['statusCode']==200 || response['statusCode']==201 ){
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                    content: Text(await response['message'])),
+                                const SnackBar(
+                                    content: Text('Request Sent Successfully!')),
                               );
-
+                              }
                               // ignore: use_build_context_synchronously
                               Navigator.popAndPushNamed(context, '/dashboard');
                             })

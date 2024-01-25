@@ -114,14 +114,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               // print(_formKey.currentState!.validate());
                               if (_formKey.currentState!.validate()) {
                                 // If the form is valid, display a snackbar.
-
                                 final response = await AuthService.login(
                                   emailController.text,
                                   passwordNameController.text,
-                                );
+                                );                                  
+
                                 // log('${response.data['message']}');
                                 if (response['statusCode'] == 200) {
                                   final user = User.fromJson(response['user']);
+                                      log('${response}');
                                   final storage = SecureStorage();
                                   await storage.saveToken(
                                       'access_token', response['access_token']);

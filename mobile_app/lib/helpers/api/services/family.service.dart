@@ -22,8 +22,7 @@ abstract class FamilyService {
           "code": code,
         },
       );
-      log(response.statusCode as String);
-      log('response : ${response.data}');
+     
       return response.data;
     } on DioException catch (e) {
       return e.response;
@@ -45,11 +44,11 @@ abstract class FamilyService {
           "floor": floor,
         },
       );
-      log(response.statusCode as String);
-      log('response : ${response.data}');
+     
       return response.data;
     } on DioException catch (e) {
       return e.response;
     }
   }
 }
+
