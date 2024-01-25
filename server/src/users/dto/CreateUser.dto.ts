@@ -16,6 +16,9 @@ export class CreateUserDto {
     @IsString()
     first_name: string;
 
+    @IsOptional()
+    mobile_number?: number;
+    
     @IsNotEmpty()
     @IsString()
     last_name: string;
