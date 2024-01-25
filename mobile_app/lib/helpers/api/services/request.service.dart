@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -18,18 +17,14 @@ abstract class RequestService {
       dio.options.headers = header;
       final response = await dio.post(
         ApiRoutes.getRequests,
-      
       );
-      // log('response : ${response}');
       return response.data;
     } on DioException catch (e) {
       return e.response;
     }
   }
 
-
-
-    static Future acceptMember(String id) async {
+  static Future acceptMember(String id) async {
     try {
       final storage = SecureStorage();
 
@@ -38,14 +33,7 @@ abstract class RequestService {
         HttpHeaders.authorizationHeader: token,
       };
       dio.options.headers = header;
-      final response = await dio.post(
-        ApiRoutes.acceptMember,
-        data: {
-          "id":id
-        }
-      
-      );
-      // log('response : ${response}');
+      final response = await dio.post(ApiRoutes.acceptMember, data: {"id": id});
       return response.data;
     } on DioException catch (e) {
       return e.response;
