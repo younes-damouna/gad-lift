@@ -145,10 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               context: context,
                               barrierDismissible: false,
                               builder: (BuildContext context) => const Loading(
-                                  color: Colors.grey, text: "Error Try again later ..."),
+                                  color: Colors.grey,
+                                  text: "Error Try again later ..."),
                             );
-                    
-                              
                           }
                         }
                       },

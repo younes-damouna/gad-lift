@@ -13,16 +13,20 @@ abstract class AuthService {
       });
       // log('response: ${response.data['user']}');
       // if (response.statusCode == 200) {
-         return response.data;
-        //   return {
-        //   "response":response.data,
-        //    "statusCode":response.statusCode
-        //  };
+        //  return response.data;
+          return {
+          "user":response.data['user'],
+           "statusCode":response.statusCode,
+           'access_token':response.data['access_token']
+         };
 
   // } 
   // return {response.data};
     } on DioException catch (e) {
-      return e.response;
+      return { "response":"",
+        "statusCode": e.response?.statusCode,
+        "statusMessage":e.response?.data['message']
+      };
     }
   }
 

@@ -10,6 +10,7 @@ import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
+import 'package:mobile_app/widgets/common/loading.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 import 'package:provider/provider.dart';
@@ -115,9 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   emailController.text,
                                   passwordNameController.text,
                                 );
-                                log('$response');
-                                // log('${response.data['message']}');
-                                if (response['statusCode'] == 200) {
+                            
+                                if (response?['statusCode'] == 200) {
                                   final user = User.fromJson(response['user']);
                                   log('${response['user']}');
                                   final storage = SecureStorage();
@@ -131,7 +131,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                     context,
                                     listen: false,
                                   ).getProfile(user);
+                                    // ignore: use_build_context_synchronously
+                                    showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) => const Loading(
+                                  color: Colors.green, text: "Success..."),
+                            );
+
                                   // ignore: use_build_context_synchronously
+                                  Navigator.pop(context, '/login');
                                   Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
@@ -139,12 +148,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                               const ConnectDeviceScreen()));
 
                                   log('user: $user');
-                                } else if (response.data['statusCode'] == 401) {
+                                } else if (response['statusCode']== 400 ||response['statusCode']== 401 ) {
                                   // ignore: use_build_context_synchronously
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                     SnackBar(
                                         content: Text(
-                                            '${response.data['message']}')),
+                                            '${response['statusMessage']}')),
                                   );
                                 }
                               }
