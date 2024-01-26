@@ -39,12 +39,12 @@ abstract class AuthService {
         "email": email,
         "password": password,
       });
-      log('${response.statusCode}');
+      log('codeing ${response.statusCode}');
 
       return response.statusCode;
     } on DioException catch (e) {
      
-           return e.response;
+           return e.response?.statusCode;
 
     }
   }

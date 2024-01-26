@@ -38,7 +38,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Form(
                 key: formKey,
                 child: Column(
-                  
                   children: [
                     Image.asset(
                       'assets/images/SignUp.png',
@@ -54,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
-                      handleValidation:Validator.validateName,
+                      handleValidation: Validator.validateName,
                       key: const Key('lname'),
                       controller: lastNameController,
                       title: 'Last Name',
@@ -123,13 +122,61 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             emailController.text,
                             passwordNameController.text,
                           );
-                          // if(response=='200'){
-                          //   log(response);
-                          // ignore: use_build_context_synchronously
-                           Navigator.popAndPushNamed(context, '/login');
-                        }
+                          log('response ${response.runtimeType}');
+                          if (response == 200) {
+                            log('log200');
+                            // ignore: use_build_context_synchronously
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return const Dialog(
+                                  child: Padding(
+                                    padding: EdgeInsets.all(20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        CircularProgressIndicator(
+                                          color: Colors.green,
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text("Loading..."),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                            await Future.delayed(const Duration(seconds: 3));
 
-                        // }
+                            // ignore: use_build_context_synchronously
+                            Navigator.popAndPushNamed(context, '/login');
+                          } else if (response == 400) {
+                            log('inregister');
+                            // ignore: use_build_context_synchronously
+                            showDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (BuildContext context) {
+                                return const Dialog(
+                                  child: Padding(
+                                    padding: EdgeInsets.all(20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        CircularProgressIndicator(
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text("Error Try again later"),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          }
+                        }
                       },
                     ),
                     Row(
