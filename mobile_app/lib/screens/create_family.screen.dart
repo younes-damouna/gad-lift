@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -53,7 +54,7 @@ class _CreateFamilyState extends State<CreateFamily> {
                     child: Column(
                       children: [
                         InputGroup(
-                          handleValidation: () {},
+                          handleValidation: Validator.validateFloor,
                           controller: text,
                           title: 'Floor Number',
                           secure: false,

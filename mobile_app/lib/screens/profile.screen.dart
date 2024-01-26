@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -76,6 +77,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   phoneController.text);
 
               final user = User.fromJson(response['user']);
+              log('user: ${response['user']}');
 
               // ignore: use_build_context_synchronously
               Provider.of<ProfileProvider>(

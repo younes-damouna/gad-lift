@@ -88,4 +88,15 @@ class Validator {
     }
     return null;
   }
+
+
+   static  validateFloor(String value) {
+    int? floorNumber = int.tryParse(value);
+    if (floorNumber == null) {
+      return "Floor must be a number";
+    } else if (floorNumber < 1 || floorNumber > 6) {
+      return "Floor must be a number between 1 and 6";
+    }
+    return null;
+  }
 }

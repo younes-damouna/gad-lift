@@ -59,8 +59,8 @@ class _InputGroupState extends State<InputGroup> {
               controller: widget.controller,
               scrollPadding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              autovalidateMode: AutovalidateMode.always,
-              // autovalidateMode: AutovalidateMode.onUserInteraction,
+              // autovalidateMode: AutovalidateMode.always,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               // keyboardAppearance: Brightness.da,
               // autofocus: true,
               // keyboardType: TextInputType.emailAddress,

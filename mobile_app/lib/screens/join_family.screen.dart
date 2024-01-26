@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/create_family.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -28,7 +29,7 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
         children: [
           Container(
             alignment: AlignmentDirectional.center,
-            height: 300,
+            height: 305,
             margin: const EdgeInsets.all(20),
             decoration: const BoxDecoration(
               // color: Color.fromARGB(98, 255, 255, 255),
@@ -48,9 +49,9 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
                   const SectionTitle(title: '6 Digits Code', size: 14),
                   const SizedBox(
                     height: 10,
@@ -59,8 +60,7 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                     child: Column(
                       children: [
                         InputGroup(
-                                                          handleValidation: (){},
-
+                          handleValidation: Validator.validateFamilyCode,
                           controller: code,
                           title: 'Family Code',
                           secure: false,
