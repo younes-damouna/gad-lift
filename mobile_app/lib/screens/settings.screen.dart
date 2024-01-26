@@ -110,17 +110,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          parent?const SectionTitle(title: 'Requests', size: 18):Container(),
-                          parent?  TextButton(
-                        onPressed: () {
-                          // req();
-                          Navigator.popAndPushNamed(context, '/login');
-                        },
-                        child: const Text('Log Out',style: TextStyle(color: Color.fromARGB(255, 184, 71, 63)),),
-                      ):Container()
+                          parent
+                              ? const SectionTitle(title: 'Requests', size: 18)
+                              : Container(),
+                          parent
+                              ? TextButton(
+                                  onPressed: () {
+                                    // req();
+                                    Navigator.popAndPushNamed(
+                                        context, '/login');
+                                  },
+                                  child: const Text(
+                                    'Log Out',
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 184, 71, 63)),
+                                  ),
+                                )
+                              : Container()
                         ],
                       ),
                       parent
@@ -177,7 +187,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           EdgeInsets.symmetric(vertical: 10.0),
                                       child: SectionTitle(
                                           title:
-                                              'You don\'t have new Requests!',
+                                              'You don\'t have new requests!',
                                           size: 14),
                                     );
                                   }
@@ -185,15 +195,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               ),
                             )
                           : Container(),
-                      const Divider(
+                      parent? Divider(
                         color: Colors.black,
                         height: 20,
                         thickness: 2,
-                      ),
-                      const Row(
+                      ):Container(),
+                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SectionTitle(title: 'Members', size: 18),
+                           
+                              const SectionTitle(title: 'Members', size: 18),
+                               Container(),
+                          !parent
+                              ? TextButton(
+                                  onPressed: () {
+                                    // req();
+                                    Navigator.popAndPushNamed(
+                                        context, '/login');
+                                  },
+                                  child: const Text(
+                                    'Log Out',
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 184, 71, 63)),
+                                  ),
+                                )
+                              : Container()
                         ],
                       ),
                       SizedBox(
@@ -210,23 +237,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           255, 95, 158, 104),
                                       text:
                                           '${member.members[i].first_name} ${member.members[i].last_name}',
-                                      handlePress: () {
-                                      
-                                       
-                                      },
+                                      handlePress: () {},
                                     );
                                   });
                             } else {
                               return const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 10.0),
                                 child: SectionTitle(
-                                    title: 'There is no Members!', size: 14),
+                                    title: 'There are no members!', size: 14),
                               );
                             }
                           },
                         ),
                       ),
-                    
                     ],
                   ),
                 ),

@@ -6,8 +6,8 @@ class ProfileProvider with ChangeNotifier {
   String email;
   String firstName;
   String lastName;
-    String profileIimg;
-    String mobileNumber;
+  String profileIimg;
+  String mobileNumber;
 
 
   ProfileProvider({
