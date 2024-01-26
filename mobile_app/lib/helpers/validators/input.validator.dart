@@ -28,4 +28,12 @@ class Validator {
       return null;
     }
   }
+
+
+    static  validatePassword(String value) {
+    if (value.length < 8) {
+      return "Password must be at least 8 characters";
+    }
+    return null;
+  }
 }

@@ -60,11 +60,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             title: 'Email',
                             secure: false,
                             icon: Icons.person_2_outlined,
-                            handleValidation:(){}
+                            handleValidation: Validator.validateEmail,
                           ),
                           InputGroup(
-                                                            handleValidation: (){},
-
+                            handleValidation: Validator.validatePassword,
                             controller: passwordNameController,
                             title: 'Password',
                             secure: true,
@@ -121,13 +120,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 final response = await AuthService.login(
                                   emailController.text,
                                   passwordNameController.text,
-                                );                                  
- log('$response');
+                                );
+                                log('$response');
                                 // log('${response.data['message']}');
                                 if (response['statusCode'] == 200) {
-                                 
                                   final user = User.fromJson(response['user']);
-                                      log('${response['user']}');
+                                  log('${response['user']}');
                                   final storage = SecureStorage();
                                   await storage.saveToken(
                                       'access_token', response['access_token']);
