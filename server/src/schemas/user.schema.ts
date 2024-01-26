@@ -35,8 +35,10 @@ export class User {
         minlength: 8,
     })
     password: string;
-    @Prop()
+
+    @Prop({ required: false,default: "" })
     mobile_number?: String;
+
     @Prop({ default: "User" })
     user_type: string;
 

@@ -49,7 +49,8 @@ export class UserController {
     ) profile_img?: Express.Multer.File) {
         const port = this.configService.get<string>('PORT');
 
-        const path = `http://${request.hostname}:${port}/uploads/${profile_img.filename.replace(/\\/g, '/')}`;
+        let path =''
+        if(profile_img?.fieldname) path=`http://${request.hostname}:${port}/uploads/${profile_img?.filename.replace(/\\/g, '/')}`;
         updateUserDto.profile_img = path
         const isValidId = mongoose.Types.ObjectId.isValid(id);
         if (!isValidId) throw new HttpException('Invalid ID', 400);
