@@ -168,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 0,
                               ),
                               InputGroup(
-                                handleValidation: () {},
+                                handleValidation: Validator.validateEmail,
                                 key: const Key('email'),
                                 controller: emailController,
                                 title: 'Email',
@@ -180,7 +180,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 0,
                               ),
                               InputGroup(
-                                handleValidation: () {},
+                                handleValidation: Validator.validatePhoneNumber,
                                 key: const Key('mobile'),
                                 controller: phoneController,
                                 title: 'Mobile Number',

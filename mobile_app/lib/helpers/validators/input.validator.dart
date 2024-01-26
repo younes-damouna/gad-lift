@@ -29,16 +29,16 @@ class Validator {
     }
   }
 
-
-    static  validatePassword(String value) {
+  static validatePassword(String value) {
     if (value.length < 8) {
       return "Password must be at least 8 characters";
     }
     return null;
   }
 
-   static  validateIP(String value) {
-    String pattern = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$';
+  static validateIP(String value) {
+    String pattern =
+        r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$';
     RegExp regExp = RegExp(pattern);
     if (value.isEmpty) {
       return "IP Address is Required";
@@ -48,7 +48,7 @@ class Validator {
     return null;
   }
 
-   static  validateFullName(String value) {
+  static validateFullName(String value) {
     if (value.isEmpty) {
       return "Full Name is Required";
     }
@@ -60,6 +60,20 @@ class Validator {
       if (part.length < 2 || !RegExp(r'^[a-zA-Z]+$').hasMatch(part)) {
         return "Each word must be at least 2 characters long";
       }
+    }
+    return null;
+  }
+
+
+
+
+   static  validatePhoneNumber(String value) {
+    String pattern = r'^\d{8}$';
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
+      return "Phone number is Required";
+    } else if (!regExp.hasMatch(value)) {
+      return "Phone number must be exactly 8 digits";
     }
     return null;
   }
