@@ -25,6 +25,7 @@ dependencies:
   firebase_core: ^2.24.2
   image_picker: ^1.0.7
   fl_chart: ^0.66.1
+  google_sign_in: ^6.2.1
   
   
 

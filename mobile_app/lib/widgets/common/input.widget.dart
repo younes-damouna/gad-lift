@@ -10,7 +10,7 @@ class InputGroup extends StatefulWidget {
   final TextEditingController controller;
   final Color? color;
   final bool? numpad;
-    final Function handleValidation;
+  final Function handleValidation;
 
   // final double size;
   const InputGroup(
@@ -21,7 +21,7 @@ class InputGroup extends StatefulWidget {
       required this.icon,
       this.color,
       this.numpad,
-       required this.handleValidation
+      required this.handleValidation
       //  required this.size
       });
 
@@ -30,7 +30,6 @@ class InputGroup extends StatefulWidget {
 }
 
 class _InputGroupState extends State<InputGroup> {
-
   @override
   Widget build(BuildContext context) {
     // widget.controller.buildTextSpan(context: context, withComposing: false);
@@ -48,13 +47,13 @@ class _InputGroupState extends State<InputGroup> {
                   color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
 
               onFieldSubmitted: (value) {},
-              validator: (value) 
-                // if (value == null || value.isEmpty) {
-                //   return 'Please enter ${widget.title}';
-                // }
-                // return null;
-              => widget.handleValidation(value) 
-              ,
+              validator: (value)
+                  // if (value == null || value.isEmpty) {
+                  //   return 'Please enter ${widget.title}';
+                  // }
+                  // return null;
+                  =>
+                  widget.handleValidation(value),
 
               controller: widget.controller,
               scrollPadding: EdgeInsets.only(
@@ -77,8 +76,8 @@ class _InputGroupState extends State<InputGroup> {
                     Radius.circular(10),
                   ),
                 ),
-                floatingLabelStyle:
-                    TextStyle(color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
+                floatingLabelStyle: TextStyle(
+                    color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
                 label: SectionTitle(
                   title: widget.title,
                   size: 15,
