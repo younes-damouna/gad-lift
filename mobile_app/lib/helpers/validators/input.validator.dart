@@ -77,4 +77,15 @@ class Validator {
     }
     return null;
   }
+
+   static  validateFamilyCode(String value) {
+    String pattern = r'^\d{6}$';
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
+      return "Family code is required";
+    } else if (!regExp.hasMatch(value)) {
+      return "Family code must be exactly 6 digits";
+    }
+    return null;
+  }
 }

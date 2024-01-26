@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -64,7 +65,7 @@ class ConnectDeviceScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         InputGroup(
-                                                          handleValidation: (){},
+                                                          handleValidation: Validator.validateIP,
 
                           controller: text,
                           title: 'Ip Address',

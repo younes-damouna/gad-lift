@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController passwordNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   emailController.text,
                                   passwordNameController.text,
                                 );
-                            
+
                                 if (response?['statusCode'] == 200) {
                                   final user = User.fromJson(response['user']);
                                   log('${response['user']}');
@@ -131,16 +131,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                     context,
                                     listen: false,
                                   ).getProfile(user);
-                                    // ignore: use_build_context_synchronously
-                                    showDialog(
-                              context: context,
-                              barrierDismissible: false,
-                              builder: (BuildContext context) => const Loading(
-                                  color: Colors.green, text: "Success..."),
-                            );
+                                  // ignore: use_build_context_synchronously
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) =>
+                                        const Loading(
+                                            color: Colors.green,
+                                            text: "Success..."),
+                                  );
+                            await Future.delayed(const Duration(seconds: 3));
 
                                   // ignore: use_build_context_synchronously
                                   Navigator.pop(context, '/login');
+                                  // ignore: use_build_context_synchronously
                                   Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
@@ -148,10 +152,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                               const ConnectDeviceScreen()));
 
                                   log('user: $user');
-                                } else if (response['statusCode']== 400 ||response['statusCode']== 401 ) {
+                                } else if (response['statusCode'] == 400 ||
+                                    response['statusCode'] == 401) {
                                   // ignore: use_build_context_synchronously
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                     SnackBar(
+                                    SnackBar(
                                         content: Text(
                                             '${response['statusMessage']}')),
                                   );
