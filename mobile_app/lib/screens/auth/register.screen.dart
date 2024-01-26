@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
@@ -16,18 +17,12 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
 
   TextEditingController passwordNameController = TextEditingController();
-  void handlePress(
-    String email,
-    String password,
-    String firstName,
-    String lastName,
-  ) {}
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +36,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Form(
+                key: formKey,
                 child: Column(
-                  key: _formKey,
+                  
                   children: [
                     Image.asset(
                       'assets/images/SignUp.png',
@@ -50,8 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: 200,
                     ),
                     InputGroup(
-                                                      handleValidation: (){},
-
+                      handleValidation: Validator.validateName,
                       key: const Key('fname'),
                       controller: firstNameController,
                       title: 'First Name',
@@ -59,8 +54,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
-                                                      handleValidation: (){},
-
+                      handleValidation:Validator.validateName,
                       key: const Key('lname'),
                       controller: lastNameController,
                       title: 'Last Name',
@@ -68,8 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
-                                                      handleValidation: (){},
-
+                      handleValidation: Validator.validateEmail,
                       key: const Key('email'),
                       controller: emailController,
                       title: 'Email',
@@ -77,8 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.email,
                     ),
                     InputGroup(
-                                                      handleValidation: (){},
-
+                      handleValidation: Validator.validatePassword,
                       key: const Key('password'),
                       controller: passwordNameController,
                       title: 'Password',
@@ -124,19 +116,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Colors.white,
                       bgColor: const Color(0xFF2FE2EE),
                       handlePress: () async {
-                       
-                       final response= await AuthService.register(
-                          firstNameController.text,
-                          lastNameController.text,
-                          emailController.text,
-                          passwordNameController.text,
-                            
-                        );
-                        // if(response=='200'){
-                        //   log(response);
-                        // ignore: use_build_context_synchronously
-                        await Navigator.popAndPushNamed(context, '/login');
-                      // }
+                        if (formKey.currentState!.validate()) {
+                          final response = await AuthService.register(
+                            firstNameController.text,
+                            lastNameController.text,
+                            emailController.text,
+                            passwordNameController.text,
+                          );
+                          // if(response=='200'){
+                          //   log(response);
+                          // ignore: use_build_context_synchronously
+                           Navigator.popAndPushNamed(context, '/login');
+                        }
+
+                        // }
                       },
                     ),
                     Row(

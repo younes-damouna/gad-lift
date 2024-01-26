@@ -156,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 20,
                               ),
                               InputGroup(
-                                handleValidation:Validator.validateFullName,
+                                handleValidation: Validator.validateFullName,
                                 key: const Key('fname'),
                                 controller: fullNameController,
                                 title: 'Full Name',

@@ -26,13 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController passwordNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  validate(value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter some text';
-    }
-    return null;
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

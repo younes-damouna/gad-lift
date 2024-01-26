@@ -30,6 +30,7 @@ class InputGroup extends StatefulWidget {
 }
 
 class _InputGroupState extends State<InputGroup> {
+
   @override
   Widget build(BuildContext context) {
     // widget.controller.buildTextSpan(context: context, withComposing: false);
@@ -58,8 +59,8 @@ class _InputGroupState extends State<InputGroup> {
               controller: widget.controller,
               scrollPadding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              // autovalidateMode: AutovalidateMode.always,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              autovalidateMode: AutovalidateMode.always,
+              // autovalidateMode: AutovalidateMode.onUserInteraction,
               // keyboardAppearance: Brightness.da,
               // autofocus: true,
               // keyboardType: TextInputType.emailAddress,
