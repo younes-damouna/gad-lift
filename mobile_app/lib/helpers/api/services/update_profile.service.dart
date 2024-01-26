@@ -8,7 +8,7 @@ import 'package:mobile_app/helpers/storage/secure.storage.dart';
 
 abstract class UserService {
   static Future updateUser(String? firstName, String? lastName, String? email,
-      String id, XFile? pickedFile) async {
+      String id, XFile? pickedFile,String? mobileNumber) async {
     try {
       FormData formData = FormData();
       if (pickedFile != null) {
@@ -18,12 +18,15 @@ abstract class UserService {
                   pickedFile.name.toString().replaceAll(' ', '').toLowerCase()),
           "first_name": firstName,
           "last_name": lastName,
+          "mobile_number":mobileNumber,
           "email": email,
         });
       } else {
         formData = FormData.fromMap({
           "first_name": firstName,
           "last_name": lastName,
+                    "mobile_number":mobileNumber,
+
           "email": email,
         });
       }

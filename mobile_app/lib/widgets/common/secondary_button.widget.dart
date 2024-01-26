@@ -44,13 +44,14 @@ class _SecondaryButtonState extends State<SecondaryButton> {
               MaterialStatePropertyAll(Color.fromARGB(67, 47, 225, 238)),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ButtonTitle(
               title: widget.text,
               size: 20,
               color: Colors.black,
             ),
+            // SizedBox(width: 10,),
             Icon(
               widget.icon,
               color: Colors.black,

@@ -72,6 +72,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 emailController.text,
                 id,
                 pickedFile,
+                phoneController.text
+                
               );
 
               final user = User.fromJson(response['user']);
