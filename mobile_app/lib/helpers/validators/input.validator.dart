@@ -36,4 +36,15 @@ class Validator {
     }
     return null;
   }
+
+   static  validateIP(String value) {
+    String pattern = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$';
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
+      return "IP Address is Required";
+    } else if (!regExp.hasMatch(value)) {
+      return "Format should look like 192.168.0.200";
+    }
+    return null;
+  }
 }

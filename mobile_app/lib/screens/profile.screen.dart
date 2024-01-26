@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mobile_app/helpers/api/services/update_profile.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
@@ -155,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 20,
                               ),
                               InputGroup(
-                                handleValidation: () {},
+                                handleValidation:(){},
                                 key: const Key('fname'),
                                 controller: fullNameController,
                                 title: 'Full Name',
