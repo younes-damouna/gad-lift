@@ -6,6 +6,7 @@ import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
+import 'package:mobile_app/widgets/common/loading.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 
@@ -129,24 +130,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             showDialog(
                               context: context,
                               barrierDismissible: false,
-                              builder: (BuildContext context) {
-                                return const Dialog(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(20.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CircularProgressIndicator(
-                                          color: Colors.green,
-                                        ),
-                                        SizedBox(width: 20),
-                                        Text("Loading..."),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
+                              builder: (BuildContext context) => const Loading(
+                                  color: Colors.green, text: "Loading..."),
                             );
+
                             await Future.delayed(const Duration(seconds: 3));
 
                             // ignore: use_build_context_synchronously
@@ -156,25 +143,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             // ignore: use_build_context_synchronously
                             showDialog(
                               context: context,
-                              barrierDismissible: true,
-                              builder: (BuildContext context) {
-                                return const Dialog(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(20.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CircularProgressIndicator(
-                                          color: Colors.grey,
-                                        ),
-                                        SizedBox(width: 20),
-                                        Text("Error Try again later"),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
+                              barrierDismissible: false,
+                              builder: (BuildContext context) => const Loading(
+                                  color: Colors.grey, text: "Error Try again later ..."),
                             );
+                    
+                              
                           }
                         }
                       },
