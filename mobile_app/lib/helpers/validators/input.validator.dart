@@ -47,4 +47,20 @@ class Validator {
     }
     return null;
   }
+
+   static  validateFullName(String value) {
+    if (value.isEmpty) {
+      return "Full Name is Required";
+    }
+    List<String> nameParts = value.trim().split(' ');
+    if (nameParts.length < 2) {
+      return "Full Name must be at least two words";
+    }
+    for (String part in nameParts) {
+      if (part.length < 2 || !RegExp(r'^[a-zA-Z]+$').hasMatch(part)) {
+        return "Each word must be at least 2 characters long";
+      }
+    }
+    return null;
+  }
 }

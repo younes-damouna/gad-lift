@@ -10,13 +10,13 @@ export type UserDocument = User & Document;
 export class User {
     @Prop({
         required: true,
-        minlength: 6
+        minlength: 2
     })
     first_name: string;
 
     @Prop({
         required: true,
-        minlength: 6
+        minlength: 2
     })
     last_name: string;
 
