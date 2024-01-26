@@ -64,6 +64,8 @@ class ConnectDeviceScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         InputGroup(
+                                                          handleValidation: (){},
+
                           controller: text,
                           title: 'Ip Address',
                           secure: false,

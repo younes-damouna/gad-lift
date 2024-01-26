@@ -59,6 +59,8 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                     child: Column(
                       children: [
                         InputGroup(
+                                                          handleValidation: (){},
+
                           controller: code,
                           title: 'Family Code',
                           secure: false,

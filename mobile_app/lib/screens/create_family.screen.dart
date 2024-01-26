@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
 import 'package:mobile_app/screens/join_family.screen.dart';
@@ -54,6 +53,7 @@ class _CreateFamilyState extends State<CreateFamily> {
                     child: Column(
                       children: [
                         InputGroup(
+                          handleValidation: () {},
                           controller: text,
                           title: 'Floor Number',
                           secure: false,

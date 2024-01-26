@@ -67,14 +67,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               final fullName = fullNameController.text.trim().split(' ');
               final response = await UserService.updateUser(
-                fullName[0],
-                fullName[1],
-                emailController.text,
-                id,
-                pickedFile,
-                phoneController.text
-                
-              );
+                  fullName[0],
+                  fullName[1],
+                  emailController.text,
+                  id,
+                  pickedFile,
+                  phoneController.text);
 
               final user = User.fromJson(response['user']);
 
@@ -157,6 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 20,
                               ),
                               InputGroup(
+                                handleValidation: () {},
                                 key: const Key('fname'),
                                 controller: fullNameController,
                                 title: 'Full Name',
@@ -168,6 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 0,
                               ),
                               InputGroup(
+                                handleValidation: () {},
                                 key: const Key('email'),
                                 controller: emailController,
                                 title: 'Email',
@@ -179,6 +179,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 height: 0,
                               ),
                               InputGroup(
+                                handleValidation: () {},
                                 key: const Key('mobile'),
                                 controller: phoneController,
                                 title: 'Mobile Number',

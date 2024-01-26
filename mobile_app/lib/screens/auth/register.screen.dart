@@ -50,6 +50,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: 200,
                     ),
                     InputGroup(
+                                                      handleValidation: (){},
+
                       key: const Key('fname'),
                       controller: firstNameController,
                       title: 'First Name',
@@ -57,6 +59,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
+                                                      handleValidation: (){},
+
                       key: const Key('lname'),
                       controller: lastNameController,
                       title: 'Last Name',
@@ -64,6 +68,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.person_2_outlined,
                     ),
                     InputGroup(
+                                                      handleValidation: (){},
+
                       key: const Key('email'),
                       controller: emailController,
                       title: 'Email',
@@ -71,6 +77,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       icon: Icons.email,
                     ),
                     InputGroup(
+                                                      handleValidation: (){},
+
                       key: const Key('password'),
                       controller: passwordNameController,
                       title: 'Password',

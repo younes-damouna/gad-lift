@@ -5,6 +5,7 @@ import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
 import 'package:mobile_app/helpers/storage/secure.storage.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/auth/register.screen.dart';
 import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
@@ -59,8 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             title: 'Email',
                             secure: false,
                             icon: Icons.person_2_outlined,
+                            handleValidation:(){}
                           ),
                           InputGroup(
+                                                            handleValidation: (){},
+
                             controller: passwordNameController,
                             title: 'Password',
                             secure: true,

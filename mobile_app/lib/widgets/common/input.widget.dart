@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/helpers/validators/input.validator.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
 
@@ -9,6 +10,8 @@ class InputGroup extends StatefulWidget {
   final TextEditingController controller;
   final Color? color;
   final bool? numpad;
+    final Function handleValidation;
+
   // final double size;
   const InputGroup(
       {super.key,
@@ -17,7 +20,8 @@ class InputGroup extends StatefulWidget {
       required this.secure,
       required this.icon,
       this.color,
-      this.numpad
+      this.numpad,
+       required this.handleValidation
       //  required this.size
       });
 
@@ -43,18 +47,19 @@ class _InputGroupState extends State<InputGroup> {
                   color: widget.color ?? const Color.fromARGB(255, 0, 0, 0)),
 
               onFieldSubmitted: (value) {},
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter ${widget.title}';
-                }
-                return null;
-              },
+              validator: (value) 
+                // if (value == null || value.isEmpty) {
+                //   return 'Please enter ${widget.title}';
+                // }
+                // return null;
+              => widget.handleValidation(value) 
+              ,
 
               controller: widget.controller,
               scrollPadding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
               // autovalidateMode: AutovalidateMode.always,
-              // autovalidateMode: AutovalidateMode.onUserInteraction,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               // keyboardAppearance: Brightness.da,
               // autofocus: true,
               // keyboardType: TextInputType.emailAddress,
