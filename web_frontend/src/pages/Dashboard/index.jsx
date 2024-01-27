@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
 import "./index.css";
+import logo from "./../../assets/images/AnimatedLogo4.png";
+
 import BarChart from "../../components/BarChart";
 import BarChartCustom from "../../components/BarChart";
+import Panel from "../../components/Panel";
 const DashboardPage = () => {
   const [activeMainTab,setActiveMainTab]=useState("Dashboard")
 
@@ -21,28 +24,13 @@ const DashboardPage = () => {
     },
    
 ]
-  const data = [
-    {
-      name: "Families",
-      "Families": 5,
-      
-    },
-    {
-      name: "Users",
-      "Users": 10,
-    
-    },
-    {
-      name: "Devices",
-      "Devices": 3,
-    
-    },
-  ];
-
+ 
   return (
     <div className="d-flex gap w-100 main">
       <div className="aside">
           <div className="menu">
+          <img  src={logo} className={`w-100`}/>
+
             {menuItems.map((menuItem,index)=>{return(
             <div key={index} onClick={()=>{ setActiveMainTab(`${menuItem.title}`)}} className={`menu-item ${activeMainTab===menuItem.title?'active':''}`}>{menuItem.title}</div>
 
@@ -50,8 +38,12 @@ const DashboardPage = () => {
           
           </div>
         </div>
-      DashboardPage
-    <BarChartCustom data={data}/>
+        <div className="m-10"> 
+        <Panel/>
+        </div>
+        
+      
+   
     </div>
   );
 };

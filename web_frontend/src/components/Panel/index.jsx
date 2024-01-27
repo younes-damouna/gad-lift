@@ -1,8 +1,28 @@
 import React from 'react'
 import './index.css'
+import BarChartCustom from '../BarChart'
 const Panel = () => {
+
+    const data = [
+        {
+          name: "Families",
+          "Families": 5,
+          
+        },
+        {
+          name: "Users",
+          "Users": 10,
+        
+        },
+        {
+          name: "Devices",
+          "Devices": 3,
+        
+        },
+      ];
+    
   return (
-    <div>Panel</div>
+    <div> <BarChartCustom data={data}/></div>
   )
 }
 
