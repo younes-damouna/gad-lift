@@ -1,6 +1,10 @@
 import 'dart:developer';
 
+
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mobile_app/helpers/config/base_dio.dart';
 import 'package:mobile_app/helpers/constants/api_constants.dart';
 
@@ -13,19 +17,20 @@ abstract class AuthService {
       });
       // log('response: ${response.data['user']}');
       // if (response.statusCode == 200) {
-        //  return response.data;
-          return {
-          "user":response.data['user'],
-           "statusCode":response.statusCode,
-           'access_token':response.data['access_token']
-         };
+      //  return response.data;
+      return {
+        "user": response.data['user'],
+        "statusCode": response.statusCode,
+        'access_token': response.data['access_token']
+      };
 
-  // } 
-  // return {response.data};
+      // }
+      // return {response.data};
     } on DioException catch (e) {
-      return { "response":"",
+      return {
+        "response": "",
         "statusCode": e.response?.statusCode,
-        "statusMessage":e.response?.data['message']
+        "statusMessage": e.response?.data['message']
       };
     }
   }
@@ -47,9 +52,42 @@ abstract class AuthService {
 
       return response.statusCode;
     } on DioException catch (e) {
-     
-           return e.response?.statusCode;
+      return e.response?.statusCode;
+    }
+  }
 
+  static Future googleSignIn() async {
+    const List<String> scopes = <String>[
+      'email',
+      'profile',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ];
+
+    GoogleSignIn googleSignIn = GoogleSignIn(
+      // Optional clientId
+      // clientId: 'your-client_id.apps.googleusercontent.com',
+      scopes: scopes,
+    );
+    // GoogleSignIn.signOut();
+
+    try {      log("fired");
+    await  googleSignIn.signOut();
+
+      final GoogleSignInAccount? user=await googleSignIn.signIn();
+
+      final GoogleSignInAuthentication googleAuth=await user!.authentication;
+      final credential=GoogleAuthProvider.credential(accessToken:googleAuth.accessToken ,idToken:googleAuth.idToken ,);
+      final names=user.displayName?.split(' ');
+     final res= await register(names![0], names![1], user.email, user.id);
+     if(res==200){
+     return await login(user.email,user.id);
+     }else{
+       return await login(user.email,user.id);
+     }
+      log('user ${res}');
+      //  return await FirebaseAuth.instance.signInWithCredential(credential);
+    } catch (error) {
+      log('$error');
     }
   }
 }
