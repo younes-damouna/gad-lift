@@ -38,8 +38,8 @@ const DashboardPage = () => {
           
           </div>
         </div>
-        <div className="m-10"> 
-        <Panel/>
+        <div className="m-10 w-100"> 
+        <Panel activeMainTab={activeMainTab}/>
         </div>
         
       
