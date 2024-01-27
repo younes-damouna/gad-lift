@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./index.css";
 import BarChartCustom from "../BarChart";
 import UserTable from "../UserTable";
+import FamiliesTable from "../FamiliesTable";
 const Panel = ({ activeMainTab, toggleMenu, open }) => {
   const [users, setusers] = useState([]);
 
@@ -33,7 +34,7 @@ const Panel = ({ activeMainTab, toggleMenu, open }) => {
       ) : activeMainTab == "Users" ? (
         <UserTable />
       ) : activeMainTab == "Families" ? (
-        <UserTable  />
+        <FamiliesTable  />
       ) :activeMainTab == "Devices" ? (
         <UserTable/>
       ) : (
