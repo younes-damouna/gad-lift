@@ -42,7 +42,7 @@ export class UsersService {
 
     }
     getUsers() {
-        return this.UserModel.find().populate('settings');
+        return this.UserModel.find().populate('settings').select('-password');
     }
 
     getUserById(id: string) {

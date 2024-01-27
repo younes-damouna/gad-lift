@@ -21,13 +21,15 @@ export class UserController {
 
     //     // use pipes will enable validation inside this controller only
 
+    
+  
     @Roles(Role.Admin)
     @UseGuards(RolesGuard)
-  
-    @UseGuards(AuthGuard)
     @Get()
-    getUsers() {
-        return this.usersService.getUsers()
+    @UseGuards(AuthGuard)
+
+    async getUsers()   {
+        return await this.usersService.getUsers()
     }
     //users/:id
     @Get(':id')
