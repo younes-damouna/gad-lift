@@ -22,6 +22,7 @@ const DashboardPage = () => {
     {
         title:"Devices"
     },
+    
    
 ]
  

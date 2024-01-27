@@ -7,19 +7,20 @@ const Panel = ({activeMainTab}) => {
     const data = [
         {
           name: "Families",
-          "Families": 5,
+          "value": 5,
           
         },
         {
           name: "Users",
-          "Users": 10,
+          "value": 10,
         
         },
         {
           name: "Devices",
-          "Devices": 3,
+          "value": 3,
         
         },
+      
       ];
     
   return (
