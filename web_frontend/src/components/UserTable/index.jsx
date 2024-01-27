@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { request } from '../../helpers/api';
 
 const UserTable = () => {
   const  [users, setusers] = useState([])
@@ -8,7 +9,7 @@ const UserTable = () => {
         const response = await request({
           route: "users",
         });
-        setusers(response.users)
+        setusers(response)
        
       } catch (error) {
         console.log(error);
@@ -17,7 +18,7 @@ const UserTable = () => {
     getUsers();
   
   }, []);
-  console.log(patients);
+  console.log(users);
   return (
     <div className="table-container">
     <table>

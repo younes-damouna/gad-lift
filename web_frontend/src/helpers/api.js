@@ -5,7 +5,7 @@ export const request = async ({ route, method, body, isLogin = false }) => {
     const response = await axios.request({
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': isLogin ? '' : JSON.parse(localStorage.getItem("logged_in")).token
+            'Authorization': isLogin ? '' :`Bearer ${ JSON.parse(localStorage.getItem("logged_in"))}`
         },
         url: route,
         method: method,
