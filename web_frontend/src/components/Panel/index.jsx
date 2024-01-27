@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 import BarChartCustom from '../BarChart'
-const Panel = () => {
+const Panel = ({activeMainTab}) => {
 
     const data = [
         {
