@@ -158,3 +158,9 @@ a {
 .w-100{
   width: 100%;
 }
+.p-2{
+  padding: 10px;
+}
+.text-danger{
+  color: red;
+}

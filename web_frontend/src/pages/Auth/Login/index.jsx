@@ -6,7 +6,7 @@ import PrimaryButton from "../../../components/PrimaryButton";
 import { request } from "../../../helpers/api";
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [message,setMessage]=useState('');
+  const [message, setMessage] = useState("");
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -20,29 +20,31 @@ const LoginPage = () => {
       };
     });
   };
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const response = await request({
       body: form,
       route: "auth/login",
       method: "POST",
-      isLogin:true
+      isLogin: true,
     });
     console.log(response);
     if (response.statusCode === 200) {
       console.log(response);
       localStorage.setItem("logged_in", JSON.stringify(response.access_token));
-
-    }else{
-
+      navigate("/dashboard");
+    } else {
+      setMessage(response.message);
+      console.log(response);
     }
-
   };
 
   return (
     <div className=" d-flex center  full-height">
       <div className="form">
         <h2 className="text-center bold">Welcome Again</h2>
-        <form action="" onSubmit={() => handleSubmit()} method="post">
+        <form action="" onSubmit={(e) => handleSubmit(e)}>
+         <div className="text-center p-2 text-danger"> {message}</div>
           <FormGroup
             label="Email"
             name="email"
