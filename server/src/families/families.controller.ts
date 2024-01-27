@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { FamiliesService } from './families.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { createFamilyDto } from './dto/CreateFamily.dto';
@@ -55,6 +55,15 @@ export class FamiliesController {
       
         
         return this.familyService.checkIfParent(req);
+
+    }
+
+    @Roles(Role.Admin)
+    @UseGuards(RolesGuard)
+    @Get()
+    @UseGuards(AuthGuard)
+    async getFamilies(){
+     return await  this.familyService.getFamilies();
 
     }
 

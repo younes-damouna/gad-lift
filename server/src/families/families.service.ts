@@ -134,6 +134,10 @@ export class FamiliesService {
 
 
     }
+    async getFamilies(){
+        return this.FamilyModel.find().populate('parent').populate('requests').populate('members').select('-password');
+
+    }
 
     isValidMongooseId(id: string) {
         const isValidId = mongoose.Types.ObjectId.isValid(id);
