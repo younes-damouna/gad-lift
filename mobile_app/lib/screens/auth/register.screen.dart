@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';
@@ -32,8 +33,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // const ui=SystemUiOverlayStyle(
+    // systemNavigationBarContrastEnforced: false,systemStatusBarContrastEnforced:false,
+    // statusBarIconBrightness: Brightness.dark,
+    //               statusBarBrightness: Brightness.dark,
+    //               );
+    // SystemChrome.setSystemUIOverlayStyle(ui);
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays: [SystemUiOverlay.top,SystemUiOverlay.bottom]);
+      //  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky,overlays: [SystemUiOverlay.top,SystemUiOverlay.bottom]);
+
+      //  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,overlays: [SystemUiOverlay.top]);
     return Scaffold(
+      
+        extendBodyBehindAppBar: true,
+        // extendBody: true,
+              backgroundColor: const Color(0xFFF3F1F1),
+
       appBar: const MyAppBar(
+        
         title: 'Sign Up',
       ),
       body: ListView(
@@ -100,55 +117,52 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             overlayColor:
                                 MaterialStatePropertyAll(Colors.white60)),
-                         onPressed: () async {
-                                log("hello");
-                                final res = await AuthService.googleSignIn();
-                                if (res?['statusCode'] == 200) {
-                                  final user = User.fromJson(res['user']);
-                                  log('${res['user']}');
-                                  final storage = SecureStorage();
-                                  await storage.saveToken(
-                                      'access_token', res['access_token']);
-                                  final token =
-                                      await storage.getToken('access_token');
-                                  log('access_token: $token');
-                                  // ignore: use_build_context_synchronously
-                                  Provider.of<ProfileProvider>(
-                                    context,
-                                    listen: false,
-                                  ).getProfile(user);
-                                  // ignore: use_build_context_synchronously
-                                  showDialog(
-                                    context: context,
-                                    barrierDismissible: false,
-                                    builder: (BuildContext context) =>
-                                        const Loading(
-                                            color: Colors.green,
-                                            text: "Success..."),
-                                  );
-                                  await Future.delayed(
-                                      const Duration(seconds: 3));
+                        onPressed: () async {
+                          log("hello");
+                          final res = await AuthService.googleSignIn();
+                          if (res?['statusCode'] == 200) {
+                            final user = User.fromJson(res['user']);
+                            log('${res['user']}');
+                            final storage = SecureStorage();
+                            await storage.saveToken(
+                                'access_token', res['access_token']);
+                            final token =
+                                await storage.getToken('access_token');
+                            log('access_token: $token');
+                            // ignore: use_build_context_synchronously
+                            Provider.of<ProfileProvider>(
+                              context,
+                              listen: false,
+                            ).getProfile(user);
+                            // ignore: use_build_context_synchronously
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) => const Loading(
+                                  color: Colors.green, text: "Success..."),
+                            );
+                            await Future.delayed(const Duration(seconds: 3));
 
-                                  // ignore: use_build_context_synchronously
-                                  Navigator.pop(context, '/login');
-                                  // ignore: use_build_context_synchronously
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ConnectDeviceScreen()));
+                            // ignore: use_build_context_synchronously
+                            Navigator.pop(context, '/login');
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ConnectDeviceScreen()));
 
-                                  log('user: $user');
-                                } else if (res['statusCode'] == 400 ||
-                                    res['statusCode'] == 401) {
-                                  // ignore: use_build_context_synchronously
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content:
-                                            Text('Oops! Google Sign-In didn’t work. Let’s try the regular registration instead.')),
-                                  );
-                                }
-                              },
+                            log('user: $user');
+                          } else if (res['statusCode'] == 400 ||
+                              res['statusCode'] == 401) {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text(
+                                      'Oops! Google Sign-In didn’t work. Let’s try the regular registration instead.')),
+                            );
+                          }
+                        },
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

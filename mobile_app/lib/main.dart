@@ -13,6 +13,7 @@ import 'package:mobile_app/screens/welcome.screen.dart';
 import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -28,6 +29,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
+  
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -55,6 +57,7 @@ class _MainAppState extends State<MainApp> {
       ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
+        debugShowCheckedModeBanner: false,
         routes: {
           '/login': (context) => const LoginScreen(),
           '/dashboard': (context) => const MainView(),
