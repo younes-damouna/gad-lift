@@ -4,6 +4,7 @@
   height: 100vh;
   padding: 10px;
   position: relative;
+  transition: all .5s ease-in-out;
 }
 .menu-item {
   background-color: gray;
@@ -26,25 +27,126 @@
   opacity: 0.7;
 }
 
-.log-out-btn{
+.log-out-btn {
   position: absolute;
-  /* margin: 10px !important; */
 
   bottom: 10px;
   right: 0;
   left: 50%;
   transform: translate(-50%);
   width: 90% !important;
-  /* margin-top: 50%; */
   background-color: rgba(255, 0, 0, 0.756);
 }
+
+.burger-menu {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+
+  padding: 10px;
+  background-color: var(--primary-bg);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.burger-menu:hover{
+  cursor: pointer;   
+}
+.burger-item {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  position: relative;
+
+  border-radius: 5px;
+  transition: all 300ms ease-in-out;
+}
+
+.burger-item::after,
+.burger-item::before {
+  content: "";
+  width: inherit;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  border-radius: 3px;
+  left: 0;
+  right: 0;
+  transition: all 300ms ease-in-out;
+}
+.burger-item::after {
+  top: 10px;
+}
+.burger-item::before {
+  top: -10px;
+}
+
+.open ::after{
+  rotate: 45deg;
+  transform-origin: center center;
+  top: 0;
+}
+.open ::before{
+  top: 0;
+  transform-origin: center center;
+  rotate: -45deg;
+
+}
+.open .burger-item{
+  background-color: transparent;
+}
+
+/* .d-block{
+  top: 0;
+  display: block;
+  opacity: 100%;
+  z-index: 99;
+  transition: all  ease-in-out;
+} */
+.show-menu{
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  left: 70%;
+  transition: all .5s ease-in-out;
+}
+
 
 @media only screen and (max-width: 600px) {
   .main {
     flex-wrap: wrap;
   }
-  .aside,
+ 
   .panel {
     width: 100% !important;
+  }
+  .aside{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    left: -70%;
+    transition: all .5 ease-in-out;
+  }
+  .show-menu{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    left: 0%;
+    transition: all  ease-in-out 10;
+  }
+  .burger-menu {
+  /* position: absolute; */
+  /* left: 60%; */
+  /* display: block; 
+  */
+  display: flex;
+  z-index: 2;
+  }
+  .menu-container {
+    margin: 20px 20px 20px 0;
+  }
+  body{
+    position: relative;
   }
 }

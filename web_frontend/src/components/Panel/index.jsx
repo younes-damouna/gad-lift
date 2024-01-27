@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import BarChartCustom from "../BarChart";
-const Panel = ({ activeMainTab }) => {
+const Panel = ({ activeMainTab,toggleMenu,open }) => {
   const [users, setusers] = useState([]);
 
   const data = [
@@ -21,7 +21,18 @@ const Panel = ({ activeMainTab }) => {
 
   return (
     <div className="panel w-100">
-      <div className="panel-title"> {activeMainTab}</div>
+      <div className="d-flex  menu-container space-between">
+      
+        <div className="panel-title"> {activeMainTab}</div>
+        <div
+          class={`burger-menu  ${open?'open':''}`}
+          onClick={
+           toggleMenu
+          }
+        >
+          <div class="burger-item"></div>
+        </div>
+      </div>
       {activeMainTab == "Dashboard" ? (
         <BarChartCustom data={data} />
       ) : (

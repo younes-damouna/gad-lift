@@ -1,44 +1,46 @@
-.panel{
-    background-color: white;
-    border-radius:0px 5px;
+.panel {
+  background-color: white;
+  border-radius: 0px 5px;
 
-    padding: 10px;
-}
-.panel-title{
-    font-size: 20px;
-    margin-block: 20px;
-}
-.table-container{
-    border-radius: 5px;
-    padding-top: 10px;
-    width: 100%;
-    position: relative;
-  
-}
-.panel,.aside{
-    /* border-radius: 20px; */
-    box-shadow: 1px 1px 10px 5px rgba(128, 128, 128, 0.256);
-}
-table{
-    border-collapse: collapse;
-    /* border-radius: 10px; */
-    width: 100%;
-    table-layout:auto;
-    overflow-x: scroll ;
-   
-
-}
-table,td,th{
-    text-align: start;
-}
-td,th,tr{
-    border: 1px solid;
-    padding-inline: 10px;
-    padding-block: 10px;
-    /* border-radius: 5px; */
-
+  padding: 10px;
 }
 
-.menu-item{
-    width: 100%;
+.panel-title {
+  font-size: 20px;
+  margin: 20px;
+}
+.table-container {
+  border-radius: 5px;
+  padding-top: 10px;
+  width: 100%;
+  position: relative;
+}
+.panel,
+.aside {
+  /* border-radius: 20px; */
+  box-shadow: 1px 1px 10px 5px rgba(128, 128, 128, 0.256);
+}
+table {
+  border-collapse: collapse;
+  /* border-radius: 10px; */
+  width: 100%;
+  table-layout: auto;
+  overflow-x: scroll;
+}
+table,
+td,
+th {
+  text-align: start;
+}
+td,
+th,
+tr {
+  border: 1px solid;
+  padding-inline: 10px;
+  padding-block: 10px;
+  /* border-radius: 5px; */
+}
+
+.menu-item {
+  width: 100%;
 }
