@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./index.css";
 import logo from "./../../assets/images/AnimatedLogo4.png";
@@ -6,6 +6,7 @@ import logo from "./../../assets/images/AnimatedLogo4.png";
 import BarChart from "../../components/BarChart";
 import BarChartCustom from "../../components/BarChart";
 import Panel from "../../components/Panel";
+import { useNavigate } from "react-router-dom";
 const DashboardPage = () => {
   const [activeMainTab, setActiveMainTab] = useState("Dashboard");
   const [showMenu, setShowMenu] = useState(false);
@@ -14,6 +15,16 @@ const DashboardPage = () => {
     else setShowMenu(true);
     // alert(showMenu ? "d-none" : "d-flex");
   };
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (
+      localStorage.getItem("logged_in") === null ||
+      localStorage.getItem("logged_in") === ""
+    ) {
+      navigate("/");
+    }
+  }, []);
   const menuItems = [
     {
       title: "Dashboard",
