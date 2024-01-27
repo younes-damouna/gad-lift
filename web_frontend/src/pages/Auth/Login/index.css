@@ -12,3 +12,9 @@
         width: 90%;
     }
     }
+
+    @media only screen and (max-width: 750px) {
+        .form{
+            width: 70%;
+        }
+        }

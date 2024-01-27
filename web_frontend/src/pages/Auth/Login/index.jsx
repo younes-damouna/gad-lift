@@ -4,6 +4,8 @@ import FormGroup from "../../../components/FormGroup";
 import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../../components/PrimaryButton";
 import { request } from "../../../helpers/api";
+import logo from "./../../../assets/images/AnimatedLogo4.png";
+
 const LoginPage = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
@@ -42,9 +44,10 @@ const LoginPage = () => {
   return (
     <div className=" d-flex center  full-height">
       <div className="form">
-        <h2 className="text-center bold">Welcome Again</h2>
+        <img src={logo} alt=""  className="w-100"/>
+        <h2 className="text-center bold p-2">Welcome Again</h2>
         <form action="" onSubmit={(e) => handleSubmit(e)}>
-         <div className="text-center p-2 text-danger"> {message}</div>
+          <div className="text-center p-2 text-danger"> {message}</div>
           <FormGroup
             label="Email"
             name="email"
