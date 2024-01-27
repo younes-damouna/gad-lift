@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
-const PrimaryButton = ({ text, className, onClick }) => {
+const PrimaryButton = ({ text, className, onClick ,type}) => {
   return (
     <div className={'button-wrapper'}>
-        <div className={`${className} button-wrapper rounded-1 fs-md`} onClick={onClick}>{text}</div>
+        <button className={`${className} button-wrapper rounded-1 fs-md w-100`} onClick={onClick} type={type}>{text}</button>
     </div>
   );
 };
