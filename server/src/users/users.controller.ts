@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Delete, FileTypeValidator, Get, HttpException, MaxFileSizeValidator, Param, ParseFilePipe, Patch, Post, Req, UploadedFile, UseInterceptors, UsePipes, ValidationPipe } from "@nestjs/common";
+import { BadRequestException, Body, Controller, Delete, FileTypeValidator, Get, HttpException, MaxFileSizeValidator, Param, ParseFilePipe, Patch, Post, Req, UploadedFile, UseGuards, UseInterceptors, UsePipes, ValidationPipe } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { CreateUserDto } from "./dto/CreateUser.dto";
 import mongoose from "mongoose";
@@ -8,6 +8,10 @@ import { diskStorage } from "multer";
 import { FileController } from "src/file.controller";
 import { join } from "path";
 import { ConfigService } from "@nestjs/config";
+import { Roles } from "src/customDecorators/roles.decorator";
+import { Role } from "src/enums/role.enum";
+import { RolesGuard } from "src/guards/roles.guard";
+import { AuthGuard } from "src/auth/auth.guard";
 
 // path the route to the @controller decorator
 @Controller('users')
@@ -17,7 +21,10 @@ export class UserController {
 
     //     // use pipes will enable validation inside this controller only
 
-
+    @Roles(Role.Admin)
+    @UseGuards(RolesGuard)
+  
+    @UseGuards(AuthGuard)
     @Get()
     getUsers() {
         return this.usersService.getUsers()
