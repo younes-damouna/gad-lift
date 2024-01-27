@@ -11,10 +11,11 @@ import {
   } from "recharts";
 const BarChartCustom = ({data}) => {
   return (
-    <div>
+    <div className="w-100">
      
-      <ResponsiveContainer width={700} height={250}>
-        <BarChart data={data}>
+      <ResponsiveContainer width={'100%'} height={250} className={`w-100`}
+    >
+        <BarChart data={data}   margin={{left:0,top:0,left:0,bottom:0}}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
