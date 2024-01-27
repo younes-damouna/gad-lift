@@ -15,7 +15,7 @@ const BarChartCustom = ({ data }) => {
       <ResponsiveContainer
        
        
-      
+        height={250}
         className={`w-100 `}
         margin={{ left: 0 }}
       >

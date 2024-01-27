@@ -3,6 +3,7 @@
   width: 300px;
   height: 100vh;
   padding: 10px;
+  position: relative;
 }
 .menu-item {
   background-color: gray;
@@ -23,6 +24,19 @@
 }
 .menu-item:hover {
   opacity: 0.7;
+}
+
+.log-out-btn{
+  position: absolute;
+  /* margin: 10px !important; */
+
+  bottom: 10px;
+  right: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90% !important;
+  /* margin-top: 50%; */
+  background-color: rgba(255, 0, 0, 0.756);
 }
 
 @media only screen and (max-width: 600px) {

@@ -21,7 +21,7 @@ const DashboardPage = () => {
     },
     {
         title:"Devices"
-    },
+    }
     
    
 ]
@@ -29,14 +29,17 @@ const DashboardPage = () => {
   return (
     <div className="d-flex gap w-100 main">
       <div className="aside">
-          <div className="menu">
+          <div className="menu" >
           <img  src={logo} className={`w-100`}/>
 
             {menuItems.map((menuItem,index)=>{return(
             <div key={index} onClick={()=>{ setActiveMainTab(`${menuItem.title}`)}} className={`menu-item ${activeMainTab===menuItem.title?'active':''}`}>{menuItem.title}</div>
 
             )})}
-          
+                    
+                    <div className={`menu-item log-out-btn`}>Log Out</div>
+                   
+
           </div>
         </div>
         <div className="m-10 w-100"> 
