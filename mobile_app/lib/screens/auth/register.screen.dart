@@ -2,13 +2,18 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
+import 'package:mobile_app/helpers/models/user.model.dart';
+import 'package:mobile_app/helpers/providers/profile_provider.dart';
+import 'package:mobile_app/helpers/storage/secure.storage.dart';
 import 'package:mobile_app/helpers/validators/input.validator.dart';
 import 'package:mobile_app/screens/auth/login.screen.dart';
+import 'package:mobile_app/screens/connect_device.screen.dart';
 import 'package:mobile_app/widgets/app_bar.widget.dart';
 import 'package:mobile_app/widgets/common/input.widget.dart';
 import 'package:mobile_app/widgets/common/loading.widget.dart';
 import 'package:mobile_app/widgets/common/primary_button.widget.dart';
 import 'package:mobile_app/widgets/common/section_title.dart';
+import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -95,7 +100,55 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             overlayColor:
                                 MaterialStatePropertyAll(Colors.white60)),
-                        onPressed: () {},
+                         onPressed: () async {
+                                log("hello");
+                                final res = await AuthService.googleSignIn();
+                                if (res?['statusCode'] == 200) {
+                                  final user = User.fromJson(res['user']);
+                                  log('${res['user']}');
+                                  final storage = SecureStorage();
+                                  await storage.saveToken(
+                                      'access_token', res['access_token']);
+                                  final token =
+                                      await storage.getToken('access_token');
+                                  log('access_token: $token');
+                                  // ignore: use_build_context_synchronously
+                                  Provider.of<ProfileProvider>(
+                                    context,
+                                    listen: false,
+                                  ).getProfile(user);
+                                  // ignore: use_build_context_synchronously
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) =>
+                                        const Loading(
+                                            color: Colors.green,
+                                            text: "Success..."),
+                                  );
+                                  await Future.delayed(
+                                      const Duration(seconds: 3));
+
+                                  // ignore: use_build_context_synchronously
+                                  Navigator.pop(context, '/login');
+                                  // ignore: use_build_context_synchronously
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ConnectDeviceScreen()));
+
+                                  log('user: $user');
+                                } else if (res['statusCode'] == 400 ||
+                                    res['statusCode'] == 401) {
+                                  // ignore: use_build_context_synchronously
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content:
+                                            Text('Oops! Google Sign-In didn’t work. Let’s try the regular registration instead.')),
+                                  );
+                                }
+                              },
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
