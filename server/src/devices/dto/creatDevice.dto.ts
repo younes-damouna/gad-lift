@@ -1,4 +1,4 @@
-import { IsIP, IsMACAddress, IsNotEmpty, IsString } from "class-validator";
+import { IsIP, IsMACAddress, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { isIPv4 } from "net";
 
 export class createDeviceDto {
@@ -12,7 +12,7 @@ export class createDeviceDto {
     @IsNotEmpty()
     @IsString()
     building_name: string;
-    @IsNotEmpty()
+    @IsOptional()
 
     status: boolean;
 
