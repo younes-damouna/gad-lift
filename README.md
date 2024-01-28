@@ -34,20 +34,20 @@
 
 <br><br>
 
-<!-- Prototyping -->
+<!-- Tech Stacks -->
 <img src="./readme/title3.svg"/>
 
 > We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-### Wireframes
-| Login screen  | Register screen |  Landing screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-
 ### Mockups
+| Login screen  | Register screen |  On boarding screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/login.jpg) | ![fsdaf](./readme/demo/signup.jpg) | ![fsdaf](./readme/demo/welcome.jpg) |
+
+<!-- ### Mockups
 | Home screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
 <br><br>
 
