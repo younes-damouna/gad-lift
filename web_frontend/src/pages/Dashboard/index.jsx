@@ -45,6 +45,10 @@ const DashboardPage = () => {
       title: "Devices",
     },
   ];
+  const handleLogout=()=>{
+    localStorage.removeItem('logged-in')
+    navigate('/auth/login')
+  }
 
   return (
     <div className="d-flex gap w-100 main">
@@ -68,7 +72,7 @@ const DashboardPage = () => {
             );
           })}
 
-          <div className={`menu-item log-out-btn`}>Log Out</div>
+          <div className={`menu-item log-out-btn`} onClick={handleLogout}>Log Out</div>
         </div>
       </div>
       <div className="m-10 w-100">

@@ -11,7 +11,7 @@ const DevicesTable = () => {
         });
         setDevices(response);
       } catch (error) {
-        console.log(error);
+       
       }
     };
     getDevices();
