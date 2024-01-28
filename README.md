@@ -52,7 +52,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 <br><br>
 
-> I designed GadLift app using wireframes and mockups, iterating on the design until I reached the ideal layout for easy navigation and a seamless user experience.
+> We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+- Project Figma design [figma](https://www.figma.com/file/fP5bB9WHHoilZjojs0GYy6/GadLift?type=design&node-id=0%3A1&mode=design&t=P8N8zA6ovk7ayPJw-1)
 
 ### Mockups
 | Login screen  | Register screen |  On boarding screen |
@@ -110,21 +111,23 @@ This is an example of how to list things you need to use the software and how to
   ``` -->
 
 ### Installation
-<!-- 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+<!-- _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._ -->
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/younes-damouna/gad-lift.git
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API in `env.example`
+   - rename `env.example` to `env`
+
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features. -->
+Now, you should be able to run GadLift locally and explore its features.
