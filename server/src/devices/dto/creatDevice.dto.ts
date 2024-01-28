@@ -8,6 +8,7 @@ export class createDeviceDto {
     mac_address: string;
     @IsNotEmpty()
     @IsIP()
+    
     ip_address: string;
     @IsNotEmpty()
     @IsString()

@@ -36,7 +36,7 @@ export class DevicesService {
     }
     async addDevice(createDeviceDto: createDeviceDto, @Request() req) {
         const createDevice = new this.DeviceModel(createDeviceDto);
-        const device = await this.findOne(createDeviceDto.mac_address);
+        const device = await this.findOne(createDeviceDto.mac_address, createDeviceDto.ip_address);
         if (device) {
             throw new UnprocessableEntityException();
         } else {
@@ -46,8 +46,17 @@ export class DevicesService {
         // return this.DeviceModel
     }
 
-    async findOne(mac_address: string): Promise<any> {
-        const device = await this.DeviceModel.findOne({ mac_address });
+    async findOne(mac_address: string, ip_address: String): Promise<any> {
+        const device = await this.DeviceModel.findOne({
+            $or: [
+                {
+                    'mac_address': mac_address,
+                   
+                },{
+                    'ip_address': ip_address
+                }
+            ]
+        });
 
         return device;
 
