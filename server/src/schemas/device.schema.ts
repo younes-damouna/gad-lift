@@ -14,6 +14,7 @@ export class Device {
     mac_address: string;
     @Prop({
         required: true,
+        unique: true
 
     })
     ip_address: string;
@@ -22,9 +23,9 @@ export class Device {
     building_name: string;
 
     @Prop({})
-    status:boolean;
+    status: boolean;
 
-  
+
 
 }
 export const DeviceSchema = SchemaFactory.createForClass(Device);

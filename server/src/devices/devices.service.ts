@@ -8,13 +8,13 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class DevicesService {
-    constructor(private httpService: HttpService,@InjectModel(Device.name) private DeviceModel: Model<Device>) { }
+    constructor(private httpService: HttpService, @InjectModel(Device.name) private DeviceModel: Model<Device>) { }
 
     async control(action: String): Promise<any> {
-       
+
         try {
 
-            
+
             const response = await axios.get(`http://192.168.0.100/box/${action}`);
 
             return {
@@ -29,8 +29,9 @@ export class DevicesService {
 
 
     }
-    async getDevices(){
+    async getDevices() {
         return this.DeviceModel.find();
 
     }
+    async addDevice(){}
 }
