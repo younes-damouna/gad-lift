@@ -76,9 +76,9 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
 
 ### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
+| Login screen  | Dashboard screen |  Landing screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/demo/dashboard/login.jpg) | ![fsdaf](./readme/demo/dashboard/dashboard.jpg) | ![fsdaf](./readme/demo/dashboard/devices.jpg) |
 | Home screen  | Menu Screen | Order Screen |
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 

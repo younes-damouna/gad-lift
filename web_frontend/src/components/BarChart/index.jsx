@@ -29,7 +29,7 @@ const BarChartCustom = ({ data }) => {
             barCategoryGap={0}
             isAnimationActive={true}
             dataKey="value"
-            fill="#2fe2bb"
+            fill="#2fe2ee"
           />
         </BarChart>
       </ResponsiveContainer>
