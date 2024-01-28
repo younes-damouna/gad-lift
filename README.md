@@ -5,22 +5,25 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> GadLift is an IOT system that will make your life easier. It is designed to help you carry your gadgets to your doorstep in case there is no elevator in your building.
+> GadLift, aims to simplify the users life with innovation. It’s an IoT system designed to effortlessly bring your home gadgets to your doorstep, especially when there’s no elevator in your building.
 >
 > GadLift aims to make your life easier
 
 ### User Stories
-- As a user, I want to be abble to lift my gadgets to my door step, so I can find some rest.
+
+#### User
+>
+- As a user, I want a device to lift my gadgets to my door step, so I can find some rest.
 - As a user, I want to register family members on the app, so that I can add members to my family to use the device.
 - As a user, I want to call the device using a mobile app so that no need for a remote control.
+>
 
-
-### Admin Stories
-
+#### Admin 
+>
 - As an admin, I want to see how many users are using the app, so that I can manage the app scalability .
-- As an admin, I want to see how many devices I have, so that I can track .
-- As an admin, I want to see how many families are created .
-
+- As an admin, I want to see how many devices I have, so that I can track them.
+- As an admin, I want to add a new device to the platform, so that I can know how many devices are active or oflline.
+>
 
 
 
