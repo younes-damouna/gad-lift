@@ -22,7 +22,7 @@ export class Device {
     @Prop({})
     building_name: string;
 
-    @Prop({})
+    @Prop({default:false})
     status: boolean;
 
 
