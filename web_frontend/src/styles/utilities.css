@@ -166,3 +166,15 @@ a {
 .text-danger{
   color: red;
 }
+
+.bg-danger {
+  background-color: red;
+}
+.bg-success{
+  background-color: green;
+}
+.circle{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

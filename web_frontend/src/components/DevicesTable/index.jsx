@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { request } from '../../helpers/api';
+import React, { useEffect, useState } from "react";
+import { request } from "../../helpers/api";
 
 const DevicesTable = () => {
-    const [devices, setDevices] = useState([]);
-    useEffect(() => {
-      const getDevices = async () => {
-        try {
-          const response = await request({
-            route: "devices",
-          });
-          setDevices(response);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      getDevices();
-    }, []);
+  const [devices, setDevices] = useState([]);
+  useEffect(() => {
+    const getDevices = async () => {
+      try {
+        const response = await request({
+          route: "devices",
+        });
+        setDevices(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getDevices();
+  }, []);
 
   return (
     <div className="table-container">
@@ -33,13 +33,20 @@ const DevicesTable = () => {
             ? devices.map((device, index) => {
                 return (
                   <tr key={index}>
+                    <td>{device.mac_address}</td> <td>{device.ip_address}</td>
+                    <td>{device.building_name}</td>
                     <td>
-                      {device.mac_address} 
-                    </td>{" "}
-                    <td>{device.ip_address}</td>
-                    <td>{device.building}</td>
-                    <td>{device.status}</td>
-
+                      {device.status ? (
+                        <span className="d-flex  start gap">
+                          <span className="bg-success circle "></span> Active
+                        </span>
+                      ) : (
+                        <span className=" d-flex start center gap">
+                          {" "}
+                          <span className="bg-danger circle"></span>Offline
+                        </span>
+                      )}
+                    </td>
                   </tr>
                 );
               })
@@ -47,7 +54,7 @@ const DevicesTable = () => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default DevicesTable
+export default DevicesTable;
