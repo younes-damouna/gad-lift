@@ -15,6 +15,12 @@ const DashboardPage = () => {
     else setShowMenu(true);
     // alert(showMenu ? "d-none" : "d-flex");
   };
+  // when token expires 
+  setInterval(() => {
+    localStorage.removeItem("logged_in");
+    navigate("/auth/login");
+   
+  }, 1000 * 60 * 60);
 
   const navigate = useNavigate();
   useEffect(() => {

@@ -3,19 +3,20 @@ import { request } from "../../helpers/api";
 
 const FamiliesTable = () => {
   const [families, setfamilies] = useState([]);
+  const getUsers = async () => {
+    try {
+      const response = await request({
+        route: "families",
+      });
+      setfamilies(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await request({
-          route: "families",
-        });
-        setfamilies(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getUsers();
   }, []);
+
   console.log(families);
   return (
     <div className="table-container">
@@ -40,13 +41,24 @@ const FamiliesTable = () => {
                       {family.parent.first_name} {family.parent.last_name}
                     </td>
                     <td>
-                      {Array.isArray(family.requests)
+                      {Array.isArray(family.requests) && family.requests.length>0
                         ? family.requests.map((user) => {
-                           return <tr>{`${user.first_name} ${user.last_name}`}</tr>
-                        })
+                            return (
+                              <tr>{`${user.first_name} ${user.last_name}`}</tr>
+                            );
+                          })
                         : 0}
                     </td>
-                    <td> {family.requests.mobile_number}</td>
+                    <td>
+                      {Array.isArray(family.members) && family.members.length>0
+                        ? family.members.map((user) => {
+                            return (
+                              <tr>{`${user.first_name} ${user.last_name}`}</tr>
+                            );
+                          })
+                        : 0}
+                    </td>
+                    <td>{family.floor>0? family.floor: '-'}</td>
                   </tr>
                 );
               })
