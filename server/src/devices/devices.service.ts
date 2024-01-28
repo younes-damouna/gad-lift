@@ -1,10 +1,11 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { HttpException, Injectable, Request, UnprocessableEntityException } from '@nestjs/common';
 import { HttpService } from "@nestjs/axios";
 import axios from 'axios';
 import { Control } from 'src/enums/control.enum';
 import { InjectModel } from '@nestjs/mongoose';
 import { Device } from 'src/schemas/device.schema';
 import { Model } from 'mongoose';
+import { createDeviceDto } from './dto/creatDevice.dto';
 
 @Injectable()
 export class DevicesService {
@@ -33,5 +34,15 @@ export class DevicesService {
         return this.DeviceModel.find();
 
     }
-    async addDevice(){}
+    async addDevice(createDeviceDto:createDeviceDto,@Request() req){
+        const createDevice=new this.DeviceModel(createDeviceDto);
+        const device=await this.findOne(createDeviceDto.mac_address);
+        if(device){
+        throw new UnprocessableEntityException();
+    }else{
+        return device.save();
+
+    }
+        // return this.DeviceModel
+    }
 }
