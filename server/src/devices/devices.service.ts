@@ -40,7 +40,7 @@ export class DevicesService {
         if (device) {
             throw new UnprocessableEntityException();
         } else {
-            return device.save();
+            return createDevice.save();
 
         }
         // return this.DeviceModel
