@@ -15,4 +15,13 @@ export class DevicesController {
        
 
     }
+
+
+    @Get()
+    @UseGuards(AuthGuard)
+    async getDevices() {
+        return await this.deviceService.getDevices()
+       
+
+    }
 }

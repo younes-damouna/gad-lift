@@ -26,4 +26,8 @@ export class DevicesService {
 
 
     }
+    async getDevices(){
+        // return this.Device.find().populate('parent').populate('requests').populate('members').select('-password');
+
+    }
 }
