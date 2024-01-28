@@ -29,13 +29,26 @@
 >
 > With **GadLift**, we're not just lifting gadgets - we're elevating your home living experience. Welcome to a world of convenience, welcome to **GadLift**. 🚀
 
-
-
-
 <br><br>
 
 <!-- Tech Stacks -->
 <img src="./readme/title3.svg"/>
+
+
+###  **GadLift**  is built using the following technologies:
+
+- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on different platforms including mobile, desktop, Linux, Android, IOS,MacOs, Windows and the web.
+- The admin panel is done using [React.js](https://react.dev/). React.js is a JavaScript library for building single-page applications out of individual pieces called components.
+- To send  notifications, the app uses the [firebase_messaging ](https://pub.dev/packages/firebase_messaging) package which supports Android, iOS.
+
+- For the backend side the project done with [NestJS](https://nestjs.com/)
+which is a progressive Node.js framework that helps build server-side applications. Nest extends [Node.js](https://nodejs.org/en) frameworks like Express or Fastify adding modular organization and a wide range of other libraries to take care of repetitive tasks. It’s open-source, uses [TypeScript](https://www.typescriptlang.org/), and it is a very versatile Node.js framework for building backend systems. It helps scale Node.js servers and supports several databases.
+
+- The project uses [MongoDB](https://www.mongodb.com/). Which is an open-source, nonrelational database management system (DBMS) that uses flexible, JSON-like documents instead of traditional tables and rows to process and store various forms of data12. As a NoSQL database solution, MongoDB provides an elastic data storage model that enables users to store and query multivariate data types with ease.
+  
+- The app uses the font ["Zen Dots"](https://fonts.google.com/specimen/Zen+Dots) as its main font, and the design of the app adheres to the material design guidelines.
+
+<br><br>
 
 > We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
@@ -44,10 +57,10 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/login.jpg) | ![fsdaf](./readme/demo/signup.jpg) | ![fsdaf](./readme/demo/welcome.jpg) |
 
-<!-- ### Mockups
+### Mockups
 | Home screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
+| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 <br><br>
 
