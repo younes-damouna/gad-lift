@@ -58,7 +58,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 ### Mockups
 | Login screen  | Register screen |  On boarding screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/login.jpg) | ![fsdaf](./readme/demo/signup.jpg) | ![fsdaf](./readme/demo/welcome.jpg) |
+| ![Landing](./readme/demo/mobile/login.jpg) | ![fsdaf](./readme/demo/mobile/signup.jpg) | ![fsdaf](./readme/demo/mobile/welcome.jpg) |
 
 
 <br><br>
