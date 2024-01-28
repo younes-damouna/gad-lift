@@ -48,21 +48,17 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 - For the IOT part the project uses [PlatformIO](https://platformio.org/) which is is a professional, cross-platform tool for embedded systems engineers and software developers1. It supports multiple frameworks and is compatible with a wide range of microcontroller boards, including Arduino and other MCU boards.
   
-- The app uses the font ["Zen Dots"](https://fonts.google.com/specimen/Zen+Dots) as its main font, and the design of the app adheres to the material design guidelines.
+- The app uses the font [Zen Dots](https://fonts.google.com/specimen/Zen+Dots) as its main font, and the design of the app adheres to the material design guidelines.
 
 <br><br>
 
-> We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+> I designed GadLift app using wireframes and mockups, iterating on the design until I reached the ideal layout for easy navigation and a seamless user experience.
 
 ### Mockups
 | Login screen  | Register screen |  On boarding screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/login.jpg) | ![fsdaf](./readme/demo/signup.jpg) | ![fsdaf](./readme/demo/welcome.jpg) |
 
-### Mockups
-| Home screen  | Menu Screen | Order Screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 <br><br>
 
