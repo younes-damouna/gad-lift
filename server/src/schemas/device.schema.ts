@@ -21,10 +21,10 @@ export class Device {
     @Prop({})
     building_name: string;
 
-    // @Prop()
-    // logs:[
-        
-    // ];
+    @Prop({})
+    status:boolean;
+
+  
 
 }
 export const DeviceSchema = SchemaFactory.createForClass(Device);
