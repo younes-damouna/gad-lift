@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Request, UseGuards } from '@nestjs/common';
 import { DevicesService } from './devices.service';
 import { HttpService } from '@nestjs/axios';
 import { Control } from 'src/enums/control.enum';
@@ -6,6 +6,7 @@ import { AuthGuard } from 'src/auth/auth.guard';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Role } from 'src/enums/role.enum';
 import { Roles } from 'src/customDecorators/roles.decorator';
+import { createDeviceDto } from './dto/creatDevice.dto';
 
 @Controller('devices')
 export class DevicesController {
@@ -32,8 +33,8 @@ export class DevicesController {
     @UseGuards(RolesGuard)
     @Post()
     @UseGuards(AuthGuard)
-    async addDevice() {
-        return await this.deviceService.getDevices()
+    async addDevice(@Request() req, @Body() createDeviceDto:createDeviceDto) {
+        return await this.deviceService.addDevice(createDeviceDto,req)
 
 
     }
