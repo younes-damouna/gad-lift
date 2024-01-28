@@ -45,6 +45,8 @@
 which is a progressive Node.js framework that helps build server-side applications. Nest extends [Node.js](https://nodejs.org/en) frameworks like Express or Fastify adding modular organization and a wide range of other libraries to take care of repetitive tasks. It’s open-source, uses [TypeScript](https://www.typescriptlang.org/), and it is a very versatile Node.js framework for building backend systems. It helps scale Node.js servers and supports several databases.
 
 - The project uses [MongoDB](https://www.mongodb.com/). Which is an open-source, nonrelational database management system (DBMS) that uses flexible, JSON-like documents instead of traditional tables and rows to process and store various forms of data12. As a NoSQL database solution, MongoDB provides an elastic data storage model that enables users to store and query multivariate data types with ease.
+
+- For the IOT part the project uses [PlatformIO](https://platformio.org/) which is is a professional, cross-platform tool for embedded systems engineers and software developers1. It supports multiple frameworks and is compatible with a wide range of microcontroller boards, including Arduino and other MCU boards.
   
 - The app uses the font ["Zen Dots"](https://fonts.google.com/specimen/Zen+Dots) as its main font, and the design of the app adheres to the material design guidelines.
 
