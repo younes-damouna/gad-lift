@@ -3,7 +3,7 @@ import './index.css'
 const FormGroup = ({ label, placeholder, className, type,required,onChange,name,value }) => {
   return (
     <div className="form-group d-flex column">
-      <label htmlFor="email text-white ">{label}</label>
+      <label htmlFor={type}>{label}</label>
       <input
         className={className}
         placeholder={placeholder}

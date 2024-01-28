@@ -9,6 +9,11 @@ import logo from "./../../../assets/images/AnimatedLogo4.png";
 const LoginPage = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
+  const [formErrorMessage, setFormErrorMessage] = useState({
+    email: "",
+    password: "",
+  });
+
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -21,6 +26,11 @@ const LoginPage = () => {
         [field]: value,
       };
     });
+    if (value == "")
+      setFormErrorMessage((prev) => {
+        return { ...prev, [field]: `${field} required` };
+      });
+    else setFormErrorMessage({});
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +54,7 @@ const LoginPage = () => {
   return (
     <div className=" d-flex center  full-height">
       <div className="form">
-        <img src={logo} alt=""  className="w-100"/>
+        <img src={logo} alt="" className="w-100" />
         <h2 className="text-center bold p-2">Welcome Again</h2>
         <form action="" onSubmit={(e) => handleSubmit(e)}>
           <div className="text-center p-2 text-danger"> {message}</div>
@@ -57,6 +67,10 @@ const LoginPage = () => {
             //  value={form.email}
             onChange={handleForm}
           />
+
+          {formErrorMessage.email && (
+            <h5 className="text-danger">Email required</h5>
+          )}
           <FormGroup
             label="Password"
             name="password"
@@ -65,6 +79,9 @@ const LoginPage = () => {
             required={true}
             onChange={handleForm}
           />
+           {formErrorMessage.password && (
+            <h5 className="text-danger">Password required</h5>
+          )}
 
           <PrimaryButton
             text={"Log In"}
