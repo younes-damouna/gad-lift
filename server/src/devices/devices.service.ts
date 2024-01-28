@@ -34,15 +34,23 @@ export class DevicesService {
         return this.DeviceModel.find();
 
     }
-    async addDevice(createDeviceDto:createDeviceDto,@Request() req){
-        const createDevice=new this.DeviceModel(createDeviceDto);
-        const device=await this.findOne(createDeviceDto.mac_address);
-        if(device){
-        throw new UnprocessableEntityException();
-    }else{
-        return device.save();
+    async addDevice(createDeviceDto: createDeviceDto, @Request() req) {
+        const createDevice = new this.DeviceModel(createDeviceDto);
+        const device = await this.findOne(createDeviceDto.mac_address);
+        if (device) {
+            throw new UnprocessableEntityException();
+        } else {
+            return device.save();
 
-    }
+        }
         // return this.DeviceModel
     }
+
+    async findOne(mac_address: string): Promise<any> {
+        const device = await this.DeviceModel.findOne({ mac_address });
+
+        return device;
+
+    }
+
 }
