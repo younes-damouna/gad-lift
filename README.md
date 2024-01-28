@@ -51,7 +51,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 - The app uses the font [Zen Dots](https://fonts.google.com/specimen/Zen+Dots) as its main font, and the design of the app adheres to the material design guidelines.
 
 <br><br>
-
+<img src="./readme/title4.svg"/>
 > We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 - Project Figma design [figma](https://www.figma.com/file/fP5bB9WHHoilZjojs0GYy6/GadLift?type=design&node-id=0%3A1&mode=design&t=P8N8zA6ovk7ayPJw-1)
 
@@ -64,9 +64,9 @@ which is a progressive Node.js framework that helps build server-side applicatio
 <br><br>
 
 <!-- Implementation -->
-<img src="./readme/title4.svg"/>
 
-> Using the wireframes and mockups as a guide, we implemented GadLift app with the following features:
+
+
 
 ### User Screens (Mobile)
 | Login screen  | Register screen | Landing screen | Loading screen |
@@ -79,8 +79,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Login screen  | Dashboard screen |  Landing screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/dashboard/login.jpg) | ![fsdaf](./readme/demo/dashboard/dashboard.jpg) | ![fsdaf](./readme/demo/dashboard/devices.jpg) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+<!-- | Home screen  | Menu Screen | Order Screen |
+| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
 <br><br>
 
