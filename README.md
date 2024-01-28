@@ -10,10 +10,19 @@
 > GadLift aims to make your life easier
 
 ### User Stories
-- As a user, I want to be abble to lift my gadgets to my house floor, so I can find some rest.
-- As a user, I want to register family members on the app, so that I can add or remove access to my family to use the device.
+- As a user, I want to be abble to lift my gadgets to my door step, so I can find some rest.
+- As a user, I want to register family members on the app, so that I can add members to my family to use the device.
 - As a user, I want to call the device using a mobile app so that no need for a remote control.
-- As an admin I want to edit device settings so that I can calibrate it .
+
+
+### Admin Stories
+
+- As an admin, I want to see how many users are using the app, so that I can manage the app scalability .
+- As an admin, I want to see how many devices I have, so that I can track .
+- As an admin, I want to see how many families are created .
+
+
+
 
 
 <br><br>
