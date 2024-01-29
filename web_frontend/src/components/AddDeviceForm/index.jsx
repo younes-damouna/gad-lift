@@ -5,23 +5,25 @@ import PrimaryButton from "../../components/PrimaryButton";
 import { request } from "../../helpers/api";
 
 const AddDeviceForm = () => {
-  const navigate = useNavigate();
+ 
   const [message, setMessage] = useState("");
   const [formErrorMessage, setFormErrorMessage] = useState({
-    email: "",
-    password: "",
+    mac_address: "",
+    ip_address: "",
+    building: ""
   });
 
   const [form, setForm] = useState({
-    email: "",
-    password: "",
+    mac_address: "",
+    ip_address: "",
+    building: ""
   });
 
   const handleForm = (field, value) => {
     setForm((prev) => {
       return {
         ...prev,
-        [field]: value,
+        [field]: value.toString(),
       };
     });
     if (value == "")
@@ -36,10 +38,11 @@ const AddDeviceForm = () => {
       body: form,
       route: "devices",
       method: "POST",
-      isLogin: true,
+    
     });
     console.log(response);
     if (response.statusCode === 200) {
+      setMessage(response.message);
       console.log(response);
     } else {
       setMessage(response.message);
