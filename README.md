@@ -53,9 +53,9 @@ which is a progressive Node.js framework that helps build server-side applicatio
 <br><br>
 <img src="./readme/title4.svg"/>
 > We designed GadLift app using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
-- Project Figma design [figma](https://www.figma.com/file/fP5bB9WHHoilZjojs0GYy6/GadLift?type=design&node-id=0%3A1&mode=design&t=P8N8zA6ovk7ayPJw-1)
+- Check more Mockups on [figma](https://www.figma.com/file/fP5bB9WHHoilZjojs0GYy6/GadLift?type=design&node-id=0%3A1&mode=design&t=P8N8zA6ovk7ayPJw-1)
 
-### Mockups
+### Mockups Examples
 | Login screen  | Register screen |  On boarding screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/mobile/login.jpg) | ![fsdaf](./readme/demo/mobile/signup.jpg) | ![fsdaf](./readme/demo/mobile/welcome.jpg) |
