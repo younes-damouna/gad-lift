@@ -7,6 +7,7 @@ import BarChart from "../../components/BarChart";
 import BarChartCustom from "../../components/BarChart";
 import Panel from "../../components/Panel";
 import { useNavigate } from "react-router-dom";
+import AddDeviceForm from "../../components/AddDeviceForm";
 const DashboardPage = () => {
   const [activeMainTab, setActiveMainTab] = useState("Dashboard");
   const [showMenu, setShowMenu] = useState(false);
@@ -43,6 +44,7 @@ const DashboardPage = () => {
     {
       title: "Devices",
     },
+    {title:"Add Device"}
   ];
   const handleLogout = () => {
     localStorage.removeItem("logged-in");
@@ -51,6 +53,7 @@ const DashboardPage = () => {
 
   return (
     <div className="d-flex gap w-100 main">
+     
       <div className={`${showMenu ? "show-menu" : ""} aside`}>
         <div className="menu">
           <img src={logo} className={`w-100`} />

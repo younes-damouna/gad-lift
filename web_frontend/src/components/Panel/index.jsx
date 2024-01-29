@@ -4,6 +4,7 @@ import BarChartCustom from "../BarChart";
 import UserTable from "../UsersTable";
 import FamiliesTable from "../FamiliesTable";
 import DevicesTable from "../DevicesTable";
+import AddDeviceForm from "../AddDeviceForm";
 const Panel = ({ activeMainTab, toggleMenu, open }) => {
   const [users, setusers] = useState([]);
 
@@ -39,7 +40,10 @@ const Panel = ({ activeMainTab, toggleMenu, open }) => {
       ) :activeMainTab == "Devices" ? (
         <DevicesTable/>
       ) : (
-        <></>
+        <div >
+        <AddDeviceForm className={`w-100 `}/>
+  
+        </div>
       )}
     </div>
   );
