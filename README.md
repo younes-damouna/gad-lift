@@ -67,7 +67,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 <img src="./readme/title5.svg"/>
 
 
-###  Architecting Data Excellence: Innovative Database Design Strategies:
+<!-- ###  Architecting Data Excellence: Innovative Database Design Strategies: -->
 
 <img src="./readme/demo/db.png"/>
 
@@ -98,9 +98,9 @@ which is a progressive Node.js framework that helps build server-side applicatio
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
 
-###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
+<!-- ###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
 
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
+- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases. -->
 
 
 
@@ -176,9 +176,9 @@ npm start
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
 
-###  Precision in Development: Harnessing the Power of Unit Testing:
-
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
+<!-- ###  Precision in Development: Harnessing the Power of Unit Testing: -->
+<!-- 
+- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process. -->
 
 <br><br>
 
