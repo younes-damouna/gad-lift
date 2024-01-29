@@ -18,7 +18,7 @@
 
 ### User
 
-- **Effortless Living**: As a user, I want a device that lifts my gadgets to my doorstep, so I can relax and enjoy my home without the heavy lifting.
+- **Effortless Living**: As a user, I want a device that lifts my gadgets to my doorstep, so I can relax without the heavy lifting.
 - **Family Access**: As a user, I want to register family members on the app, enabling everyone in my family to use the device and share in the convenience.
 - **App Control**: As a user, I want to call the device using a mobile app, eliminating the need for a physical remote control and making the process seamless.
 
@@ -39,9 +39,9 @@
 
 ###  **GadLift**  is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on different platforms including mobile, desktop, Linux, Android, IOS,MacOs, Windows and the web.
+- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on different platforms including mobile, desktop, Linux, Android, IOS, MacOs, Windows and the web.
 - The admin panel is done using [React.js](https://react.dev/). React.js is a JavaScript library for building single-page applications out of individual pieces called components.
-- To send  notifications, the app uses the [firebase_messaging ](https://pub.dev/packages/firebase_messaging) package which supports Android, iOS.
+- To send  notifications, the app uses the [Firebase ](https://pub.dev/packages/firebase_messaging) package which supports Android, iOS.
 
 - For the backend side the project done with [NestJS](https://nestjs.com/)
 which is a progressive Node.js framework that helps build server-side applications. Nest extends [Node.js](https://nodejs.org/en) frameworks like Express or Fastify adding modular organization and a wide range of other libraries to take care of repetitive tasks. It’s open-source, uses [TypeScript](https://www.typescriptlang.org/), and it is a very versatile Node.js framework for building backend systems. It helps scale Node.js servers and supports several databases.
