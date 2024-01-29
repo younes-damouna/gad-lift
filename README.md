@@ -73,6 +73,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 
 <br><br>
+<img src="./readme/title6.svg"/>
+
 
 ### User Screens (Mobile)
 | Login screen  | Register screen | Landing screen | Loading screen |
@@ -87,25 +89,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | ![Landing](./readme/demo/dashboard/login.jpg) | ![fsdaf](./readme/demo/dashboard/dashboard.jpg) | ![fsdaf](./readme/demo/dashboard/devices.jpg) |
 <!-- | Home screen  | Menu Screen | Order Screen |
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
-
-<br><br>
-
-<!-- Tech stack -->
-<img src="./readme/title5.svg"/>
-
-###  Architecting Data Excellence: Innovative Database Design Strategies:
-
-- Insert ER Diagram here
-
-
-
-
-<br><br>
-
-
-<!-- Implementation -->
-<img src="./readme/title6.svg"/>
-
+<br>
 
 ### User Screens (Mobile)
 | Login screen  | Register screen | Landing screen | Loading screen |
@@ -142,6 +126,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 <br><br>
 
+<img src="./readme/title10.svg"/>
 
 > To set up GadLift locally, follow these steps:
 
