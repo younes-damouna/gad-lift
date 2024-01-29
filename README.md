@@ -178,9 +178,6 @@ npm start
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
 
-<!-- ###  Precision in Development: Harnessing the Power of Unit Testing: -->
-<!-- 
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process. -->
 
 <br><br>
 
@@ -197,8 +194,6 @@ npm start
   ```
 
 ### Installation
-
-<!-- _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._ -->
 
 
 1. Clone the repo
