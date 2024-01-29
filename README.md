@@ -69,7 +69,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 ###  Architecting Data Excellence: Innovative Database Design Strategies:
 
-- Insert ER Diagram here
+<img src="./readme/demo/db.png"/>
+
 
 
 <br><br>
