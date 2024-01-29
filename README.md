@@ -116,6 +116,75 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 - This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
 
+
+
+### 1. Download and installed PuTTY
+
+PuTTY is a free and open source terminal emulator that you will use to connect to your EC2 instance via SSH. You can download PuTTY from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install it on your PC.
+
+### 2. Connect to  EC2 instance via SSH
+
+To connect to your EC2 instance via SSH, you need to follow these steps:
+
+- Launch PuTTY and enter your EC2 instance's public IP address or DNS name in the Host Name field.
+- In the Connection category, expand SSH and select Auth. Click Browse and select your .pkk file.
+- Click Open to start the connection. You may see a security alert, click Yes to continue.
+- Enter your username (usually ec2-user) and press Enter.
+
+You should now see a command prompt like this:
+
+```bash
+[ec2-user@ip-172-31-22-123 ~]$
+```
+
+### 3. Install Git, Node, and NPM
+
+To install Git, Node, and NPM on your EC2 instance, you need to run the following commands:
+
+```bash
+# Update the system
+sudo yum update -y
+
+# Install Git
+sudo yum install git -y
+
+# Install Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
+
+# Install NPM
+npm install -g npm
+```
+
+### 4. Login to your GitHub account using CLI
+
+To login to your GitHub account using CLI, you need to follow these steps:
+
+- Generate a personal access token from your GitHub account settings. You can follow the official guide [here](^2^) to do that. Make sure to copy the token and keep it safe.
+- Run the following command and enter your GitHub username and the token when prompted:
+
+```bash
+git config --global credential.helper store
+git clone https://github.com/your-username/your-project.git
+```
+
+### 5. Pull your project and run it
+
+To pull your project and run it, you need to run the following commands:
+
+```bash
+# Navigate to your project folder
+cd your-project
+
+# Pull the latest changes
+git pull
+
+# Run your project
+npm start
+```
+
+
 <br><br>
 
 <!-- Unit Testing -->
