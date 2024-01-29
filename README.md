@@ -91,7 +91,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 <!-- | Home screen  | Menu Screen | Order Screen |
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 <br>
-
+<!--  -->
 
 
 
@@ -104,7 +104,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 
 
-### 1. Download and installed PuTTY
+### 1. Download and install PuTTY
 
 PuTTY is a free and open source terminal emulator that you will use to connect to your EC2 instance via SSH. You can download PuTTY from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install it on your PC.
 
