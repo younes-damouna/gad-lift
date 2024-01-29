@@ -7,7 +7,6 @@ export class FileController {
   @Get('uploads/:filename')
   serveFile(@Param('filename') filename: string, @Res() res) {
     const path = join(__dirname, '..', 'uploads', filename);
-    console.log(path)
 
     if (existsSync(path)) {
       return res.sendFile(path);
