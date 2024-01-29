@@ -10,7 +10,6 @@ function App() {
       <BrowserRouter>
       
         <Routes>
-          <Route element={<LandingPage />} path="/" />
           <Route element={<LoginPage />} path="/auth/login" />
           <Route element={<DashboardPage />} path="/dashboard" />
         </Routes>
