@@ -78,11 +78,11 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 
 ### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| Login screen  | Register screen | Loading screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/gifs/googleLogin.gif) | ![fsdaf](./readme/demo/gifs/signup.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) |
+| Home screen  | Connect device Screen| Order Screen | Checkout Screen |
+| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![fsdaf](./readme/demo/gifs/) | ![fsdaf](https://placehold.co/900x1600) |
 
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
@@ -92,21 +92,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 <br>
 
-### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
 
-### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-
-<br><br>
 
 
 <!-- AWS Deployment -->
@@ -161,7 +147,7 @@ npm install -g npm
 
 To login to your GitHub account using CLI, you need to follow these steps:
 
-- Generate a personal access token from your GitHub account settings. You can follow the official guide [here](^2^) to do that. Make sure to copy the token and keep it safe.
+- Generate a personal access token from your GitHub account settings.Make sure to copy the token and keep it safe.
 - Run the following command and enter your GitHub username and the token when prompted:
 
 ```bash
