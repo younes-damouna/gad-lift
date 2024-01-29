@@ -147,7 +147,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+
 * npm
   ```sh
   npm install npm@latest -g
@@ -157,20 +157,92 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._ -->
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
    git clone https://github.com/younes-damouna/gad-lift.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `env.example`
+3. Enter your API in `env.example`
    - rename `env.example` to `env`
 
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+
+
+
+
+
+
+
+
+
+4. Clone the repo
+   ```sh
+   git clone https://github.com/your-username/your-project.git
+   ```
+5. Install the dependencies
+   ```sh
+   # For the mobile app
+   cd mobile_app
+   flutter pub get
+
+   # For the server
+   cd server
+   npm install
+
+   # For the web-frontend
+   cd web-frontend
+   npm install
+   ```
+6. Configure Firebase
+   ```sh
+   # To use Firebase in your mobile app, you need to register your app in the Firebase console and download the configuration files. You can follow the official guide here to do that. Make sure to place the google-services.json file in the android/app folder and the GoogleService-Info.plist file in the ios/Runner folder.
+   ```
+7. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+## How to run the project locally
+
+To run the project locally, you need to follow these steps:
+
+### 1. Run the apps
+
+To run the mobile app, you need to connect a physical device or an emulator and use the following command:
+
+```bash
+flutter run
+```
+
+To run the server, you need to use the following command:
+
+```bash
+npm run start
+```
+
+To run the web-frontend, you need to use the following command:
+
+```bash
+npm run start
+```
+
+You can then access the web app at http://localhost:3000.
+
+### 2. Run the arduino code
+
+To run the arduino code, you need to use PlatformIO. You can follow the official guide [here](https://docs.platformio.org/en/latest/integration/ide/vscode.html) to install PlatformIO extension for VS Code. Then, you need to open the arduino folder in VS Code and use the following command:
+
+```bash
+pio run -t upload
+```
+
+This will compile and upload the code to your microcontroller. You can also use the PlatformIO terminal or the PlatformIO Core (CLI) to run the code.
+
 
 Now, you should be able to run GadLift locally and explore its features.
