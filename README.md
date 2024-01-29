@@ -12,6 +12,8 @@
 
 >**GadLift** is an innovative IoT system designed to simplify your life by bringing your home gadgets right to your doorstep. Our mission is to make your life easier, one lift at a time.
 
+> With **GadLift**, we're not just lifting gadgets - we're elevating your home living experience. Welcome to a world of convenience, welcome to **GadLift**. 🚀
+
 ## User Stories
 
 ### User
@@ -27,7 +29,7 @@
 - **Platform Expansion**: As an admin, I want to add a new device to the platform, helping me monitor the number of active and offline devices.
 
 >
-> With **GadLift**, we're not just lifting gadgets - we're elevating your home living experience. Welcome to a world of convenience, welcome to **GadLift**. 🚀
+
 
 <br><br>
 
