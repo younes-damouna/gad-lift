@@ -77,7 +77,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   phoneController.text);
 
               final user = User.fromJson(response['user']);
-              log('user: ${response['user']}');
 
               // ignore: use_build_context_synchronously
               Provider.of<ProfileProvider>(

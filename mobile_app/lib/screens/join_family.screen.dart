@@ -74,7 +74,6 @@ class _JoinFamilyScreenState extends State<JoinFamilyScreen> {
                             handlePress: () async {
                               final checkParent =
                                   await FamilyService.checkIfParent();
-                              log('$checkParent');
                               if (checkParent['exists']) {
                                 // ignore: use_build_context_synchronously
                                 ScaffoldMessenger.of(context).showSnackBar(
