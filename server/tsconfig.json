@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["node", "express"],
+    "types": ["jest","node", "express"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,

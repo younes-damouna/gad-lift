@@ -53,7 +53,7 @@ export class DevicesService {
                     'mac_address': mac_address,
                    
                 },{
-                    'ip_address': ip_address
+                     'ip_address': ip_address
                 }
             ]
         });
