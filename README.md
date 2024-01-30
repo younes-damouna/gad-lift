@@ -112,7 +112,7 @@ https://github.com/younes-damouna/gad-lift/assets/107083535/a8f6fad4-772f-4e26-a
 | App Video  | Prototype video | 
 | -------------| ------------- |
 
-| <video width="630" height="300" src="https://github.com/younes-damouna/gad-lift/assets/107083535/ 10d17105-8586-4903-8f48-66406c2b15b5.mp4"> | <video width="630" height="300" src="https://github.com/younes-damouna/gad-lift/assets/107083535/a8f6fad4-772f-4e26-acf8-f632fe850efd.mp4" >|
+| <video width="630" height="300" src="https://github.com/younes-damouna/gad-lift/assets/107083535/10d17105-8586-4903-8f48-66406c2b15b5"> | <video width="630" height="300" src="https://github.com/younes-damouna/gad-lift/assets/107083535/a8f6fad4-772f-4e26-acf8-f632fe850efd" > |
 
 
 
