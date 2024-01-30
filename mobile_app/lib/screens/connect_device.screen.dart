@@ -63,7 +63,7 @@ class ConnectDeviceScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         InputGroup(
-                                                          handleValidation: Validator.validateIP,
+                             handleValidation: Validator.validateIP,
 
                           controller: text,
                           title: 'Ip Address',

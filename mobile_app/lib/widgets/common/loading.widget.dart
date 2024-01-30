@@ -14,14 +14,14 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return   Dialog(
                                   child: Padding(
-                                    padding: EdgeInsets.all(20.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         CircularProgressIndicator(
                                           color:widget.color,
                                         ),
-                                        SizedBox(width: 20),
+                                        const SizedBox(width: 20),
                                         Text(widget.text),
                                       ],
                                     ),
