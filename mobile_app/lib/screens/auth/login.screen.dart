@@ -88,17 +88,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   overlayColor:
                                       MaterialStatePropertyAll(Colors.white60)),
                               onPressed: () async {
-                                log("hello");
                                 final res = await AuthService.googleSignIn();
                                 if (res?['statusCode'] == 200) {
                                   final user = User.fromJson(res['user']);
-                                  log('${res['user']}');
                                   final storage = SecureStorage();
                                   await storage.saveToken(
                                       'access_token', res['access_token']);
-                                  final token =
-                                      await storage.getToken('access_token');
-                                  log('access_token: $token');
+                                  
                                   // ignore: use_build_context_synchronously
                                   Provider.of<ProfileProvider>(
                                     context,
@@ -125,7 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                           builder: (context) =>
                                               const ConnectDeviceScreen()));
 
-                                  log('user: $user');
                                 } else if (res['statusCode'] == 400 ||
                                     res['statusCode'] == 401) {
                                   // ignore: use_build_context_synchronously
@@ -167,13 +162,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                 if (response?['statusCode'] == 200) {
                                   final user = User.fromJson(response['user']);
-                                  log('${response['user']}');
                                   final storage = SecureStorage();
                                   await storage.saveToken(
                                       'access_token', response['access_token']);
-                                  final token =
-                                      await storage.getToken('access_token');
-                                  log('access_token: $token');
+                                  
                                   // ignore: use_build_context_synchronously
                                   Provider.of<ProfileProvider>(
                                     context,
@@ -200,7 +192,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                           builder: (context) =>
                                               const ConnectDeviceScreen()));
 
-                                  log('user: $user');
                                 } else if (response['statusCode'] == 400 ||
                                     response['statusCode'] == 401) {
                                   // ignore: use_build_context_synchronously
