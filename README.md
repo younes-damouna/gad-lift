@@ -86,6 +86,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Home screen  | Connect device Screen | Prototype |
 | ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![new](./readme/demo/gifs/prototype.gif) |
 
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://github.com/younes-damouna/gad-lift/readme/demo/video/video.mp4)
+
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
 | ---| ---| ---|
