@@ -40,7 +40,7 @@ const LoginPage = () => {
       method: "POST",
       isLogin: true,
     });
-    console.log(response);
+    // console.log(response);
     if (response.statusCode === 200) {
       console.log(response);
       localStorage.setItem("logged_in", JSON.stringify(response.access_token));
