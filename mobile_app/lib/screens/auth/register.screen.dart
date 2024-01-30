@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mobile_app/helpers/api/services/auth.service.dart';
 import 'package:mobile_app/helpers/models/user.model.dart';
 import 'package:mobile_app/helpers/providers/profile_provider.dart';

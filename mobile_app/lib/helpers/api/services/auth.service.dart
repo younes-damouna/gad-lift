@@ -2,7 +2,6 @@ import 'dart:developer';
 
 
 import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mobile_app/helpers/config/base_dio.dart';
 import 'package:mobile_app/helpers/constants/api_constants.dart';
@@ -70,7 +69,7 @@ abstract class AuthService {
       final GoogleSignInAccount? user=await googleSignIn.signIn();
 
       final GoogleSignInAuthentication googleAuth=await user!.authentication;
-      final credential=GoogleAuthProvider.credential(accessToken:googleAuth.accessToken ,idToken:googleAuth.idToken ,);
+      // final credential=GoogleAuthProvider.credential(accessToken:googleAuth.accessToken ,idToken:googleAuth.idToken ,);
       final names=user.displayName?.split(' ');
      final res= await register(names![0], names![1], user.email, user.id);
      if(res==200){

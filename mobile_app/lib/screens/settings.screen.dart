@@ -71,7 +71,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         parent = false;
       });
     }
-    print(parent);
   }
 
   @override
@@ -195,7 +194,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               ),
                             )
                           : Container(),
-                      parent? Divider(
+                      parent? const Divider(
                         color: Colors.black,
                         height: 20,
                         thickness: 2,
