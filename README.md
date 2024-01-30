@@ -83,8 +83,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Login screen  | Register screen | Loading screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/gifs/googleLogin.gif) | ![fsdaf](./readme/demo/gifs/signup.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) |
-| Home screen  | Connect device Screen |
-| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif)  |
+| Home screen  | Connect device Screen | Prototype |
+| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif)
 
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
@@ -106,11 +106,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 
 
 
-### 1. Download and install PuTTY
 
-PuTTY is a free and open source terminal emulator that you will use to connect to your EC2 instance via SSH. You can download PuTTY from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install it on your PC.
-
-### 2. Connect to  EC2 instance via SSH
+### 1. Connect to  EC2 instance via SSH
 
 To connect to your EC2 instance via SSH, you need to follow these steps:
 
@@ -125,7 +122,7 @@ You should now see a command prompt like this:
 [ec2-user@ip-172-31-22-123 ~]$
 ```
 
-### 3. Install Git, Node, and NPM
+### 2. Install Git, Node, and NPM
 
 To install Git, Node, and NPM on your EC2 instance, you need to run the following commands:
 
@@ -145,7 +142,7 @@ nvm install node
 npm install -g npm
 ```
 
-### 4. Login to your GitHub account using CLI
+### 3. Login to your GitHub account using CLI
 
 To login to your GitHub account using CLI, you need to follow these steps:
 
@@ -157,7 +154,7 @@ git config --global credential.helper store
 git clone https://github.com/your-username/your-project.git
 ```
 
-### 5. Pull your project and run it
+### 4. Pull your project and run it
 
 To pull your project and run it, you need to run the following commands:
 
