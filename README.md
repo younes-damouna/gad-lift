@@ -83,8 +83,8 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Login screen  | Register screen | Loading screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/gifs/googleLogin.gif) | ![fsdaf](./readme/demo/gifs/signup.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) |
-| Home screen  | Connect device Screen |
-| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) |
+| Home screen  | Connect device Screen | Prototype |
+| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![fsdaf](./readme/demo/build.jpeg) |
 
 
 
