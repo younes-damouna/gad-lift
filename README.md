@@ -83,10 +83,10 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Login screen  | Register screen | Loading screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/gifs/googleLogin.gif) | ![fsdaf](./readme/demo/gifs/signup.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) |
-| Home screen  | Connect device Screen | Prototype |
-| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![new](./readme/demo/gifs/prototype.gif) |
+| Home screen  | Connect device Screen |
+| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) |
 
-[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://github.com/younes-damouna/gad-lift/readme/demo/video/video.mp4)
+[![Watch the video](https://img.freepik.com/free-vector/video-media-player-design_114579-839.jpg)](https://youtube.com/shorts/55uT6SodVNg?feature=share)
 
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
