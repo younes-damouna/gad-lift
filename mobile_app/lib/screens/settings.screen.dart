@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helpers/api/services/family.service.dart';
@@ -28,7 +27,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     final req = Request.parseRequests(response['requests']);
     final members = Member.parseMembers(response['members']);
-    log('response ${response['members']}');
     // ignore: use_build_context_synchronously
     Provider.of<RequestProvider>(
       context,
@@ -41,7 +39,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       listen: false,
     ).getMembers(members);
 
-    log('requests: ${response['requests']}');
     await isParent();
   }
   // ignore: prefer_typing_uninitialized_variables
@@ -61,7 +58,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   isParent() async {
     final checkParent = await FamilyService.checkIfParent();
-    log('EXISTS ${checkParent['exists'] == true}');
     if (checkParent['exists'] == true) {
       setState(() {
         parent = true;
@@ -148,7 +144,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                             text:
                                                 '${req.requests[i].first_name} ${req.requests[i].last_name}',
                                             handlePress: () {
-                                              log(req.requests[i].id);
                                               showDialog<String>(
                                                 context: context,
                                                 builder:
@@ -171,7 +166,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                     //   listen: false,
                                                     // ).getRequests(req);
 
-                                                    log('requests: $response');
                                                   },
                                                   request:
                                                       '${req.requests[i].first_name} ${req.requests[i].last_name}',
