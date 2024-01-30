@@ -84,7 +84,7 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | ---| ---| ---|
 | ![Landing](./readme/demo/gifs/googleLogin.gif) | ![fsdaf](./readme/demo/gifs/signup.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) | ![fsdaf](./readme/demo/gifs/welcome.gif) |
 | Home screen  | Connect device Screen | Prototype |
-| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif)
+| ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) | ![new](./readme/demo/gifs/prototype.gif) |
 
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
