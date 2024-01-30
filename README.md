@@ -86,14 +86,25 @@ which is a progressive Node.js framework that helps build server-side applicatio
 | Home screen  | Connect device Screen |
 | ![Landing](./readme/demo/gifs/home.gif) | ![fsdaf](./readme/demo/gifs/connectDevice.gif) |
 
-[![Watch the video](https://img.freepik.com/free-vector/video-media-player-design_114579-839.jpg)](https://youtube.com/shorts/55uT6SodVNg?feature=share)
+
 
 ### Admin Screens (Web)
 | Login screen  | Dashboard screen |  Landing screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/dashboard/login.jpg) | ![fsdaf](./readme/demo/dashboard/dashboard.jpg) | ![fsdaf](./readme/demo/dashboard/devices.jpg) |
+
+| Users screen  | Families screen |
+| ---| ---|
+| ![Landing](./readme/demo/dashboard/users.jpg) | ![fsdaf](./readme/demo/dashboard/families.jpg) | 
 <!-- | Home screen  | Menu Screen | Order Screen |
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
+Watch the prototype
+<div width="100%">
+
+[![Watch the video](https://img.freepik.com/free-vector/video-media-player-design_114579-839.jpg)](https://youtube.com/shorts/55uT6SodVNg?feature=share)
+
+</div>
+
 <br>
 <!--  -->
 
@@ -170,15 +181,10 @@ git pull
 # Run your project
 npm start
 ```
-
-
 <br><br>
 
 <!-- Unit Testing -->
 <!-- <img src="./readme/title9.svg"/> -->
-
-
-<br><br>
 
 <img src="./readme/title10.svg"/>
 
