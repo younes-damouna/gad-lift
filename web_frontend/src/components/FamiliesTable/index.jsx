@@ -17,7 +17,6 @@ const FamiliesTable = () => {
     getUsers();
   }, []);
 
-  console.log(families);
   return (
     <div className="table-container">
       <table>
