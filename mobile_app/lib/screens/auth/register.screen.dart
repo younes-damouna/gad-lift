@@ -117,17 +117,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             overlayColor:
                                 MaterialStatePropertyAll(Colors.white60)),
                         onPressed: () async {
-                          log("hello");
                           final res = await AuthService.googleSignIn();
                           if (res?['statusCode'] == 200) {
                             final user = User.fromJson(res['user']);
-                            log('${res['user']}');
                             final storage = SecureStorage();
                             await storage.saveToken(
                                 'access_token', res['access_token']);
-                            final token =
-                                await storage.getToken('access_token');
-                            log('access_token: $token');
+                           
                             // ignore: use_build_context_synchronously
                             Provider.of<ProfileProvider>(
                               context,
@@ -151,7 +147,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     builder: (context) =>
                                         const ConnectDeviceScreen()));
 
-                            log('user: $user');
                           } else if (res['statusCode'] == 400 ||
                               res['statusCode'] == 401) {
                             // ignore: use_build_context_synchronously
@@ -191,7 +186,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           );
                           log('response ${response.runtimeType}');
                           if (response == 200) {
-                            log('log200');
                             // ignore: use_build_context_synchronously
                             showDialog(
                               context: context,
@@ -205,7 +199,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             // ignore: use_build_context_synchronously
                             Navigator.popAndPushNamed(context, '/login');
                           } else if (response == 400) {
-                            log('inregister');
                             // ignore: use_build_context_synchronously
                             showDialog(
                               context: context,
